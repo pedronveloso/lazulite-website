@@ -1,7 +1,7 @@
 baseURL = 'https://lazulite-app.netlify.com'
 languageCode = 'en-us'
 title = 'Lazulite App'
-theme = "nightfall"
+theme = "lazulite"
 
 
 [[params.social]]

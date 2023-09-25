@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <title>
+        {{ i18n "home" }} | {{ .Site.Params.author }}
+    </title>
+
+    {{ partial "head.html" . }}
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        {{ partial "header.html" . }}
+
+        <div class="content vertical">
+            <main class="main">
+                <div class="indexWrapper">
+                    {{ with .Site.GetPage "page" "_index.md" }}
+                    {{ .Content }}
+                    {{ end }}
+
+                </div>
+            </main>
+        </div>
+
+
+        {{ partial "footer.html" . }}
+    </div>
+
+</body>
+
+</html>
