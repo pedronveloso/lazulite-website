@@ -1,4 +1,28 @@
-baseURL = 'http://hugo-quickstart-template.netlify.com'
+baseURL = 'https://lazulite-app.netlify.com'
 languageCode = 'en-us'
-title = 'Netlify + Hugo Quickstart'
-theme = 'netlify-basic'
+title = 'Lazulite App'
+theme = "nightfall"
+
+
+[[params.social]]
+key = 0
+name = "email"
+url = "mailto:lazulite.app@example.com"
+#icon = "fa-solid fa-envelope"
+
+readingTime = false  # Show reading time on post page
+published = false  # Show published data on post page
+
+
+[menu]
+  [[menu.header]]
+    name = "Privacy Policy"
+    weight = 0
+    url = "/privacy"
+#  [[menu.header]]
+#    name = "posts"
+#    weight = 0
+#    url = "/posts"
+
+[params]
+footerHtml = 'Lazulite App for Android'
