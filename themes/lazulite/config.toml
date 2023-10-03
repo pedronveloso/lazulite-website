@@ -1,4 +1,14 @@
+languageCode = 'en-us'
 [module]
   [module.hugoVersion]
     extended = true
     min = "0.80.0"
+
+readingTime = false  # Show reading time on post page
+published = false  # Show published data on post page
+
+[[params.social]]
+key = 0
+name = "email"
+url = "mailto:lazuliteapp@gmail.com"
+

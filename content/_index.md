@@ -10,7 +10,12 @@ author = "Pedro Veloso"
 
 <div style="text-align: center;">
 
-## Lazulite for Android
+## Get it now via Google Play Store!
+
+[{{< figure src="/images/google-play-badge.png" title="Download from Play Store" alt="Google Play Badge" width="300px" >}}](https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite)
+
+
+
 
 </div>
-Yoyo yo!
+
