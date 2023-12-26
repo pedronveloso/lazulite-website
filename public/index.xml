@@ -5,16 +5,21 @@
     <link>https://lazulite-app.netlify.com/</link>
     <description>Recent content on Lazulite App</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://lazulite-app.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="https://lazulite-app.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FAQ</title>
+      <link>https://lazulite-app.netlify.com/faq/</link>
+      <pubDate>Mon, 25 Dec 2023 16:18:23 -0700</pubDate>
+      <guid>https://lazulite-app.netlify.com/faq/</guid>
+      <description>Lazulite Frequently Asked Questions I&amp;rsquo;m stuck at the ADB permissions screen If you&amp;rsquo;re stuck at the ADB permissions screen, I&amp;rsquo;ve written the following tutorial to help get unfamiliar users unblocked:&#xA;Lazulite Setup Simplified: Installing ADB on Windows and MacOS&#xA;Does Lazulite have an impact on battery life? Lazulite is designed to have a minimal impact on battery life. It only runs when you&amp;rsquo;re using it, and it doesn&amp;rsquo;t run in the background.</description>
+    </item>
     <item>
       <title>Privacy</title>
       <link>https://lazulite-app.netlify.com/privacy/</link>
       <pubDate>Sun, 24 Sep 2023 16:18:23 -0700</pubDate>
-      
       <guid>https://lazulite-app.netlify.com/privacy/</guid>
-      <description>Privacy Policy for Lazulite Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.
-Information We Collect: Anonymous Data via Firebase Analytics: We collect anonymous data about how users interact with our app to improve its functionality and user experience.</description>
+      <description>Privacy Policy for Lazulite Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.&#xA;Information We Collect: Anonymous Data via Firebase Analytics: We collect anonymous data about how users interact with our app to improve its functionality and user experience.</description>
     </item>
-    
   </channel>
 </rss>

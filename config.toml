@@ -19,6 +19,10 @@ published = false  # Show published data on post page
     name = "Privacy Policy"
     weight = 0
     url = "/privacy"
+  [[menu.header]]
+    name = "FAQ"
+    weight = 1
+    url = "/faq"
 #  [[menu.header]]
 #    name = "posts"
 #    weight = 0
