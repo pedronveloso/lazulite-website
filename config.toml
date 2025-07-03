@@ -1,4 +1,4 @@
-baseURL = 'https://lazulite-app.netlify.app'
+baseURL = 'https://lazulite.app'
 languageCode = 'en-us'
 title = 'Lazulite App'
 theme = "lazulite"
