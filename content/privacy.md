@@ -2,6 +2,7 @@
 title: "Privacy"
 date: 2023-09-24T16:18:23-07:00
 draft: false
+showMetadata: false
 ---
 
 # Privacy Policy for Lazulite

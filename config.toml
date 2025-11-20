@@ -3,16 +3,17 @@ languageCode = 'en-us'
 title = 'Lazulite App'
 theme = "lazulite"
 
+# Allow raw HTML in markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [[params.social]]
 key = 0
 name = "email"
 url = "mailto:lazulite.app@example.com"
 #icon = "fa-solid fa-envelope"
-
-readingTime = false  # Show reading time on post page
-published = false  # Show published data on post page
-
 
 [menu]
   [[menu.header]]
@@ -30,3 +31,5 @@ published = false  # Show published data on post page
 
 [params]
 footerHtml = 'Lazulite App for Android'
+readingTime = false  # Show reading time on post page
+published = false  # Show published data on post page

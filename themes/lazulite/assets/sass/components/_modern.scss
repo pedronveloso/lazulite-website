@@ -1,0 +1,439 @@
+// Modern Lazulite Components
+
+// Gradient Text
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    rgba(191, 64, 255, 0.7) 0%,
+    rgba(91, 159, 255, 0.75) 50%,
+    rgba(91, 159, 255, 0.65) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+// Cards
+.card {
+  background-color: $card-background;
+  border-radius: $radius-lg;
+  padding: $space-base;
+  margin-bottom: $space-base;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  &.card-light {
+    background-color: $card-background-light;
+  }
+
+  &.card-glow {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(
+        135deg,
+        rgba($neon-cyan, 0.1),
+        rgba($neon-purple, 0.1),
+        rgba($neon-blue, 0.1)
+      );
+      border-radius: $radius-lg;
+      z-index: -1;
+    }
+  }
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: $grey-6;
+  margin-bottom: $space-md;
+  font-family: $fontHeader;
+}
+
+.card-divider {
+  height: 1px;
+  background-color: $divider-color;
+  margin: $space-md 0;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  padding: $space-md $space-lg;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: $fontParagraph;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.btn-cyan {
+  background-color: rgba($neon-cyan, 0.2);
+  color: $neon-cyan;
+
+  &:hover {
+    background-color: rgba($neon-cyan, 0.3);
+  }
+}
+
+.btn-purple {
+  background-color: rgba($neon-purple, 0.2);
+  color: $neon-purple;
+
+  &:hover {
+    background-color: rgba($neon-purple, 0.3);
+  }
+}
+
+.btn-blue {
+  background-color: rgba($neon-blue, 0.2);
+  color: $neon-blue;
+
+  &:hover {
+    background-color: rgba($neon-blue, 0.3);
+  }
+}
+
+.btn-primary {
+  background-color: $laz-primary;
+  color: white;
+
+  &:hover {
+    background-color: lighten($laz-primary, 10%);
+  }
+}
+
+// Badges
+.badge {
+  display: inline-block;
+  padding: $space-xs $space-md;
+  border-radius: $radius-sm;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: $fontHeader;
+}
+
+.badge-excellent {
+  background-color: rgba($quality-excellent, 0.2);
+  color: $quality-excellent;
+}
+
+.badge-good {
+  background-color: rgba($quality-good, 0.2);
+  color: $quality-good;
+}
+
+.badge-neon {
+  background-color: rgba($neon-cyan, 0.2);
+  color: $neon-cyan;
+  padding: $space-sm $space-base;
+  border-radius: $radius-pill;
+  font-size: 14px;
+}
+
+// Now Playing Badge with Glow
+.now-playing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-md;
+  padding: $space-sm $space-lg;
+  position: relative;
+  color: $grey-4;
+
+  &.active {
+    color: $neon-cyan;
+    font-weight: 600;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba($neon-cyan, 0.2),
+        rgba($neon-purple, 0.2),
+        transparent
+      );
+      border-radius: $radius-pill;
+      filter: blur(16px);
+      animation: glow-pulse 1.5s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+  }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: $radius-circle;
+  background-color: $neon-cyan;
+  animation: glow-pulse 1.5s ease-in-out infinite alternate;
+}
+
+// Animations
+@keyframes glow-pulse {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animated-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+// Feature Grid
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $space-lg;
+  margin: $space-xl 0;
+
+  @media (max-width: $breakMedium) {
+    grid-template-columns: 1fr;
+    gap: $space-base;
+  }
+}
+
+.feature-card {
+  background-color: $card-background;
+  border-radius: $radius-lg;
+  padding: $space-lg;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba($neon-cyan, 0.2), rgba($neon-purple, 0.2));
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $space-base;
+    font-size: 32px;
+  }
+
+  .feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $grey-6;
+    margin-bottom: $space-sm;
+    font-family: $fontHeader;
+  }
+
+  .feature-description {
+    color: $grey-4;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .feature-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba($neon-cyan, 0.15), transparent);
+    pointer-events: none;
+  }
+}
+
+// Hero Section
+.hero-section {
+  text-align: center;
+  padding: $space-xl * 2 $space-lg;
+  position: relative;
+
+  @media (max-width: $breakMedium) {
+    padding: $space-xl $space-base;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: $space-base;
+    font-family: $fontHeader;
+
+    @media (max-width: $breakMedium) {
+      font-size: 32px;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    color: $grey-4;
+    margin-bottom: $space-xl;
+    line-height: 1.6;
+
+    @media (max-width: $breakMedium) {
+      font-size: 16px;
+    }
+  }
+
+  .hero-cta {
+    margin-top: $space-lg;
+  }
+}
+
+// Mockup Placeholder
+.mockup-placeholder {
+  background: linear-gradient(135deg, $card-background-light 0%, $card-background 100%);
+  border: 2px dashed rgba($neon-cyan, 0.3);
+  border-radius: $radius-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: $grey-4;
+  font-family: $fontHeader;
+  font-size: 14px;
+  text-align: center;
+  padding: $space-lg;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($neon-cyan, 0.1),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  .placeholder-text {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Section
+.section {
+  padding: $space-xl 0;
+
+  &.section-alt {
+    background-color: rgba($card-background, 0.5);
+  }
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: $grey-6;
+  margin-bottom: $space-base;
+  font-family: $fontHeader;
+  text-align: center;
+
+  @media (max-width: $breakMedium) {
+    font-size: 24px;
+  }
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: $grey-4;
+  text-align: center;
+  margin-bottom: $space-xl;
+  line-height: 1.6;
+}
+
+// Two Column Layout
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-xl;
+  align-items: center;
+
+  @media (max-width: $breakMedium) {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+
+  &.reverse {
+    @media (min-width: $breakMedium) {
+      .column:first-child {
+        order: 2;
+      }
+      .column:last-child {
+        order: 1;
+      }
+    }
+  }
+}
+
+// Highlight Box
+.highlight-box {
+  background: linear-gradient(135deg, rgba($neon-purple, 0.1), rgba($neon-blue, 0.1));
+  border-left: 4px solid $neon-cyan;
+  padding: $space-base $space-lg;
+  border-radius: $radius-md;
+  margin: $space-lg 0;
+
+  p {
+    margin: 0;
+    color: $grey-5;
+  }
+
+  strong {
+    color: $neon-cyan;
+  }
+}
