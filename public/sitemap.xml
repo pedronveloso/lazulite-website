@@ -2,20 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lazulite-app.netlify.app/</loc>
+    <loc>https://lazulite.app/</loc>
     <lastmod>2023-12-25T16:18:23-07:00</lastmod>
   </url><url>
-    <loc>https://lazulite-app.netlify.app/faq/</loc>
+    <loc>https://lazulite.app/faq/</loc>
     <lastmod>2023-12-25T16:18:23-07:00</lastmod>
   </url><url>
-    <loc>https://lazulite-app.netlify.app/privacy/</loc>
+    <loc>https://lazulite.app/privacy/</loc>
     <lastmod>2023-09-24T16:18:23-07:00</lastmod>
   </url><url>
-    <loc>https://lazulite-app.netlify.app/posts/</loc>
+    <loc>https://lazulite.app/posts/</loc>
     <lastmod>2023-09-24T15:58:14-07:00</lastmod>
   </url><url>
-    <loc>https://lazulite-app.netlify.app/categories/</loc>
+    <loc>https://lazulite.app/categories/</loc>
   </url><url>
-    <loc>https://lazulite-app.netlify.app/tags/</loc>
+    <loc>https://lazulite.app/tags/</loc>
   </url>
 </urlset>

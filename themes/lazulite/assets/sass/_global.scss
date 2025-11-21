@@ -1,37 +1,111 @@
 @import "./utils/variables";
 
+// CSS Custom Properties
+:root {
+  /* Brand Colors */
+  --laz-primary: #{$laz-primary};
+  --laz-business-name: #{$laz-business-name};
+  --laz-labels: #{$laz-labels};
+  --laz-slogan: #{$laz-slogan};
+  --laz-icon: #{$laz-icon};
+
+  /* Neon Accents */
+  --neon-cyan: #{$neon-cyan};
+  --neon-purple: #{$neon-purple};
+  --neon-blue: #{$neon-blue};
+  --neon-green: #{$neon-green};
+  --neon-pink: #{$neon-pink};
+
+  /* Backgrounds */
+  --laz-background: #{$laz-background};
+  --card-background: #{$card-background};
+  --card-background-light: #{$card-background-light};
+  --divider-color: #{$divider-color};
+
+  /* Text */
+  --grey-3: #{$grey-3};
+  --grey-4: #{$grey-4};
+  --grey-5: #{$grey-5};
+  --grey-6: #{$grey-6};
+
+  /* Quality Indicators */
+  --quality-excellent: #{$quality-excellent};
+  --quality-good: #{$quality-good};
+  --quality-fair: #{$quality-fair};
+  --quality-poor: #{$quality-poor};
+
+  /* Spacing */
+  --space-xs: #{$space-xs};
+  --space-sm: #{$space-sm};
+  --space-md: #{$space-md};
+  --space-base: #{$space-base};
+  --space-lg: #{$space-lg};
+  --space-xl: #{$space-xl};
+
+  /* Border Radius */
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-pill: #{$radius-pill};
+  --radius-circle: #{$radius-circle};
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: $fontParagraph;
-  color: $white;
-  background-color: $backgroundDark;
+  color: $grey-5;
+  background-color: $laz-background;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: $blue;
+  color: $neon-cyan;
+  text-decoration: none;
+  transition: filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
 }
 
 pre code {
   font-family: $fontCode;
   font-size: 75%;
   display: block;
-  background: $backgroundDarker;
+  background: $card-background;
   padding: 10px;
   overflow: auto;
+  border-radius: $radius-sm;
 }
 
 code {
   font-family: $fontCode;
   font-size: 75%;
+  background: rgba($neon-purple, 0.1);
+  padding: 2px 6px;
+  border-radius: $radius-sm;
+  color: $neon-purple;
 }
 
 @for $i from 1 through 6 {
   h#{$i} {
     font-family: $fontHeader;
+    color: $grey-6;
   }
+}
+
+p {
+  color: $grey-5;
 }
 
 @-ms-viewport{

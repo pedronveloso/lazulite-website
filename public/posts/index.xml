@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Lazulite App</title>
-    <link>https://lazulite-app.netlify.app/posts/</link>
+    <link>https://lazulite.app/posts/</link>
     <description>Recent content in Posts on Lazulite App</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://lazulite-app.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lazulite.app/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

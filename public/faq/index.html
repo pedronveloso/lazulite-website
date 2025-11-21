@@ -9,11 +9,11 @@ FAQ |
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="generator" content="Hugo 0.127.0">
+<meta name="generator" content="Hugo 0.152.2">
 
 
-<link rel="canonical" href="https://lazulite-app.netlify.app/faq/" >
-<link href="/sass/main.min.7c57d7795628d7c025cc5db105e8a8d02017cfd7b77929b93c867586a4b49d65.css" rel="stylesheet">
+<link rel="canonical" href="https://lazulite.app/faq/" >
+<link href="/sass/main.min.7d453bcf6668a3f10bf8030f078b2798636190e6ed7d446e655eea6eb7b22af3.css" rel="stylesheet">
 
 
 
@@ -25,7 +25,7 @@ FAQ |
         <header class="headerWrapper">
     <div class="header">
         <div>
-            <a href="https://lazulite-app.netlify.app/">
+            <a href="https://lazulite.app/">
                 <span class="terminal"> Home</span>
             </a>
         </div>
@@ -35,11 +35,11 @@ FAQ |
             <ul>
                 
                 <li>
-                    <a href="https://lazulite-app.netlify.app/faq" title="" >FAQ</a>
+                    <a href="https://lazulite.app/faq" title="" >FAQ</a>
                 </li>
                 
                 <li>
-                    <a href="https://lazulite-app.netlify.app/privacy" title="" >Privacy Policy</a>
+                    <a href="https://lazulite.app/privacy" title="" >Privacy Policy</a>
                 </li>
                 
             </ul>
@@ -54,37 +54,62 @@ FAQ |
 <div class="postWrapper">
     <h1>FAQ</h1>
     
-    <section class="postMetadata">
-        <dl>
-            
-            
-            
-            
-                <dt>published</dt>
-                
-                <dd><time datetime="2023-12-25">December 25, 2023</time></dd>
-            
-            
-                <dt>reading time</dt>
-                <dd>1 minute</dd>
-            
-        </dl>
-    </section>
-    
     <div>
-        <h1 id="lazulite-frequently-asked-questions">Lazulite Frequently Asked Questions</h1>
+        <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<h2 id="why-does-lazulite-need-special-permissions">Why does Lazulite need special permissions?</h2>
+<p>Lazulite needs permission to read your Android system&rsquo;s audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you&rsquo;ll need to grant permission using one of three methods:</p>
+<h3 id="option-1-adb-recommended-for-most-users">Option 1: ADB (Recommended for Most Users)</h3>
+<p><strong>Best for:</strong> First-time users and anyone not familiar with Android customization</p>
+<p>This is the easiest method for most people. You&rsquo;ll connect your phone to your computer via USB and run a simple command. It takes about 5 minutes and doesn&rsquo;t require any technical expertise.</p>
+<p><strong>Note:</strong> You&rsquo;ll need to re-grant permission after each device restart.</p>
+<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">📖 Step-by-Step ADB Tutorial for Windows and MacOS</a></p>
+<h3 id="option-2-shizuku">Option 2: Shizuku</h3>
+<p><strong>Best for:</strong> Users who want persistent permissions without restarting</p>
+<p><a href="https://shizuku.rikka.app/">Shizuku</a> is an app that helps other apps access system permissions. Once set up, permissions persist across reboots. Requires initial ADB setup, but you won&rsquo;t need to reconnect your phone after restarts.</p>
+<h3 id="option-3-root-access">Option 3: Root Access</h3>
+<p><strong>Best for:</strong> Power users with rooted devices</p>
+<p>If your device is rooted, Lazulite can automatically request the necessary permissions. This is the most convenient option, but only if you&rsquo;re already comfortable with rooting Android devices.</p>
+<hr>
 <h2 id="im-stuck-at-the-adb-permissions-screen">I&rsquo;m stuck at the ADB permissions screen</h2>
-<p>If you&rsquo;re stuck at the ADB permissions screen, I&rsquo;ve written the following tutorial to help get unfamiliar users unblocked:</p>
+<p><strong>First time setting up?</strong> Follow our detailed tutorial that walks you through installing ADB and granting permissions:</p>
 <p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">Lazulite Setup Simplified: Installing ADB on Windows and MacOS</a></p>
-<h2 id="does-lazulite-have-an-impact-on-battery-life">Does Lazulite have an impact on battery life?</h2>
-<p>Lazulite is designed to have a minimal impact on battery life. It only runs when you&rsquo;re using it, and it doesn&rsquo;t run in the background.</p>
-<p>The way it works is by looking at logs meant for development purposes. These logs live on your phone/tablet, therefore there is <strong>no impact
-whatsoever</strong>  on the battery life of your bluetooth device.</p>
-<h2 id="does-lazulite-have-an-impact-on-data-usage">Does Lazulite have an impact on data usage?</h2>
-<p>Lazulite might collect basic usage and crash data. This data is anonymized, and this functionality is provided by Google Firebase, so it&rsquo;s highly optimized for mobile devices as well as compliant with the latest privacy regulations for all regions.
-However, if you so wish you can opt out of this data collection by going to the settings screen and disabling the Telemetry data option.</p>
-<h2 id="further-questions">Further questions</h2>
-<p>If you have any further questions, please <a href="mailto:lazuliteapp@gmail.com">contact us via email</a>.</p>
+<p><strong>Already granted permission but it&rsquo;s not working?</strong> Make sure:</p>
+<ul>
+<li>Your phone is connected via USB with USB debugging enabled</li>
+<li>You&rsquo;ve authorized the computer on your phone when the &ldquo;Allow USB debugging?&rdquo; prompt appeared</li>
+<li>You&rsquo;re running the correct ADB command exactly as shown in the tutorial</li>
+</ul>
+<p><strong>Using Shizuku?</strong> Ensure Shizuku is running before launching Lazulite.</p>
+<hr>
+<h2 id="will-lazulite-drain-my-battery">Will Lazulite drain my battery?</h2>
+<p><strong>TL;DR:</strong> Nope, negligible impact.</p>
+<p>Lazulite only reads existing system logs that your device generates anyway. It doesn&rsquo;t create additional processes or run in the background when you&rsquo;re not using it.</p>
+<p><strong>Important:</strong> Lazulite monitors your phone/tablet&rsquo;s logs, not your Bluetooth headphones. Your earbuds&rsquo; battery life is completely unaffected.</p>
+<hr>
+<h2 id="does-lazulite-use-my-mobile-data">Does Lazulite use my mobile data?</h2>
+<p>Lazulite performs all audio analysis locally on your device—no data leaves your phone unless you choose to share it.</p>
+<p><strong>Optional telemetry:</strong> The app may collect anonymous usage and crash data via Google Firebase to help improve stability. This uses minimal data and is compliant with privacy regulations worldwide.</p>
+<p><strong>Want to opt out?</strong> Go to Settings → Disable &ldquo;Telemetry data&rdquo;</p>
+<hr>
+<h2 id="which-bluetooth-codecs-does-lazulite-support">Which Bluetooth codecs does Lazulite support?</h2>
+<p>Lazulite can detect and analyze all Bluetooth audio codecs your device supports, including:</p>
+<ul>
+<li><strong>High-quality codecs:</strong> LDAC, LDAC Plus, aptX HD, aptX Adaptive, aptX Lossless, aptX, LC3, LC3 Plus</li>
+<li><strong>Standard codecs:</strong> AAC, SBC</li>
+<li><strong>And many more</strong> as Android adds new codec support</li>
+</ul>
+<p>If your device and headphones support it, Lazulite can monitor it.</p>
+<hr>
+<h2 id="can-i-use-lazulite-with-wired-headphones">Can I use Lazulite with wired headphones?</h2>
+<p>Lazulite is specifically designed for Bluetooth audio analysis. It monitors the Bluetooth audio stack, codec negotiation, and wireless transmission quality—none of which apply to wired connections.</p>
+<p>For wired headphones, audio goes directly from your device&rsquo;s DAC to your ears without the complexity of wireless encoding and transmission.</p>
+<hr>
+<h2 id="why-do-streaming-apps-sometimes-show-different-codecs-than-expected">Why do streaming apps sometimes show different codecs than expected?</h2>
+<p><strong>This is exactly why Lazulite exists.</strong> Many streaming apps claim &ldquo;lossless&rdquo; or &ldquo;hi-fi&rdquo; quality, but your device or Bluetooth headphones might force re-encoding to a lower-quality codec.</p>
+<p>Lazulite shows you the <strong>actual codec being used for Bluetooth transmission</strong>, not what the streaming app claims to be sending. If you&rsquo;re paying for hi-res audio but seeing AAC 256kbps, now you know the truth.</p>
+<hr>
+<h2 id="further-questions">Further Questions?</h2>
+<p>Still stuck or have questions not covered here? <a href="mailto:lazuliteapp@gmail.com">Drop us an email</a> and we&rsquo;ll help you out.</p>
 
     </div>
 </div>
