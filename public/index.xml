@@ -2,32 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lazulite App</title>
-    <link>http://localhost:1313/</link>
+    <link>https://lazulite.app/</link>
     <description>Recent content on Lazulite App</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Dec 2023 16:18:23 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lazulite.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FAQ</title>
-      <link>http://localhost:1313/faq/</link>
+      <link>https://lazulite.app/faq/</link>
       <pubDate>Mon, 25 Dec 2023 16:18:23 -0700</pubDate>
-      <guid>http://localhost:1313/faq/</guid>
+      <guid>https://lazulite.app/faq/</guid>
       <description>&lt;h1 id=&#34;frequently-asked-questions&#34;&gt;Frequently Asked Questions&lt;/h1&gt;&#xA;&lt;h2 id=&#34;why-does-lazulite-need-special-permissions&#34;&gt;Why does Lazulite need special permissions?&lt;/h2&gt;&#xA;&lt;p&gt;Lazulite needs permission to read your Android system&amp;rsquo;s audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you&amp;rsquo;ll need to grant permission using one of three methods:&lt;/p&gt;&#xA;&lt;h3 id=&#34;option-1-adb-recommended-for-most-users&#34;&gt;Option 1: ADB (Recommended for Most Users)&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Best for:&lt;/strong&gt; First-time users and anyone not familiar with Android customization&lt;/p&gt;&#xA;&lt;p&gt;This is the easiest method for most people. You&amp;rsquo;ll connect your phone to your computer via USB and run a simple command. It takes about 5 minutes and doesn&amp;rsquo;t require any technical expertise.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Privacy</title>
-      <link>http://localhost:1313/privacy/</link>
+      <link>https://lazulite.app/privacy/</link>
       <pubDate>Sun, 24 Sep 2023 16:18:23 -0700</pubDate>
-      <guid>http://localhost:1313/privacy/</guid>
+      <guid>https://lazulite.app/privacy/</guid>
       <description>&lt;h1 id=&#34;privacy-policy-for-lazulite&#34;&gt;Privacy Policy for Lazulite&lt;/h1&gt;&#xA;&lt;p&gt;Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.&lt;/p&gt;&#xA;&lt;h2 id=&#34;information-we-collect&#34;&gt;Information We Collect:&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Anonymous Data via Firebase Analytics: We collect anonymous data about how users interact with our app to improve its functionality and user experience. This data does not personally identify individual users.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Sun, 24 Sep 2023 15:58:14 -0700</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;h1 id=&#34;title&#34;&gt;title&lt;/h1&gt;&#xA;&lt;p&gt;Yoh this is some content here&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
