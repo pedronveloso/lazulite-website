@@ -9,6 +9,9 @@ $bg-surface: #191A22;   // oklch(15% 0.008 255)
 $bg-raised:  #20212B;   // oklch(19% 0.008 255)
 $bg-border:  #2B2C38;   // oklch(23% 0.008 255)
 
+// ─── Near-black for text on accent buttons (not pure black — tinted) ────────
+$bg-deep: #0D0D12;
+
 // ─── Accent — Amber/Gold (VU meters, precision instruments, tube warmth) ────
 $accent:        #C49C3C;
 $accent-bright: #D4AE54;

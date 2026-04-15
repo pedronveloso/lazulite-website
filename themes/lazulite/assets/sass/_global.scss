@@ -118,6 +118,19 @@ p {
   color: var(--text-secondary);
 }
 
+// ─── Focus styles ─────────────────────────────────────────────────────────────
+// Applied to keyboard/switch navigation only (not mouse clicks)
+:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 3px;
+  border-radius: $radius-sm;
+}
+
+// Remove focus ring for mouse users
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 @-ms-viewport {
   width: device-width;
 }

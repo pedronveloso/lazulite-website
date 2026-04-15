@@ -30,6 +30,8 @@
     filter: none;
   }
 
+  min-height: 44px;
+
   &:active {
     transform: translateY(1px);
   }
@@ -38,13 +40,13 @@
 // Primary CTA — amber/gold fill
 .btn-cyan {
   background-color: $accent;
-  color: #0D0D12;
+  color: $bg-deep;
   border-color: $accent;
 
   &:hover {
     background-color: $accent-bright;
     border-color: $accent-bright;
-    color: #0D0D12;
+    color: $bg-deep;
   }
 }
 
@@ -72,7 +74,7 @@
 
 .btn-primary {
   background-color: $accent;
-  color: #0D0D12;
+  color: $bg-deep;
   border-color: $accent;
 
   &:hover {
@@ -184,6 +186,7 @@
 
 .animated-float {
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 // ─── Feature Grid ─────────────────────────────────────────────────────────────
@@ -279,7 +282,7 @@
   padding: $space-3xl 0;
 
   &.section-alt {
-    background-color: rgba($bg-surface, 0.5);
+    background-color: $bg-surface;
   }
 
   @media (max-width: $breakMedium) {
@@ -296,6 +299,11 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
+}
+
+// Modifier: left-aligned section title (used in feature columns)
+.section-title--left {
+  text-align: left;
 }
 
 .section-subtitle {

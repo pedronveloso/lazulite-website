@@ -15,15 +15,15 @@
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $text-tertiary;
+  color: $text-secondary;
 }
 
 .footerLink {
-  color: $text-tertiary;
+  color: $text-secondary;
   transition: color 0.15s ease;
 
   &:hover {
-    color: $text-secondary;
+    color: $text-primary;
     filter: none;
   }
 }

@@ -25,6 +25,8 @@ This is the easiest method for most people. You'll connect your phone to your co
 
 [Shizuku](https://shizuku.rikka.app/) is an app that helps other apps access system permissions. Once set up, permissions persist across reboots. Requires initial ADB setup, but you won't need to reconnect your phone after restarts.
 
+[▶ Video guide: How to enable Shizuku](https://www.youtube.com/shorts/pnHNdU6LppA)
+
 ### Option 3: Root Access
 **Best for:** Power users with rooted devices
 
@@ -71,8 +73,8 @@ Lazulite performs all audio analysis locally on your device—no data leaves you
 
 Lazulite can detect and analyze all Bluetooth audio codecs your device supports, including:
 
-- **High-quality codecs:** LDAC, LDAC Plus, aptX HD, aptX Adaptive, aptX Lossless, aptX, LC3, LC3 Plus
-- **Standard codecs:** AAC, SBC
+- **High-quality codecs:** LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5
+- **Standard codecs:** AAC, SBC, SSC, SSC UHQ
 - **And many more** as Android adds new codec support
 
 If your device and headphones support it, Lazulite can monitor it.

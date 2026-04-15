@@ -23,6 +23,7 @@
 
   .hero-logo {
     max-width: 110px;
+    height: auto;
     margin: 0 auto $space-lg;
     display: block;
     opacity: 0.95;
@@ -91,6 +92,52 @@
   // Section dividers for visual rhythm
   .section + .section {
     border-top: 1px solid $bg-border;
+  }
+
+  // Body text utility for feature sections (replaces inline style="color: var(--grey-4)")
+  .feature-body {
+    color: $text-secondary;
+    line-height: 1.75;
+    margin-bottom: $space-base;
+    font-size: 0.9375rem;
+    max-width: 52ch;
+  }
+
+  // Feature images inside two-column sections
+  .feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: $radius-lg;
+    border: 1px solid $bg-border;
+    display: block;
+  }
+
+  // "Improve it" section — full-width, breaks the two-column monotony
+  .improve-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-xl;
+
+    .improve-section__body {
+      max-width: 560px;
+      text-align: center;
+      color: $text-secondary;
+      line-height: 1.75;
+      font-size: 0.9375rem;
+    }
+
+    .improve-section__image {
+      max-width: 420px;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $radius-lg;
+        border: 1px solid $bg-border;
+      }
+    }
   }
 }
 
