@@ -1,439 +1,365 @@
-// Modern Lazulite Components
+@import "../utils/variables";
 
-// Gradient Text
+// ─── Accent Text ─────────────────────────────────────────────────────────────
+// Replaces the banned gradient-text pattern with a solid accent color
 .gradient-text {
-  background: linear-gradient(
-    90deg,
-    rgba(191, 64, 255, 0.7) 0%,
-    rgba(91, 159, 255, 0.75) 50%,
-    rgba(91, 159, 255, 0.65) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: bold;
+  color: $accent;
+  font-weight: 700;
   text-transform: uppercase;
   display: inline-block;
 }
 
-// Cards
-.card {
-  background-color: $card-background;
-  border-radius: $radius-lg;
-  padding: $space-base;
-  margin-bottom: $space-base;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  }
-
-  &.card-light {
-    background-color: $card-background-light;
-  }
-
-  &.card-glow {
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(
-        135deg,
-        rgba($neon-cyan, 0.1),
-        rgba($neon-purple, 0.1),
-        rgba($neon-blue, 0.1)
-      );
-      border-radius: $radius-lg;
-      z-index: -1;
-    }
-  }
-}
-
-.card-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: $grey-6;
-  margin-bottom: $space-md;
-  font-family: $fontHeader;
-}
-
-.card-divider {
-  height: 1px;
-  background-color: $divider-color;
-  margin: $space-md 0;
-}
-
-// Buttons
+// ─── Buttons ─────────────────────────────────────────────────────────────────
 .btn {
   display: inline-flex;
   align-items: center;
   gap: $space-sm;
-  padding: $space-md $space-lg;
-  border: none;
+  padding: 10px $space-xl;
+  border: 1px solid transparent;
   border-radius: $radius-sm;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: $fontDisplay;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s ease;
   text-decoration: none;
-  font-family: $fontParagraph;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+
+  &:hover {
+    filter: none;
+  }
 
   &:active {
-    transform: scale(0.95);
+    transform: translateY(1px);
   }
 }
 
+// Primary CTA — amber/gold fill
 .btn-cyan {
-  background-color: rgba($neon-cyan, 0.2);
-  color: $neon-cyan;
+  background-color: $accent;
+  color: #0D0D12;
+  border-color: $accent;
 
   &:hover {
-    background-color: rgba($neon-cyan, 0.3);
+    background-color: $accent-bright;
+    border-color: $accent-bright;
+    color: #0D0D12;
   }
 }
 
+// Secondary — outline, neutral
 .btn-purple {
-  background-color: rgba($neon-purple, 0.2);
-  color: $neon-purple;
+  background-color: transparent;
+  color: $text-secondary;
+  border-color: $bg-border;
 
   &:hover {
-    background-color: rgba($neon-purple, 0.3);
+    border-color: $text-tertiary;
+    color: $text-primary;
   }
 }
 
 .btn-blue {
-  background-color: rgba($neon-blue, 0.2);
-  color: $neon-blue;
+  background-color: transparent;
+  color: $accent-teal;
+  border-color: $accent-teal;
 
   &:hover {
-    background-color: rgba($neon-blue, 0.3);
+    background-color: rgba($accent-teal, 0.08);
   }
 }
 
 .btn-primary {
-  background-color: $laz-primary;
-  color: white;
+  background-color: $accent;
+  color: #0D0D12;
+  border-color: $accent;
 
   &:hover {
-    background-color: lighten($laz-primary, 10%);
+    background-color: $accent-bright;
+    border-color: $accent-bright;
   }
 }
 
-// Badges
+// ─── Cards ───────────────────────────────────────────────────────────────────
+.card {
+  background-color: $bg-surface;
+  border-radius: $radius-lg;
+  border: 1px solid $bg-border;
+  padding: $space-xl;
+  margin-bottom: $space-base;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba($accent, 0.35);
+  }
+
+  &.card-light {
+    background-color: $bg-raised;
+  }
+
+  &.card-glow {
+    border-color: rgba($accent, 0.25);
+  }
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: $space-md;
+  font-family: $fontDisplay;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-divider {
+  height: 1px;
+  background-color: $bg-border;
+  margin: $space-md 0;
+}
+
+// ─── Badges ──────────────────────────────────────────────────────────────────
 .badge {
   display: inline-block;
-  padding: $space-xs $space-md;
+  padding: 3px $space-md;
   border-radius: $radius-sm;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.6875rem;
+  font-weight: 700;
   text-transform: uppercase;
-  font-family: $fontHeader;
+  letter-spacing: 0.1em;
+  font-family: $fontDisplay;
 }
 
 .badge-excellent {
-  background-color: rgba($quality-excellent, 0.2);
+  background-color: rgba($quality-excellent, 0.12);
   color: $quality-excellent;
 }
 
 .badge-good {
-  background-color: rgba($quality-good, 0.2);
-  color: $quality-good;
+  background-color: rgba($accent, 0.12);
+  color: $accent;
 }
 
 .badge-neon {
-  background-color: rgba($neon-cyan, 0.2);
-  color: $neon-cyan;
+  background-color: rgba($accent, 0.10);
+  color: $accent;
   padding: $space-sm $space-base;
   border-radius: $radius-pill;
-  font-size: 14px;
+  font-size: 0.8125rem;
 }
 
-// Now Playing Badge with Glow
+// ─── Now Playing Badge ────────────────────────────────────────────────────────
 .now-playing-badge {
   display: inline-flex;
   align-items: center;
   gap: $space-md;
   padding: $space-sm $space-lg;
-  position: relative;
-  color: $grey-4;
+  color: $text-secondary;
 
   &.active {
-    color: $neon-cyan;
+    color: $accent;
     font-weight: 600;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba($neon-cyan, 0.2),
-        rgba($neon-purple, 0.2),
-        transparent
-      );
-      border-radius: $radius-pill;
-      filter: blur(16px);
-      animation: glow-pulse 1.5s ease-in-out infinite alternate;
-      z-index: -1;
-    }
   }
 }
 
 .pulse-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: $radius-circle;
-  background-color: $neon-cyan;
-  animation: glow-pulse 1.5s ease-in-out infinite alternate;
+  background-color: $accent;
+  animation: pulse-fade 2s ease-in-out infinite alternate;
 }
 
-// Animations
-@keyframes glow-pulse {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 0.8;
-  }
+// ─── Animations ──────────────────────────────────────────────────────────────
+@keyframes pulse-fade {
+  from { opacity: 0.25; }
+  to   { opacity: 1; }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
 }
 
 .animated-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
-// Feature Grid
+// ─── Feature Grid ─────────────────────────────────────────────────────────────
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: $space-lg;
   margin: $space-xl 0;
 
   @media (max-width: $breakMedium) {
     grid-template-columns: 1fr;
-    gap: $space-base;
   }
 }
 
 .feature-card {
-  background-color: $card-background;
+  background-color: $bg-surface;
+  border: 1px solid $bg-border;
   border-radius: $radius-lg;
-  padding: $space-lg;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  padding: $space-xl;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    transform: translateY(-4px);
+    border-color: rgba($accent, 0.35);
+    transform: translateY(-2px);
   }
 
   .feature-icon {
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, rgba($neon-cyan, 0.2), rgba($neon-purple, 0.2));
+    width: 44px;
+    height: 44px;
     border-radius: $radius-md;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: $space-base;
-    font-size: 32px;
+    font-size: 22px;
+    color: $accent;
+    background: rgba($accent, 0.10);
   }
 
   .feature-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: $grey-6;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: $text-primary;
     margin-bottom: $space-sm;
-    font-family: $fontHeader;
+    font-family: $fontDisplay;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .feature-description {
-    color: $grey-4;
-    line-height: 1.6;
-    font-size: 14px;
+    color: $text-secondary;
+    line-height: 1.65;
+    font-size: 0.9375rem;
   }
 
   .feature-accent {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, rgba($neon-cyan, 0.15), transparent);
-    pointer-events: none;
+    display: none;
   }
 }
 
-// Hero Section
+// ─── Hero Section ─────────────────────────────────────────────────────────────
 .hero-section {
   text-align: center;
-  padding: $space-xl * 2 $space-lg;
+  padding: $space-3xl * 1.5 $space-lg $space-2xl;
   position: relative;
 
   @media (max-width: $breakMedium) {
-    padding: $space-xl $space-base;
+    padding: $space-2xl $space-base $space-xl;
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: clamp(3.5rem, 10vw, 7rem);
     font-weight: 700;
-    margin-bottom: $space-base;
-    font-family: $fontHeader;
-
-    @media (max-width: $breakMedium) {
-      font-size: 32px;
-    }
+    margin: $space-lg 0 $space-base;
+    font-family: $fontDisplay;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $text-primary;
+    line-height: 1;
   }
 
   .hero-subtitle {
-    font-size: 20px;
-    color: $grey-4;
-    margin-bottom: $space-xl;
-    line-height: 1.6;
-
-    @media (max-width: $breakMedium) {
-      font-size: 16px;
-    }
-  }
-
-  .hero-cta {
-    margin-top: $space-lg;
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+    color: $text-secondary;
+    margin: 0 auto $space-xl;
+    line-height: 1.75;
+    max-width: 440px;
   }
 }
 
-// Mockup Placeholder
-.mockup-placeholder {
-  background: linear-gradient(135deg, $card-background-light 0%, $card-background 100%);
-  border: 2px dashed rgba($neon-cyan, 0.3);
-  border-radius: $radius-lg;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  color: $grey-4;
-  font-family: $fontHeader;
-  font-size: 14px;
-  text-align: center;
-  padding: $space-lg;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba($neon-cyan, 0.1),
-      transparent
-    );
-    animation: shimmer 3s infinite;
-  }
-
-  .placeholder-text {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-// Section
+// ─── Sections ─────────────────────────────────────────────────────────────────
 .section {
-  padding: $space-xl 0;
+  padding: $space-3xl 0;
 
   &.section-alt {
-    background-color: rgba($card-background, 0.5);
+    background-color: rgba($bg-surface, 0.5);
+  }
+
+  @media (max-width: $breakMedium) {
+    padding: $space-2xl 0;
   }
 }
 
 .section-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: $grey-6;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-weight: 700;
+  color: $text-primary;
   margin-bottom: $space-base;
-  font-family: $fontHeader;
+  font-family: $fontDisplay;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-align: center;
-
-  @media (max-width: $breakMedium) {
-    font-size: 24px;
-  }
 }
 
 .section-subtitle {
-  font-size: 18px;
-  color: $grey-4;
+  font-size: 1rem;
+  color: $text-secondary;
   text-align: center;
-  margin-bottom: $space-xl;
-  line-height: 1.6;
+  margin: 0 auto $space-xl;
+  line-height: 1.7;
+  max-width: 540px;
 }
 
-// Two Column Layout
+// ─── Two Column Layout ────────────────────────────────────────────────────────
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: $space-xl;
+  gap: $space-2xl;
   align-items: center;
 
   @media (max-width: $breakMedium) {
     grid-template-columns: 1fr;
-    gap: $space-lg;
+    gap: $space-xl;
   }
 
   &.reverse {
     @media (min-width: $breakMedium) {
-      .column:first-child {
-        order: 2;
-      }
-      .column:last-child {
-        order: 1;
-      }
+      .column:first-child { order: 2; }
+      .column:last-child  { order: 1; }
     }
   }
 }
 
-// Highlight Box
+// ─── Highlight Box ────────────────────────────────────────────────────────────
+// No border-left accent stripe (absolute ban). Uses full border + tinted background.
 .highlight-box {
-  background: linear-gradient(135deg, rgba($neon-purple, 0.1), rgba($neon-blue, 0.1));
-  border-left: 4px solid $neon-cyan;
+  background: rgba($accent, 0.07);
+  border: 1px solid rgba($accent, 0.25);
   padding: $space-base $space-lg;
   border-radius: $radius-md;
   margin: $space-lg 0;
 
   p {
     margin: 0;
-    color: $grey-5;
+    color: $text-secondary;
   }
 
   strong {
-    color: $neon-cyan;
+    color: $accent;
   }
+}
+
+// ─── Mockup Placeholder ───────────────────────────────────────────────────────
+.mockup-placeholder {
+  background: $bg-raised;
+  border: 1px solid $bg-border;
+  border-radius: $radius-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: $text-tertiary;
+  font-family: $fontDisplay;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: $space-xl;
 }

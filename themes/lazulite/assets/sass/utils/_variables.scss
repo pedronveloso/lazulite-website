@@ -1,70 +1,90 @@
-// Lazulite Design System Colors
+// Lazulite Design System
+// Aesthetic: Technical, Elite, Well-crafted, Audiophile
+// Palette: deep cool slate + amber/gold + muted teal
 
-// Brand Colors
-$laz-primary: #4B75A0;
-$laz-business-name: #A4BBD2;
-$laz-labels: #73A6DA;
-$laz-slogan: #E6E6E6;
-$laz-icon: #F0F0F0;
+// ─── Backgrounds ────────────────────────────────────────────────────────────
+// (hex for SCSS function compat; CSS custom props use oklch in _global.scss)
+$bg-base:    #12131A;   // oklch(11% 0.008 255)
+$bg-surface: #191A22;   // oklch(15% 0.008 255)
+$bg-raised:  #20212B;   // oklch(19% 0.008 255)
+$bg-border:  #2B2C38;   // oklch(23% 0.008 255)
 
-// Neon Accents
-$neon-cyan: #00F5FF;
-$neon-purple: #BF40FF;
-$neon-blue: #5B9FFF;
-$neon-green: #00FF88;
-$neon-pink: #FF006E;
+// ─── Accent — Amber/Gold (VU meters, precision instruments, tube warmth) ────
+$accent:        #C49C3C;
+$accent-bright: #D4AE54;
+$accent-dim:    #8C6E28;
 
-// Backgrounds
-$laz-background: #282634;
-$card-background: #1E1C28;
-$card-background-light: #2A2838;
-$divider-color: #3A3848;
+// ─── Accent 2 — Muted Teal (data readouts, signal measurement) ──────────────
+$accent-teal:     #3A9E8A;
+$accent-teal-dim: #2A7060;
 
-// Text & Neutral Colors
-$grey-3: #585858;
-$grey-4: #ACACAC;
-$grey-5: #E0E0E0;
-$grey-6: #F2F2F2;
+// ─── Text ───────────────────────────────────────────────────────────────────
+$text-primary:   #EEEEF4;
+$text-secondary: #8E8EA0;
+$text-tertiary:  #54546A;
 
-// Quality Indicators
-$quality-excellent: #00F5FF;
-$quality-good: #5B9FFF;
-$quality-fair: #FFB84D;
-$quality-poor: #FF6B6B;
-$error-red: #F297A2;
+// ─── Quality indicators ─────────────────────────────────────────────────────
+$quality-excellent: #3DB87A;
+$quality-good:      #C49C3C;
+$quality-fair:      #C47A3C;
+$quality-poor:      #C44040;
 
-// Legacy color mappings (for backwards compatibility)
-$darkGrey: $grey-3;
-$white: $grey-6;
-$black: $card-background;
-$blue: $neon-blue;
-$backgroundDarker: $card-background;
-$backgroundDark: $laz-background;
+// ─── Typography ─────────────────────────────────────────────────────────────
+$fontDisplay:   'Barlow Condensed', system-ui, sans-serif;
+$fontParagraph: 'Epilogue', system-ui, sans-serif;
+$fontCode:      'Fira Mono', 'Courier New', monospace;
+$fontHeader:    $fontDisplay;  // legacy alias
 
-// Spacing Scale
-$space-xs: 4px;
-$space-sm: 8px;
-$space-md: 12px;
+// ─── Legacy color mappings (for existing components that use old names) ──────
+$backgroundDark:        $bg-base;
+$backgroundDarker:      $bg-surface;
+$card-background:       $bg-surface;
+$card-background-light: $bg-raised;
+$divider-color:         $bg-border;
+$laz-background:        $bg-base;
+
+$white:  $text-primary;
+$grey-6: $text-primary;
+$grey-5: $text-secondary;
+$grey-4: $text-secondary;
+$grey-3: $text-tertiary;
+$black:  $bg-surface;
+$blue:   $accent-teal;
+
+$laz-primary:       $accent;
+$laz-business-name: $text-primary;
+$laz-labels:        $text-secondary;
+$laz-slogan:        $text-secondary;
+$laz-icon:          $text-primary;
+
+// Neon legacy → remapped to non-neon equivalents
+$neon-cyan:   $accent-teal;
+$neon-purple: $accent;
+$neon-blue:   $accent;
+$neon-green:  $quality-excellent;
+$neon-pink:   $quality-poor;
+
+// ─── Spacing (4pt scale) ────────────────────────────────────────────────────
+$space-xs:   4px;
+$space-sm:   8px;
+$space-md:   12px;
 $space-base: 16px;
-$space-lg: 24px;
-$space-xl: 32px;
+$space-lg:   24px;
+$space-xl:   32px;
+$space-2xl:  48px;
+$space-3xl:  64px;
 
-// Border Radius
-$radius-sm: 4px;
-$radius-md: 8px;
-$radius-lg: 12px;
-$radius-xl: 18px;
-$radius-pill: 24px;
+// ─── Border Radius ──────────────────────────────────────────────────────────
+$radius-sm:     3px;
+$radius-md:     6px;
+$radius-lg:     10px;
+$radius-xl:     16px;
+$radius-pill:   24px;
 $radius-circle: 50%;
 
-// Fonts
-$fontHeader: 'Fira Mono', 'Courier New', monospace;
-$fontParagraph: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-$fontCode: 'Fira Mono', 'Courier New', monospace;
-
-// Content
-$breakLarge: 992px;
-$breakMedium: 768px;
-$breakSmall: 576px;
-$width: 1200px;
-$width-narrow: 760px;
+// ─── Layout ─────────────────────────────────────────────────────────────────
+$breakLarge:   992px;
+$breakMedium:  768px;
+$breakSmall:   576px;
+$width:        1200px;
+$width-narrow: 720px;

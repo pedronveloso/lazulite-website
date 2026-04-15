@@ -19,17 +19,19 @@
 .flexWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-height: 100vh;
   flex: 1 auto;
-
 }
 
 .main {
   height: 100%;
-  padding: 20px;
+  padding: 0 $space-xl;
 
   @media only screen and (min-width: $breakLarge) {
     width: $width;
+  }
+
+  @media (max-width: $breakMedium) {
+    padding: 0 $space-base;
   }
 }

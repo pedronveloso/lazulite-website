@@ -10,10 +10,14 @@
     }
   }
   a {
-    color: $white;
-    text-shadow: $black 0px 0px 2px;
+    color: $text-secondary;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
     margin: 10px;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: $text-primary;
+    }
   }
 }
