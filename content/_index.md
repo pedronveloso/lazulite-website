@@ -13,8 +13,8 @@ author = "Pedro Veloso"
   </h1>
 
   <p class="hero-subtitle">
-    Your Bluetooth audio's secrets, finally exposed.<br>
-    Real-time codec inspection.
+    Streaming apps claim lossless. Your headphones say otherwise.<br>
+    Lazulite shows what's actually being delivered — in real time.
   </p>
 
   <div class="cta-buttons">

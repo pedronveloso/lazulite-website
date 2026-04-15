@@ -131,3 +131,130 @@ dd {
 dt::after {
   content: ":";
 }
+
+// ─── FAQ Jump Nav ─────────────────────────────────────────────────────────────
+.faq-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm $space-base;
+  margin: $space-xl 0 $space-2xl;
+
+  a {
+    font-family: $fontDisplay;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text-secondary;
+    text-decoration: none;
+    padding: $space-sm $space-base;
+    border: 1px solid $bg-border;
+    border-radius: $radius-sm;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      color: $accent;
+      border-color: rgba($accent, 0.4);
+      text-decoration: none;
+    }
+  }
+}
+
+// ─── FAQ Collapsible Items ────────────────────────────────────────────────────
+.postWrapper {
+  details {
+    border: 1px solid $bg-border;
+    border-radius: $radius-md;
+    margin-bottom: $space-base;
+    background: $bg-surface;
+    transition: border-color 0.2s ease;
+
+    &[open] {
+      border-color: rgba($accent, 0.3);
+    }
+
+    &:hover {
+      border-color: rgba($accent, 0.2);
+    }
+
+    summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $space-base $space-lg;
+      cursor: pointer;
+      font-family: $fontDisplay;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $text-primary;
+      user-select: none;
+      gap: $space-base;
+
+      // Hide default marker cross-browser
+      &::-webkit-details-marker { display: none; }
+
+      // Chevron indicator
+      &::after {
+        content: "+";
+        font-family: $fontCode;
+        font-size: 1.125rem;
+        font-weight: 400;
+        color: $accent;
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &[open] summary::after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.faq-body {
+  padding: 0 $space-lg $space-lg;
+
+  p, li {
+    color: $text-secondary;
+    line-height: 1.8;
+    font-size: 0.9375rem;
+    max-width: 65ch;
+  }
+
+  ul {
+    padding-left: $space-xl;
+    margin-bottom: $space-base;
+
+    li {
+      margin-bottom: $space-sm;
+    }
+  }
+
+  h3 {
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    color: $accent;
+    margin-top: $space-lg;
+    margin-bottom: $space-sm;
+  }
+
+  strong {
+    color: $text-primary;
+    font-weight: 600;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba($accent, 0.4);
+
+    &:hover {
+      color: $accent-bright;
+      text-decoration-color: rgba($accent-bright, 0.6);
+    }
+  }
+}

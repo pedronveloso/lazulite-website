@@ -185,8 +185,13 @@
 }
 
 .animated-float {
-  animation: float 4s ease-in-out infinite;
   will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animated-float {
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
 // ─── Feature Grid ─────────────────────────────────────────────────────────────
