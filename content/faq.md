@@ -62,29 +62,30 @@ showMetadata: false
 <details>
 <summary>Which Bluetooth codecs does Lazulite support?</summary>
 <div class="faq-body">
-<p>Lazulite can detect and analyze all Bluetooth audio codecs your device supports, including:</p>
+<p>Lazulite can detect and display all Bluetooth audio codecs your device supports:</p>
 <ul>
-<li><strong>High-quality codecs:</strong> LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
-<li><strong>Standard codecs:</strong> AAC, SBC, SSC, SSC UHQ</li>
-<li><strong>And many more</strong> as Android adds new codec support</li>
+<li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3</li>
+<li>LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
+<li>AAC, SBC</li>
+<li>SSC, SSC UHQ (Samsung devices only)</li>
 </ul>
-<p>If your device and headphones support it, Lazulite can monitor it.</p>
+<p>If your device and headphones negotiate it, Lazulite will show it.</p>
 </div>
 </details>
 
 <details>
 <summary>Can I use Lazulite with wired headphones?</summary>
 <div class="faq-body">
-<p>Lazulite is specifically designed for Bluetooth audio analysis. It monitors the Bluetooth audio stack, codec negotiation, and wireless transmission quality — none of which apply to wired connections.</p>
-<p>For wired headphones, audio goes directly from your device's DAC to your ears without the complexity of wireless encoding and transmission.</p>
+<p>Lazulite monitors the Bluetooth audio stack: codec negotiation, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
+<p>With wired headphones, audio goes straight from your device's DAC to your ears. No wireless encoding, no codec negotiation.</p>
 </div>
 </details>
 
 <details>
 <summary>Why do streaming apps sometimes show different codecs than expected?</summary>
 <div class="faq-body">
-<p><strong>This is exactly why Lazulite exists.</strong> Many streaming apps claim "lossless" or "hi-fi" quality, but your device or Bluetooth headphones might force re-encoding to a lower-quality codec.</p>
-<p>Lazulite shows you the <strong>actual codec being used for Bluetooth transmission</strong>, not what the streaming app claims to be sending. If you're paying for hi-res audio but seeing AAC 256kbps, now you know the truth.</p>
+<p>Many streaming apps claim "lossless" or "hi-fi" quality, but your device or headphones may force re-encoding to a lower-quality codec before audio ever reaches your ears.</p>
+<p>Lazulite shows the <strong>actual codec used for Bluetooth transmission</strong>, not what the streaming app reports. If you are paying for hi-res audio but seeing AAC 256kbps in Lazulite, you now know what is actually happening.</p>
 </div>
 </details>
 
@@ -95,7 +96,7 @@ showMetadata: false
 <details>
 <summary>Does Lazulite use my mobile data?</summary>
 <div class="faq-body">
-<p>Lazulite performs all audio analysis locally on your device — no data leaves your phone unless you choose to share it.</p>
+<p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
 <p><strong>Optional telemetry:</strong> The app may collect anonymous usage and crash data via Google Firebase to help improve stability. This uses minimal data and is compliant with privacy regulations worldwide.</p>
 <p><strong>Want to opt out?</strong> Go to Settings → Disable "Telemetry data"</p>
 </div>
@@ -110,7 +111,7 @@ showMetadata: false
 <div class="faq-body">
 <p><strong>TL;DR:</strong> Nope, negligible impact.</p>
 <p>Lazulite only reads existing system logs that your device generates anyway. It doesn't create additional processes or run in the background when you're not using it.</p>
-<p><strong>Important:</strong> Lazulite monitors your phone/tablet's logs, not your Bluetooth headphones. Your earbuds' battery life is completely unaffected.</p>
+<p><strong>Note:</strong> Lazulite monitors your phone's logs, not your Bluetooth headphones. Your earbuds' battery is unaffected.</p>
 </div>
 </details>
 

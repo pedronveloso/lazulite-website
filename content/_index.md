@@ -14,7 +14,7 @@ author = "Pedro Veloso"
 
   <p class="hero-subtitle">
     Streaming apps claim lossless. Your headphones say otherwise.<br>
-    Lazulite shows what's actually being delivered — in real time.
+    Lazulite shows exactly what's being delivered.
   </p>
 
   <div class="cta-buttons">
@@ -31,7 +31,7 @@ author = "Pedro Veloso"
 <section id="features" class="section">
   <h2 class="section-title">Why Audiophiles Choose <span class="gradient-text">Lazulite</span></h2>
   <p class="section-subtitle">
-    Because you deserve to know if and how your sound is being compressed
+    Know exactly what your gear is doing to your audio.
   </p>
 
   <div class="two-column">
@@ -41,13 +41,13 @@ author = "Pedro Veloso"
     <div class="column">
       <h2 class="section-title section-title--left">Real-Time Audio Analysis</h2>
       <p class="feature-body">
-        Watch your audio codec in action as it happens. LDAC, aptX HD, AAC, SBC — we expose it all.
+        Watch your active codec as it negotiates. LDAC, aptX HD, AAC, SBC: every codec your device and headphones settle on, visible in real time.
       </p>
       <p class="feature-body">
-        See exactly what quality your streaming service is actually delivering.
+        See what quality tier your streaming service is actually sending over Bluetooth.
       </p>
       <p class="feature-body">
-        Discover which codecs your headphones and device actually support. No more guessing if your gear can handle that pristine hi-res audio you paid for.
+        Find out whether your gear supports that hi-res audio you paid for, or if it's been silently downgraded.
       </p>
     </div>
   </div>
@@ -59,7 +59,7 @@ author = "Pedro Veloso"
     <div class="column">
       <h2 class="section-title section-title--left">Bluetooth Glitch or Bad Connection?</h2>
       <p class="feature-body" style="text-align: center">
-        Audio cutting out? Lazulite monitors Bluetooth transmission for packet loss in real-time. Find out if it's your WiFi acting up or your Bluetooth getting interference.
+        Audio cutting out? Lazulite monitors Bluetooth transmission for packet loss in real time. See whether interference is coming from WiFi overlap or a weak Bluetooth signal.
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
         <li>Packet loss monitoring</li>
@@ -78,7 +78,7 @@ author = "Pedro Veloso"
 <section class="section section-alt">
   <h2 class="section-title">Smart Suggestions</h2>
   <p class="section-subtitle">
-    Uncover ways to improve your listening experience. Use app-offered quick actions to fix it.
+    Spot issues and fix them with built-in quick actions.
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
@@ -97,7 +97,7 @@ author = "Pedro Veloso"
 
 <!-- CTA Section -->
 <section class="section download-section">
-  <h2 class="section-title">Ready to Unlock Your Audio Truth?</h2>
+  <h2 class="section-title">Hear What's Actually Playing</h2>
   <p class="section-subtitle">
     Available on Google Play. No subscriptions. No BS.
   </p>
