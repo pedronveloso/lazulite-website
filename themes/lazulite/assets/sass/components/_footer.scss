@@ -1,11 +1,29 @@
 @import "../utils/variables";
 
 .footer {
-  padding: 15px;
+  padding: $space-lg $space-xl;
+  background-color: $bg-surface;
+  border-top: 1px solid $bg-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background-color: $backgroundDarker;
+}
+
+.footer span {
+  font-family: $fontDisplay;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $text-secondary;
 }
 
 .footerLink {
-  color: $white;
+  color: $text-secondary;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $text-primary;
+    filter: none;
+  }
 }

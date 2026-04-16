@@ -19,11 +19,11 @@ url = "mailto:lazulite.app@example.com"
   [[menu.header]]
     name = "Privacy Policy"
     weight = 0
-    url = "/privacy"
+    url = "/privacy/"
   [[menu.header]]
     name = "FAQ"
     weight = 1
-    url = "/faq"
+    url = "/faq/"
 #  [[menu.header]]
 #    name = "posts"
 #    weight = 0
@@ -33,3 +33,4 @@ url = "mailto:lazulite.app@example.com"
 footerHtml = 'Lazulite App for Android'
 readingTime = false  # Show reading time on post page
 published = false  # Show published data on post page
+description = "Real-time Bluetooth audio codec inspection for Android. Monitor LDAC, aptX HD, AAC, SBC and more — see exactly what your wireless audio is doing."

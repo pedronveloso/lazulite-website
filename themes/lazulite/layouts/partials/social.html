@@ -3,8 +3,8 @@
         {{ range sort .Site.Params.social "key"}}
         <li>
             {{ if isset . "icon" }}
-                <a href="{{ .url | safeURL }}" aria-hidden="true" title="{{ .name }}" {{ if .rel }} rel="{{ .rel }}"{{ end }}>
-                    <i class="{{ .icon }}"></i>
+                <a href="{{ .url | safeURL }}" aria-label="{{ .name }}" {{ if .rel }} rel="{{ .rel }}"{{ end }}>
+                    <i class="{{ .icon }}" aria-hidden="true"></i>
                 </a>
             {{ else }}
                 <a href="{{ .url | safeURL }}" {{ if .rel }} rel="{{ .rel }}"{{ end }}>{{ .name }}</a>

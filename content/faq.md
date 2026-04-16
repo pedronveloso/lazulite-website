@@ -7,91 +7,113 @@ showMetadata: false
 
 # Frequently Asked Questions
 
-## Why does Lazulite need special permissions?
-
-Lazulite needs permission to read your Android system's audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:
-
-### Option 1: ADB (Recommended for Most Users)
-**Best for:** First-time users and anyone not familiar with Android customization
-
-This is the easiest method for most people. You'll connect your phone to your computer via USB and run a simple command. It takes about 5 minutes and doesn't require any technical expertise.
-
-**Note:** You'll need to re-grant permission after each device restart.
-
-[📖 Step-by-Step ADB Tutorial for Windows and MacOS](https://pedronveloso.com/android-lazulite-how-to-run-adb-command/)
-
-### Option 2: Shizuku
-**Best for:** Users who want persistent permissions without restarting
-
-[Shizuku](https://shizuku.rikka.app/) is an app that helps other apps access system permissions. Once set up, permissions persist across reboots. Requires initial ADB setup, but you won't need to reconnect your phone after restarts.
-
-### Option 3: Root Access
-**Best for:** Power users with rooted devices
-
-If your device is rooted, Lazulite can automatically request the necessary permissions. This is the most convenient option, but only if you're already comfortable with rooting Android devices.
+<nav class="faq-nav" aria-label="FAQ sections">
+  <a href="#permissions">Permissions & Setup</a>
+  <a href="#codecs">Codecs & Compatibility</a>
+  <a href="#privacy">Privacy & Data</a>
+  <a href="#usage">Usage & Behavior</a>
+</nav>
 
 ---
 
-## I'm stuck at the ADB permissions screen
+<h2 id="permissions">Permissions & Setup</h2>
 
-**First time setting up?** Follow our detailed tutorial that walks you through installing ADB and granting permissions:
+<details>
+<summary>Why does Lazulite need special permissions?</summary>
+<div class="faq-body">
+<p>Lazulite needs permission to read your Android system's audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:</p>
 
-[Lazulite Setup Simplified: Installing ADB on Windows and MacOS](https://pedronveloso.com/android-lazulite-how-to-run-adb-command/)
+<h3>Option 1: ADB (Recommended for Most Users)</h3>
+<p><strong>Best for:</strong> First-time users and anyone not familiar with Android customization</p>
+<p>This is the easiest method for most people. You'll connect your phone to your computer via USB and run a simple command. It takes about 5 minutes and doesn't require any technical expertise.</p>
+<p><strong>Note:</strong> You'll need to re-grant permission after each device restart.</p>
+<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">📖 Step-by-Step ADB Tutorial for Windows and MacOS</a></p>
 
-**Already granted permission but it's not working?** Make sure:
-- Your phone is connected via USB with USB debugging enabled
-- You've authorized the computer on your phone when the "Allow USB debugging?" prompt appeared
-- You're running the correct ADB command exactly as shown in the tutorial
+<h3>Option 2: Shizuku</h3>
+<p><strong>Best for:</strong> Users who want persistent permissions without restarting</p>
+<p><a href="https://shizuku.rikka.app/">Shizuku</a> is an app that helps other apps access system permissions. Once set up, permissions persist across reboots. Requires initial ADB setup, but you won't need to reconnect your phone after restarts.</p>
+<p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ Video guide: How to enable Shizuku</a></p>
 
-**Using Shizuku?** Ensure Shizuku is running before launching Lazulite.
+<h3>Option 3: Root Access</h3>
+<p><strong>Best for:</strong> Power users with rooted devices</p>
+<p>If your device is rooted, Lazulite can automatically request the necessary permissions. This is the most convenient option, but only if you're already comfortable with rooting Android devices.</p>
+</div>
+</details>
 
----
-
-## Will Lazulite drain my battery?
-
-**TL;DR:** Nope, negligible impact.
-
-Lazulite only reads existing system logs that your device generates anyway. It doesn't create additional processes or run in the background when you're not using it.
-
-**Important:** Lazulite monitors your phone/tablet's logs, not your Bluetooth headphones. Your earbuds' battery life is completely unaffected.
-
----
-
-## Does Lazulite use my mobile data?
-
-Lazulite performs all audio analysis locally on your device—no data leaves your phone unless you choose to share it.
-
-**Optional telemetry:** The app may collect anonymous usage and crash data via Google Firebase to help improve stability. This uses minimal data and is compliant with privacy regulations worldwide.
-
-**Want to opt out?** Go to Settings → Disable "Telemetry data"
-
----
-
-## Which Bluetooth codecs does Lazulite support?
-
-Lazulite can detect and analyze all Bluetooth audio codecs your device supports, including:
-
-- **High-quality codecs:** LDAC, LDAC Plus, aptX HD, aptX Adaptive, aptX Lossless, aptX, LC3, LC3 Plus
-- **Standard codecs:** AAC, SBC
-- **And many more** as Android adds new codec support
-
-If your device and headphones support it, Lazulite can monitor it.
+<details>
+<summary>I'm stuck at the ADB permissions screen</summary>
+<div class="faq-body">
+<p><strong>First time setting up?</strong> Follow our detailed tutorial that walks you through installing ADB and granting permissions:</p>
+<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">Lazulite Setup Simplified: Installing ADB on Windows and MacOS</a></p>
+<p><strong>Already granted permission but it's not working?</strong> Make sure:</p>
+<ul>
+<li>Your phone is connected via USB with USB debugging enabled</li>
+<li>You've authorized the computer on your phone when the "Allow USB debugging?" prompt appeared</li>
+<li>You're running the correct ADB command exactly as shown in the tutorial</li>
+</ul>
+<p><strong>Using Shizuku?</strong> Ensure Shizuku is running before launching Lazulite.</p>
+</div>
+</details>
 
 ---
 
-## Can I use Lazulite with wired headphones?
+<h2 id="codecs">Codecs & Compatibility</h2>
 
-Lazulite is specifically designed for Bluetooth audio analysis. It monitors the Bluetooth audio stack, codec negotiation, and wireless transmission quality—none of which apply to wired connections.
+<details>
+<summary>Which Bluetooth codecs does Lazulite support?</summary>
+<div class="faq-body">
+<p>Lazulite can detect and display all Bluetooth audio codecs your device supports:</p>
+<ul>
+<li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3</li>
+<li>LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
+<li>AAC, SBC</li>
+<li>SSC, SSC UHQ (Samsung devices only)</li>
+</ul>
+<p>If your device and headphones support it and agree to use it, Lazulite will show it.</p>
+</div>
+</details>
 
-For wired headphones, audio goes directly from your device's DAC to your ears without the complexity of wireless encoding and transmission.
+<details>
+<summary>Can I use Lazulite with wired headphones?</summary>
+<div class="faq-body">
+<p>Lazulite monitors the Bluetooth audio stack: which codec your phone and headphones agreed on, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
+<p>With wired headphones, audio goes straight from your device's DAC to your ears. No wireless encoding, no codec selection.</p>
+</div>
+</details>
+
+<details>
+<summary>Why do streaming apps sometimes show different codecs than expected?</summary>
+<div class="faq-body">
+<p>Many streaming apps claim "lossless" or "hi-fi" quality, but your device or headphones may force re-encoding to a lower-quality codec before audio ever reaches your ears.</p>
+<p>Lazulite shows the <strong>actual codec used for Bluetooth transmission</strong>, not what the streaming app reports. If you are paying for hi-res audio but seeing AAC 256kbps in Lazulite, you now know what is actually happening.</p>
+</div>
+</details>
 
 ---
 
-## Why do streaming apps sometimes show different codecs than expected?
+<h2 id="privacy">Privacy & Data</h2>
 
-**This is exactly why Lazulite exists.** Many streaming apps claim "lossless" or "hi-fi" quality, but your device or Bluetooth headphones might force re-encoding to a lower-quality codec.
+<details>
+<summary>Does Lazulite use my mobile data?</summary>
+<div class="faq-body">
+<p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
+<p><strong>Optional telemetry:</strong> The app may collect anonymous usage and crash data via Google Firebase to help improve stability. This uses minimal data and is compliant with privacy regulations worldwide.</p>
+<p><strong>Want to opt out?</strong> Go to Settings → Disable "Telemetry data"</p>
+</div>
+</details>
 
-Lazulite shows you the **actual codec being used for Bluetooth transmission**, not what the streaming app claims to be sending. If you're paying for hi-res audio but seeing AAC 256kbps, now you know the truth.
+---
+
+<h2 id="usage">Usage & Behavior</h2>
+
+<details>
+<summary>Will Lazulite drain my battery?</summary>
+<div class="faq-body">
+<p><strong>TL;DR:</strong> Nope, negligible impact.</p>
+<p>Lazulite only reads existing system logs that your device generates anyway. It doesn't create additional processes or run in the background when you're not using it.</p>
+<p><strong>Note:</strong> Lazulite monitors your phone's logs, not your Bluetooth headphones. Your earbuds' battery is unaffected.</p>
+</div>
+</details>
 
 ---
 

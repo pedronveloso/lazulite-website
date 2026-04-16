@@ -2,11 +2,11 @@
     <div class="header">
         <div>
             <a href="{{ .Site.BaseURL }}">
-                <span class="terminal">{{ .Site.Params.user }}{{ .Site.Params.hostname }} Home</span>
+                <span class="terminal">{{ .Site.Title }}</span>
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
                 {{ range .Site.Menus.header }}

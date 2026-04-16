@@ -15,8 +15,9 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - Netlify deploys automatically on push using Hugo 0.101.0 (configured in `netlify.toml`)
 
 ### Testing
-- `cypress open` - Open Cypress test runner for e2e tests
+- `cypress open` - Open Cypress test runner for e2e tests (requires `hugo server` running on port 8888)
 - `cypress run` - Run Cypress tests headlessly
+- Tests go in `cypress/e2e/` (no tests exist yet; directory must be created)
 - Tests configured in `cypress.config.js` with baseUrl `http://localhost:8888`
 
 ## Architecture
@@ -36,6 +37,10 @@ Content lives in `content/` as markdown files:
 
 Menu items are defined in `config.toml` under `[menu.header]` with weight-based ordering.
 
+### Content Editing
+- Content markdown files support raw HTML (enabled via `markup.goldmark.renderer.unsafe = true` in `config.toml`) — `_index.md` is almost entirely raw HTML sections
+- New blog posts should be placed in `content/posts/` with draft front matter
+
 ### Theme Architecture
 The custom "lazulite" theme (based on "Nightfall"):
 - **Layouts**: `themes/lazulite/layouts/` contains HTML templates
@@ -43,10 +48,14 @@ The custom "lazulite" theme (based on "Nightfall"):
   - `index.html` - Homepage layout
   - `_default/single.html` - Single page layout (FAQ, Privacy)
   - `partials/` - Reusable components (header, footer, social)
-- **Styles**: SCSS in `themes/lazulite/assets/` with component-based organization
-- **Fonts**: Custom OpenSans and FiraMono fonts in `static/`
-- **Design**: Dark theme, responsive/mobile-first, optimized for app showcase
+- **Styles**: SCSS in `themes/lazulite/assets/sass/` with component-based organization
+  - Design tokens (colors, spacing, breakpoints, fonts) live in `utils/_variables.scss`
+  - Modern UI components (buttons, cards, hero, feature grid, badges) are in `components/_modern.scss`
+  - Homepage-specific layout styles are in `pages/_index.scss`
+- **Fonts**: OpenSans (body) and FiraMono (headings/code) in `themes/lazulite/static/fonts/`
+- **Design**: Dark theme (`#282634` background), neon accent palette (cyan `#00F5FF`, purple `#BF40FF`, blue `#5B9FFF`), responsive/mobile-first
 
 ### Static Assets
 - `static/images/` - App screenshots and Google Play badge
 - Hugo copies `static/` contents directly to `public/` during build
+- `public/` and `resources/_gen/` are build artifacts; do not edit them directly
