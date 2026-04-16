@@ -69,15 +69,15 @@ showMetadata: false
 <li>AAC, SBC</li>
 <li>SSC, SSC UHQ (Samsung devices only)</li>
 </ul>
-<p>If your device and headphones negotiate it, Lazulite will show it.</p>
+<p>If your device and headphones support it and agree to use it, Lazulite will show it.</p>
 </div>
 </details>
 
 <details>
 <summary>Can I use Lazulite with wired headphones?</summary>
 <div class="faq-body">
-<p>Lazulite monitors the Bluetooth audio stack: codec negotiation, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
-<p>With wired headphones, audio goes straight from your device's DAC to your ears. No wireless encoding, no codec negotiation.</p>
+<p>Lazulite monitors the Bluetooth audio stack: which codec your phone and headphones agreed on, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
+<p>With wired headphones, audio goes straight from your device's DAC to your ears. No wireless encoding, no codec selection.</p>
 </div>
 </details>
 

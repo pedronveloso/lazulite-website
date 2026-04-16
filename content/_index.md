@@ -41,7 +41,7 @@ author = "Pedro Veloso"
     <div class="column">
       <h2 class="section-title section-title--left">Real-Time Audio Analysis</h2>
       <p class="feature-body">
-        Watch your active codec as it negotiates. LDAC, aptX HD, AAC, SBC: every codec your device and headphones settle on, visible in real time.
+        Watch which codec your phone and headphones agree on. LDAC, aptX HD, AAC, SBC: whatever they settle on, Lazulite shows it in real time.
       </p>
       <p class="feature-body">
         See what quality tier your streaming service is actually sending over Bluetooth.
