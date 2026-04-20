@@ -16,11 +16,13 @@
                     </a>
                 </li>
                 {{ end }}
+                {{ $page := . }}
+                {{ $sites := sort hugo.Sites "Language.Weight" }}
+                {{ $languageCount := len $sites }}
                 <li class="headerLanguage">
-                    <label class="headerLanguage__label" for="language-select">{{ i18n "language" }}</label>
-                    <select id="language-select" class="headerLanguage__select" aria-label="{{ i18n "language" }}" data-language-switcher>
-                        {{ $page := . }}
-                        {{ range sort hugo.Sites "Language.Weight" }}
+                    {{ if le $languageCount 4 }}
+                    <div class="headerLanguage__segmented" role="navigation" aria-label="{{ i18n "language" }}" data-language-switcher>
+                        {{ range $sites }}
                             {{ $langCode := .Language.Lang }}
                             {{ $targetSite := . }}
                             {{ $target := $targetSite.Home }}
@@ -31,11 +33,57 @@
                                     {{ $target = index . 0 }}
                                 {{ end }}
                             {{ end }}
-                            <option value="{{ $langCode }}" data-url="{{ $target.RelPermalink }}" {{ if eq $page.Lang $langCode }}selected{{ end }}>
-                                {{ i18n (printf "language_%s" $langCode) }}
-                            </option>
+                            <a
+                                href="{{ $target.RelPermalink }}"
+                                class="headerLanguage__option {{ if eq $page.Lang $langCode }}is-active{{ end }}"
+                                lang="{{ .Language.LanguageCode | default $langCode }}"
+                                hreflang="{{ $langCode }}"
+                                title="{{ i18n (printf "language_%s" $langCode) }}"
+                                aria-current="{{ if eq $page.Lang $langCode }}page{{ else }}false{{ end }}"
+                                data-language-option
+                                data-language="{{ $langCode }}"
+                                data-url="{{ $target.RelPermalink }}"
+                            >
+                                {{ i18n (printf "language_short_%s" $langCode) }}
+                            </a>
                         {{ end }}
-                    </select>
+                    </div>
+                    {{ else }}
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="{{ i18n "language" }}">
+                            <span class="headerLanguage__triggerLabel">{{ i18n (printf "language_short_%s" $page.Lang) }}</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="{{ i18n "language" }}">
+                            {{ range $sites }}
+                                {{ $langCode := .Language.Lang }}
+                                {{ $targetSite := . }}
+                                {{ $target := $targetSite.Home }}
+                                {{ if eq $page.Lang $langCode }}
+                                    {{ $target = $page }}
+                                {{ else }}
+                                    {{ with where $page.Translations "Lang" $langCode }}
+                                        {{ $target = index . 0 }}
+                                    {{ end }}
+                                {{ end }}
+                                <a
+                                    href="{{ $target.RelPermalink }}"
+                                    class="headerLanguage__menuItem {{ if eq $page.Lang $langCode }}is-active{{ end }}"
+                                    lang="{{ .Language.LanguageCode | default $langCode }}"
+                                    hreflang="{{ $langCode }}"
+                                    role="menuitem"
+                                    aria-current="{{ if eq $page.Lang $langCode }}page{{ else }}false{{ end }}"
+                                    data-language-option
+                                    data-language="{{ $langCode }}"
+                                    data-url="{{ $target.RelPermalink }}"
+                                >
+                                    <span class="headerLanguage__menuShort">{{ i18n (printf "language_short_%s" $langCode) }}</span>
+                                    <span class="headerLanguage__menuFull">{{ i18n (printf "language_%s" $langCode) }}</span>
+                                </a>
+                            {{ end }}
+                        </div>
+                    </details>
+                    {{ end }}
                 </li>
             </ul>
         </nav>

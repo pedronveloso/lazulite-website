@@ -65,9 +65,20 @@
     return document.querySelector("[data-language-switcher]");
   }
 
+  function findOptions(switcher) {
+    return switcher ? switcher.querySelectorAll("[data-language-option]") : [];
+  }
+
   function findUrlForLanguage(switcher, language) {
-    var option = switcher.querySelector('option[value="' + language + '"]');
-    return option ? option.getAttribute("data-url") : null;
+    var options = findOptions(switcher);
+
+    for (var index = 0; index < options.length; index += 1) {
+      if (options[index].getAttribute("data-language") === language) {
+        return options[index].getAttribute("data-url");
+      }
+    }
+
+    return null;
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -77,18 +88,23 @@
       return;
     }
 
-    switcher.addEventListener("change", function () {
-      var nextLanguage = normalizeLanguage(switcher.value);
-      var nextUrl = findUrlForLanguage(switcher, nextLanguage);
+    switcher.addEventListener("click", function (event) {
+      var option = event.target.closest("[data-language-option]");
 
-      setStoredLanguage(nextLanguage);
+      if (!option) {
+        return;
+      }
 
-      if (nextUrl) {
-        window.location.assign(nextUrl);
+      setStoredLanguage(option.getAttribute("data-language"));
+
+      var menu = option.closest("details");
+
+      if (menu) {
+        menu.removeAttribute("open");
       }
     });
 
-    var currentLanguage = normalizeLanguage(document.documentElement.lang || switcher.value);
+    var currentLanguage = normalizeLanguage(document.documentElement.lang);
     var storedLanguage = getStoredLanguage();
     var preferredLanguage = storedLanguage || detectPreferredLanguage();
     var isRootPath = window.location.pathname === "/";

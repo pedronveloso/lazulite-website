@@ -13,11 +13,20 @@
 [language_en]
     other = "English"
 
+[language_short_en]
+    other = "EN"
+
 [language_es]
     other = "Español"
 
+[language_short_es]
+    other = "ES"
+
 [language_zh]
     other = "简体中文"
+
+[language_short_zh]
+    other = "中文"
 
 [published]
     other = "published"
