@@ -12,7 +12,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - `hugo` - Build static site (outputs to `public/`)
 - `hugo server` - Start local dev server (http://localhost:1313)
 - `hugo server -D` - Include draft content in dev server
-- Netlify deploys automatically on push using Hugo 0.101.0 (configured in `netlify.toml`)
+- Netlify deploys automatically on push using Hugo 0.160.1 (configured in `netlify.toml`)
 
 ### Testing
 - `cypress open` - Open Cypress test runner for e2e tests (requires `hugo server` running on port 8888)
