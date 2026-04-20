@@ -1,0 +1,48 @@
+[not_found]
+    other = "NO ENCONTRADO"
+
+[not_found_desc]
+    other = "Acabas de abrir una ruta que no existe..."
+
+[home]
+    other = "Inicio"
+
+[language]
+    other = "Idioma"
+
+[language_en]
+    other = "English"
+
+[language_es]
+    other = "Español"
+
+[language_zh]
+    other = "简体中文"
+
+[published]
+    other = "publicado"
+
+[reading_time]
+    other = "tiempo de lectura"
+
+[reading_time_desc]
+  one = "1 minuto"
+  other = "{{ .Count }} minutos"
+
+[authors]
+  other = "autores"
+
+[tags]
+  other = "etiquetas"
+
+[categories]
+  other = "categorías"
+
+[and]
+  other = "y"
+
+[powered_by]
+  other = "Creado con"
+
+[theme]
+  other = "tema"

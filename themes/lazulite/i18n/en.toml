@@ -7,6 +7,18 @@
 [home]
     other = "Home"
 
+[language]
+    other = "Language"
+
+[language_en]
+    other = "English"
+
+[language_es]
+    other = "Español"
+
+[language_zh]
+    other = "简体中文"
+
 [published]
     other = "published"
 

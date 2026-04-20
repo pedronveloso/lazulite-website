@@ -1,5 +1,6 @@
 baseURL = 'https://lazulite.app'
-languageCode = 'en-us'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
 title = 'Lazulite App'
 theme = "lazulite"
 
@@ -15,22 +16,58 @@ name = "email"
 url = "mailto:lazulite.app@example.com"
 #icon = "fa-solid fa-envelope"
 
-[menu]
-  [[menu.header]]
-    name = "Privacy Policy"
-    weight = 0
-    url = "/privacy/"
-  [[menu.header]]
-    name = "FAQ"
-    weight = 1
-    url = "/faq/"
-#  [[menu.header]]
-#    name = "posts"
-#    weight = 0
-#    url = "/posts"
-
 [params]
-footerHtml = 'Lazulite App for Android'
 readingTime = false  # Show reading time on post page
 published = false  # Show published data on post page
-description = "Real-time Bluetooth audio codec inspection for Android. Monitor LDAC, aptX HD, AAC, SBC and more — see exactly what your wireless audio is doing."
+
+[languages]
+  [languages.en]
+    languageCode = 'en-US'
+    languageName = 'English'
+    weight = 1
+    title = 'Lazulite App'
+    [languages.en.params]
+      footerHtml = 'Lazulite App for Android'
+      description = "Real-time Bluetooth audio codec inspection for Android. Monitor LDAC, aptX HD, AAC, SBC and more — see exactly what your wireless audio is doing."
+    [[languages.en.menu.header]]
+      name = "Privacy Policy"
+      weight = 0
+      pageRef = "/privacy"
+    [[languages.en.menu.header]]
+      name = "FAQ"
+      weight = 1
+      pageRef = "/faq"
+
+  [languages.es]
+    languageCode = 'es-ES'
+    languageName = 'Español'
+    weight = 2
+    title = 'Lazulite App'
+    [languages.es.params]
+      footerHtml = 'Lazulite App para Android'
+      description = "Inspección en tiempo real de códecs de audio Bluetooth para Android. Supervisa LDAC, aptX HD, AAC, SBC y más para ver exactamente qué está haciendo tu audio inalámbrico."
+    [[languages.es.menu.header]]
+      name = "Privacidad"
+      weight = 0
+      pageRef = "/privacy"
+    [[languages.es.menu.header]]
+      name = "Preguntas frecuentes"
+      weight = 1
+      pageRef = "/faq"
+
+  [languages.zh]
+    languageCode = 'zh-CN'
+    languageName = '简体中文'
+    weight = 3
+    title = 'Lazulite App'
+    [languages.zh.params]
+      footerHtml = '适用于 Android 的 Lazulite'
+      description = "面向 Android 的实时蓝牙音频编解码器检测。监控 LDAC、aptX HD、AAC、SBC 等格式，准确查看无线音频的实际传输情况。"
+    [[languages.zh.menu.header]]
+      name = "隐私政策"
+      weight = 0
+      pageRef = "/privacy"
+    [[languages.zh.menu.header]]
+      name = "常见问题"
+      weight = 1
+      pageRef = "/faq"

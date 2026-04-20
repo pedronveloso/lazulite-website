@@ -1,7 +1,7 @@
 <header class="headerWrapper">
     <div class="header">
         <div>
-            <a href="{{ .Site.BaseURL }}">
+            <a href="{{ .Site.Home.RelPermalink }}">
                 <span class="terminal">{{ .Site.Title }}</span>
             </a>
         </div>
@@ -11,11 +11,32 @@
             <ul>
                 {{ range .Site.Menus.header }}
                 <li>
-                    <a href="{{ .URL | absURL }}" title="{{ .Title }}" >
+                    <a href="{{ .URL | relLangURL }}" title="{{ .Title }}" >
                         {{- .Name -}}
                     </a>
                 </li>
                 {{ end }}
+                <li class="headerLanguage">
+                    <label class="headerLanguage__label" for="language-select">{{ i18n "language" }}</label>
+                    <select id="language-select" class="headerLanguage__select" aria-label="{{ i18n "language" }}" data-language-switcher>
+                        {{ $page := . }}
+                        {{ range sort hugo.Sites "Language.Weight" }}
+                            {{ $langCode := .Language.Lang }}
+                            {{ $targetSite := . }}
+                            {{ $target := $targetSite.Home }}
+                            {{ if eq $page.Lang $langCode }}
+                                {{ $target = $page }}
+                            {{ else }}
+                                {{ with where $page.Translations "Lang" $langCode }}
+                                    {{ $target = index . 0 }}
+                                {{ end }}
+                            {{ end }}
+                            <option value="{{ $langCode }}" data-url="{{ $target.RelPermalink }}" {{ if eq $page.Lang $langCode }}selected{{ end }}>
+                                {{ i18n (printf "language_%s" $langCode) }}
+                            </option>
+                        {{ end }}
+                    </select>
+                </li>
             </ul>
         </nav>
     </div>

@@ -6,6 +6,12 @@
 
 <!-- Permalink & RSSlink -->
 <link rel="canonical" href="{{ .Permalink }}" >
+<link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" >
+{{ range .Translations }}
+  {{ if ne .Lang $.Lang }}
+  <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" >
+  {{ end }}
+{{ end }}
 {{- with .OutputFormats.Get "RSS" }}
   <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" >
   <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" >
@@ -13,5 +19,6 @@
 
 {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+<script src="{{ "js/language-switcher.js" | relURL }}" defer></script>
 
 {{ partial "custom-head.html" . }}

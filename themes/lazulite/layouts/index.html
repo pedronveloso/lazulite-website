@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.LanguageCode | default .Site.Language.Lang }}">
 
 <head>
     <title>
-        {{ i18n "home" }} | {{ .Site.Params.author }}
+        {{ i18n "home" }} | {{ .Site.Title }}
     </title>
 
     {{ partial "head.html" . }}
