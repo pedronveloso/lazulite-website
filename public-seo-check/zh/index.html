@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>
+        Android 蓝牙音频编解码器分析工具 | Lazulite App
+    </title>
+
+    
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    
+  
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<meta name="generator" content="Hugo 0.161.1">
+
+
+<link rel="canonical" href="https://lazulite.app/zh/" >
+<link rel="alternate" hreflang="zh-CN" href="https://lazulite.app/zh/" >
+
+  
+  <link rel="alternate" hreflang="en-US" href="https://lazulite.app/" >
+  
+
+  
+  <link rel="alternate" hreflang="es-ES" href="https://lazulite.app/es/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/" >
+  <link href="https://lazulite.app/zh/index.xml" rel="alternate" type="application/rss+xml" title="Lazulite App" >
+  <link href="https://lazulite.app/zh/index.xml" rel="feed" type="application/rss+xml" title="Lazulite App" ><meta property="og:site_name" content="Lazulite App">
+<meta property="og:title" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
+<meta property="og:description" content="适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lazulite.app/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lazulite.app/images/codecs-info-2.png">
+<meta property="og:image:alt" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1088">
+<meta property="og:image:height" content="1357">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
+<meta name="twitter:description" content="适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。">
+<meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
+
+
+<link href="/sass/main.min.bb0869439b4ee4f811277c4a80d1a63d2d0c0a8223e1d119d2683cc613da3323.css" rel="stylesheet">
+<script src="/js/language-switcher.js" defer></script>
+
+
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/codecs-info-2.png","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Epilogue:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a href="/zh/">
+                <span class="terminal">Lazulite App</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="/zh/faq/" title="常见问题" >常见问题</a>
+                </li>
+                
+                <li>
+                    <a href="/zh/privacy/" title="隐私政策" >隐私政策</a>
+                </li>
+                
+                
+                
+                
+                <li class="headerLanguage">
+                    
+                    <div class="headerLanguage__segmented" role="navigation" aria-label="语言" data-language-switcher>
+                        
+                            
+                            
+                            
+                            
+                                
+                                    
+                                
+                            
+                            <a
+                                href="/"
+                                class="headerLanguage__option "
+                                lang="en-US"
+                                hreflang="en"
+                                title="English"
+                                aria-current="false"
+                                data-language-option
+                                data-language="en"
+                                data-url="/"
+                            >
+                                EN
+                            </a>
+                        
+                            
+                            
+                            
+                            
+                                
+                                    
+                                
+                            
+                            <a
+                                href="/es/"
+                                class="headerLanguage__option "
+                                lang="es-ES"
+                                hreflang="es"
+                                title="Español"
+                                aria-current="false"
+                                data-language-option
+                                data-language="es"
+                                data-url="/es/"
+                            >
+                                ES
+                            </a>
+                        
+                            
+                            
+                            
+                            
+                                
+                            
+                            <a
+                                href="/zh/"
+                                class="headerLanguage__option is-active"
+                                lang="zh-CN"
+                                hreflang="zh"
+                                title="简体中文"
+                                aria-current="page"
+                                data-language-option
+                                data-language="zh"
+                                data-url="/zh/"
+                            >
+                                中文
+                            </a>
+                        
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content vertical">
+            <main class="main">
+                <div class="indexWrapper">
+                    
+                    <div class="homepage">
+<section class="hero-section">
+  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo animated-float" width="270" height="270">
+  <h1 class="hero-title">
+    <span class="gradient-text">LAZULITE</span>
+  </h1>
+  <p class="hero-subtitle">
+    流媒体应用宣称无损。你的耳机却未必如此。<br>
+    Lazulite 会把实际传输到耳机的内容直接展示出来。
+  </p>
+  <div class="cta-buttons">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan">
+      立即下载
+    </a>
+    <a href="#features" class="btn btn-purple">
+      查看功能
+    </a>
+  </div>
+</section>
+<section id="features" class="section">
+  <h2 class="section-title">为什么发烧友选择 <span class="gradient-text">Lazulite</span></h2>
+  <p class="section-subtitle">
+    准确了解你的设备究竟对音频做了什么。
+  </p>
+  <div class="two-column">
+    <div class="column">
+      <img src="/images/codecs-info-2.webp" alt="实时音频编解码器分析界面，显示 LDAC 编解码器详情" class="feature-img" loading="lazy" width="1088" height="1357">
+    </div>
+    <div class="column">
+      <h2 class="section-title section-title--left">实时音频分析</h2>
+      <p class="feature-body">
+        查看手机和耳机最终协商使用的是哪种编解码器。无论是 LDAC、aptX HD、AAC 还是 SBC，Lazulite 都会实时显示。
+      </p>
+      <p class="feature-body">
+        看清你的流媒体服务通过蓝牙实际发送的是哪一个音质等级。
+      </p>
+      <p class="feature-body">
+        确认你的设备是否真的支持你付费购买的高解析音频，还是早已被悄悄降级。
+      </p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="two-column reverse">
+    <div class="column">
+      <h2 class="section-title section-title--left">蓝牙故障，还是连接太差？</h2>
+      <p class="feature-body" style="text-align: center">
+        音频断断续续？Lazulite 会实时监控蓝牙传输中的丢包情况。你可以判断干扰究竟来自 WiFi 频段重叠，还是蓝牙信号过弱。
+      </p>
+      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+        <li>丢包监控</li>
+        <li>传输稳定性指标</li>
+        <li>信号质量分析</li>
+        <li>实时诊断</li>
+      </ul>
+    </div>
+    <div class="column">
+      <img src="/images/packet-loss-stats.webp" alt="显示蓝牙传输质量随时间变化的丢包统计图表" class="feature-img" loading="lazy" width="924" height="540">
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <h2 class="section-title">智能建议</h2>
+  <p class="section-subtitle">
+    发现问题，并通过内置快捷操作快速处理。
+  </p>
+  <div class="improve-section">
+    <div class="improve-section__image">
+      <img src="/images/setup-tips.webp" alt="Lazulite 应用显示音频设置建议和快捷操作提示" class="feature-img" loading="lazy" width="590" height="325">
+    </div>
+  </div>
+</section>
+<section class="section app-showcase">
+  <h2 class="section-title">实际效果一目了然</h2>
+  <div class="screenshot-mockup">
+    <img src="/images/lazulite-preview.webp" alt="Lazulite 应用演示动画，展示编解码器检测和丢包监控" width="360" height="780">
+  </div>
+</section>
+<section class="section download-section">
+  <h2 class="section-title">听见真正正在播放的内容</h2>
+  <p class="section-subtitle">
+    已上架 Google Play。无订阅，不玩虚的。
+  </p>
+  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite">
+    <img src="/images/google-play-badge.png" alt="在 Google Play 获取 Lazulite" width="200" height="77" loading="lazy">
+  </a>
+</section>
+</div>
+
+                    
+
+                </div>
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>适用于 Android 的 Lazulite</span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>

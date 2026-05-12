@@ -1,5 +1,6 @@
 +++
 author = "Pedro Veloso"
+description = "Bluetooth audio codec analyzer for Android. Lazulite shows the real codec in use, packet loss, and whether LDAC, aptX HD, AAC, or SBC is actually reaching your headphones."
 +++
 
 <div class="homepage">

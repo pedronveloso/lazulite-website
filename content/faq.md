@@ -1,8 +1,20 @@
 ---
 title: "FAQ"
+seoTitle: "Lazulite FAQ: Permissions, Bluetooth Codecs, Setup & Compatibility"
+description: "Answers about Lazulite permissions, ADB setup, Shizuku, Bluetooth codec support, packet loss monitoring, and Android audio compatibility."
 date: 2023-12-25T16:18:23-07:00
 draft: false
 showMetadata: false
+schemaType: "FAQPage"
+faqSchema:
+  - question: "Why does Lazulite need special permissions?"
+    answer: "Lazulite reads Android audio system logs to show real-time Bluetooth codec information and transmission data. Android restricts these logs, so permission must be granted with ADB, Shizuku, or root access."
+  - question: "Which Bluetooth codecs does Lazulite support?"
+    answer: "Lazulite can detect the Bluetooth audio codecs your device supports and negotiates, including LDAC, aptX, aptX HD, aptX Adaptive, LC3, LHDC variants, AAC, SBC, and Samsung SSC codecs when available."
+  - question: "Can I use Lazulite with wired headphones?"
+    answer: "No. Lazulite monitors the Bluetooth audio stack, including codec negotiation and transmission quality. Wired audio bypasses Bluetooth, so there is no Bluetooth codec data for the app to inspect."
+  - question: "Will Lazulite drain my battery?"
+    answer: "Battery impact is minimal. Lazulite reads system logs that already exist and does not create extra Bluetooth processing when you are not using the app."
 ---
 
 # Frequently Asked Questions

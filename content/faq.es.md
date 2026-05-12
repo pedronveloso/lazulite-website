@@ -1,8 +1,20 @@
 ---
 title: "Preguntas frecuentes"
+seoTitle: "FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad"
+description: "Respuestas sobre permisos de Lazulite, configuración con ADB, Shizuku, compatibilidad con códecs Bluetooth, monitoreo de pérdida de paquetes y audio en Android."
 date: 2023-12-25T16:18:23-07:00
 draft: false
 showMetadata: false
+schemaType: "FAQPage"
+faqSchema:
+  - question: "¿Por qué Lazulite necesita permisos especiales?"
+    answer: "Lazulite lee los registros de audio del sistema Android para mostrar información en tiempo real sobre códecs Bluetooth y datos de transmisión. Android restringe esos registros, por lo que el permiso debe concederse con ADB, Shizuku o acceso root."
+  - question: "¿Qué códecs Bluetooth admite Lazulite?"
+    answer: "Lazulite puede detectar los códecs Bluetooth que tu dispositivo admite y negocia, incluidos LDAC, aptX, aptX HD, aptX Adaptive, LC3, variantes de LHDC, AAC, SBC y los códecs Samsung SSC cuando están disponibles."
+  - question: "¿Puedo usar Lazulite con auriculares con cable?"
+    answer: "No. Lazulite supervisa la pila de audio Bluetooth, incluida la negociación del códec y la calidad de transmisión. El audio por cable no usa Bluetooth, así que no hay datos de códec Bluetooth que inspeccionar."
+  - question: "¿Lazulite consume mucha batería?"
+    answer: "El impacto en batería es mínimo. Lazulite lee registros del sistema que ya existen y no crea procesamiento Bluetooth adicional cuando no estás usando la app."
 ---
 
 # Preguntas frecuentes

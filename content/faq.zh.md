@@ -1,8 +1,20 @@
 ---
 title: "常见问题"
+seoTitle: "Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性"
+description: "解答 Lazulite 的权限要求、ADB 设置、Shizuku、蓝牙编解码器支持、丢包监控以及 Android 音频兼容性等问题。"
 date: 2023-12-25T16:18:23-07:00
 draft: false
 showMetadata: false
+schemaType: "FAQPage"
+faqSchema:
+  - question: "为什么 Lazulite 需要特殊权限？"
+    answer: "Lazulite 需要读取 Android 音频系统日志，才能显示实时蓝牙编解码器信息和传输数据。Android 会限制这些日志，因此必须通过 ADB、Shizuku 或 root 权限授予访问权限。"
+  - question: "Lazulite 支持哪些蓝牙编解码器？"
+    answer: "Lazulite 可以检测设备支持并实际协商使用的蓝牙音频编解码器，包括 LDAC、aptX、aptX HD、aptX Adaptive、LC3、各版本 LHDC、AAC、SBC，以及在支持设备上的三星 SSC 编解码器。"
+  - question: "Lazulite 可以配合有线耳机使用吗？"
+    answer: "不可以。Lazulite 监控的是蓝牙音频栈，包括编解码器协商和传输质量。有线音频不会经过蓝牙，因此没有蓝牙编解码器数据可供应用分析。"
+  - question: "Lazulite 会明显耗电吗？"
+    answer: "电量影响很小。Lazulite 读取的是系统已经生成的日志，在你不使用应用时不会额外增加蓝牙处理负担。"
 ---
 
 # 常见问题

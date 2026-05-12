@@ -1,5 +1,5 @@
 {{ define "title"}}
-{{ .Title }} | {{ .Site.Title }}
+{{ .Params.seoTitle | default (printf "%s | %s" .Title .Site.Title) }}
 {{ end }}
 
 {{ define "main" }}

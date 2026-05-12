@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        {{ i18n "home" }} | {{ .Site.Title }}
+        {{ .Site.Params.homeTitle | default (printf "%s | %s" (i18n "home") .Site.Title) }}
     </title>
 
     {{ partial "head.html" . }}

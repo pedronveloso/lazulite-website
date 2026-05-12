@@ -1,5 +1,7 @@
 ---
 title: "隐私政策"
+seoTitle: "Lazulite 隐私政策"
+description: "查看 Lazulite 的隐私政策，了解这款 Android 应用如何处理 Firebase 分析、崩溃报告和可选的诊断日志。"
 date: 2023-09-24T16:18:23-07:00
 draft: false
 showMetadata: false

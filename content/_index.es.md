@@ -1,5 +1,6 @@
 +++
 author = "Pedro Veloso"
+description = "Analizador de códecs Bluetooth para Android. Lazulite muestra el códec real en uso, la pérdida de paquetes y si LDAC, aptX HD, AAC o SBC realmente está llegando a tus auriculares."
 +++
 
 <div class="homepage">

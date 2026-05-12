@@ -1,5 +1,6 @@
 +++
 author = "Pedro Veloso"
+description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。"
 +++
 
 <div class="homepage">

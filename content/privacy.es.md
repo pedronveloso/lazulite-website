@@ -1,5 +1,7 @@
 ---
 title: "Privacidad"
+seoTitle: "Política de privacidad de Lazulite"
+description: "Consulta la política de privacidad de Lazulite, incluido cómo la app de Android maneja analíticas de Firebase, informes de fallos y registros de diagnóstico opcionales."
 date: 2023-09-24T16:18:23-07:00
 draft: false
 showMetadata: false

@@ -1,5 +1,7 @@
 ---
 title: "Privacy"
+seoTitle: "Lazulite Privacy Policy"
+description: "Read the Lazulite privacy policy, including how the Android app handles Firebase analytics, crash reports, and optional diagnostic logs."
 date: 2023-09-24T16:18:23-07:00
 draft: false
 showMetadata: false
