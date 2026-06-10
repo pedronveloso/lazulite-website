@@ -19,19 +19,6 @@ hugo
 
 The dev server runs at http://localhost:1313 by default.
 
-## Testing
-
-E2E tests use Cypress with the site running on port 8888:
-
-```bash
-# Start Hugo on the expected port first
-hugo server --port 8888
-
-# Then in a separate terminal
-cypress open   # interactive
-cypress run    # headless
-```
-
 ## Link checking
 
 [Lychee](https://github.com/lycheeverse/lychee) runs in CI on every push and PR. To run locally:
@@ -46,4 +33,3 @@ Configuration lives in `.lychee.toml`. The CI workflow (`.github/workflows/link-
 ## Deployment
 
 Netlify deploys automatically on push to `main`. Hugo version and build command are configured in `netlify.toml`.
-
