@@ -36,7 +36,7 @@
                             <a
                                 href="{{ $target.RelPermalink }}"
                                 class="headerLanguage__option {{ if eq $page.Lang $langCode }}is-active{{ end }}"
-                                lang="{{ .Language.LanguageCode | default $langCode }}"
+                                lang="{{ .Language.Locale | default $langCode }}"
                                 hreflang="{{ $langCode }}"
                                 title="{{ i18n (printf "language_%s" $langCode) }}"
                                 aria-current="{{ if eq $page.Lang $langCode }}page{{ else }}false{{ end }}"
@@ -69,7 +69,7 @@
                                 <a
                                     href="{{ $target.RelPermalink }}"
                                     class="headerLanguage__menuItem {{ if eq $page.Lang $langCode }}is-active{{ end }}"
-                                    lang="{{ .Language.LanguageCode | default $langCode }}"
+                                    lang="{{ .Language.Locale | default $langCode }}"
                                     hreflang="{{ $langCode }}"
                                     role="menuitem"
                                     aria-current="{{ if eq $page.Lang $langCode }}page{{ else }}false{{ end }}"
