@@ -24,8 +24,8 @@ socialImage = "/images/codecs-info-2.png"
 
 [languages]
   [languages.en]
-    languageCode = 'en-US'
-    languageName = 'English'
+    locale = 'en-US'
+    label = 'English'
     weight = 1
     title = 'Lazulite App'
     [languages.en.params]
@@ -42,8 +42,8 @@ socialImage = "/images/codecs-info-2.png"
       pageRef = "/faq"
 
   [languages.es]
-    languageCode = 'es-ES'
-    languageName = 'Español'
+    locale = 'es-ES'
+    label = 'Español'
     weight = 2
     title = 'Lazulite App'
     [languages.es.params]
@@ -60,8 +60,8 @@ socialImage = "/images/codecs-info-2.png"
       pageRef = "/faq"
 
   [languages.zh]
-    languageCode = 'zh-CN'
-    languageName = '简体中文'
+    locale = 'zh-CN'
+    label = '简体中文'
     weight = 3
     title = 'Lazulite App'
     [languages.zh.params]

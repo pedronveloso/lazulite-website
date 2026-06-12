@@ -1,4 +1,4 @@
-languageCode = 'en-us'
+locale = 'en-us'
 [module]
   [module.hugoVersion]
     extended = true
@@ -11,4 +11,3 @@ published = false  # Show published data on post page
 key = 0
 name = "email"
 url = "mailto:lazuliteapp@gmail.com"
-

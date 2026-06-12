@@ -15,7 +15,7 @@
 {{ $socialImage := .Site.Params.socialImage | default "/images/lazulite-logo-500.png" }}
 {{ $socialImageURL := absURL $socialImage }}
 {{ $socialImageAlt := $title }}
-{{ $languageCode := .Site.Language.LanguageCode | default .Site.Language.Lang }}
+{{ $languageCode := .Site.Language.Locale | default .Site.Language.Lang }}
 {{ $defaultPage := . }}
 {{ range .AllTranslations }}
   {{ if eq .Lang $.Site.Home.Language.Lang }}
@@ -34,7 +34,7 @@
 <link rel="alternate" hreflang="{{ $languageCode }}" href="{{ .Permalink }}" >
 {{ range .Translations }}
   {{ if ne .Lang $.Lang }}
-  <link rel="alternate" hreflang="{{ .Site.Language.LanguageCode | default .Site.Language.Lang }}" href="{{ .Permalink }}" >
+  <link rel="alternate" hreflang="{{ .Site.Language.Locale | default .Site.Language.Lang }}" href="{{ .Permalink }}" >
   {{ end }}
 {{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ $defaultPage.Permalink }}" >
