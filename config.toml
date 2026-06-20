@@ -13,7 +13,7 @@ theme = "lazulite"
 [[params.social]]
 key = 0
 name = "email"
-url = "mailto:lazulite.app@example.com"
+url = "mailto:lazuliteapp@gmail.com"
 #icon = "fa-solid fa-envelope"
 
 [params]
