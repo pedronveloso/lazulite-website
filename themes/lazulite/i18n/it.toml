@@ -1,14 +1,14 @@
 [not_found]
-    other = "NOT FOUND"
+    other = "NON TROVATO"
 
 [not_found_desc]
-    other = "You just hit a route that doesn't exist..."
+    other = "Hai appena raggiunto una pagina che non esiste..."
 
 [home]
     other = "Home"
 
 [language]
-    other = "Language"
+    other = "Lingua"
 
 [language_en]
     other = "English"
@@ -35,29 +35,29 @@
     other = "IT"
 
 [published]
-    other = "published"
+    other = "pubblicato"
 
 [reading_time]
-    other = "reading time"
+    other = "tempo di lettura"
 
 [reading_time_desc]
-  one = "1 minute"
-  other = "{{ .Count }} minutes"
+  one = "1 minuto"
+  other = "{{ .Count }} minuti"
 
 [authors]
-  other = "authors"
+  other = "autori"
 
 [tags]
-  other = "tags"
+  other = "tag"
 
 [categories]
-  other = "categories"
+  other = "categorie"
 
 [and]
-  other = "and"
+  other = "e"
 
 [powered_by]
-  other = "Built with"
+  other = "Realizzato con"
 
 [theme]
-  other = "theme"
+  other = "tema"

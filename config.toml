@@ -76,3 +76,21 @@ socialImage = "/images/codecs-info-2.png"
       name = "常见问题"
       weight = 1
       pageRef = "/faq"
+
+  [languages.it]
+    locale = 'it-IT'
+    label = 'Italiano'
+    weight = 4
+    title = 'Lazulite App'
+    [languages.it.params]
+      footerHtml = 'Lazulite App per Android'
+      description = "Ispezione in tempo reale dei codec audio Bluetooth per Android. Monitora LDAC, aptX HD, AAC, SBC e altri codec per vedere esattamente cosa sta facendo il tuo audio wireless."
+      homeTitle = "Analizzatore di codec audio Bluetooth per Android | Lazulite App"
+    [[languages.it.menu.header]]
+      name = "Privacy"
+      weight = 0
+      pageRef = "/privacy"
+    [[languages.it.menu.header]]
+      name = "Domande frequenti"
+      weight = 1
+      pageRef = "/faq"
