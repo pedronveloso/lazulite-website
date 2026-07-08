@@ -15,6 +15,14 @@
 {{ $socialImage := .Site.Params.socialImage | default "/images/lazulite-logo-500.png" }}
 {{ $socialImageURL := absURL $socialImage }}
 {{ $socialImageAlt := $title }}
+{{ $socialImageType := "image/png" }}
+{{ if strings.HasSuffix $socialImage ".webp" }}
+  {{ $socialImageType = "image/webp" }}
+{{ else if or (strings.HasSuffix $socialImage ".jpg") (strings.HasSuffix $socialImage ".jpeg") }}
+  {{ $socialImageType = "image/jpeg" }}
+{{ else if strings.HasSuffix $socialImage ".svg" }}
+  {{ $socialImageType = "image/svg+xml" }}
+{{ end }}
 {{ $languageCode := .Site.Language.Locale | default .Site.Language.Lang }}
 {{ $defaultPage := . }}
 {{ range .AllTranslations }}
@@ -51,7 +59,7 @@
 <meta property="og:locale" content="{{ replace $languageCode "-" "_" }}">
 <meta property="og:image" content="{{ $socialImageURL }}">
 <meta property="og:image:alt" content="{{ $socialImageAlt }}">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image:type" content="{{ $socialImageType }}">
 <meta property="og:image:width" content="1088">
 <meta property="og:image:height" content="1357">
 
@@ -78,6 +86,22 @@
     "inLanguage" $languageCode
   }}
   <script type="application/ld+json">{{ $appSchema | jsonify | safeJS }}</script>
+  {{ $orgSchema := dict
+    "@context" "https://schema.org"
+    "@type" "Organization"
+    "name" .Site.Title
+    "url" .Site.Home.Permalink
+    "logo" (absURL "/images/lazulite-logo-500.png")
+    "sameAs" (slice .Site.Params.playStoreUrl)
+  }}
+  <script type="application/ld+json">{{ $orgSchema | jsonify | safeJS }}</script>
+  {{ $websiteSchema := dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "name" .Site.Title
+    "url" .Site.Home.Permalink
+  }}
+  <script type="application/ld+json">{{ $websiteSchema | jsonify | safeJS }}</script>
 {{ end }}
 {{ if and (eq .Params.schemaType "FAQPage") .Params.faqSchema }}
   {{ $entities := slice }}

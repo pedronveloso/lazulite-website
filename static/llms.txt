@@ -1,0 +1,21 @@
+# Lazulite
+
+> Lazulite is an Android app that shows the real Bluetooth audio codec in use between your phone and your headphones, in real time.
+
+Lazulite reads Android's Bluetooth audio stack to reveal what streaming apps and manufacturers often hide: the actual codec negotiated (LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, LHDC V1-V5, AAC, SBC, and Samsung SSC/SSC UHQ where available), packet loss, and transmission/signal quality — instead of relying on what a streaming app claims to be sending.
+
+Key facts:
+- Platform: Android only (no iOS version, no wired/desktop support — it specifically monitors the Bluetooth audio stack)
+- Distribution: Google Play Store, paid app (one-time purchase, price set on the Play Store)
+- Core features: real-time Bluetooth codec detection, packet loss monitoring, transmission stability metrics, signal quality analysis, and setup suggestions
+- Setup: requires reading Android system audio logs, granted via ADB, Shizuku, or root access
+- Privacy: all audio analysis runs locally on-device; optional anonymous crash/usage telemetry via Firebase, can be disabled in Settings
+
+Links:
+- Homepage: https://lazulite.app/
+- Play Store listing: https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite
+- FAQ: https://lazulite.app/faq/
+- Privacy policy: https://lazulite.app/privacy/
+- Contact: lazuliteapp@gmail.com
+
+Also available in Spanish (https://lazulite.app/es/), Simplified Chinese (https://lazulite.app/zh/), and Italian (https://lazulite.app/it/).

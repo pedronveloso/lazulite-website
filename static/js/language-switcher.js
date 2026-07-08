@@ -16,6 +16,10 @@
       return "zh";
     }
 
+    if (lower.indexOf("it") === 0) {
+      return "it";
+    }
+
     return "en";
   }
 
@@ -38,6 +42,10 @@
         lang.indexOf("zh-hans") === 0
       ) {
         return "zh";
+      }
+
+      if (lang.indexOf("it") === 0) {
+        return "it";
       }
     }
 

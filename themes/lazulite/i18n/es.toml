@@ -28,6 +28,12 @@
 [language_short_zh]
     other = "中文"
 
+[language_it]
+    other = "Italiano"
+
+[language_short_it]
+    other = "IT"
+
 [published]
     other = "publicado"
 
