@@ -11,6 +11,10 @@ showMetadata: false
 
 Grazie per aver scelto Lazulite. La tua privacy è importante per noi e ci impegniamo a proteggere i tuoi dati personali. Questa Informativa sulla privacy descrive i tipi di informazioni che raccogliamo, come le utilizziamo e le misure che adottiamo per proteggere i tuoi dati quando usi la nostra applicazione Android disponibile sul Google Play Store.
 
+## Analisi del sito web:
+
+Quando visiti lazulite.app, raccogliamo dati analitici anonimizzati sulle visite alle pagine e sulle interazioni con i link di download, le risorse di configurazione, le risposte alle domande frequenti e i link di contatto. Questa analisi si applica solo al sito web ed è separata dalla telemetria opzionale dell'app Android. Non utilizziamo cookie né identifichiamo i singoli visitatori. I dati analitici sono trattati su server nell'Unione europea e conservati solo per il tempo necessario a migliorare il sito e i relativi contenuti di assistenza e ad adempiere agli obblighi di legge applicabili, in conformità alle leggi sulla privacy applicabili.
+
 ## Informazioni che raccogliamo:
 
 - Dati anonimi tramite Firebase Analytics: raccogliamo dati anonimi su come gli utenti interagiscono con la nostra app per migliorarne le funzionalità e l'esperienza d'uso. Questi dati non identificano personalmente i singoli utenti.
@@ -27,7 +31,7 @@ Grazie per aver scelto Lazulite. La tua privacy è importante per noi e ci impeg
 
 ## Condivisione e trasferimento dei dati:
 
-Non vendiamo, scambiamo né trasferiamo le tue informazioni a terze parti. Tuttavia, Firebase Analytics e Crashlytics, gestiti da Google, possono archiviare ed elaborare i dati. Per maggiori dettagli su come vengono gestiti i dati, consulta l'Informativa sulla privacy di Google.
+Non vendiamo né scambiamo le tue informazioni. Firebase Analytics e Crashlytics, gestiti da Google, possono archiviare ed elaborare dati analitici dell'app. Per maggiori dettagli su come vengono gestiti i dati, consulta l'Informativa sulla privacy di Google.
 
 ## Protezione dei dati:
 

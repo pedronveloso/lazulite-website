@@ -19,7 +19,7 @@ description = "Bluetooth audio codec analyzer for Android. Lazulite shows the re
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
       Download Now
     </a>
     <a href="#features" class="btn btn-purple">
@@ -102,7 +102,7 @@ description = "Bluetooth audio codec analyzer for Android. Lazulite shows the re
   <p class="section-subtitle">
     Available on Google Play. No subscriptions. No BS.
   </p>
-  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite">
+  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" data-umami-event="download_intent" data-umami-event-placement="footer">
     <img src="/images/google-play-badge.png" alt="Get Lazulite on Google Play" width="200" height="77" loading="lazy">
   </a>
 </section>

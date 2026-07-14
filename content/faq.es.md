@@ -30,7 +30,7 @@ faqSchema:
 
 <h2 id="permissions">Permisos y configuración</h2>
 
-<details>
+<details data-umami-faq="special_permissions">
 <summary>¿Por qué Lazulite necesita permisos especiales?</summary>
 <div class="faq-body">
 <p>Lazulite necesita permiso para leer los registros de audio de tu sistema Android y así mostrar información en tiempo real sobre códecs y transmisión Bluetooth. Android restringe el acceso a estos registros por motivos de privacidad y seguridad, así que tendrás que conceder permiso usando uno de estos tres métodos:</p>
@@ -52,7 +52,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="adb_permissions_help">
 <summary>Estoy atascado en la pantalla de permisos de ADB</summary>
 <div class="faq-body">
 <p><strong>¿Es la primera vez que lo configuras?</strong> Sigue nuestro tutorial detallado para instalar ADB y conceder permisos:</p>
@@ -71,7 +71,7 @@ faqSchema:
 
 <h2 id="codecs">Códecs y compatibilidad</h2>
 
-<details>
+<details data-umami-faq="codec_support">
 <summary>¿Qué códecs Bluetooth admite Lazulite?</summary>
 <div class="faq-body">
 <p>Lazulite puede detectar y mostrar todos los códecs de audio Bluetooth compatibles con tu dispositivo:</p>
@@ -85,7 +85,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="wired_headphones">
 <summary>¿Puedo usar Lazulite con auriculares con cable?</summary>
 <div class="faq-body">
 <p>Lazulite supervisa la pila de audio Bluetooth: qué códec acordaron usar tu teléfono y tus auriculares, la calidad de transmisión y la pérdida de paquetes. Las conexiones con cable evitan todo eso, así que Lazulite no tiene nada que leer.</p>
@@ -93,7 +93,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="codec_expectations">
 <summary>¿Por qué las apps de streaming a veces muestran códecs distintos de lo esperado?</summary>
 <div class="faq-body">
 <p>Muchas apps de streaming prometen calidad "lossless" o "hi-fi", pero tu dispositivo o tus auriculares pueden forzar una recodificación a un códec de menor calidad antes de que el audio llegue a tus oídos.</p>
@@ -105,7 +105,7 @@ faqSchema:
 
 <h2 id="privacy">Privacidad y datos</h2>
 
-<details>
+<details data-umami-faq="mobile_data">
 <summary>¿Lazulite usa mis datos móviles?</summary>
 <div class="faq-body">
 <p>Lazulite realiza todo el análisis de audio localmente en tu dispositivo. No se envía ningún dato desde tu teléfono a menos que elijas compartirlo.</p>
@@ -118,7 +118,7 @@ faqSchema:
 
 <h2 id="usage">Uso y comportamiento</h2>
 
-<details>
+<details data-umami-faq="battery_impact">
 <summary>¿Lazulite agota la batería?</summary>
 <div class="faq-body">
 <p><strong>Resumen:</strong> no, el impacto es insignificante.</p>

@@ -30,7 +30,7 @@ faqSchema:
 
 <h2 id="permissions">Permissions & Setup</h2>
 
-<details>
+<details data-umami-faq="special_permissions">
 <summary>Why does Lazulite need special permissions?</summary>
 <div class="faq-body">
 <p>Lazulite needs permission to read your Android system's audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:</p>
@@ -52,7 +52,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="adb_permissions_help">
 <summary>I'm stuck at the ADB permissions screen</summary>
 <div class="faq-body">
 <p><strong>First time setting up?</strong> Follow our detailed tutorial that walks you through installing ADB and granting permissions:</p>
@@ -71,7 +71,7 @@ faqSchema:
 
 <h2 id="codecs">Codecs & Compatibility</h2>
 
-<details>
+<details data-umami-faq="codec_support">
 <summary>Which Bluetooth codecs does Lazulite support?</summary>
 <div class="faq-body">
 <p>Lazulite can detect and display all Bluetooth audio codecs your device supports:</p>
@@ -85,7 +85,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="wired_headphones">
 <summary>Can I use Lazulite with wired headphones?</summary>
 <div class="faq-body">
 <p>Lazulite monitors the Bluetooth audio stack: which codec your phone and headphones agreed on, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
@@ -93,7 +93,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="codec_expectations">
 <summary>Why do streaming apps sometimes show different codecs than expected?</summary>
 <div class="faq-body">
 <p>Many streaming apps claim "lossless" or "hi-fi" quality, but your device or headphones may force re-encoding to a lower-quality codec before audio ever reaches your ears.</p>
@@ -105,7 +105,7 @@ faqSchema:
 
 <h2 id="privacy">Privacy & Data</h2>
 
-<details>
+<details data-umami-faq="mobile_data">
 <summary>Does Lazulite use my mobile data?</summary>
 <div class="faq-body">
 <p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
@@ -118,7 +118,7 @@ faqSchema:
 
 <h2 id="usage">Usage & Behavior</h2>
 
-<details>
+<details data-umami-faq="battery_impact">
 <summary>Will Lazulite drain my battery?</summary>
 <div class="faq-body">
 <p><strong>TL;DR:</strong> Nope, negligible impact.</p>
