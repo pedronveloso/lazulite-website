@@ -11,6 +11,10 @@ showMetadata: false
 
 Gracias por elegir Lazulite. Tu privacidad es importante para nosotros y estamos comprometidos con la protección de tus datos personales. Esta Política de privacidad describe qué información recopilamos, cómo la usamos y qué medidas tomamos para proteger tus datos cuando utilizas nuestra aplicación Android disponible en Google Play.
 
+## Analítica del sitio web
+
+Cuando visitas lazulite.app, recopilamos datos analíticos anonimizados sobre las visitas a las páginas y las interacciones con enlaces de descarga, recursos de configuración, respuestas de las preguntas frecuentes y enlaces de contacto. Esta analítica se aplica únicamente al sitio web y es independiente de la telemetría opcional de la aplicación Android. No usamos cookies ni identificamos a los visitantes de forma individual. Los datos analíticos se procesan en servidores de la Unión Europea y se conservan solo durante el tiempo necesario para mejorar el sitio y su contenido de ayuda, y para cumplir con las obligaciones legales aplicables, de conformidad con las leyes de privacidad aplicables.
+
 ## Información que recopilamos
 
 - Datos anónimos mediante Firebase Analytics: recopilamos datos anónimos sobre cómo interactúan los usuarios con la app para mejorar su funcionamiento y la experiencia de uso. Estos datos no identifican personalmente a ningún usuario.
@@ -27,7 +31,7 @@ Gracias por elegir Lazulite. Tu privacidad es importante para nosotros y estamos
 
 ## Compartición y transferencia de datos
 
-No **vendemos**, intercambiamos ni transferimos tu información a terceros. Sin embargo, Firebase Analytics y Crashlytics, gestionados por Google, pueden almacenar y procesar esos datos. Consulta la Política de privacidad de Google para obtener más información sobre cómo gestiona esos datos.
+No **vendemos** ni intercambiamos tu información. Firebase Analytics y Crashlytics, gestionados por Google, pueden almacenar y procesar datos analíticos de la aplicación. Consulta la Política de privacidad de Google para obtener más información sobre cómo gestiona esos datos.
 
 ## Protección de datos
 

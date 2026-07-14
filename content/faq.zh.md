@@ -30,7 +30,7 @@ faqSchema:
 
 <h2 id="permissions">权限与设置</h2>
 
-<details>
+<details data-umami-faq="special_permissions">
 <summary>为什么 Lazulite 需要特殊权限？</summary>
 <div class="faq-body">
 <p>Lazulite 需要读取 Android 系统的音频日志，才能实时显示编解码器信息和蓝牙传输数据。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
@@ -52,7 +52,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="adb_permissions_help">
 <summary>我卡在 ADB 权限页面了</summary>
 <div class="faq-body">
 <p><strong>第一次设置？</strong> 请参考我们的详细教程，里面包含安装 ADB 和授予权限的完整步骤：</p>
@@ -71,7 +71,7 @@ faqSchema:
 
 <h2 id="codecs">编解码器与兼容性</h2>
 
-<details>
+<details data-umami-faq="codec_support">
 <summary>Lazulite 支持哪些蓝牙编解码器？</summary>
 <div class="faq-body">
 <p>Lazulite 可以检测并显示你的设备支持的所有蓝牙音频编解码器：</p>
@@ -85,7 +85,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="wired_headphones">
 <summary>我可以把 Lazulite 用在有线耳机上吗？</summary>
 <div class="faq-body">
 <p>Lazulite 监控的是蓝牙音频栈：包括手机和耳机协商使用的编解码器、传输质量以及丢包情况。有线连接会绕过这一整套流程，因此 Lazulite 没有任何可读取的数据。</p>
@@ -93,7 +93,7 @@ faqSchema:
 </div>
 </details>
 
-<details>
+<details data-umami-faq="codec_expectations">
 <summary>为什么流媒体应用显示的编解码器有时和预期不一样？</summary>
 <div class="faq-body">
 <p>很多流媒体应用会宣称提供“无损”或“Hi-Fi”音质，但在声音真正传到你耳朵之前，设备或耳机可能已经被迫重新编码成更低质量的编解码器。</p>
@@ -105,7 +105,7 @@ faqSchema:
 
 <h2 id="privacy">隐私与数据</h2>
 
-<details>
+<details data-umami-faq="mobile_data">
 <summary>Lazulite 会使用我的移动数据吗？</summary>
 <div class="faq-body">
 <p>Lazulite 的所有音频分析都在你的设备本地完成。除非你主动选择分享，否则不会有任何数据从你的手机发出。</p>
@@ -118,7 +118,7 @@ faqSchema:
 
 <h2 id="usage">使用与行为</h2>
 
-<details>
+<details data-umami-faq="battery_impact">
 <summary>Lazulite 会不会很耗电？</summary>
 <div class="faq-body">
 <p><strong>简短回答：</strong>不会，影响几乎可以忽略不计。</p>

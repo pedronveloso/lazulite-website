@@ -18,7 +18,7 @@ description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazul
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
       立即下载
     </a>
     <a href="#features" class="btn btn-purple">
@@ -96,7 +96,7 @@ description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazul
   <p class="section-subtitle">
     已上架 Google Play。无订阅，不玩虚的。
   </p>
-  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite">
+  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" data-umami-event="download_intent" data-umami-event-placement="footer">
     <img src="/images/google-play-badge.png" alt="在 Google Play 获取 Lazulite" width="200" height="77" loading="lazy">
   </a>
 </section>

@@ -11,6 +11,10 @@ showMetadata: false
 
 Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.
 
+## Website Analytics:
+
+When you visit lazulite.app, we collect anonymized analytics about page visits and interactions with download links, setup resources, FAQ answers, and contact links. This analytics applies only to the website and is separate from the optional telemetry collected by the Android app. We do not use cookies or identify individual visitors. Analytics data is processed on servers in the European Union and retained only for as long as necessary to improve the site and its support content, and to meet applicable legal obligations, in accordance with applicable privacy laws.
+
 ## Information We Collect:
 
 - Anonymous Data via Firebase Analytics: We collect anonymous data about how users interact with our app to improve its functionality and user experience. This data does not personally identify individual users.
@@ -27,7 +31,7 @@ Thank you for choosing Lazulite. Your privacy is important to us, and we are com
 
 ## Data Sharing and Transfer:
 
-We do **not** sell, trade, or transfer your information to third parties. However, Firebase Analytics and Crashlytics, run by Google, may store and process the data. Please refer to Google's Privacy Policy for more details on how they manage data.
+We do **not** sell or trade your information. Firebase Analytics and Crashlytics, run by Google, may store and process app analytics data. Please refer to Google's Privacy Policy for more details on how they manage data.
 
 ## Data Protection:
 
