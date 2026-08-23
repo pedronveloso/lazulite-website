@@ -10,7 +10,7 @@ faqSchema:
   - question: "¿Por qué Lazulite necesita permisos especiales?"
     answer: "Lazulite lee los registros de audio del sistema Android para mostrar información en tiempo real sobre códecs Bluetooth y datos de transmisión. Android restringe esos registros, por lo que el permiso debe concederse con ADB, Shizuku o acceso root."
   - question: "¿Qué códecs Bluetooth admite Lazulite?"
-    answer: "Lazulite puede detectar los códecs Bluetooth que tu dispositivo admite y negocia, incluidos LDAC, aptX, aptX HD, aptX Adaptive, LC3, variantes de LHDC, AAC, SBC y los códecs Samsung SSC cuando están disponibles."
+    answer: "Lazulite puede detectar los códecs Bluetooth que tu dispositivo admite y negocia, incluidos LDAC, aptX, aptX HD, aptX Adaptive, LC3, MIHC, Opus, variantes de LHDC, AAC, SBC y los códecs Samsung SSC cuando están disponibles."
   - question: "¿Puedo usar Lazulite con auriculares con cable?"
     answer: "No. Lazulite supervisa la pila de audio Bluetooth, incluida la negociación del códec y la calidad de transmisión. El audio por cable no usa Bluetooth, así que no hay datos de códec Bluetooth que inspeccionar."
   - question: "¿Lazulite consume mucha batería?"
@@ -35,16 +35,15 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite necesita permiso para leer los registros de audio de tu sistema Android y así mostrar información en tiempo real sobre códecs y transmisión Bluetooth. Android restringe el acceso a estos registros por motivos de privacidad y seguridad, así que tendrás que conceder permiso usando uno de estos tres métodos:</p>
 
-<h3>Opción 1: ADB (recomendado para la mayoría)</h3>
-<p><strong>Ideal para:</strong> usuarios que lo configuran por primera vez y personas sin experiencia modificando Android</p>
-<p>Este es el método más sencillo para la mayoría. Conectarás tu teléfono al ordenador por USB y ejecutarás un comando simple. Lleva unos 5 minutos y no requiere conocimientos técnicos.</p>
-<p><strong>Nota:</strong> tendrás que volver a conceder el permiso después de cada reinicio del dispositivo.</p>
-<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">📖 Tutorial paso a paso de ADB para Windows y macOS</a></p>
-
-<h3>Opción 2: Shizuku</h3>
-<p><strong>Ideal para:</strong> usuarios que quieren permisos persistentes sin repetir el proceso tras reiniciar</p>
-<p><a href="https://shizuku.rikka.app/">Shizuku</a> es una app que ayuda a otras aplicaciones a acceder a permisos del sistema. Una vez configurada, los permisos se mantienen tras reiniciar. Requiere una configuración inicial con ADB, pero no tendrás que volver a conectar el teléfono después.</p>
+<h3>Opción 1: Shizuku (recomendado para la mayoría)</h3>
+<p><strong>Ideal para:</strong> la mayoría de usuarios, especialmente quienes prefieren configurar Lazulite directamente desde el teléfono</p>
+<p><a href="https://shizuku.rikka.app/">Shizuku</a> permite que Lazulite acceda a la información del sistema que necesita sin root. En Android 11 y versiones posteriores, puedes iniciar Shizuku mediante la depuración inalámbrica, sin conectar el teléfono a un ordenador. Después de reiniciar el dispositivo, tendrás que volver a iniciar Shizuku antes de abrir Lazulite.</p>
 <p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ Guía en video: cómo habilitar Shizuku</a></p>
+
+<h3>Opción 2: ADB (para usuarios familiarizados con ADB)</h3>
+<p><strong>Ideal para:</strong> usuarios que ya saben utilizar ADB desde un ordenador</p>
+<p>Instala <a href="https://developer.android.com/tools/releases/platform-tools">Android SDK Platform-Tools</a>, activa la depuración USB, conecta y autoriza el teléfono y, después, ejecuta:</p>
+<pre><code>adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP</code></pre>
 
 <h3>Opción 3: Acceso root</h3>
 <p><strong>Ideal para:</strong> usuarios avanzados con dispositivos rooteados</p>
@@ -55,13 +54,15 @@ faqSchema:
 <details data-umami-faq="adb_permissions_help">
 <summary>Estoy atascado en la pantalla de permisos de ADB</summary>
 <div class="faq-body">
-<p><strong>¿Es la primera vez que lo configuras?</strong> Sigue nuestro tutorial detallado para instalar ADB y conceder permisos:</p>
-<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">Lazulite simplificado: instalar ADB en Windows y macOS</a></p>
+<p><strong>¿Es la primera vez que usas ADB?</strong> Te recomendamos utilizar Shizuku. La opción ADB está pensada para usuarios que ya se sienten cómodos ejecutando comandos desde un ordenador.</p>
+<p>Si quieres continuar con ADB, instala <a href="https://developer.android.com/tools/releases/platform-tools">Android SDK Platform-Tools</a>, activa la depuración USB, conecta y autoriza el teléfono y, después, ejecuta:</p>
+<pre><code>adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP</code></pre>
 <p><strong>¿Ya diste permiso pero no funciona?</strong> Asegúrate de que:</p>
 <ul>
 <li>Tu teléfono esté conectado por USB y la depuración USB esté activada</li>
 <li>Hayas autorizado el ordenador en el teléfono cuando apareció el mensaje "¿Permitir depuración USB?"</li>
-<li>Estés ejecutando exactamente el comando ADB correcto que aparece en el tutorial</li>
+<li><code>adb devices</code> muestre el teléfono como <code>device</code> y no como <code>unauthorized</code></li>
+<li>Hayas ejecutado el comando de concesión exactamente como aparece arriba</li>
 </ul>
 <p><strong>¿Usas Shizuku?</strong> Verifica que Shizuku esté en ejecución antes de abrir Lazulite.</p>
 </div>
@@ -76,7 +77,7 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite puede detectar y mostrar todos los códecs de audio Bluetooth compatibles con tu dispositivo:</p>
 <ul>
-<li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3</li>
+<li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus</li>
 <li>LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
 <li>AAC, SBC</li>
 <li>SSC, SSC UHQ (solo en dispositivos Samsung)</li>

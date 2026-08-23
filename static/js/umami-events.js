@@ -17,9 +17,9 @@
 
   function trackSetupAndContactClicks() {
     trackLinkClicks(
-      'a[href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/"]',
+      'a[href="https://developer.android.com/tools/releases/platform-tools"]',
       "setup_resource_click",
-      { resource: "adb_tutorial" }
+      { resource: "adb_platform_tools" }
     );
     trackLinkClicks(
       'a[href="https://shizuku.rikka.app/"]',

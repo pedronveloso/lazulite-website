@@ -10,7 +10,7 @@ faqSchema:
   - question: "为什么 Lazulite 需要特殊权限？"
     answer: "Lazulite 需要读取 Android 音频系统日志，才能显示实时蓝牙编解码器信息和传输数据。Android 会限制这些日志，因此必须通过 ADB、Shizuku 或 root 权限授予访问权限。"
   - question: "Lazulite 支持哪些蓝牙编解码器？"
-    answer: "Lazulite 可以检测设备支持并实际协商使用的蓝牙音频编解码器，包括 LDAC、aptX、aptX HD、aptX Adaptive、LC3、各版本 LHDC、AAC、SBC，以及在支持设备上的三星 SSC 编解码器。"
+    answer: "Lazulite 可以检测设备支持并实际协商使用的蓝牙音频编解码器，包括 LDAC、aptX、aptX HD、aptX Adaptive、LC3、MIHC、Opus、各版本 LHDC、AAC、SBC，以及在支持设备上的三星 SSC 编解码器。"
   - question: "Lazulite 可以配合有线耳机使用吗？"
     answer: "不可以。Lazulite 监控的是蓝牙音频栈，包括编解码器协商和传输质量。有线音频不会经过蓝牙，因此没有蓝牙编解码器数据可供应用分析。"
   - question: "Lazulite 会明显耗电吗？"
@@ -35,16 +35,15 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite 需要读取 Android 系统的音频日志，才能实时显示编解码器信息和蓝牙传输数据。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
 
-<h3>方式 1：ADB（推荐大多数用户使用）</h3>
-<p><strong>适合：</strong>首次设置的用户，以及不熟悉 Android 深度配置的人</p>
-<p>这是大多数用户最简单的方式。你只需通过 USB 将手机连接到电脑，然后执行一条简单命令。整个过程大约 5 分钟，不需要技术背景。</p>
-<p><strong>注意：</strong>每次设备重启后，你都需要重新授予权限。</p>
-<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">📖 Windows 和 macOS 的 ADB 分步教程</a></p>
-
-<h3>方式 2：Shizuku</h3>
-<p><strong>适合：</strong>希望权限在重启后仍然保留的用户</p>
-<p><a href="https://shizuku.rikka.app/">Shizuku</a> 是一款帮助其他应用获取系统权限的工具。设置完成后，权限可以在重启后继续保留。它仍然需要先通过 ADB 进行初始设置，但以后就不必每次重启后再重新连接手机。</p>
+<h3>方式 1：Shizuku（推荐大多数用户使用）</h3>
+<p><strong>适合：</strong>大多数用户，尤其是希望直接在手机上设置 Lazulite 的用户</p>
+<p><a href="https://shizuku.rikka.app/">Shizuku</a> 无需 root，即可让 Lazulite 访问所需的系统信息。在 Android 11 及更高版本上，你可以通过无线调试启动 Shizuku，无需将手机连接到电脑。设备重启后，你需要先重新启动 Shizuku，再打开 Lazulite。</p>
 <p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ 视频指南：如何启用 Shizuku</a></p>
+
+<h3>方式 2：ADB（适合熟悉 ADB 的用户）</h3>
+<p><strong>适合：</strong>已经知道如何在电脑上使用 ADB 的用户</p>
+<p>安装 <a href="https://developer.android.com/tools/releases/platform-tools">Android SDK Platform-Tools</a>，启用 USB 调试，连接并授权手机，然后运行：</p>
+<pre><code>adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP</code></pre>
 
 <h3>方式 3：Root 权限</h3>
 <p><strong>适合：</strong>已经 root 设备的高级用户</p>
@@ -55,13 +54,15 @@ faqSchema:
 <details data-umami-faq="adb_permissions_help">
 <summary>我卡在 ADB 权限页面了</summary>
 <div class="faq-body">
-<p><strong>第一次设置？</strong> 请参考我们的详细教程，里面包含安装 ADB 和授予权限的完整步骤：</p>
-<p><a href="https://pedronveloso.com/android-lazulite-how-to-run-adb-command/">Lazulite 简明设置指南：在 Windows 和 macOS 上安装 ADB</a></p>
+<p><strong>第一次使用 ADB？</strong>我们建议改用 Shizuku。ADB 选项适合已经熟悉在电脑上运行命令的用户。</p>
+<p>如果你仍想使用 ADB，请安装 <a href="https://developer.android.com/tools/releases/platform-tools">Android SDK Platform-Tools</a>，启用 USB 调试，连接并授权手机，然后运行：</p>
+<pre><code>adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP</code></pre>
 <p><strong>已经授予权限但还是不工作？</strong> 请确认：</p>
 <ul>
 <li>手机已通过 USB 连接，并启用了 USB 调试</li>
 <li>手机弹出“允许 USB 调试？”提示时，你已经授权这台电脑</li>
-<li>你执行的 ADB 命令与教程中给出的内容完全一致</li>
+<li><code>adb devices</code> 将手机显示为 <code>device</code>，而不是 <code>unauthorized</code></li>
+<li>你已完全按照上方内容运行授权命令</li>
 </ul>
 <p><strong>使用 Shizuku？</strong> 请确保在启动 Lazulite 之前，Shizuku 已经在运行。</p>
 </div>
@@ -76,7 +77,7 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite 可以检测并显示你的设备支持的所有蓝牙音频编解码器：</p>
 <ul>
-<li>LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3</li>
+<li>LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus</li>
 <li>LHDC V1、LHDC V2、LHDC V3、LHDC V4、LHDC V5</li>
 <li>AAC、SBC</li>
 <li>SSC、SSC UHQ（仅限三星设备）</li>
