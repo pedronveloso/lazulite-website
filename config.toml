@@ -10,6 +10,21 @@ theme = "lazulite"
     [markup.goldmark.renderer]
       unsafe = true
 
+# Serve a plain-markdown alternate of content pages (FAQ, Privacy) for AI agents
+[outputs]
+  page = ["HTML", "MARKDOWN"]
+
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
+
+[outputFormats]
+  [outputFormats.MARKDOWN]
+    mediaType = "text/markdown"
+    isPlainText = true
+    isHTML = false
+    permalinkable = false
+
 [[params.social]]
 key = 0
 name = "email"

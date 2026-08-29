@@ -50,6 +50,9 @@
   <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" >
   <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" >
 {{- end -}}
+{{- with .OutputFormats.Get "MARKDOWN" }}
+  <link href="{{ .Permalink }}" rel="alternate" type="text/markdown" title="{{ $title }} (Markdown)" >
+{{- end -}}
 
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:title" content="{{ $title }}">

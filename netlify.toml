@@ -8,6 +8,11 @@
   HUGO_VERSION = "0.163.0"
 
 [[headers]]
+  for = "/*"
+  [headers.values]
+    Link = "</llms.txt>; rel=\"alternate\"; type=\"text/markdown\""
+
+[[headers]]
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
