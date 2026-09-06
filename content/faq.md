@@ -37,7 +37,7 @@ faqSchema:
 
 <h3>Option 1: Shizuku (Recommended for Most Users)</h3>
 <p><strong>Best for:</strong> Most users, especially those who prefer to set up Lazulite directly on their phone</p>
-<p><a href="https://shizuku.rikka.app/">Shizuku</a> lets Lazulite access the system information it needs without root. On Android 11 and newer, you can start Shizuku using Wireless debugging, without connecting your phone to a computer. After restarting your device, you'll need to start Shizuku again before opening Lazulite.</p>
+<p><a href="https://github.com/thedjchi/Shizuku">Shizuku</a> lets Lazulite access the system information it needs without root. On Android 11 and newer, you can start Shizuku using Wireless debugging, without connecting your phone to a computer. After restarting your device, you'll need to start Shizuku again before opening Lazulite.</p>
 <p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ Video guide: How to enable Shizuku</a></p>
 
 <h3>Option 2: ADB (For Users Familiar with ADB)</h3>
@@ -102,6 +102,22 @@ faqSchema:
 </div>
 </details>
 
+<details data-umami-faq="hardware_offload">
+<summary>What is A2DP hardware offload, and does Lazulite show it?</summary>
+<div class="faq-body">
+<p>Some Android devices can move Bluetooth audio encoding off the main processor and onto dedicated audio or Bluetooth hardware. That can reduce CPU work and power use during playback.</p>
+<p>Lazulite detects when A2DP hardware offload is active and lists which codecs your device's hardware supports for it. A codec showing up in that list doesn't mean it's being offloaded right now: that depends on the codec in use, the connected device, your system settings, and how the manufacturer implemented it.</p>
+</div>
+</details>
+
+<details data-umami-faq="vendor_lookup">
+<summary>Can Lazulite tell me the brand of my connected headphones?</summary>
+<div class="faq-body">
+<p>Yes. Turn on "Look up destination vendor" in Settings and Lazulite will show the manufacturer of your connected Bluetooth device next to its other details.</p>
+<p>This is off by default. When you enable it, Lazulite sends only the first three pairs of the destination MAC address to MACLookup to identify the vendor. No other part of the address is ever sent.</p>
+</div>
+</details>
+
 ---
 
 <h2 id="privacy">Privacy & Data</h2>
@@ -111,7 +127,8 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
 <p><strong>Optional telemetry:</strong> The app may collect anonymous usage and crash data via Google Firebase to help improve stability. This uses minimal data and is compliant with privacy regulations worldwide.</p>
-<p><strong>Want to opt out?</strong> Go to Settings → Disable "Telemetry data"</p>
+<p><strong>Optional vendor lookup:</strong> If you turn on "Look up destination vendor" in Settings, Lazulite sends the first three pairs of your connected device's MAC address to MACLookup to identify its manufacturer. No other part of the address is sent, and the setting stays off unless you enable it.</p>
+<p><strong>Want to opt out?</strong> Go to Settings → Disable "Telemetry data" or "Look up destination vendor"</p>
 </div>
 </details>
 

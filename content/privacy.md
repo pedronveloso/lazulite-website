@@ -23,6 +23,8 @@ When you visit lazulite.app, we collect anonymized analytics about page visits a
 
 - System Logs: Users have the option to send us system logs to assist in resolving technical issues. While these logs can provide valuable information for troubleshooting, they may also contain sensitive information about the user's device. Sending system logs is entirely voluntary.
 
+- Destination Device Vendor Lookup: If you turn on the optional "Look up destination vendor" setting, Lazulite sends the first three pairs of your connected Bluetooth device's MAC address to MACLookup to identify its vendor. This setting is off by default, and no other part of the address is ever sent.
+
 ## How We Use Your Information:
 
 - Improvement & Development: The anonymous data from Firebase Analytics helps us understand how users interact with our app, allowing us to enhance user experience and introduce new features.
@@ -31,7 +33,7 @@ When you visit lazulite.app, we collect anonymized analytics about page visits a
 
 ## Data Sharing and Transfer:
 
-We do **not** sell or trade your information. Firebase Analytics and Crashlytics, run by Google, may store and process app analytics data. Please refer to Google's Privacy Policy for more details on how they manage data.
+We do **not** sell or trade your information. Firebase Analytics and Crashlytics, run by Google, may store and process app analytics data. Please refer to Google's Privacy Policy for more details on how they manage data. If you turn on the destination vendor lookup setting, MACLookup receives the partial MAC address needed to identify the vendor. You can check MACLookup's own privacy practices for details on how they handle that data.
 
 ## Data Protection:
 

@@ -23,6 +23,8 @@ Cuando visitas lazulite.app, recopilamos datos analíticos anonimizados sobre la
 
 - Registros del sistema: los usuarios pueden optar por enviarnos registros del sistema para ayudarnos a resolver problemas técnicos. Aunque estos registros pueden ser útiles para el diagnóstico, también pueden contener información sensible sobre el dispositivo. El envío de registros es completamente voluntario.
 
+- Búsqueda del proveedor del dispositivo de destino: si activas la opción "Buscar proveedor del destino", Lazulite envía los tres primeros pares de la dirección MAC del dispositivo Bluetooth conectado a MACLookup para identificar su proveedor. Esta opción está desactivada de forma predeterminada, y no se envía ninguna otra parte de la dirección.
+
 ## Cómo usamos tu información
 
 - Mejora y desarrollo: los datos anónimos de Firebase Analytics nos ayudan a entender cómo se usa la app, lo que nos permite mejorar la experiencia e incorporar nuevas funciones.
@@ -31,7 +33,7 @@ Cuando visitas lazulite.app, recopilamos datos analíticos anonimizados sobre la
 
 ## Compartición y transferencia de datos
 
-No **vendemos** ni intercambiamos tu información. Firebase Analytics y Crashlytics, gestionados por Google, pueden almacenar y procesar datos analíticos de la aplicación. Consulta la Política de privacidad de Google para obtener más información sobre cómo gestiona esos datos.
+No **vendemos** ni intercambiamos tu información. Firebase Analytics y Crashlytics, gestionados por Google, pueden almacenar y procesar datos analíticos de la aplicación. Consulta la Política de privacidad de Google para obtener más información sobre cómo gestiona esos datos. Si activas la opción de búsqueda del proveedor del destino, MACLookup recibe la parte de la dirección MAC necesaria para identificar el proveedor. Puedes consultar las prácticas de privacidad propias de MACLookup para saber cómo gestionan esos datos.
 
 ## Protección de datos
 

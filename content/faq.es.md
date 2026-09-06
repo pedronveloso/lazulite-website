@@ -37,7 +37,7 @@ faqSchema:
 
 <h3>Opción 1: Shizuku (recomendado para la mayoría)</h3>
 <p><strong>Ideal para:</strong> la mayoría de usuarios, especialmente quienes prefieren configurar Lazulite directamente desde el teléfono</p>
-<p><a href="https://shizuku.rikka.app/">Shizuku</a> permite que Lazulite acceda a la información del sistema que necesita sin root. En Android 11 y versiones posteriores, puedes iniciar Shizuku mediante la depuración inalámbrica, sin conectar el teléfono a un ordenador. Después de reiniciar el dispositivo, tendrás que volver a iniciar Shizuku antes de abrir Lazulite.</p>
+<p><a href="https://github.com/thedjchi/Shizuku">Shizuku</a> permite que Lazulite acceda a la información del sistema que necesita sin root. En Android 11 y versiones posteriores, puedes iniciar Shizuku mediante la depuración inalámbrica, sin conectar el teléfono a un ordenador. Después de reiniciar el dispositivo, tendrás que volver a iniciar Shizuku antes de abrir Lazulite.</p>
 <p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ Guía en video: cómo habilitar Shizuku</a></p>
 
 <h3>Opción 2: ADB (para usuarios familiarizados con ADB)</h3>
@@ -102,6 +102,22 @@ faqSchema:
 </div>
 </details>
 
+<details data-umami-faq="hardware_offload">
+<summary>¿Qué es la descarga de hardware A2DP, y la muestra Lazulite?</summary>
+<div class="faq-body">
+<p>Algunos dispositivos Android pueden trasladar la codificación de audio Bluetooth del procesador principal a hardware de audio o Bluetooth dedicado. Esto puede reducir el trabajo de la CPU y el consumo durante la reproducción.</p>
+<p>Lazulite detecta cuándo la descarga de hardware A2DP está activa y muestra qué códecs admite el hardware de tu dispositivo para ella. Que un códec aparezca en esa lista no significa que se esté usando en tu conexión actual: eso depende del códec en uso, el dispositivo conectado, los ajustes del sistema y cómo lo implementó el fabricante.</p>
+</div>
+</details>
+
+<details data-umami-faq="vendor_lookup">
+<summary>¿Puede Lazulite decirme la marca de mis auriculares conectados?</summary>
+<div class="faq-body">
+<p>Sí. Activa "Buscar proveedor del destino" en Ajustes y Lazulite mostrará el fabricante de tu dispositivo Bluetooth conectado junto al resto de sus datos.</p>
+<p>Esta opción está desactivada de forma predeterminada. Cuando la activas, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
+</div>
+</details>
+
 ---
 
 <h2 id="privacy">Privacidad y datos</h2>
@@ -111,7 +127,8 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite realiza todo el análisis de audio localmente en tu dispositivo. No se envía ningún dato desde tu teléfono a menos que elijas compartirlo.</p>
 <p><strong>Telemetría opcional:</strong> la app puede recopilar datos anónimos de uso y fallos mediante Google Firebase para mejorar la estabilidad. Esto usa una cantidad mínima de datos y cumple con normativas de privacidad a nivel mundial.</p>
-<p><strong>¿Quieres desactivarlo?</strong> Ve a Ajustes → Desactiva "Datos de telemetría"</p>
+<p><strong>Búsqueda opcional de proveedor:</strong> si activas "Buscar proveedor del destino" en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción permanece desactivada a menos que la actives.</p>
+<p><strong>¿Quieres desactivarlo?</strong> Ve a Ajustes → Desactiva "Datos de telemetría" o "Buscar proveedor del destino"</p>
 </div>
 </details>
 

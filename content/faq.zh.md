@@ -37,7 +37,7 @@ faqSchema:
 
 <h3>方式 1：Shizuku（推荐大多数用户使用）</h3>
 <p><strong>适合：</strong>大多数用户，尤其是希望直接在手机上设置 Lazulite 的用户</p>
-<p><a href="https://shizuku.rikka.app/">Shizuku</a> 无需 root，即可让 Lazulite 访问所需的系统信息。在 Android 11 及更高版本上，你可以通过无线调试启动 Shizuku，无需将手机连接到电脑。设备重启后，你需要先重新启动 Shizuku，再打开 Lazulite。</p>
+<p><a href="https://github.com/thedjchi/Shizuku">Shizuku</a> 无需 root，即可让 Lazulite 访问所需的系统信息。在 Android 11 及更高版本上，你可以通过无线调试启动 Shizuku，无需将手机连接到电脑。设备重启后，你需要先重新启动 Shizuku，再打开 Lazulite。</p>
 <p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ 视频指南：如何启用 Shizuku</a></p>
 
 <h3>方式 2：ADB（适合熟悉 ADB 的用户）</h3>
@@ -102,6 +102,22 @@ faqSchema:
 </div>
 </details>
 
+<details data-umami-faq="hardware_offload">
+<summary>什么是 A2DP 硬件卸载？Lazulite 会显示它吗？</summary>
+<div class="faq-body">
+<p>部分 Android 设备可以把蓝牙音频编码从主处理器转移到专用的音频或蓝牙硬件上处理，从而减少播放时的 CPU 负担和功耗。</p>
+<p>Lazulite 能检测到 A2DP 硬件卸载是否启用，并显示你设备的硬件支持哪些编解码器进行卸载。某个编解码器出现在列表中，并不代表当前连接一定在使用硬件卸载，这取决于所选编解码器、连接的设备、系统设置以及制造商的具体实现。</p>
+</div>
+</details>
+
+<details data-umami-faq="vendor_lookup">
+<summary>Lazulite 能告诉我耳机是什么品牌吗？</summary>
+<div class="faq-body">
+<p>可以。在“设置”中开启“查询目标设备供应商”，Lazulite 就会在已连接蓝牙设备的详情旁显示其制造商。</p>
+<p>该功能默认关闭。开启后，Lazulite 只会把目标 MAC 地址的前三对字符发送给 MACLookup 用于识别供应商，地址的其他部分不会被发送。</p>
+</div>
+</details>
+
 ---
 
 <h2 id="privacy">隐私与数据</h2>
@@ -111,7 +127,8 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite 的所有音频分析都在你的设备本地完成。除非你主动选择分享，否则不会有任何数据从你的手机发出。</p>
 <p><strong>可选遥测：</strong>应用可能会通过 Google Firebase 收集匿名使用数据和崩溃数据，以帮助提升稳定性。这只会消耗极少的数据量，并符合全球隐私法规要求。</p>
-<p><strong>想关闭？</strong> 前往“设置” → 关闭“遥测数据”</p>
+<p><strong>可选的供应商查询：</strong>如果你在“设置”中开启“查询目标设备供应商”，Lazulite 会将已连接设备 MAC 地址的前三对字符发送给 MACLookup，以识别其制造商。地址的其他部分不会被发送，且该功能默认关闭，只有你主动开启后才会生效。</p>
+<p><strong>想关闭？</strong> 前往“设置” → 关闭“遥测数据”或“查询目标设备供应商”</p>
 </div>
 </details>
 
