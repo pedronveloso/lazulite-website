@@ -160,6 +160,51 @@ dt::after {
   }
 }
 
+// ─── Changelog Release Links ─────────────────────────────────────────────────
+.postWrapper .changelog-version {
+  display: inline-flex;
+  margin-top: $space-2xl;
+  margin-bottom: $space-lg;
+  padding: 0;
+  font-family: $fontCode;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-wrap: balance;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: $space-sm $space-lg;
+    color: $accent-bright;
+    background: rgba($accent, 0.12);
+    border: 1px solid rgba($accent, 0.5);
+    border-radius: $radius-sm;
+    text-decoration: none;
+    text-underline-offset: initial;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+
+    &::before {
+      content: "#";
+      margin-right: $space-sm;
+      color: $accent-dim;
+    }
+
+    &:hover {
+      color: $text-primary;
+      background: rgba($accent, 0.2);
+      border-color: $accent-bright;
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-bright;
+      outline-offset: 3px;
+    }
+  }
+}
+
 // ─── FAQ Collapsible Items ────────────────────────────────────────────────────
 .postWrapper {
   details {

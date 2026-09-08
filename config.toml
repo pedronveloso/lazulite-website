@@ -55,6 +55,10 @@ socialImage = "/images/codecs-info-2.png"
       name = "FAQ"
       weight = 1
       pageRef = "/faq"
+    [[languages.en.menu.header]]
+      name = "Changelog"
+      weight = 2
+      pageRef = "/changelog"
 
   [languages.es]
     locale = 'es-ES'
@@ -73,6 +77,10 @@ socialImage = "/images/codecs-info-2.png"
       name = "Preguntas frecuentes"
       weight = 1
       pageRef = "/faq"
+    [[languages.es.menu.header]]
+      name = "Novedades"
+      weight = 2
+      pageRef = "/changelog"
 
   [languages.zh]
     locale = 'zh-CN'
@@ -91,6 +99,10 @@ socialImage = "/images/codecs-info-2.png"
       name = "常见问题"
       weight = 1
       pageRef = "/faq"
+    [[languages.zh.menu.header]]
+      name = "更新日志"
+      weight = 2
+      pageRef = "/changelog"
 
   [languages.it]
     locale = 'it-IT'
@@ -109,3 +121,7 @@ socialImage = "/images/codecs-info-2.png"
       name = "Domande frequenti"
       weight = 1
       pageRef = "/faq"
+    [[languages.it.menu.header]]
+      name = "Novità"
+      weight = 2
+      pageRef = "/changelog"
