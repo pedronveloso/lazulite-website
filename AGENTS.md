@@ -12,7 +12,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - `hugo` - Build static site (outputs to `public/`)
 - `hugo server` - Start local dev server (http://localhost:1313)
 - `hugo server -D` - Include draft content in dev server
-- Netlify deploys automatically on push using Hugo 0.163.0 (configured in `netlify.toml`)
+- Netlify deploys automatically on push using Hugo 0.166.0 (configured via `HUGO_VERSION` in `netlify.toml`) — keep this in sync with the local Hugo binary (`hugo version`) when either is upgraded
 
 ### Testing
 - There is no automated test setup. `package.json` is empty and no Cypress/test config exists.
@@ -27,17 +27,18 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 
 ### Internationalization
 The site is multilingual. Languages are defined under `[languages.*]` in `config.toml`:
-- `en` (English, default), `es` (Español), `zh` (简体中文)
+- `en` (English, default), `es` (Español), `zh` (简体中文), `it` (Italiano)
 - Each language sets its own `locale`, `params` (`footerHtml`, `description`, `homeTitle`), and menu items under `[[languages.XX.menu.header]]` (weight-based ordering)
-- Translated content uses the `name.<lang>.md` convention (e.g. `faq.es.md`, `faq.zh.md`); the unsuffixed file is English
+- Translated content uses the `name.<lang>.md` convention (e.g. `faq.es.md`, `faq.zh.md`, `faq.it.md`); the unsuffixed file is English
 
 ### Content Structure
 Content lives in `content/` as markdown files:
 - `_index.md` - Homepage with app features and Google Play Store link
 - `faq.md` - FAQ page for ADB setup and app functionality questions
 - `privacy.md` - Privacy policy page
+- `changelog.md` - App release changelog
 - `posts/` - Blog posts (minimal usage)
-- Each of the above has `.es.md` and `.zh.md` translations
+- Each of the above (except `posts/`) has `.es.md`, `.zh.md`, and `.it.md` translations
 
 ### Content Editing
 - Content markdown files support raw HTML (enabled via `markup.goldmark.renderer.unsafe = true` in `config.toml`) — `_index.md` is almost entirely raw HTML sections
