@@ -17,7 +17,7 @@ showMetadata: false
 
 ## Android 应用诊断信息
 
-Lazulite 的 Android 应用不使用 Firebase Analytics。崩溃诊断信息为可选项，默认关闭。如果你在引导流程或“设置”中选择开启**崩溃诊断信息**，Lazulite 可能会将崩溃报告和技术诊断日志发送给 Firebase Crashlytics（Google 的服务）。这些报告可能包含有关应用、设备、操作系统以及问题发生前事件的技术信息。我们不会将其描述为匿名信息，因为技术信息与其他信息结合后可能具有识别性。
+崩溃诊断信息为可选项，默认关闭。如果你在引导流程或“设置”中选择开启**崩溃诊断信息**，Lazulite 可能会将崩溃报告和技术诊断日志发送给 Firebase Crashlytics（Google 的服务）。这些报告可能包含有关应用、设备、操作系统以及问题发生前事件的技术信息。我们不会将其描述为匿名信息，因为技术信息与其他信息结合后可能具有识别性。
 
 崩溃诊断信息关闭时，Crashlytics 可能会在本地保留报告。如果你稍后开启崩溃诊断信息，本地存储的报告可能会上传到 Firebase Crashlytics。关闭该设置会立即停止 Lazulite 发送诊断日志，并为后续应用运行关闭 Crashlytics 收集；它不会删除 Firebase 已保存的报告。
 

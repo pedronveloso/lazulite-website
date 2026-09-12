@@ -17,7 +17,7 @@ When you visit lazulite.app, we collect anonymized analytics about page visits a
 
 ## Android App Diagnostics:
 
-Lazulite does not use Firebase Analytics in its Android app. Crash diagnostics are optional and disabled by default. If you choose to enable **Crash diagnostics** during onboarding or in Settings, Lazulite may send crash reports and technical diagnostic logs to Firebase Crashlytics, a Google service. These reports can include technical information about the app, device, operating system, and events leading to a problem. We do not describe them as anonymous because technical information can sometimes be identifying when combined with other information.
+Crash diagnostics are optional and disabled by default. If you choose to enable **Crash diagnostics** during onboarding or in Settings, Lazulite may send crash reports and technical diagnostic logs to Firebase Crashlytics, a Google service. These reports can include technical information about the app, device, operating system, and events leading to a problem. We do not describe them as anonymous because technical information can sometimes be identifying when combined with other information.
 
 Crashlytics may retain reports locally while diagnostics are disabled. If you later enable Crash diagnostics, locally stored reports may upload to Firebase Crashlytics. Turning the setting off stops Lazulite from sending diagnostic breadcrumbs immediately and disables Crashlytics collection for future app runs; it does not delete reports already held by Firebase.
 

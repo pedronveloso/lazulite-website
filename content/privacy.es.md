@@ -17,7 +17,7 @@ Cuando visitas lazulite.app, recopilamos datos analíticos anonimizados sobre la
 
 ## Diagnósticos de la app Android
 
-La app Android de Lazulite no utiliza Firebase Analytics. Los diagnósticos de fallos son opcionales y están desactivados de forma predeterminada. Si eliges activar **Diagnósticos de fallos** durante la bienvenida o en Ajustes, Lazulite puede enviar informes de fallos y registros técnicos de diagnóstico a Firebase Crashlytics, un servicio de Google. Estos informes pueden incluir información técnica sobre la app, el dispositivo, el sistema operativo y los eventos previos a un problema. No los describimos como anónimos porque la información técnica puede ser identificable al combinarse con otros datos.
+Los diagnósticos de fallos son opcionales y están desactivados de forma predeterminada. Si eliges activar **Diagnósticos de fallos** durante la bienvenida o en Ajustes, Lazulite puede enviar informes de fallos y registros técnicos de diagnóstico a Firebase Crashlytics, un servicio de Google. Estos informes pueden incluir información técnica sobre la app, el dispositivo, el sistema operativo y los eventos previos a un problema. No los describimos como anónimos porque la información técnica puede ser identificable al combinarse con otros datos.
 
 Crashlytics puede conservar informes localmente mientras los diagnósticos están desactivados. Si más tarde activas Diagnósticos de fallos, los informes almacenados localmente pueden cargarse en Firebase Crashlytics. Desactivar el ajuste detiene inmediatamente los registros de diagnóstico de Lazulite y desactiva la recopilación de Crashlytics para futuras ejecuciones de la app; no elimina los informes que Firebase ya conserve.
 
