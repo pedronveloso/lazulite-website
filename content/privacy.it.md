@@ -1,8 +1,8 @@
 ---
 title: "Privacy"
 seoTitle: "Informativa sulla privacy di Lazulite"
-description: "Leggi l'informativa sulla privacy di Lazulite, incluso come l'app Android gestisce Firebase Analytics, i report di crash e i log diagnostici opzionali."
-date: 2023-09-24T16:18:23-07:00
+description: "Leggi l'informativa sulla privacy di Lazulite, inclusi i dati diagnostici opzionali di Firebase Crashlytics e i log tecnici opzionali."
+date: 2026-09-10T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -15,11 +15,11 @@ Grazie per aver scelto Lazulite. La tua privacy è importante per noi e ci impeg
 
 Quando visiti lazulite.app, raccogliamo dati analitici anonimizzati sulle visite alle pagine e sulle interazioni con i link di download, le risorse di configurazione, le risposte alle domande frequenti e i link di contatto. Questa analisi si applica solo al sito web ed è separata dalla telemetria opzionale dell'app Android. Non utilizziamo cookie né identifichiamo i singoli visitatori. I dati analitici sono trattati su server nell'Unione europea e conservati solo per il tempo necessario a migliorare il sito e i relativi contenuti di assistenza e ad adempiere agli obblighi di legge applicabili, in conformità alle leggi sulla privacy applicabili.
 
-## Informazioni che raccogliamo:
+## Diagnostica dell'app Android:
 
-- Dati anonimi tramite Firebase Analytics: raccogliamo dati anonimi su come gli utenti interagiscono con la nostra app per migliorarne le funzionalità e l'esperienza d'uso. Questi dati non identificano personalmente i singoli utenti.
+L'app Android di Lazulite non usa Firebase Analytics. La diagnostica degli arresti anomali è facoltativa e disattivata per impostazione predefinita. Se scegli di attivare **Diagnostica degli arresti anomali** durante l'onboarding o nelle Impostazioni, Lazulite può inviare report sugli arresti anomali e log diagnostici tecnici a Firebase Crashlytics, un servizio di Google. I report possono includere informazioni tecniche sull'app, sul dispositivo, sul sistema operativo e sugli eventi che hanno preceduto un problema. Non li descriviamo come anonimi perché le informazioni tecniche possono essere identificative se combinate con altri dati.
 
-- Report di crash tramite Crashlytics: quando l'app riscontra dei problemi, vengono inviati report di crash anonimi per aiutarci a individuare e risolvere eventuali problemi. Questi report non contengono informazioni personali dell'utente.
+Crashlytics può conservare report localmente mentre la diagnostica è disattivata. Se in seguito attivi Diagnostica degli arresti anomali, i report archiviati localmente possono essere caricati su Firebase Crashlytics. Disattivare l'impostazione interrompe immediatamente i log diagnostici di Lazulite e disabilita la raccolta di Crashlytics per le esecuzioni future dell'app; non elimina i report già conservati da Firebase.
 
 - Log di sistema: gli utenti hanno la possibilità di inviarci i log di sistema per aiutarci a risolvere problemi tecnici. Sebbene questi log possano fornire informazioni utili per la risoluzione dei problemi, potrebbero anche contenere informazioni sensibili sul dispositivo dell'utente. L'invio dei log di sistema è del tutto volontario.
 
@@ -27,21 +27,19 @@ Quando visiti lazulite.app, raccogliamo dati analitici anonimizzati sulle visite
 
 ## Come utilizziamo le tue informazioni:
 
-- Miglioramento e sviluppo: i dati anonimi di Firebase Analytics ci aiutano a capire come gli utenti interagiscono con la nostra app, permettendoci di migliorare l'esperienza d'uso e introdurre nuove funzionalità.
-
 - Risoluzione dei problemi: i report di Crashlytics e i log di sistema ci aiutano a individuare e correggere problemi tecnici per garantire il corretto funzionamento dell'app.
 
 ## Condivisione e trasferimento dei dati:
 
-Non vendiamo né scambiamo le tue informazioni. Firebase Analytics e Crashlytics, gestiti da Google, possono archiviare ed elaborare dati analitici dell'app. Per maggiori dettagli su come vengono gestiti i dati, consulta l'Informativa sulla privacy di Google. Se attivi l'opzione di ricerca del fornitore della destinazione, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore. Puoi consultare le norme sulla privacy di MACLookup per sapere come gestiscono quei dati.
+Non vendiamo né scambiamo le tue informazioni. Se attivi la diagnostica degli arresti anomali, Google Firebase Crashlytics riceve ed elabora tali dati diagnostici. Per maggiori dettagli sulle pratiche relative ai dati di Google, consulta l'[Informativa sulla privacy di Google](https://policies.google.com/privacy). Se attivi l'opzione di ricerca del fornitore della destinazione, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore.
 
 ## Protezione dei dati:
 
 Adottiamo diverse misure di sicurezza per garantire la protezione dei dati che raccogliamo. Sebbene ci impegniamo a proteggere le tue informazioni, nessun metodo di archiviazione elettronica è sicuro al 100% e non possiamo garantirne l'assoluta sicurezza.
 
-## Consenso dell'utente:
+## La tua scelta e contatti:
 
-Utilizzando la nostra app, accetti questa Informativa sulla privacy. Se non sei d'accordo con la nostra informativa, ti invitiamo a non utilizzare la nostra applicazione.
+La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla in qualsiasi momento in **Impostazioni → Diagnostica degli arresti anomali**. Per domande o richieste relative alla privacy, contattaci all'indirizzo [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
 
 ## Modifiche a questa Informativa sulla privacy:
 

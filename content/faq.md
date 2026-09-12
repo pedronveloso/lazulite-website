@@ -126,9 +126,9 @@ faqSchema:
 <summary>Does Lazulite use my mobile data?</summary>
 <div class="faq-body">
 <p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
-<p><strong>Optional telemetry:</strong> The app may collect anonymous usage and crash data via Google Firebase to help improve stability. This uses minimal data and is compliant with privacy regulations worldwide.</p>
+<p><strong>Optional crash diagnostics:</strong> Lazulite does not collect app usage analytics. Crash diagnostics are off by default; if you enable them, crash reports and technical diagnostic logs may be sent to Google Firebase Crashlytics to help improve stability. Locally stored reports may upload after you opt in.</p>
 <p><strong>Optional vendor lookup:</strong> If you turn on "Look up destination vendor" in Settings, Lazulite sends the first three pairs of your connected device's MAC address to MACLookup to identify its manufacturer. No other part of the address is sent, and the setting stays off unless you enable it.</p>
-<p><strong>Want to opt out?</strong> Go to Settings → Disable "Telemetry data" or "Look up destination vendor"</p>
+<p><strong>Want to opt out?</strong> Go to Settings → Disable "Crash diagnostics" or "Look up destination vendor".</p>
 </div>
 </details>
 

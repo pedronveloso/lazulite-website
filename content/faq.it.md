@@ -126,9 +126,9 @@ faqSchema:
 <summary>Lazulite usa i miei dati mobili?</summary>
 <div class="faq-body">
 <p>Lazulite esegue tutta l'analisi audio localmente sul tuo dispositivo. Nessun dato lascia il telefono, a meno che tu non scelga di condividerlo.</p>
-<p><strong>Telemetria opzionale:</strong> l'app può raccogliere dati anonimi di utilizzo e crash tramite Google Firebase per aiutare a migliorare la stabilità. Utilizza dati minimi ed è conforme alle normative sulla privacy a livello globale.</p>
+<p><strong>Diagnostica degli arresti anomali facoltativa:</strong> Lazulite non raccoglie analisi dell'utilizzo dell'app. La diagnostica degli arresti anomali è disattivata per impostazione predefinita; se la attivi, report sugli arresti anomali e log diagnostici tecnici possono essere inviati a Google Firebase Crashlytics per migliorare la stabilità. I report archiviati localmente possono essere caricati dopo l'attivazione.</p>
 <p><strong>Ricerca del fornitore opzionale:</strong> se attivi "Cerca il fornitore della destinazione" in Impostazioni, Lazulite invia le prime tre coppie dell'indirizzo MAC del tuo dispositivo connesso a MACLookup per identificarne il produttore. Nessun'altra parte dell'indirizzo viene inviata, e l'opzione resta disattivata finché non la attivi tu.</p>
-<p><strong>Vuoi disattivarla?</strong> Vai su Impostazioni → Disattiva "Dati di telemetria" o "Cerca il fornitore della destinazione"</p>
+<p><strong>Vuoi disattivarla?</strong> Vai su Impostazioni → Disattiva "Diagnostica degli arresti anomali" o "Cerca il fornitore della destinazione".</p>
 </div>
 </details>
 

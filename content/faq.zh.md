@@ -126,9 +126,9 @@ faqSchema:
 <summary>Lazulite 会使用我的移动数据吗？</summary>
 <div class="faq-body">
 <p>Lazulite 的所有音频分析都在你的设备本地完成。除非你主动选择分享，否则不会有任何数据从你的手机发出。</p>
-<p><strong>可选遥测：</strong>应用可能会通过 Google Firebase 收集匿名使用数据和崩溃数据，以帮助提升稳定性。这只会消耗极少的数据量，并符合全球隐私法规要求。</p>
+<p><strong>可选崩溃诊断信息：</strong>Lazulite 不收集应用使用情况分析数据。崩溃诊断信息默认关闭；如果你开启该选项，崩溃报告和技术诊断日志可能会发送给 Google Firebase Crashlytics，以帮助提高稳定性。启用后，本地存储的报告可能会上传。</p>
 <p><strong>可选的供应商查询：</strong>如果你在“设置”中开启“查询目标设备供应商”，Lazulite 会将已连接设备 MAC 地址的前三对字符发送给 MACLookup，以识别其制造商。地址的其他部分不会被发送，且该功能默认关闭，只有你主动开启后才会生效。</p>
-<p><strong>想关闭？</strong> 前往“设置” → 关闭“遥测数据”或“查询目标设备供应商”</p>
+<p><strong>想关闭？</strong> 前往“设置” → 关闭“崩溃诊断信息”或“查询目标设备供应商”。</p>
 </div>
 </details>
 
