@@ -1,8 +1,9 @@
 ---
 title: "隐私政策"
 seoTitle: "Lazulite 隐私政策"
-description: "查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息和可选技术诊断日志。"
+description: "查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息、可选技术诊断日志和可选用户问卷。"
 date: 2026-09-10T00:00:00+02:00
+lastmod: 2026-09-23T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -29,9 +30,15 @@ showMetadata: false
 
 - 故障排查：Crashlytics 报告和系统日志帮助我们识别并修复技术问题，确保应用稳定运行。
 
+## 可选用户问卷
+
+Lazulite 偶尔可能会向你展示关于你的音频设置和听音体验的可选问卷。是否回答完全由你决定，你可以随时忽略它们，不会对应用产生任何影响。如果你选择回答，你的回答（可能包含自由文本评论）将通过安全连接发送给第三方调查服务，以便我们了解 Lazulite 在真实设备和配置下的表现。
+
+我们只收集你提交的回答。回答完全匿名，不包含设备标识符、账户信息或其他个人数据。回答仅以汇总形式用于研究和产品改进。
+
 ## 数据共享和传输
 
-我们**不会**出售或交易你的信息。如果你开启崩溃诊断信息，Google Firebase Crashlytics 会接收和处理这些诊断信息。有关 Google 数据处理方式的更多信息，请参阅 [Google 隐私权政策](https://policies.google.com/privacy)。如果你开启了目标设备供应商查询设置，MACLookup 会收到用于识别供应商所需的部分 MAC 地址。
+我们**不会**出售或交易你的信息。如果你开启崩溃诊断信息，Google Firebase Crashlytics 会接收和处理这些诊断信息。有关 Google 数据处理方式的更多信息，请参阅 [Google 隐私权政策](https://policies.google.com/privacy)。如果你开启了目标设备供应商查询设置，MACLookup 会收到用于识别供应商所需的部分 MAC 地址。如果你回答了可选问卷，调查服务只会收到你提交的回答。
 
 ## 数据保护
 
@@ -39,7 +46,7 @@ showMetadata: false
 
 ## 你的选择和联系方式
 
-崩溃诊断信息为可选项。你可以随时在 Lazulite 的**设置 → 崩溃诊断信息**中开启或撤回该选择。如有隐私问题或请求，请通过 [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com) 联系我们。
+崩溃诊断信息为可选项。你可以随时在 Lazulite 的**设置 → 崩溃诊断信息**中开启或撤回该选择。问卷参与同样为可选项，你可以随时跳过。如有隐私问题或请求，请通过 [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com) 联系我们。
 
 ## 本隐私政策的变更
 

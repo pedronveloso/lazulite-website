@@ -1,0 +1,49 @@
+name: opencode-review
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+
+      - name: Run OpenCode review
+        uses: anomalyco/opencode/github@18ef3cc7c5a25b82114c953a80ccc09f4988f74e # v1.18.32
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: opencode/big-pickle
+          use_github_token: true
+          prompt: |
+            Review this pull request following the repository guidelines in AGENTS.md.
+            - Check for correctness and potential bugs in content front matter, links,
+              config.toml, raw HTML sections, SCSS, and Hugo layouts
+            - Flag build artifacts committed to the PR (public/ and resources/_gen/ must
+              never be committed)
+            - Flag user-facing strings or content that were not added/updated in every
+              locale (en/es/zh/it), following the name.<lang>.md translation convention
+            - Verify privacy and security rules: sanitize URLs, tokens, and credentials
+              from logs; never commit secrets (watch config.toml and netlify.toml for new
+              keys); keep cleartext exceptions narrow
+            - Note that there is no automated test setup, and call out changes that need
+              manual verification or the existing link check
+            - Suggest concrete, actionable improvements with file references
+            Post the resulting review on the pull request.

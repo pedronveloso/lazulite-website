@@ -1,8 +1,9 @@
 ---
 title: "Privacy"
 seoTitle: "Lazulite Privacy Policy"
-description: "Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics and optional diagnostic logs."
+description: "Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics, optional diagnostic logs, and optional user questionnaires."
 date: 2026-09-10T00:00:00+02:00
+lastmod: 2026-09-23T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -29,9 +30,15 @@ Crashlytics may retain reports locally while diagnostics are disabled. If you la
 
 - Troubleshooting: Crashlytics reports and system logs aid us in identifying and rectifying technical issues to ensure smooth app performance.
 
+## Optional User Questionnaires:
+
+Lazulite may occasionally show you optional questionnaires about your audio setup and listening experience. Answering is entirely up to you, and you can dismiss them whenever you want without any effect on the app. If you do respond, your answers (which may include free-text comments) are sent over a secure connection to a third-party survey service so we can understand how Lazulite performs on real devices and setups.
+
+We only collect the answers you submit. Survey responses are completely anonymous: they carry no device identifiers, account info, or other personal data. We use them in aggregate for research and product improvements.
+
 ## Data Sharing and Transfer:
 
-We do **not** sell or trade your information. If you enable Crash diagnostics, Google Firebase Crashlytics receives and processes those diagnostics. See [Google's Privacy Policy](https://policies.google.com/privacy) for information about Google's data practices. If you turn on the destination vendor lookup setting, MACLookup receives the partial MAC address needed to identify the vendor. You can check MACLookup's own privacy practices for details on how it handles that data.
+We do **not** sell or trade your information. If you enable Crash diagnostics, Google Firebase Crashlytics receives and processes those diagnostics. See [Google's Privacy Policy](https://policies.google.com/privacy) for information about Google's data practices. If you turn on the destination vendor lookup setting, MACLookup receives the partial MAC address needed to identify the vendor. You can check MACLookup's own privacy practices for details on how it handles that data. If you answer an optional questionnaire, the survey service receives only the answers you submitted.
 
 ## Data Protection:
 
@@ -39,7 +46,7 @@ We implement a variety of security measures to maintain the safety of the data w
 
 ## Your Choice and Contact:
 
-Crash diagnostics are optional. You can enable or withdraw them at any time in Lazulite under **Settings → Crash diagnostics**. For privacy questions or requests, contact us at [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
+Crash diagnostics are optional. You can enable or withdraw them at any time in Lazulite under **Settings → Crash diagnostics**. Questionnaire participation is optional too, and you can skip it at any time. For privacy questions or requests, contact us at [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
 
 ## Changes to This Privacy Policy:
 
