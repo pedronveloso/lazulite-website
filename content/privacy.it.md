@@ -1,8 +1,9 @@
 ---
 title: "Privacy"
 seoTitle: "Informativa sulla privacy di Lazulite"
-description: "Leggi l'informativa sulla privacy di Lazulite, inclusi i dati diagnostici opzionali di Firebase Crashlytics e i log tecnici opzionali."
+description: "Leggi l'informativa sulla privacy di Lazulite, inclusi i dati diagnostici opzionali di Firebase Crashlytics, i log tecnici opzionali e i questionari facoltativi per l'utente."
 date: 2026-09-10T00:00:00+02:00
+lastmod: 2026-09-23T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -29,9 +30,15 @@ Crashlytics può conservare report localmente mentre la diagnostica è disattiva
 
 - Risoluzione dei problemi: i report di Crashlytics e i log di sistema ci aiutano a individuare e correggere problemi tecnici per garantire il corretto funzionamento dell'app.
 
+## Questionari facoltativi per l'utente:
+
+Lazulite può mostrarti di tanto in tanto questionari facoltativi sul tuo setup audio e sulla tua esperienza di ascolto. Rispondere è del tutto volontario e puoi ignorarli in qualsiasi momento senza alcun effetto sull'app. Se decidi di rispondere, le tue risposte (che possono includere commenti a testo libero) vengono inviate tramite una connessione sicura a un servizio di sondaggi di terze parti, così possiamo capire come Lazulite si comporta su dispositivi e configurazioni reali.
+
+Raccogliamo solo le risposte che invii. Le risposte sono del tutto anonime: non includono identificativi del dispositivo, dati dell'account né altre informazioni personali. Vengono utilizzate in forma aggregata per ricerca e miglioramenti del prodotto.
+
 ## Condivisione e trasferimento dei dati:
 
-Non vendiamo né scambiamo le tue informazioni. Se attivi la diagnostica degli arresti anomali, Google Firebase Crashlytics riceve ed elabora tali dati diagnostici. Per maggiori dettagli sulle pratiche relative ai dati di Google, consulta l'[Informativa sulla privacy di Google](https://policies.google.com/privacy). Se attivi l'opzione di ricerca del fornitore della destinazione, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore.
+Non vendiamo né scambiamo le tue informazioni. Se attivi la diagnostica degli arresti anomali, Google Firebase Crashlytics riceve ed elabora tali dati diagnostici. Per maggiori dettagli sulle pratiche relative ai dati di Google, consulta l'[Informativa sulla privacy di Google](https://policies.google.com/privacy). Se attivi l'opzione di ricerca del fornitore della destinazione, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore. Se rispondi a un questionario facoltativo, il servizio di sondaggi riceve solo le risposte che hai inviato.
 
 ## Protezione dei dati:
 
@@ -39,7 +46,7 @@ Adottiamo diverse misure di sicurezza per garantire la protezione dei dati che r
 
 ## La tua scelta e contatti:
 
-La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla in qualsiasi momento in **Impostazioni → Diagnostica degli arresti anomali**. Per domande o richieste relative alla privacy, contattaci all'indirizzo [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
+La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla in qualsiasi momento in **Impostazioni → Diagnostica degli arresti anomali**. Anche la partecipazione ai questionari è facoltativa e puoi saltarli in qualsiasi momento. Per domande o richieste relative alla privacy, contattaci all'indirizzo [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
 
 ## Modifiche a questa Informativa sulla privacy:
 

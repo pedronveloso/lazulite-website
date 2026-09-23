@@ -9,7 +9,7 @@ Key facts:
 - Distribution: Google Play Store, paid app (one-time purchase, price set on the Play Store)
 - Core features: real-time Bluetooth codec detection, packet loss monitoring, transmission stability metrics, signal quality analysis, and setup suggestions
 - Setup: requires reading Android system audio logs, granted via ADB, Shizuku, or root access
-- Privacy: all audio analysis runs locally on-device; optional anonymous crash/usage telemetry via Firebase, can be disabled in Settings
+- Privacy: all audio analysis runs locally on-device; optional anonymous crash/usage telemetry via Firebase, can be disabled in Settings; optional user questionnaires submitted via a survey service and used only in aggregate
 
 Links:
 - Homepage: https://lazulite.app/
