@@ -56,9 +56,9 @@ socialImage = "/images/codecs-info-2.png"
       weight = 1
       pageRef = "/faq"
     [[languages.en.menu.header]]
-      name = "Changelog"
+      name = "What's New"
       weight = 2
-      pageRef = "/changelog"
+      pageRef = "/whats-new"
 
   [languages.es]
     locale = 'es-ES'
@@ -80,7 +80,7 @@ socialImage = "/images/codecs-info-2.png"
     [[languages.es.menu.header]]
       name = "Novedades"
       weight = 2
-      pageRef = "/changelog"
+      pageRef = "/whats-new"
 
   [languages.zh]
     locale = 'zh-CN'
@@ -100,9 +100,9 @@ socialImage = "/images/codecs-info-2.png"
       weight = 1
       pageRef = "/faq"
     [[languages.zh.menu.header]]
-      name = "更新日志"
+      name = "新功能"
       weight = 2
-      pageRef = "/changelog"
+      pageRef = "/whats-new"
 
   [languages.it]
     locale = 'it-IT'
@@ -124,4 +124,4 @@ socialImage = "/images/codecs-info-2.png"
     [[languages.it.menu.header]]
       name = "Novità"
       weight = 2
-      pageRef = "/changelog"
+      pageRef = "/whats-new"

@@ -1,10 +1,17 @@
 ---
-title: "更新日志"
-seoTitle: "Lazulite 更新日志"
-description: "查看 Lazulite for Android 的最新变化，包括音频路径查看、蓝牙改进和重新设计的引导体验。"
+title: "新功能"
+seoTitle: "Lazulite 新功能"
+description: "了解 Lazulite for Android 的新功能，包括焕新的主屏幕、更清晰的音频路径和更好的设备兼容性。"
 draft: false
 showMetadata: false
 ---
+
+<h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="链接到版本 2026.09">2026.09</a></h2>
+
+- 焕新的主屏幕让音频路径一目了然。
+- 查看当前播放音乐的应用，更多 Android 设备现可显示应用图标。
+- 提升 OnePlus 设备上 LDAC 解码的准确性。
+- 可通过应用内的可选问卷分享偏好和反馈。
 
 <h2 id="2026-08" class="changelog-version"><a href="#2026-08" aria-label="链接到版本 2026.08">2026.08</a></h2>
 

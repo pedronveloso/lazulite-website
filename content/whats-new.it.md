@@ -1,10 +1,17 @@
 ---
 title: "Novità"
 seoTitle: "Novità di Lazulite"
-description: "Scopri le novità di Lazulite per Android, tra cui la visualizzazione del percorso audio, miglioramenti Bluetooth e una procedura iniziale ridisegnata."
+description: "Scopri le novità di Lazulite per Android, tra cui una schermata Home rinnovata, un percorso audio più chiaro e una migliore compatibilità con i dispositivi."
 draft: false
 showMetadata: false
 ---
+
+<h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Link alla versione 2026.09">2026.09</a></h2>
+
+- Una schermata Home rinnovata rende più chiaro il percorso audio.
+- Scopri quale app sta riproducendo audio, con le icone visibili su più dispositivi Android.
+- Decodifica LDAC più precisa sui dispositivi OnePlus.
+- Condividi preferenze e feedback con un questionario facoltativo nell'app.
 
 <h2 id="2026-08" class="changelog-version"><a href="#2026-08" aria-label="Link alla versione 2026.08">2026.08</a></h2>
 
