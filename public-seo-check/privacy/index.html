@@ -20,6 +20,8 @@ Lazulite Privacy Policy
 
 
 
+
+
   
     
   
@@ -28,12 +30,14 @@ Lazulite Privacy Policy
 
   
 
+  
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Read the Lazulite privacy policy, including how the Android app handles Firebase analytics, crash reports, and optional diagnostic logs.">
+<meta name="description" content="Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics, optional diagnostic logs, and optional user questionnaires.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 
-<meta name="generator" content="Hugo 0.161.1">
+<meta name="generator" content="Hugo 0.166.0">
 
 
 <link rel="canonical" href="https://lazulite.app/privacy/" >
@@ -47,9 +51,14 @@ Lazulite Privacy Policy
   <link rel="alternate" hreflang="zh-CN" href="https://lazulite.app/zh/privacy/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/privacy/" ><meta property="og:site_name" content="Lazulite App">
+  
+  <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/privacy/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/privacy/" >
+  <link href="https://lazulite.app/privacy/index.md" rel="alternate" type="text/markdown" title="Lazulite Privacy Policy (Markdown)" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Lazulite Privacy Policy">
-<meta property="og:description" content="Read the Lazulite privacy policy, including how the Android app handles Firebase analytics, crash reports, and optional diagnostic logs.">
+<meta property="og:description" content="Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics, optional diagnostic logs, and optional user questionnaires.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lazulite.app/privacy/">
 <meta property="og:locale" content="en_US">
@@ -61,11 +70,11 @@ Lazulite Privacy Policy
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lazulite Privacy Policy">
-<meta name="twitter:description" content="Read the Lazulite privacy policy, including how the Android app handles Firebase analytics, crash reports, and optional diagnostic logs.">
+<meta name="twitter:description" content="Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics, optional diagnostic logs, and optional user questionnaires.">
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.bb0869439b4ee4f811277c4a80d1a63d2d0c0a8223e1d119d2683cc613da3323.css" rel="stylesheet">
+<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -79,6 +88,8 @@ Lazulite Privacy Policy
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
+<script src="/js/umami-events.js" defer></script>
 
 
 
@@ -101,6 +112,10 @@ Lazulite Privacy Policy
                 
                 <li>
                     <a href="/faq/" title="FAQ" >FAQ</a>
+                </li>
+                
+                <li>
+                    <a href="/whats-new/" title="What&#39;s New" >What&#39;s New</a>
                 </li>
                 
                 <li>
@@ -178,6 +193,28 @@ Lazulite Privacy Policy
                                 中文
                             </a>
                         
+                            
+                            
+                            
+                            
+                                
+                                    
+                                
+                            
+                            <a
+                                href="/it/privacy/"
+                                class="headerLanguage__option "
+                                lang="it-IT"
+                                hreflang="it"
+                                title="Italiano"
+                                aria-current="false"
+                                data-language-option
+                                data-language="it"
+                                data-url="/it/privacy/"
+                            >
+                                IT
+                            </a>
+                        
                     </div>
                     
                 </li>
@@ -196,33 +233,32 @@ Lazulite Privacy Policy
     <div>
         <h1 id="privacy-policy-for-lazulite">Privacy Policy for Lazulite</h1>
 <p>Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.</p>
-<h2 id="information-we-collect">Information We Collect:</h2>
+<h2 id="website-analytics">Website Analytics:</h2>
+<p>When you visit lazulite.app, we collect anonymized analytics about page visits and interactions with download links, setup resources, FAQ answers, and contact links. This analytics applies only to the website and is separate from the optional telemetry collected by the Android app. We do not use cookies or identify individual visitors. Analytics data is processed on servers in the European Union and retained only for as long as necessary to improve the site and its support content, and to meet applicable legal obligations, in accordance with applicable privacy laws.</p>
+<h2 id="android-app-diagnostics">Android App Diagnostics:</h2>
+<p>Crash diagnostics are optional and disabled by default. If you choose to enable <strong>Crash diagnostics</strong> during onboarding or in Settings, Lazulite may send crash reports and technical diagnostic logs to Firebase Crashlytics, a Google service. These reports can include technical information about the app, device, operating system, and events leading to a problem. We do not describe them as anonymous because technical information can sometimes be identifying when combined with other information.</p>
+<p>Crashlytics may retain reports locally while diagnostics are disabled. If you later enable Crash diagnostics, locally stored reports may upload to Firebase Crashlytics. Turning the setting off stops Lazulite from sending diagnostic breadcrumbs immediately and disables Crashlytics collection for future app runs; it does not delete reports already held by Firebase.</p>
 <ul>
 <li>
-<p>Anonymous Data via Firebase Analytics: We collect anonymous data about how users interact with our app to improve its functionality and user experience. This data does not personally identify individual users.</p>
-</li>
-<li>
-<p>Crash Reports via Crashlytics: When the app encounters issues, anonymous crash reports are sent to help us identify and address potential problems. These reports do not contain personal user information.</p>
-</li>
-<li>
 <p>System Logs: Users have the option to send us system logs to assist in resolving technical issues. While these logs can provide valuable information for troubleshooting, they may also contain sensitive information about the user&rsquo;s device. Sending system logs is entirely voluntary.</p>
+</li>
+<li>
+<p>Destination Device Vendor Lookup: If you turn on the optional &ldquo;Look up destination vendor&rdquo; setting, Lazulite sends the first three pairs of your connected Bluetooth device&rsquo;s MAC address to MACLookup to identify its vendor. This setting is off by default, and no other part of the address is ever sent.</p>
 </li>
 </ul>
 <h2 id="how-we-use-your-information">How We Use Your Information:</h2>
 <ul>
-<li>
-<p>Improvement &amp; Development: The anonymous data from Firebase Analytics helps us understand how users interact with our app, allowing us to enhance user experience and introduce new features.</p>
-</li>
-<li>
-<p>Troubleshooting: Crashlytics reports and system logs aid us in identifying and rectifying technical issues to ensure smooth app performance.</p>
-</li>
+<li>Troubleshooting: Crashlytics reports and system logs aid us in identifying and rectifying technical issues to ensure smooth app performance.</li>
 </ul>
+<h2 id="optional-user-questionnaires">Optional User Questionnaires:</h2>
+<p>Lazulite may occasionally show you optional questionnaires about your audio setup and listening experience. Answering is entirely up to you, and you can dismiss them whenever you want without any effect on the app. If you do respond, your answers (which may include free-text comments) are sent over a secure connection to a third-party survey service so we can understand how Lazulite performs on real devices and setups.</p>
+<p>We only collect the answers you submit. Survey responses are completely anonymous: they carry no device identifiers, account info, or other personal data. We use them in aggregate for research and product improvements.</p>
 <h2 id="data-sharing-and-transfer">Data Sharing and Transfer:</h2>
-<p>We do <strong>not</strong> sell, trade, or transfer your information to third parties. However, Firebase Analytics and Crashlytics, run by Google, may store and process the data. Please refer to Google&rsquo;s Privacy Policy for more details on how they manage data.</p>
+<p>We do <strong>not</strong> sell or trade your information. If you enable Crash diagnostics, Google Firebase Crashlytics receives and processes those diagnostics. See <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a> for information about Google&rsquo;s data practices. If you turn on the destination vendor lookup setting, MACLookup receives the partial MAC address needed to identify the vendor. You can check MACLookup&rsquo;s own privacy practices for details on how it handles that data. If you answer an optional questionnaire, the survey service receives only the answers you submitted.</p>
 <h2 id="data-protection">Data Protection:</h2>
 <p>We implement a variety of security measures to maintain the safety of the data we collect. While we strive to protect your information, no method of electronic storage is 100% secure, and we cannot guarantee its absolute security.</p>
-<h2 id="users-consent">User&rsquo;s Consent:</h2>
-<p>By using our app, you consent to this Privacy Policy. If you do not agree with our policy, please refrain from using our application.</p>
+<h2 id="your-choice-and-contact">Your Choice and Contact:</h2>
+<p>Crash diagnostics are optional. You can enable or withdraw them at any time in Lazulite under <strong>Settings → Crash diagnostics</strong>. Questionnaire participation is optional too, and you can skip it at any time. For privacy questions or requests, contact us at <a href="mailto:lazuliteapp@gmail.com">lazuliteapp@gmail.com</a>.</p>
 <h2 id="changes-to-this-privacy-policy">Changes to This Privacy Policy:</h2>
 <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page, and we advise you to review this page periodically for any changes.</p>
 

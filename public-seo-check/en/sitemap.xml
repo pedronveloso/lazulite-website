@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://lazulite.app/</loc>
-    <lastmod>2023-12-25T16:18:23-07:00</lastmod>
+    <lastmod>2026-09-23T00:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://lazulite.app/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -16,30 +21,17 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
-                href="https://lazulite.app/"
-                />
-  </url><url>
-    <loc>https://lazulite.app/faq/</loc>
-    <lastmod>2023-12-25T16:18:23-07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://lazulite.app/es/faq/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://lazulite.app/zh/faq/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://lazulite.app/faq/"
+                hreflang="it-IT"
+                href="https://lazulite.app/it/"
                 />
   </url><url>
     <loc>https://lazulite.app/privacy/</loc>
-    <lastmod>2023-09-24T16:18:23-07:00</lastmod>
+    <lastmod>2026-09-23T00:00:00+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://lazulite.app/privacy/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -52,11 +44,39 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="it-IT"
+                href="https://lazulite.app/it/privacy/"
+                />
+  </url><url>
+    <loc>https://lazulite.app/faq/</loc>
+    <lastmod>2023-12-25T16:18:23-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
                 hreflang="en-US"
-                href="https://lazulite.app/privacy/"
+                href="https://lazulite.app/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://lazulite.app/es/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://lazulite.app/zh/faq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it-IT"
+                href="https://lazulite.app/it/faq/"
                 />
   </url><url>
     <loc>https://lazulite.app/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://lazulite.app/categories/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -69,13 +89,18 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en-US"
-                href="https://lazulite.app/categories/"
+                hreflang="it-IT"
+                href="https://lazulite.app/it/categories/"
                 />
   </url><url>
     <loc>https://lazulite.app/posts/</loc>
   </url><url>
     <loc>https://lazulite.app/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://lazulite.app/tags/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -88,8 +113,30 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="it-IT"
+                href="https://lazulite.app/it/tags/"
+                />
+  </url><url>
+    <loc>https://lazulite.app/whats-new/</loc>
+    <xhtml:link
+                rel="alternate"
                 hreflang="en-US"
-                href="https://lazulite.app/tags/"
+                href="https://lazulite.app/whats-new/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://lazulite.app/es/whats-new/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://lazulite.app/zh/whats-new/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it-IT"
+                href="https://lazulite.app/it/whats-new/"
                 />
   </url>
 </urlset>

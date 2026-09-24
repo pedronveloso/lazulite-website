@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://lazulite.app/en/sitemap.xml</loc>
-    
-      <lastmod>2023-12-25T16:18:23-07:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://lazulite.app/es/sitemap.xml</loc>
-    
-      <lastmod>2023-12-25T16:18:23-07:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://lazulite.app/zh/sitemap.xml</loc>
-    
-      <lastmod>2023-12-25T16:18:23-07:00</lastmod>
-    
-  </sitemap>
-  
+	
+		<sitemap>
+			<loc>https://lazulite.app/en/sitemap.xml</loc>
+			
+				<lastmod>2026-09-23T00:00:00+02:00</lastmod>
+			
+		</sitemap>
+	
+		<sitemap>
+			<loc>https://lazulite.app/es/sitemap.xml</loc>
+			
+				<lastmod>2026-09-23T00:00:00+02:00</lastmod>
+			
+		</sitemap>
+	
+		<sitemap>
+			<loc>https://lazulite.app/zh/sitemap.xml</loc>
+			
+				<lastmod>2026-09-23T00:00:00+02:00</lastmod>
+			
+		</sitemap>
+	
+		<sitemap>
+			<loc>https://lazulite.app/it/sitemap.xml</loc>
+			
+				<lastmod>2026-09-23T00:00:00+02:00</lastmod>
+			
+		</sitemap>
+	
 </sitemapindex>
