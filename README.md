@@ -15,9 +15,15 @@ hugo server -D
 
 # Production build (outputs to public/)
 hugo
+
+# Refresh the tracked SEO snapshot
+./scripts/seo-snapshot.sh --update
 ```
 
 The dev server runs at http://localhost:1313 by default.
+
+The tracked `public-seo-check/` snapshot is checked against a fresh Hugo build in CI. Run the update
+command above after changing site content, configuration, or assets.
 
 ## Link checking
 

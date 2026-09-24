@@ -1,10 +1,10 @@
----
-title: "Changelog"
-seoTitle: "Lazulite Changelog"
-description: "See what's new in Lazulite for Android, including audio-path inspection, Bluetooth improvements, and onboarding updates."
-draft: false
-showMetadata: false
----
+
+<h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Link to version 2026.09">2026.09</a></h2>
+
+- A refreshed Home screen makes your audio path easier to follow.
+- See which app is playing, with app icons shown on more Android devices.
+- More accurate LDAC decoding on OnePlus devices.
+- Share your preferences and feedback through an optional in-app questionnaire.
 
 <h2 id="2026-08" class="changelog-version"><a href="#2026-08" aria-label="Link to version 2026.08">2026.08</a></h2>
 
@@ -36,3 +36,4 @@ showMetadata: false
 - Improved app resilience when encountering errors.
 - Improved media handling.
 - Several bug fixes and other improvements.
+

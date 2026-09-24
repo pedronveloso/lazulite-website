@@ -20,6 +20,8 @@ Lazulite 隐私政策
 
 
 
+
+
   
 
   
@@ -28,12 +30,14 @@ Lazulite 隐私政策
     
   
 
+  
+
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="查看 Lazulite 的隐私政策，了解这款 Android 应用如何处理 Firebase 分析、崩溃报告和可选的诊断日志。">
+<meta name="description" content="查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息、可选技术诊断日志和可选用户问卷。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 
-<meta name="generator" content="Hugo 0.161.1">
+<meta name="generator" content="Hugo 0.166.0">
 
 
 <link rel="canonical" href="https://lazulite.app/zh/privacy/" >
@@ -47,9 +51,14 @@ Lazulite 隐私政策
   <link rel="alternate" hreflang="es-ES" href="https://lazulite.app/es/privacy/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/privacy/" ><meta property="og:site_name" content="Lazulite App">
+  
+  <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/privacy/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/privacy/" >
+  <link href="https://lazulite.app/zh/privacy/index.md" rel="alternate" type="text/markdown" title="Lazulite 隐私政策 (Markdown)" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Lazulite 隐私政策">
-<meta property="og:description" content="查看 Lazulite 的隐私政策，了解这款 Android 应用如何处理 Firebase 分析、崩溃报告和可选的诊断日志。">
+<meta property="og:description" content="查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息、可选技术诊断日志和可选用户问卷。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lazulite.app/zh/privacy/">
 <meta property="og:locale" content="zh_CN">
@@ -61,11 +70,11 @@ Lazulite 隐私政策
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lazulite 隐私政策">
-<meta name="twitter:description" content="查看 Lazulite 的隐私政策，了解这款 Android 应用如何处理 Firebase 分析、崩溃报告和可选的诊断日志。">
+<meta name="twitter:description" content="查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息、可选技术诊断日志和可选用户问卷。">
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.bb0869439b4ee4f811277c4a80d1a63d2d0c0a8223e1d119d2683cc613da3323.css" rel="stylesheet">
+<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -79,6 +88,8 @@ Lazulite 隐私政策
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
+<script src="/js/umami-events.js" defer></script>
 
 
 
@@ -101,6 +112,10 @@ Lazulite 隐私政策
                 
                 <li>
                     <a href="/zh/faq/" title="常见问题" >常见问题</a>
+                </li>
+                
+                <li>
+                    <a href="/zh/whats-new/" title="新功能" >新功能</a>
                 </li>
                 
                 <li>
@@ -178,6 +193,28 @@ Lazulite 隐私政策
                                 中文
                             </a>
                         
+                            
+                            
+                            
+                            
+                                
+                                    
+                                
+                            
+                            <a
+                                href="/it/privacy/"
+                                class="headerLanguage__option "
+                                lang="it-IT"
+                                hreflang="it"
+                                title="Italiano"
+                                aria-current="false"
+                                data-language-option
+                                data-language="it"
+                                data-url="/it/privacy/"
+                            >
+                                IT
+                            </a>
+                        
                     </div>
                     
                 </li>
@@ -196,33 +233,32 @@ Lazulite 隐私政策
     <div>
         <h1 id="lazulite-隐私政策">Lazulite 隐私政策</h1>
 <p>感谢你选择 Lazulite。你的隐私对我们很重要，我们致力于保护你的个人数据。本隐私政策说明了当你使用我们在 Google Play 提供的 Android 应用时，我们会收集哪些信息、如何使用这些信息，以及我们会采取哪些措施来保护你的数据。</p>
-<h2 id="我们收集的信息">我们收集的信息</h2>
+<h2 id="网站分析">网站分析</h2>
+<p>当你访问 lazulite.app 时，我们会收集有关页面访问以及用户与下载链接、设置资源、常见问题答案和联系链接互动的匿名分析数据。这些分析仅适用于网站，与 Android 应用的可选遥测数据相互独立。我们不使用 Cookie，也不会识别个人访问者。分析数据在欧盟的服务器上处理，并且仅在改进网站及其帮助内容以及履行适用法律义务所必需的期限内保留，符合适用的隐私法律。</p>
+<h2 id="android-应用诊断信息">Android 应用诊断信息</h2>
+<p>崩溃诊断信息为可选项，默认关闭。如果你在引导流程或“设置”中选择开启<strong>崩溃诊断信息</strong>，Lazulite 可能会将崩溃报告和技术诊断日志发送给 Firebase Crashlytics（Google 的服务）。这些报告可能包含有关应用、设备、操作系统以及问题发生前事件的技术信息。我们不会将其描述为匿名信息，因为技术信息与其他信息结合后可能具有识别性。</p>
+<p>崩溃诊断信息关闭时，Crashlytics 可能会在本地保留报告。如果你稍后开启崩溃诊断信息，本地存储的报告可能会上传到 Firebase Crashlytics。关闭该设置会立即停止 Lazulite 发送诊断日志，并为后续应用运行关闭 Crashlytics 收集；它不会删除 Firebase 已保存的报告。</p>
 <ul>
 <li>
-<p>通过 Firebase Analytics 收集的匿名数据：我们会收集用户与应用交互的匿名数据，用于改进功能和使用体验。这些数据不会识别个人身份。</p>
-</li>
-<li>
-<p>通过 Crashlytics 收集的崩溃报告：当应用发生问题时，我们会收到匿名崩溃报告，以帮助我们识别并修复潜在问题。这些报告不包含用户的个人信息。</p>
-</li>
-<li>
 <p>系统日志：用户可以选择向我们发送系统日志，以帮助排查技术问题。虽然这些日志对故障排查很有帮助，但也可能包含设备的敏感信息。发送系统日志完全出于自愿。</p>
+</li>
+<li>
+<p>目标设备供应商查询：如果你开启可选的“查询目标设备供应商”设置，Lazulite 会将已连接蓝牙设备 MAC 地址的前三对字符发送给 MACLookup，以识别其供应商。该设置默认关闭，且地址的其他部分不会被发送。</p>
 </li>
 </ul>
 <h2 id="我们如何使用你的信息">我们如何使用你的信息</h2>
 <ul>
-<li>
-<p>改进和开发：Firebase Analytics 提供的匿名数据帮助我们了解用户如何使用应用，从而优化体验并推出新功能。</p>
-</li>
-<li>
-<p>故障排查：Crashlytics 报告和系统日志帮助我们识别并修复技术问题，确保应用稳定运行。</p>
-</li>
+<li>故障排查：Crashlytics 报告和系统日志帮助我们识别并修复技术问题，确保应用稳定运行。</li>
 </ul>
+<h2 id="可选用户问卷">可选用户问卷</h2>
+<p>Lazulite 偶尔可能会向你展示关于你的音频设置和听音体验的可选问卷。是否回答完全由你决定，你可以随时忽略它们，不会对应用产生任何影响。如果你选择回答，你的回答（可能包含自由文本评论）将通过安全连接发送给第三方调查服务，以便我们了解 Lazulite 在真实设备和配置下的表现。</p>
+<p>我们只收集你提交的回答。回答完全匿名，不包含设备标识符、账户信息或其他个人数据。回答仅以汇总形式用于研究和产品改进。</p>
 <h2 id="数据共享和传输">数据共享和传输</h2>
-<p>我们<strong>不会</strong>出售、交易或向第三方转让你的信息。不过，由 Google 运营的 Firebase Analytics 和 Crashlytics 可能会存储和处理这些数据。有关 Google 如何管理这些数据的更多信息，请参阅 Google 的隐私政策。</p>
+<p>我们<strong>不会</strong>出售或交易你的信息。如果你开启崩溃诊断信息，Google Firebase Crashlytics 会接收和处理这些诊断信息。有关 Google 数据处理方式的更多信息，请参阅 <a href="https://policies.google.com/privacy">Google 隐私权政策</a>。如果你开启了目标设备供应商查询设置，MACLookup 会收到用于识别供应商所需的部分 MAC 地址。如果你回答了可选问卷，调查服务只会收到你提交的回答。</p>
 <h2 id="数据保护">数据保护</h2>
 <p>我们采取多种安全措施来保护所收集的数据。尽管我们会尽力保护你的信息，但任何电子存储方式都无法做到 100% 安全，因此我们无法保证绝对安全。</p>
-<h2 id="用户同意">用户同意</h2>
-<p>使用本应用即表示你同意本隐私政策。如果你不同意本政策，请不要使用本应用。</p>
+<h2 id="你的选择和联系方式">你的选择和联系方式</h2>
+<p>崩溃诊断信息为可选项。你可以随时在 Lazulite 的<strong>设置 → 崩溃诊断信息</strong>中开启或撤回该选择。问卷参与同样为可选项，你可以随时跳过。如有隐私问题或请求，请通过 <a href="mailto:lazuliteapp@gmail.com">lazuliteapp@gmail.com</a> 联系我们。</p>
 <h2 id="本隐私政策的变更">本隐私政策的变更</h2>
 <p>我们可能会不时更新本隐私政策。任何变更都会发布在此页面上，我们建议你定期查看本页。</p>
 

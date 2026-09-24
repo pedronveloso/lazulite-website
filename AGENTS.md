@@ -36,7 +36,7 @@ Content lives in `content/` as markdown files:
 - `_index.md` - Homepage with app features and Google Play Store link
 - `faq.md` - FAQ page for ADB setup and app functionality questions
 - `privacy.md` - Privacy policy page
-- `changelog.md` - App release changelog
+- `whats-new.md` - App release notes
 - `posts/` - Blog posts (minimal usage)
 - Each of the above (except `posts/`) has `.es.md`, `.zh.md`, and `.it.md` translations
 

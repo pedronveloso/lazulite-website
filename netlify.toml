@@ -7,6 +7,26 @@
 [build.environment]
   HUGO_VERSION = "0.166.0"
 
+[[redirects]]
+  from = "/changelog"
+  to = "/whats-new"
+  status = 301
+
+[[redirects]]
+  from = "/es/changelog"
+  to = "/es/whats-new"
+  status = 301
+
+[[redirects]]
+  from = "/it/changelog"
+  to = "/it/whats-new"
+  status = 301
+
+[[redirects]]
+  from = "/zh/changelog"
+  to = "/zh/whats-new"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
