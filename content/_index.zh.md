@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。"
+description = "适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。"
 +++
 
 <div class="homepage">
@@ -35,18 +35,18 @@ description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazul
 
   <div class="two-column">
     <div class="column">
-      <img src="/images/codecs-info-2.webp" alt="实时音频编解码器分析界面，显示 LDAC 编解码器详情" class="feature-img" loading="lazy" width="1088" height="1357">
+      {{< app-media role="home" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" >}}
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">实时音频分析</h2>
       <p class="feature-body">
-        查看手机和耳机最终协商使用的是哪种编解码器。无论是 LDAC、aptX HD、AAC 还是 SBC，Lazulite 都会实时显示。
+        查看手机和耳机协商使用的编解码器：LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。
       </p>
       <p class="feature-body">
-        看清你的流媒体服务通过蓝牙实际发送的是哪一个音质等级。
+        查看采样率、位深，以及设备提供的比特率或编码质量设置。
       </p>
       <p class="feature-body">
-        确认你的设备是否真的支持你付费购买的高解析音频，还是早已被悄悄降级。
+        打开音频路径详情，对比播放应用输出和蓝牙传输格式，了解 Android 在哪个环节转换了音频格式。
       </p>
     </div>
   </div>
@@ -56,18 +56,21 @@ description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazul
   <div class="two-column reverse">
     <div class="column">
       <h2 class="section-title section-title--left">蓝牙故障，还是连接太差？</h2>
-      <p class="feature-body" style="text-align: center">
-        音频断断续续？Lazulite 会实时监控蓝牙传输中的丢包情况。你可以判断干扰究竟来自 WiFi 频段重叠，还是蓝牙信号过弱。
+      <p class="feature-body">
+        播放健康状态会在每次刷新时对比 Android 诊断信息。查看新报告的音频欠载、输出缓冲区丢弃，以及可归属于当前播放设备的连接问题。
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
-        <li>丢包监控</li>
-        <li>传输稳定性指标</li>
-        <li>信号质量分析</li>
-        <li>实时诊断</li>
+        <li>音频缓冲区数据不足</li>
+        <li>输出音频缓冲区丢弃</li>
+        <li>播放期间近期报告的连接问题</li>
+        <li>检查范围取决于设备提供的诊断信息</li>
       </ul>
+      <p class="feature-body">
+        这些信息有助于排查播放问题，但无法确定原因，也不能证明是否出现了可听见的中断。
+      </p>
     </div>
     <div class="column">
-      <img src="/images/packet-loss-stats.webp" alt="显示蓝牙传输质量随时间变化的丢包统计图表" class="feature-img" loading="lazy" width="924" height="540">
+      {{< app-media role="playback-health" alt="播放健康状态卡片，显示新报告的音频欠载和输出缓冲区丢弃" >}}
     </div>
   </div>
 </section>
@@ -75,11 +78,11 @@ description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazul
 <section class="section section-alt">
   <h2 class="section-title">智能建议</h2>
   <p class="section-subtitle">
-    发现问题，并通过内置快捷操作快速处理。
+    获取适合当前配置的设置建议，并快速打开相关系统设置。
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/setup-tips.webp" alt="Lazulite 应用显示音频设置建议和快捷操作提示" class="feature-img" loading="lazy" width="590" height="325">
+      {{< app-media role="setup-tips" alt="高解析度设置建议，附有蓝牙设置快捷入口" >}}
     </div>
   </div>
 </section>
@@ -87,7 +90,7 @@ description = "适用于 Android 的蓝牙音频编解码器分析工具。Lazul
 <section class="section app-showcase">
   <h2 class="section-title">实际效果一目了然</h2>
   <div class="screenshot-mockup">
-    <img src="/images/lazulite-preview.webp" alt="Lazulite 应用演示动画，展示编解码器检测和丢包监控" width="360" height="780">
+    {{< app-media role="home-video" alt="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" >}}
   </div>
 </section>
 

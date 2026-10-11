@@ -1,0 +1,16 @@
+{{- $role := .Get "role" -}}
+{{- $alt := .Get "alt" -}}
+{{- $media := index hugo.Data.app_media .Page.Language.Lang $role -}}
+{{- if not $media -}}
+  {{- errorf "Missing app media for %s/%s" .Page.Language.Lang $role -}}
+{{- end -}}
+{{- if eq $role "home-video" -}}
+<div class="app-video">
+  <video class="app-media app-media--video" width="{{ $media.width }}" height="{{ $media.height }}" poster="{{ $media.poster }}" muted loop playsinline controls preload="none" aria-label="{{ $alt }}" data-app-video data-src="{{ $media.src }}" hidden>
+    <img src="{{ $media.poster }}" alt="{{ $alt }}" width="{{ $media.width }}" height="{{ $media.height }}" loading="lazy">
+  </video>
+  <img class="app-media app-media--phone" data-app-video-poster src="{{ $media.poster }}" alt="{{ $alt }}" width="{{ $media.width }}" height="{{ $media.height }}" loading="lazy">
+</div>
+{{- else -}}
+<img src="{{ $media.src }}" alt="{{ $alt }}" class="feature-img app-media app-media--{{ if eq $role "home" }}phone{{ else }}card{{ end }}" loading="lazy" width="{{ $media.width }}" height="{{ $media.height }}">
+{{- end -}}

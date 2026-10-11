@@ -35,7 +35,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 
   <div class="two-column">
     <div class="column">
-      <img src="/images/codecs-info-2.webp" alt="AACのコーデック情報を表示したLazuliteの画面（英語表示）" class="feature-img" loading="lazy" width="1088" height="1357">
+      {{< app-media role="home" alt="使用中のaptX AdaptiveコーデックとBluetooth音声経路を表示したLazuliteのホーム画面" >}}
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">使用中のコーデック</h2>
@@ -56,7 +56,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
   <div class="two-column reverse">
     <div class="column">
       <h2 class="section-title section-title--left">音切れが気になるときに</h2>
-      <p class="feature-body" style="text-align: center">
+      <p class="feature-body">
         「再生状態の診断」では、更新のたびにAndroidの診断情報を比較します。新たに報告された音声のアンダーラン、送信バッファーの音声データの破棄、再生中の機器に関する接続の問題を確認できます。
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
@@ -66,11 +66,11 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
         <li>取得できる診断情報は端末によって異なります</li>
       </ul>
       <p class="feature-body">
-        原因や実際に音切れが聞こえたかどうかは、この情報だけではわかりません。無線で失われたパケット数やWi-Fi干渉を測定するものではありません。
+        再生の問題を調べる手がかりになりますが、原因や実際に音切れが聞こえたかどうかは、この情報だけではわかりません。
       </p>
     </div>
     <div class="column">
-      <img src="/images/packet-loss-stats.webp" alt="LazuliteのBluetooth診断情報の表示例（旧バージョン・英語表示）" class="feature-img" loading="lazy" width="924" height="540">
+      {{< app-media role="playback-health" alt="新たに報告された音声のアンダーランと送信バッファーの破棄を表示した再生状態の診断カード" >}}
     </div>
   </div>
 </section>
@@ -78,11 +78,11 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 <section class="section section-alt">
   <h2 class="section-title">設定を見直すヒント</h2>
   <p class="section-subtitle">
-    接続中の機器やコーデックに合わせたヒントから、試したい設定を見つけてみてください。
+    接続中の機器やコーデックに合わせたヒントと、関連するシステム設定へのショートカットを確認できます。
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/setup-tips.webp" alt="オーディオ設定のヒントを表示したLazuliteの画面（英語表示）" class="feature-img" loading="lazy" width="590" height="325">
+      {{< app-media role="setup-tips" alt="Bluetooth設定へのショートカットがある高解像度オーディオの設定ヒント" >}}
     </div>
   </div>
 </section>
@@ -90,7 +90,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 <section class="section app-showcase">
   <h2 class="section-title">画面で使い方をチェック</h2>
   <div class="screenshot-mockup">
-    <img src="/images/lazulite-preview.webp" alt="Lazuliteでコーデック情報を確認する操作例（旧バージョン・英語表示）" width="360" height="780">
+    {{< app-media role="home-video" alt="Pixel 8のフレーム内でLDACの詳細を表示したLazuliteのホーム画面の録画" >}}
   </div>
 </section>
 

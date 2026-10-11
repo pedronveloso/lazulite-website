@@ -38,7 +38,7 @@
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bluetooth audio codec analyzer for Android. Lazulite shows the real codec in use, packet loss, and whether LDAC, aptX HD, AAC, or SBC is actually reaching your headphones.">
+<meta name="description" content="Bluetooth audio inspector for Android. Check the active codec, encoding quality, playback app output, and recent Android-reported playback issues.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 
 <meta name="generator" content="Hugo 0.166.0">
@@ -67,7 +67,7 @@
   <link href="https://lazulite.app/index.xml" rel="alternate" type="application/rss+xml" title="Lazulite App" >
   <link href="https://lazulite.app/index.xml" rel="feed" type="application/rss+xml" title="Lazulite App" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Bluetooth Audio Codec Analyzer for Android | Lazulite App">
-<meta property="og:description" content="Bluetooth audio codec analyzer for Android. Lazulite shows the real codec in use, packet loss, and whether LDAC, aptX HD, AAC, or SBC is actually reaching your headphones.">
+<meta property="og:description" content="Bluetooth audio inspector for Android. Check the active codec, encoding quality, playback app output, and recent Android-reported playback issues.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lazulite.app/">
 <meta property="og:locale" content="en_US">
@@ -79,16 +79,17 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bluetooth Audio Codec Analyzer for Android | Lazulite App">
-<meta name="twitter:description" content="Bluetooth audio codec analyzer for Android. Lazulite shows the real codec in use, packet loss, and whether LDAC, aptX HD, AAC, or SBC is actually reaching your headphones.">
+<meta name="twitter:description" content="Bluetooth audio inspector for Android. Check the active codec, encoding quality, playback app output, and recent Android-reported playback issues.">
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
+<link href="/sass/main.min.f5f5d3b1dad22e3041ed7befb8a937716c8ca957d1623c554fa3f1688e858019.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
+<script src="/js/app-media.js" defer></script>
 
 
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"Bluetooth audio codec analyzer for Android. Lazulite shows the real codec in use, packet loss, and whether LDAC, aptX HD, AAC, or SBC is actually reaching your headphones.","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/codecs-info-2.png","inLanguage":"en-US","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"Bluetooth audio inspector for Android. Check the active codec, encoding quality, playback app output, and recent Android-reported playback issues.","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/codecs-info-2.png","inLanguage":"en-US","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/"}</script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","logo":"https://lazulite.app/images/lazulite-logo-500.png","name":"Lazulite App","sameAs":["https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"],"url":"https://lazulite.app/"}</script>
   
@@ -305,51 +306,54 @@
   </p>
   <div class="two-column">
     <div class="column">
-      <img src="/images/codecs-info-2.webp" alt="Real-time audio codec analysis screen showing LDAC codec details" class="feature-img" loading="lazy" width="1088" height="1357">
+      <img src="/images/app/en/home.webp?v=70c7106a59064351" alt="Lazulite Home showing the active aptX Adaptive codec and Bluetooth audio path" class="feature-img app-media app-media--phone" loading="lazy" width="1267" height="2667">
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">Real-Time Audio Analysis</h2>
       <p class="feature-body">
-        Watch which codec your phone and headphones agree on. LDAC, aptX HD, AAC, SBC: whatever they settle on, Lazulite shows it in real time.
+        Check the codec your phone and headphones selected: LDAC, aptX HD, AAC, SBC, or another supported format. Refresh to see the latest reported configuration.
       </p>
       <p class="feature-body">
-        See what quality tier your streaming service is actually sending over Bluetooth.
+        See the sample rate, bit depth, and available bitrate or encoding quality information for the active connection.
       </p>
       <p class="feature-body">
-        Find out whether your gear supports that hi-res audio you paid for, or if it's been silently downgraded.
+        Open Audio path details to compare playback app output with the Bluetooth format and see where Android changes the audio format.
       </p>
     </div>
   </div>
 </section>
-<!-- Packet Loss Detection -->
+<!-- Playback health -->
 <section class="section">
   <div class="two-column reverse">
     <div class="column">
       <h2 class="section-title section-title--left">Bluetooth Glitch or Bad Connection?</h2>
-      <p class="feature-body" style="text-align: center">
-        Audio cutting out? Lazulite monitors Bluetooth transmission for packet loss in real time. See whether interference is coming from WiFi overlap or a weak Bluetooth signal.
+      <p class="feature-body">
+        Playback health compares Android diagnostics when you refresh. Check newly reported audio underruns, outgoing buffer drops, and connection issues attributable to the device playing audio.
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
-        <li>Packet loss monitoring</li>
-        <li>Transmission stability metrics</li>
-        <li>Signal quality analysis</li>
-        <li>Real-time diagnostics</li>
+        <li>Audio buffer underruns</li>
+        <li>Outgoing audio buffer drops</li>
+        <li>Recent connection issues during playback</li>
+        <li>Coverage based on the diagnostics your device provides</li>
       </ul>
+      <p class="feature-body">
+        These observations help you investigate playback problems. They do not establish a cause or whether a disruption was audible.
+      </p>
     </div>
     <div class="column">
-      <img src="/images/packet-loss-stats.webp" alt="Packet loss statistics graph showing Bluetooth transmission quality over time" class="feature-img" loading="lazy" width="924" height="540">
+      <img src="/images/app/en/playback-health.webp?v=07d015cde7288852" alt="Playback health card showing newly reported audio underruns and outgoing buffer drops" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="555">
     </div>
   </div>
 </section>
-<!-- Smart Suggestions — full-width to break two-column monotony -->
+<!-- Smart Suggestions -->
 <section class="section section-alt">
   <h2 class="section-title">Smart Suggestions</h2>
   <p class="section-subtitle">
-    Spot issues and fix them with built-in quick actions.
+    Find contextual setup tips and shortcuts to relevant system settings.
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/setup-tips.webp" alt="Lazulite app showing audio setup tips and quick-action suggestions" class="feature-img" loading="lazy" width="590" height="325">
+      <img src="/images/app/en/setup-tips.webp?v=b883d363fbfe4289" alt="High-resolution setup tip with a shortcut to Bluetooth settings" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="551">
     </div>
   </div>
 </section>
@@ -357,7 +361,12 @@
 <section class="section app-showcase">
   <h2 class="section-title">See It In Action</h2>
   <div class="screenshot-mockup">
-    <img src="/images/lazulite-preview.webp" alt="Lazulite app animated walkthrough showing codec detection and packet loss monitoring" width="360" height="780">
+    <div class="app-video">
+      <video class="app-media app-media--video" width="1268" height="2668" poster="/images/app/en/home-video-poster.webp?v=f6f39f2be3e01516" muted loop playsinline controls preload="none" aria-label="Lazulite Home recording showing LDAC codec details in a Pixel 8 frame" data-app-video data-src="/videos/app/en/home.mp4?v=af64d0b4c183626f" hidden>
+        <img src="/images/app/en/home-video-poster.webp?v=f6f39f2be3e01516" alt="Lazulite Home recording showing LDAC codec details in a Pixel 8 frame" width="1268" height="2668" loading="lazy">
+      </video>
+      <img class="app-media app-media--phone" data-app-video-poster src="/images/app/en/home-video-poster.webp?v=f6f39f2be3e01516" alt="Lazulite Home recording showing LDAC codec details in a Pixel 8 frame" width="1268" height="2668" loading="lazy">
+    </div>
   </div>
 </section>
 <!-- CTA Section -->
