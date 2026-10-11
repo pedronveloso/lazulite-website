@@ -60,3 +60,12 @@
 
 [theme]
   other = "主题"
+
+[language_ja]
+    other = "日本語"
+
+[language_short_ja]
+    other = "日本語"
+
+[navigation_toggle]
+    other = "打开或关闭导航菜单"

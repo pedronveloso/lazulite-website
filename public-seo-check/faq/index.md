@@ -96,7 +96,7 @@
 <summary>Can Lazulite tell me the brand of my connected headphones?</summary>
 <div class="faq-body">
 <p>Yes. Turn on "Look up destination vendor" in Settings and Lazulite will show the manufacturer of your connected Bluetooth device next to its other details.</p>
-<p>This is off by default. When you enable it, Lazulite sends only the first three pairs of the destination MAC address to MACLookup to identify the vendor. No other part of the address is ever sent.</p>
+<p>This is on by default when no preference has been saved; existing choices are preserved. You can turn it off in Settings. When enabled, Lazulite sends only the first three pairs of the destination MAC address to MACLookup to identify the vendor. No other part of the address is ever sent.</p>
 </div>
 </details>
 
@@ -109,7 +109,7 @@
 <div class="faq-body">
 <p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
 <p><strong>Optional crash diagnostics:</strong> Lazulite does not collect app usage analytics. Crash diagnostics are off by default; if you enable them, crash reports and technical diagnostic logs may be sent to Google Firebase Crashlytics to help improve stability. Locally stored reports may upload after you opt in.</p>
-<p><strong>Optional vendor lookup:</strong> If you turn on "Look up destination vendor" in Settings, Lazulite sends the first three pairs of your connected device's MAC address to MACLookup to identify its manufacturer. No other part of the address is sent, and the setting stays off unless you enable it.</p>
+<p><strong>Optional vendor lookup:</strong> When "Look up destination vendor" is enabled in Settings, Lazulite sends the first three pairs of your connected device's MAC address to MACLookup to identify its manufacturer. No other part of the address is sent, and the setting is on by default when no preference has been saved. Existing choices are preserved, and you can turn it off in Settings.</p>
 <p><strong>Want to opt out?</strong> Go to Settings → Disable "Crash diagnostics" or "Look up destination vendor".</p>
 </div>
 </details>

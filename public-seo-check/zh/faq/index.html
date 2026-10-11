@@ -23,11 +23,13 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 
 
   
-
-  
-
-  
     
+  
+
+  
+
+  
+
   
 
   
@@ -55,7 +57,11 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
   <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/faq/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/faq/" >
+  
+  <link rel="alternate" hreflang="ja-JP" href="https://lazulite.app/ja/faq/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/faq/" >
   <link href="https://lazulite.app/zh/faq/index.md" rel="alternate" type="text/markdown" title="Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性 (Markdown)" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性">
 <meta property="og:description" content="解答 Lazulite 的权限要求、ADB 设置、Shizuku、蓝牙编解码器支持、丢包监控以及 Android 音频兼容性等问题。">
@@ -74,7 +80,7 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
+<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -119,7 +125,7 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="打开或关闭导航菜单"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
                 
@@ -140,95 +146,128 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
                 
                 <li class="headerLanguage">
                     
-                    <div class="headerLanguage__segmented" role="navigation" aria-label="语言" data-language-switcher>
-                        
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="语言">
+                            <span class="headerLanguage__triggerLabel">中文</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="语言">
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="en-US"
+                                    hreflang="en"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="en"
+                                    data-url="/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">EN</span>
+                                    <span class="headerLanguage__menuFull">English</span>
+                                </a>
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/es/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="es-ES"
+                                    hreflang="es"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="es"
+                                    data-url="/es/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">ES</span>
+                                    <span class="headerLanguage__menuFull">Español</span>
+                                </a>
                             
-                            
+                                
+                                
+                                
                                 
                                     
                                 
+                                <a
+                                    href="/zh/faq/"
+                                    class="headerLanguage__menuItem is-active"
+                                    lang="zh-CN"
+                                    hreflang="zh"
+                                    role="menuitem"
+                                    aria-current="page"
+                                    data-language-option
+                                    data-language="zh"
+                                    data-url="/zh/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">中文</span>
+                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                </a>
                             
-                            <a
-                                href="/faq/"
-                                class="headerLanguage__option "
-                                lang="en-US"
-                                hreflang="en"
-                                title="English"
-                                aria-current="false"
-                                data-language-option
-                                data-language="en"
-                                data-url="/faq/"
-                            >
-                                EN
-                            </a>
-                        
-                            
-                            
-                            
-                            
+                                
+                                
+                                
                                 
                                     
-                                
-                            
-                            <a
-                                href="/es/faq/"
-                                class="headerLanguage__option "
-                                lang="es-ES"
-                                hreflang="es"
-                                title="Español"
-                                aria-current="false"
-                                data-language-option
-                                data-language="es"
-                                data-url="/es/faq/"
-                            >
-                                ES
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
-                            
-                            <a
-                                href="/zh/faq/"
-                                class="headerLanguage__option is-active"
-                                lang="zh-CN"
-                                hreflang="zh"
-                                title="简体中文"
-                                aria-current="page"
-                                data-language-option
-                                data-language="zh"
-                                data-url="/zh/faq/"
-                            >
-                                中文
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
+                                        
                                     
                                 
+                                <a
+                                    href="/it/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="it-IT"
+                                    hreflang="it"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="it"
+                                    data-url="/it/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">IT</span>
+                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                </a>
                             
-                            <a
-                                href="/it/faq/"
-                                class="headerLanguage__option "
-                                lang="it-IT"
-                                hreflang="it"
-                                title="Italiano"
-                                aria-current="false"
-                                data-language-option
-                                data-language="it"
-                                data-url="/it/faq/"
-                            >
-                                IT
-                            </a>
-                        
-                    </div>
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/ja/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="ja-JP"
+                                    hreflang="ja"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="ja"
+                                    data-url="/ja/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">日本語</span>
+                                    <span class="headerLanguage__menuFull">日本語</span>
+                                </a>
+                            
+                        </div>
+                    </details>
                     
                 </li>
             </ul>
@@ -326,7 +365,7 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 <summary>Lazulite 能告诉我耳机是什么品牌吗？</summary>
 <div class="faq-body">
 <p>可以。在“设置”中开启“查询目标设备供应商”，Lazulite 就会在已连接蓝牙设备的详情旁显示其制造商。</p>
-<p>该功能默认关闭。开启后，Lazulite 只会把目标 MAC 地址的前三对字符发送给 MACLookup 用于识别供应商，地址的其他部分不会被发送。</p>
+<p>如果尚未保存偏好设置，该功能默认开启；已保存的选择会保留。你可以在“设置”中关闭此功能。开启时，Lazulite 只会把目标 MAC 地址的前三对字符发送给 MACLookup 用于识别供应商，地址的其他部分不会被发送。</p>
 </div>
 </details>
 <hr>
@@ -336,7 +375,7 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 <div class="faq-body">
 <p>Lazulite 的所有音频分析都在你的设备本地完成。除非你主动选择分享，否则不会有任何数据从你的手机发出。</p>
 <p><strong>可选崩溃诊断信息：</strong>Lazulite 不收集应用使用情况分析数据。崩溃诊断信息默认关闭；如果你开启该选项，崩溃报告和技术诊断日志可能会发送给 Google Firebase Crashlytics，以帮助提高稳定性。启用后，本地存储的报告可能会上传。</p>
-<p><strong>可选的供应商查询：</strong>如果你在“设置”中开启“查询目标设备供应商”，Lazulite 会将已连接设备 MAC 地址的前三对字符发送给 MACLookup，以识别其制造商。地址的其他部分不会被发送，且该功能默认关闭，只有你主动开启后才会生效。</p>
+<p><strong>可选的供应商查询：</strong>当“设置”中的“查询目标设备供应商”开启时，Lazulite 会将已连接设备 MAC 地址的前三对字符发送给 MACLookup，以识别其制造商。地址的其他部分不会被发送，如果尚未保存偏好设置，该功能默认开启。已保存的选择会保留，你可以在“设置”中关闭此功能。</p>
 <p><strong>想关闭？</strong> 前往“设置” → 关闭“崩溃诊断信息”或“查询目标设备供应商”。</p>
 </div>
 </details>

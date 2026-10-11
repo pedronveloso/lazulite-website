@@ -25,11 +25,13 @@
 
 
   
-
-  
-
-  
     
+  
+
+  
+
+  
+
   
 
   
@@ -57,7 +59,11 @@
   <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/" >
+  
+  <link rel="alternate" hreflang="ja-JP" href="https://lazulite.app/ja/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/" >
   <link href="https://lazulite.app/zh/index.xml" rel="alternate" type="application/rss+xml" title="Lazulite App" >
   <link href="https://lazulite.app/zh/index.xml" rel="feed" type="application/rss+xml" title="Lazulite App" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
@@ -77,7 +83,7 @@
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
+<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -116,7 +122,7 @@
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="打开或关闭导航菜单"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
                 
@@ -137,95 +143,128 @@
                 
                 <li class="headerLanguage">
                     
-                    <div class="headerLanguage__segmented" role="navigation" aria-label="语言" data-language-switcher>
-                        
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="语言">
+                            <span class="headerLanguage__triggerLabel">中文</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="语言">
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/"
+                                    class="headerLanguage__menuItem "
+                                    lang="en-US"
+                                    hreflang="en"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="en"
+                                    data-url="/"
+                                >
+                                    <span class="headerLanguage__menuShort">EN</span>
+                                    <span class="headerLanguage__menuFull">English</span>
+                                </a>
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/es/"
+                                    class="headerLanguage__menuItem "
+                                    lang="es-ES"
+                                    hreflang="es"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="es"
+                                    data-url="/es/"
+                                >
+                                    <span class="headerLanguage__menuShort">ES</span>
+                                    <span class="headerLanguage__menuFull">Español</span>
+                                </a>
                             
-                            
+                                
+                                
+                                
                                 
                                     
                                 
+                                <a
+                                    href="/zh/"
+                                    class="headerLanguage__menuItem is-active"
+                                    lang="zh-CN"
+                                    hreflang="zh"
+                                    role="menuitem"
+                                    aria-current="page"
+                                    data-language-option
+                                    data-language="zh"
+                                    data-url="/zh/"
+                                >
+                                    <span class="headerLanguage__menuShort">中文</span>
+                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                </a>
                             
-                            <a
-                                href="/"
-                                class="headerLanguage__option "
-                                lang="en-US"
-                                hreflang="en"
-                                title="English"
-                                aria-current="false"
-                                data-language-option
-                                data-language="en"
-                                data-url="/"
-                            >
-                                EN
-                            </a>
-                        
-                            
-                            
-                            
-                            
+                                
+                                
+                                
                                 
                                     
-                                
-                            
-                            <a
-                                href="/es/"
-                                class="headerLanguage__option "
-                                lang="es-ES"
-                                hreflang="es"
-                                title="Español"
-                                aria-current="false"
-                                data-language-option
-                                data-language="es"
-                                data-url="/es/"
-                            >
-                                ES
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
-                            
-                            <a
-                                href="/zh/"
-                                class="headerLanguage__option is-active"
-                                lang="zh-CN"
-                                hreflang="zh"
-                                title="简体中文"
-                                aria-current="page"
-                                data-language-option
-                                data-language="zh"
-                                data-url="/zh/"
-                            >
-                                中文
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
+                                        
                                     
                                 
+                                <a
+                                    href="/it/"
+                                    class="headerLanguage__menuItem "
+                                    lang="it-IT"
+                                    hreflang="it"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="it"
+                                    data-url="/it/"
+                                >
+                                    <span class="headerLanguage__menuShort">IT</span>
+                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                </a>
                             
-                            <a
-                                href="/it/"
-                                class="headerLanguage__option "
-                                lang="it-IT"
-                                hreflang="it"
-                                title="Italiano"
-                                aria-current="false"
-                                data-language-option
-                                data-language="it"
-                                data-url="/it/"
-                            >
-                                IT
-                            </a>
-                        
-                    </div>
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/ja/"
+                                    class="headerLanguage__menuItem "
+                                    lang="ja-JP"
+                                    hreflang="ja"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="ja"
+                                    data-url="/ja/"
+                                >
+                                    <span class="headerLanguage__menuShort">日本語</span>
+                                    <span class="headerLanguage__menuFull">日本語</span>
+                                </a>
+                            
+                        </div>
+                    </details>
                     
                 </li>
             </ul>

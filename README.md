@@ -31,8 +31,13 @@ command above after changing site content, configuration, or assets.
 
 ```bash
 # Build first, then check
-hugo && lychee --config .lychee.toml --root-dir "$(pwd)/public" --no-progress 'public/**/*.html'
+hugo && lychee --config .lychee.toml --root-dir "$(pwd)/public" \
+  --remap "https://lazulite[.]app/(.*) file://$(pwd)/public/\$1" \
+  --no-progress 'public/**/*.html'
 ```
+
+The remap checks links to lazulite.app against the generated build, including pages that have not
+been deployed yet. External links are still checked online.
 
 Configuration lives in `.lychee.toml`. The CI workflow (`.github/workflows/link-check.yml`) also runs on a weekly schedule to catch external link rot.
 

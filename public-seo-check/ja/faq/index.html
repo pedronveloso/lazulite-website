@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+
+<head>
+    <title>
+Lazuliteのよくある質問：権限、設定、Bluetoothコーデックと対応機器
+</title>
+
+    
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lazuliteの権限設定、ShizukuやADBの使い方、対応Bluetoothコーデック、音声経路の確認、プライバシーについて紹介します。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<meta name="generator" content="Hugo 0.166.0">
+
+
+<link rel="canonical" href="https://lazulite.app/ja/faq/" >
+<link rel="alternate" hreflang="ja-JP" href="https://lazulite.app/ja/faq/" >
+
+  
+  <link rel="alternate" hreflang="en-US" href="https://lazulite.app/faq/" >
+  
+
+  
+  <link rel="alternate" hreflang="es-ES" href="https://lazulite.app/es/faq/" >
+  
+
+  
+  <link rel="alternate" hreflang="zh-CN" href="https://lazulite.app/zh/faq/" >
+  
+
+  
+  <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/faq/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/faq/" >
+  <link href="https://lazulite.app/ja/faq/index.md" rel="alternate" type="text/markdown" title="Lazuliteのよくある質問：権限、設定、Bluetoothコーデックと対応機器 (Markdown)" ><meta property="og:site_name" content="Lazulite">
+<meta property="og:title" content="Lazuliteのよくある質問：権限、設定、Bluetoothコーデックと対応機器">
+<meta property="og:description" content="Lazuliteの権限設定、ShizukuやADBの使い方、対応Bluetoothコーデック、音声経路の確認、プライバシーについて紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lazulite.app/ja/faq/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://lazulite.app/images/codecs-info-2.png">
+<meta property="og:image:alt" content="Lazuliteのよくある質問：権限、設定、Bluetoothコーデックと対応機器">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1088">
+<meta property="og:image:height" content="1357">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lazuliteのよくある質問：権限、設定、Bluetoothコーデックと対応機器">
+<meta name="twitter:description" content="Lazuliteの権限設定、ShizukuやADBの使い方、対応Bluetoothコーデック、音声経路の確認、プライバシーについて紹介します。">
+<meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
+
+
+<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
+<script src="/js/language-switcher.js" defer></script>
+
+
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazuliteは、Androidのオーディオログを読み取り、Bluetoothコーデックや音声経路の情報を表示します。Androidはこのログへのアクセスを制限しているため、Shizuku、ADB、rootのいずれかで権限を許可する必要があります。"},"name":"Lazuliteに追加の権限が必要なのはなぜ？"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"端末が情報を公開している場合、LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus、LHDC各種、AAC、SBC、SamsungのSSCやSSC UHQなど、機器の対応コーデックと接続で使われているコーデックを確認できます。"},"name":"どのBluetoothコーデックに対応していますか？"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"有線オーディオの解析には対応していません。LazuliteはBluetooth接続のコーデックや音声経路を調べるアプリです。有線接続はBluetoothを使わないため、解析するBluetoothコーデック情報がありません。"},"name":"有線ヘッドホンでも使えますか？"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazuliteは端末がすでに作成したシステムログを読み取ります。ホーム画面の自動更新はバックグラウンドでは動作しません。使用中の消費電力は、端末や更新頻度などによって変わります。"},"name":"バッテリーの消費は増えますか？"}]}</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Epilogue:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
+<script src="/js/umami-events.js" defer></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a href="/ja/">
+                <span class="terminal">Lazulite</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu" aria-label="メニューを開閉"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="/ja/faq/" title="よくある質問" >よくある質問</a>
+                </li>
+                
+                <li>
+                    <a href="/ja/whats-new/" title="更新情報" >更新情報</a>
+                </li>
+                
+                <li>
+                    <a href="/ja/privacy/" title="プライバシーポリシー" >プライバシーポリシー</a>
+                </li>
+                
+                
+                
+                
+                <li class="headerLanguage">
+                    
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="言語">
+                            <span class="headerLanguage__triggerLabel">日本語</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="言語">
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="en-US"
+                                    hreflang="en"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="en"
+                                    data-url="/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">EN</span>
+                                    <span class="headerLanguage__menuFull">English</span>
+                                </a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/es/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="es-ES"
+                                    hreflang="es"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="es"
+                                    data-url="/es/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">ES</span>
+                                    <span class="headerLanguage__menuFull">Español</span>
+                                </a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/zh/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="zh-CN"
+                                    hreflang="zh"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="zh"
+                                    data-url="/zh/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">中文</span>
+                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                </a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/it/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="it-IT"
+                                    hreflang="it"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="it"
+                                    data-url="/it/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">IT</span>
+                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                </a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                
+                                <a
+                                    href="/ja/faq/"
+                                    class="headerLanguage__menuItem is-active"
+                                    lang="ja-JP"
+                                    hreflang="ja"
+                                    role="menuitem"
+                                    aria-current="page"
+                                    data-language-option
+                                    data-language="ja"
+                                    data-url="/ja/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">日本語</span>
+                                    <span class="headerLanguage__menuFull">日本語</span>
+                                </a>
+                            
+                        </div>
+                    </details>
+                    
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>よくある質問</h1>
+    
+    <div>
+        <nav class="faq-nav" aria-label="よくある質問のカテゴリ">
+  <a href="#permissions">権限と設定</a>
+  <a href="#codecs">コーデックと対応機器</a>
+  <a href="#privacy">プライバシーとデータ</a>
+  <a href="#usage">使い方と動作</a>
+</nav>
+<hr>
+<h2 id="permissions">権限と設定</h2>
+<details data-umami-faq="special_permissions">
+<summary>Lazuliteに追加の権限が必要なのはなぜ？</summary>
+<div class="faq-body">
+<p>Lazuliteは、Androidのオーディオログを読み取り、Bluetoothコーデックや音声経路の情報を表示します。Androidはプライバシーとセキュリティのためにログへのアクセスを制限しているので、次のいずれかの方法で許可する必要があります。</p>
+<h3>方法1：Shizuku（おすすめ）</h3>
+<p><strong>こんな方に：</strong>スマートフォンだけで設定したい方</p>
+<p><a href="https://github.com/thedjchi/Shizuku">Shizuku</a>を使うと、root化せずに必要なシステム情報へアクセスできます。Android 11以降では、パソコンに接続せず「ワイヤレス デバッグ」でShizukuを起動できます。端末を再起動した後は、Lazuliteを開く前にShizukuをもう一度起動してください。</p>
+<p><a href="https://www.youtube.com/shorts/pnHNdU6LppA">▶ Shizukuの有効化手順を動画で見る</a></p>
+<h3>方法2：ADB</h3>
+<p><strong>こんな方に：</strong>パソコンからADBコマンドを使い慣れている方</p>
+<p><a href="https://developer.android.com/tools/releases/platform-tools">Android SDK Platform-Tools</a>をインストールし、USBデバッグを有効にしてください。端末を接続してパソコンからのアクセスを許可したら、次のコマンドを実行します。</p>
+<pre><code>adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP</code></pre>
+<h3>方法3：root権限</h3>
+<p><strong>こんな方に：</strong>すでにroot化した端末を使っている上級者</p>
+<p>端末がroot化されている場合は、Lazuliteから必要な権限をリクエストできます。Lazuliteのために端末をroot化する必要はありません。通常はShizukuがおすすめです。</p>
+</div>
+</details>
+<details data-umami-faq="adb_permissions_help">
+<summary>ADBの権限設定から先に進めません</summary>
+<div class="faq-body">
+<p><strong>ADBを初めて使いますか？</strong>その場合はShizukuがおすすめです。ADBによる設定は、パソコンでのコマンド操作に慣れている方向けです。</p>
+<p>ADBで続ける場合は、<a href="https://developer.android.com/tools/releases/platform-tools">Android SDK Platform-Tools</a>をインストールし、USBデバッグを有効にしてください。端末を接続してアクセスを許可したら、次のコマンドを実行します。</p>
+<pre><code>adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP</code></pre>
+<p><strong>権限を許可しても動かない場合は、次の点を確認してください。</strong></p>
+<ul>
+<li>USBデバッグが有効で、端末がUSBで接続されていること</li>
+<li>端末の「USBデバッグを許可しますか？」で、接続したパソコンを許可したこと</li>
+<li><code>adb devices</code>で端末が<code>unauthorized</code>ではなく<code>device</code>と表示されること</li>
+<li>上の権限付与コマンドをそのまま実行したこと</li>
+</ul>
+<p><strong>Shizukuを使っている場合：</strong>Lazuliteを開く前に、Shizukuが起動しているか確認してください。</p>
+</div>
+</details>
+<hr>
+<h2 id="codecs">コーデックと対応機器</h2>
+<details data-umami-faq="codec_support">
+<summary>どのBluetoothコーデックに対応していますか？</summary>
+<div class="faq-body">
+<p>端末が情報を公開している場合、次のBluetoothオーディオコーデックを検出・表示できます。</p>
+<ul>
+<li>LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus</li>
+<li>LHDC V1、LHDC V2、LHDC V3、LHDC V4、LHDC V5</li>
+<li>AAC、SBC</li>
+<li>SSC、SSC UHQ（Samsung端末のみ）</li>
+</ul>
+<p>スマートフォンと出力先の対応コーデックを別々に確認できます。両方が対応していても、その接続で使われるとは限りません。接続時に選ばれたコーデックは、使用中のコーデックとして表示します。</p>
+</div>
+</details>
+<details data-umami-faq="wired_headphones">
+<summary>有線ヘッドホンでも使えますか？</summary>
+<div class="faq-body">
+<p>有線オーディオの解析には対応していません。Lazuliteは、スマートフォンとBluetooth機器の接続で使われるコーデックや音声経路を調べるアプリです。</p>
+<p>有線接続はBluetoothを使わないため、解析するBluetoothコーデック情報がありません。</p>
+</div>
+</details>
+<details data-umami-faq="codec_expectations">
+<summary>ストリーミングアプリの表示と、コーデックが違うのはなぜ？</summary>
+<div class="faq-body">
+<p>ストリーミングアプリの「ロスレス」や「ハイレゾ」は、配信される音源の形式を示すことがあります。一方、Bluetoothで送る音声は、端末や接続機器に合わせてAndroidが別のコーデックでエンコードします。</p>
+<p>Lazuliteは、<strong>Bluetooth伝送で実際に使われているコーデック</strong>を表示します。「音声経路の詳細」では、取得できる場合にアプリの音声出力も確認できます。これらは元の音源の品質や、実際に聞こえる音質を測定したものではありません。</p>
+</div>
+</details>
+<details data-umami-faq="hardware_offload">
+<summary>A2DPハードウェアオフロードとは？Lazuliteで確認できますか？</summary>
+<div class="faq-body">
+<p>A2DPハードウェアオフロードは、Bluetooth音声のエンコード処理をメインプロセッサーから専用のオーディオ機能やBluetoothハードウェアに移す仕組みです。再生中のCPU負荷や消費電力を抑えられる場合があります。</p>
+<p>Lazuliteは、端末が報告する設定と対応コーデックを表示します。システムの設定フラグがオンで、音声を再生中かつ使用中のコーデックが対応一覧にある場合は「有効」、フラグがオンでも再生が一時停止中かコーデックの一致を確認できない場合は「利用可能」、フラグがオフの場合は「無効」と表示します。</p>
+<p>コーデックが一覧にあることや一致することだけでは、実際にハードウェアで処理されている証明にはなりません。実際の経路は接続機器やシステム設定、メーカーの実装にもよります。オフロードは処理効率を高める機能で、音質を向上させるものではありません。</p>
+</div>
+</details>
+<details data-umami-faq="vendor_lookup">
+<summary>接続したヘッドホンのメーカーもわかりますか？</summary>
+<div class="faq-body">
+<p>設定の「出力先のメーカーを検索」を有効にすると、確認できたメーカー名をBluetooth機器の情報に表示します。アドレスがランダム化されている場合など、確認できないこともあります。</p>
+<p>この設定は、設定値がまだ保存されていない場合はオンです。保存済みの設定はそのまま引き継がれ、設定画面からオフにできます。有効な場合は、メーカーを調べるためにMACアドレスの先頭3組だけをMACLookupに送信します。残りのアドレスは送信しません。</p>
+</div>
+</details>
+<hr>
+<h2 id="privacy">プライバシーとデータ</h2>
+<details data-umami-faq="mobile_data">
+<summary>モバイルデータ通信は使いますか？</summary>
+<div class="faq-body">
+<p>オーディオ情報の解析は端末内で行います。任意の外部サービスを有効にした場合や、ログやアンケートの回答を送信した場合は、通信が発生します。</p>
+<p><strong>クラッシュ診断：</strong>アプリの利用状況の分析データは収集しません。クラッシュ診断は初期状態ではオフです。有効にすると、安定性の改善のためにクラッシュレポートと技術的な診断ログをGoogle Firebase Crashlyticsに送信する場合があります。有効にする前に端末に保存されたレポートも、後から送信される場合があります。</p>
+<p><strong>メーカー検索：</strong>設定の「出力先のメーカーを検索」が有効な場合、接続機器のMACアドレスの先頭3組をMACLookupに送信します。残りのアドレスは送信しません。この設定は、設定値が未保存の場合はオンです。保存済みの設定は引き継がれます。</p>
+<p><strong>送信を止めるには：</strong>設定から「クラッシュ診断」または「出力先のメーカーを検索」をオフにしてください。詳しくは<a href="/ja/privacy/">プライバシーポリシー</a>をご確認ください。</p>
+</div>
+</details>
+<hr>
+<h2 id="usage">使い方と動作</h2>
+<details data-umami-faq="battery_impact">
+<summary>バッテリーの消費は増えますか？</summary>
+<div class="faq-body">
+<p>Lazuliteは、端末がすでに作成したシステムログを読み取ります。ホーム画面の自動更新は、アプリがバックグラウンドにある間は動作しません。</p>
+<p>使用中の消費電力は、端末や更新頻度などによって変わります。自動更新を使う場合は、設定の更新間隔を調整してみてください。</p>
+<p>Bluetooth機器へ追加の音声を送って測定する仕組みではありません。</p>
+</div>
+</details>
+<hr>
+<h2 id="ほかに気になることはありますか">ほかに気になることはありますか？</h2>
+<p>ここで解決しない場合や、ほかの質問がある場合は、<a href="mailto:lazuliteapp@gmail.com">メールでお問い合わせください</a>。</p>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>Android向けアプリ Lazulite</span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>

@@ -114,7 +114,7 @@ faqSchema:
 <summary>Lazulite può dirmi la marca delle mie cuffie connesse?</summary>
 <div class="faq-body">
 <p>Sì. Attiva "Cerca il fornitore della destinazione" in Impostazioni e Lazulite mostrerà il produttore del tuo dispositivo Bluetooth connesso accanto agli altri dettagli.</p>
-<p>Questa opzione è disattivata per impostazione predefinita. Quando la attivi, Lazulite invia solo le prime tre coppie dell'indirizzo MAC di destinazione a MACLookup per identificare il fornitore. Nessun'altra parte dell'indirizzo viene mai inviata.</p>
+<p>Questa opzione è attiva per impostazione predefinita se non è stata salvata una preferenza; le scelte esistenti vengono rispettate. Puoi disattivarla nelle Impostazioni. Quando è attiva, Lazulite invia solo le prime tre coppie dell'indirizzo MAC di destinazione a MACLookup per identificare il fornitore. Nessun'altra parte dell'indirizzo viene mai inviata.</p>
 </div>
 </details>
 
@@ -127,7 +127,7 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite esegue tutta l'analisi audio localmente sul tuo dispositivo. Nessun dato lascia il telefono, a meno che tu non scelga di condividerlo.</p>
 <p><strong>Diagnostica degli arresti anomali facoltativa:</strong> Lazulite non raccoglie analisi dell'utilizzo dell'app. La diagnostica degli arresti anomali è disattivata per impostazione predefinita; se la attivi, report sugli arresti anomali e log diagnostici tecnici possono essere inviati a Google Firebase Crashlytics per migliorare la stabilità. I report archiviati localmente possono essere caricati dopo l'attivazione.</p>
-<p><strong>Ricerca del fornitore opzionale:</strong> se attivi "Cerca il fornitore della destinazione" in Impostazioni, Lazulite invia le prime tre coppie dell'indirizzo MAC del tuo dispositivo connesso a MACLookup per identificarne il produttore. Nessun'altra parte dell'indirizzo viene inviata, e l'opzione resta disattivata finché non la attivi tu.</p>
+<p><strong>Ricerca del fornitore opzionale:</strong> quando "Cerca il fornitore della destinazione" è attivo nelle Impostazioni, Lazulite invia le prime tre coppie dell'indirizzo MAC del tuo dispositivo connesso a MACLookup per identificarne il produttore. Nessun'altra parte dell'indirizzo viene inviata, e l'opzione è attiva per impostazione predefinita se non è stata salvata una preferenza. Le scelte esistenti vengono rispettate e puoi disattivarla nelle Impostazioni.</p>
 <p><strong>Vuoi disattivarla?</strong> Vai su Impostazioni → Disattiva "Diagnostica degli arresti anomali" o "Cerca il fornitore della destinazione".</p>
 </div>
 </details>

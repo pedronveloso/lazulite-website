@@ -24,7 +24,7 @@ Crashlytics può conservare report localmente mentre la diagnostica è disattiva
 
 - Log di sistema: gli utenti hanno la possibilità di inviarci i log di sistema per aiutarci a risolvere problemi tecnici. Sebbene questi log possano fornire informazioni utili per la risoluzione dei problemi, potrebbero anche contenere informazioni sensibili sul dispositivo dell'utente. L'invio dei log di sistema è del tutto volontario.
 
-- Ricerca del fornitore del dispositivo di destinazione: se attivi l'opzione facoltativa "Cerca il fornitore della destinazione", Lazulite invia le prime tre coppie dell'indirizzo MAC del dispositivo Bluetooth connesso a MACLookup per identificarne il fornitore. Questa opzione è disattivata per impostazione predefinita e nessun'altra parte dell'indirizzo viene mai inviata.
+- Ricerca del fornitore del dispositivo di destinazione: quando l'opzione facoltativa "Cerca il fornitore della destinazione" è attiva, Lazulite invia le prime tre coppie dell'indirizzo MAC del dispositivo Bluetooth connesso a MACLookup per identificarne il fornitore. Questa opzione è attiva per impostazione predefinita se non è stata salvata una preferenza; le scelte esistenti vengono rispettate. Puoi disattivarla nelle Impostazioni. Nessun'altra parte dell'indirizzo viene mai inviata.
 
 ## Come utilizziamo le tue informazioni:
 
@@ -38,7 +38,7 @@ Raccogliamo solo le risposte che invii. Le risposte sono del tutto anonime: non 
 
 ## Condivisione e trasferimento dei dati:
 
-Non vendiamo né scambiamo le tue informazioni. Se attivi la diagnostica degli arresti anomali, Google Firebase Crashlytics riceve ed elabora tali dati diagnostici. Per maggiori dettagli sulle pratiche relative ai dati di Google, consulta l'[Informativa sulla privacy di Google](https://policies.google.com/privacy). Se attivi l'opzione di ricerca del fornitore della destinazione, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore. Se rispondi a un questionario facoltativo, il servizio di sondaggi riceve solo le risposte che hai inviato.
+Non vendiamo né scambiamo le tue informazioni. Se attivi la diagnostica degli arresti anomali, Google Firebase Crashlytics riceve ed elabora tali dati diagnostici. Per maggiori dettagli sulle pratiche relative ai dati di Google, consulta l'[Informativa sulla privacy di Google](https://policies.google.com/privacy). Quando l'opzione di ricerca del fornitore della destinazione è attiva, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore. Se rispondi a un questionario facoltativo, il servizio di sondaggi riceve solo le risposte che hai inviato.
 
 ## Protezione dei dati:
 

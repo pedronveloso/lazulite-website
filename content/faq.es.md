@@ -114,7 +114,7 @@ faqSchema:
 <summary>¿Puede Lazulite decirme la marca de mis auriculares conectados?</summary>
 <div class="faq-body">
 <p>Sí. Activa "Buscar proveedor del destino" en Ajustes y Lazulite mostrará el fabricante de tu dispositivo Bluetooth conectado junto al resto de sus datos.</p>
-<p>Esta opción está desactivada de forma predeterminada. Cuando la activas, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
+<p>Esta opción está activada de forma predeterminada si no hay una preferencia guardada; se respetan las elecciones existentes. Puedes desactivarla en Ajustes. Cuando está activada, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
 </div>
 </details>
 
@@ -127,7 +127,7 @@ faqSchema:
 <div class="faq-body">
 <p>Lazulite realiza todo el análisis de audio localmente en tu dispositivo. No se envía ningún dato desde tu teléfono a menos que elijas compartirlo.</p>
 <p><strong>Diagnósticos de fallos opcionales:</strong> Lazulite no recopila analíticas de uso de la app. Los diagnósticos de fallos están desactivados de forma predeterminada; si los activas, pueden enviarse informes de fallos y registros técnicos de diagnóstico a Google Firebase Crashlytics para mejorar la estabilidad. Los informes almacenados localmente pueden cargarse después de activar la opción.</p>
-<p><strong>Búsqueda opcional de proveedor:</strong> si activas "Buscar proveedor del destino" en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción permanece desactivada a menos que la actives.</p>
+<p><strong>Búsqueda opcional de proveedor:</strong> cuando "Buscar proveedor del destino" está activado en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción está activada de forma predeterminada si no hay una preferencia guardada. Se respetan las elecciones existentes y puedes desactivarla en Ajustes.</p>
 <p><strong>¿Quieres desactivarlo?</strong> Ve a Ajustes → Desactiva "Diagnósticos de fallos" o "Buscar proveedor del destino".</p>
 </div>
 </details>

@@ -5,7 +5,9 @@
 {{ if .IsHome }}
   {{ $ogType = "website" }}
 {{ end }}
-{{ if .Params.seoTitle }}
+{{ if eq .Kind "404" }}
+  {{ $title = printf "%s | %s" (i18n "not_found") .Site.Title }}
+{{ else if .Params.seoTitle }}
   {{ $title = .Params.seoTitle }}
 {{ else if .IsHome }}
   {{ $title = .Site.Params.homeTitle | default (printf "%s | %s" (i18n "home") .Site.Title) }}
@@ -26,7 +28,7 @@
 {{ $languageCode := .Site.Language.Locale | default .Site.Language.Lang }}
 {{ $defaultPage := . }}
 {{ range .AllTranslations }}
-  {{ if eq .Lang $.Site.Home.Language.Lang }}
+  {{ if eq .Lang hugo.Sites.Default.Language.Lang }}
     {{ $defaultPage = . }}
   {{ end }}
 {{ end }}

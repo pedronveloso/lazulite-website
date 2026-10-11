@@ -23,9 +23,11 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 
 
   
+    
+  
 
   
-    
+
   
 
   
@@ -55,7 +57,11 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
   <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/faq/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/es/faq/" >
+  
+  <link rel="alternate" hreflang="ja-JP" href="https://lazulite.app/ja/faq/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/faq/" >
   <link href="https://lazulite.app/es/faq/index.md" rel="alternate" type="text/markdown" title="FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad (Markdown)" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad">
 <meta property="og:description" content="Respuestas sobre permisos de Lazulite, configuración con ADB, Shizuku, compatibilidad con códecs Bluetooth, monitoreo de pérdida de paquetes y audio en Android.">
@@ -74,7 +80,7 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
+<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -119,7 +125,7 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="Abrir o cerrar el menú"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
                 
@@ -140,95 +146,128 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
                 
                 <li class="headerLanguage">
                     
-                    <div class="headerLanguage__segmented" role="navigation" aria-label="Idioma" data-language-switcher>
-                        
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="Idioma">
+                            <span class="headerLanguage__triggerLabel">ES</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="Idioma">
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="en-US"
+                                    hreflang="en"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="en"
+                                    data-url="/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">EN</span>
+                                    <span class="headerLanguage__menuFull">English</span>
+                                </a>
                             
-                            
-                            
+                                
+                                
+                                
                                 
                                     
                                 
-                            
-                            <a
-                                href="/faq/"
-                                class="headerLanguage__option "
-                                lang="en-US"
-                                hreflang="en"
-                                title="English"
-                                aria-current="false"
-                                data-language-option
-                                data-language="en"
-                                data-url="/faq/"
-                            >
-                                EN
-                            </a>
-                        
-                            
-                            
-                            
+                                <a
+                                    href="/es/faq/"
+                                    class="headerLanguage__menuItem is-active"
+                                    lang="es-ES"
+                                    hreflang="es"
+                                    role="menuitem"
+                                    aria-current="page"
+                                    data-language-option
+                                    data-language="es"
+                                    data-url="/es/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">ES</span>
+                                    <span class="headerLanguage__menuFull">Español</span>
+                                </a>
                             
                                 
-                            
-                            <a
-                                href="/es/faq/"
-                                class="headerLanguage__option is-active"
-                                lang="es-ES"
-                                hreflang="es"
-                                title="Español"
-                                aria-current="page"
-                                data-language-option
-                                data-language="es"
-                                data-url="/es/faq/"
-                            >
-                                ES
-                            </a>
-                        
-                            
-                            
-                            
-                            
+                                
+                                
                                 
                                     
-                                
-                            
-                            <a
-                                href="/zh/faq/"
-                                class="headerLanguage__option "
-                                lang="zh-CN"
-                                hreflang="zh"
-                                title="简体中文"
-                                aria-current="false"
-                                data-language-option
-                                data-language="zh"
-                                data-url="/zh/faq/"
-                            >
-                                中文
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
+                                        
                                     
                                 
+                                <a
+                                    href="/zh/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="zh-CN"
+                                    hreflang="zh"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="zh"
+                                    data-url="/zh/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">中文</span>
+                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                </a>
                             
-                            <a
-                                href="/it/faq/"
-                                class="headerLanguage__option "
-                                lang="it-IT"
-                                hreflang="it"
-                                title="Italiano"
-                                aria-current="false"
-                                data-language-option
-                                data-language="it"
-                                data-url="/it/faq/"
-                            >
-                                IT
-                            </a>
-                        
-                    </div>
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/it/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="it-IT"
+                                    hreflang="it"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="it"
+                                    data-url="/it/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">IT</span>
+                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                </a>
+                            
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/ja/faq/"
+                                    class="headerLanguage__menuItem "
+                                    lang="ja-JP"
+                                    hreflang="ja"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="ja"
+                                    data-url="/ja/faq/"
+                                >
+                                    <span class="headerLanguage__menuShort">日本語</span>
+                                    <span class="headerLanguage__menuFull">日本語</span>
+                                </a>
+                            
+                        </div>
+                    </details>
                     
                 </li>
             </ul>
@@ -326,7 +365,7 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 <summary>¿Puede Lazulite decirme la marca de mis auriculares conectados?</summary>
 <div class="faq-body">
 <p>Sí. Activa "Buscar proveedor del destino" en Ajustes y Lazulite mostrará el fabricante de tu dispositivo Bluetooth conectado junto al resto de sus datos.</p>
-<p>Esta opción está desactivada de forma predeterminada. Cuando la activas, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
+<p>Esta opción está activada de forma predeterminada si no hay una preferencia guardada; se respetan las elecciones existentes. Puedes desactivarla en Ajustes. Cuando está activada, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
 </div>
 </details>
 <hr>
@@ -336,7 +375,7 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 <div class="faq-body">
 <p>Lazulite realiza todo el análisis de audio localmente en tu dispositivo. No se envía ningún dato desde tu teléfono a menos que elijas compartirlo.</p>
 <p><strong>Diagnósticos de fallos opcionales:</strong> Lazulite no recopila analíticas de uso de la app. Los diagnósticos de fallos están desactivados de forma predeterminada; si los activas, pueden enviarse informes de fallos y registros técnicos de diagnóstico a Google Firebase Crashlytics para mejorar la estabilidad. Los informes almacenados localmente pueden cargarse después de activar la opción.</p>
-<p><strong>Búsqueda opcional de proveedor:</strong> si activas "Buscar proveedor del destino" en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción permanece desactivada a menos que la actives.</p>
+<p><strong>Búsqueda opcional de proveedor:</strong> cuando "Buscar proveedor del destino" está activado en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción está activada de forma predeterminada si no hay una preferencia guardada. Se respetan las elecciones existentes y puedes desactivarla en Ajustes.</p>
 <p><strong>¿Quieres desactivarlo?</strong> Ve a Ajustes → Desactiva "Diagnósticos de fallos" o "Buscar proveedor del destino".</p>
 </div>
 </details>

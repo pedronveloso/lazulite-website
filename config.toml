@@ -125,3 +125,25 @@ socialImage = "/images/codecs-info-2.png"
       name = "Novità"
       weight = 2
       pageRef = "/whats-new"
+
+  [languages.ja]
+    locale = 'ja-JP'
+    label = '日本語'
+    weight = 5
+    title = 'Lazulite'
+    [languages.ja.params]
+      footerHtml = 'Android向けアプリ Lazulite'
+      description = "AndroidのBluetoothオーディオを詳しく確認。使用中のコーデック、サンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を表示します。"
+      homeTitle = "AndroidのBluetoothオーディオを詳しく確認 | Lazulite"
+    [[languages.ja.menu.header]]
+      name = "プライバシーポリシー"
+      weight = 0
+      pageRef = "/privacy"
+    [[languages.ja.menu.header]]
+      name = "よくある質問"
+      weight = 1
+      pageRef = "/faq"
+    [[languages.ja.menu.header]]
+      name = "更新情報"
+      weight = 2
+      pageRef = "/whats-new"

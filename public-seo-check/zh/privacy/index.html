@@ -23,11 +23,13 @@ Lazulite 隐私政策
 
 
   
-
-  
-
-  
     
+  
+
+  
+
+  
+
   
 
   
@@ -55,7 +57,11 @@ Lazulite 隐私政策
   <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/privacy/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/privacy/" >
+  
+  <link rel="alternate" hreflang="ja-JP" href="https://lazulite.app/ja/privacy/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/privacy/" >
   <link href="https://lazulite.app/zh/privacy/index.md" rel="alternate" type="text/markdown" title="Lazulite 隐私政策 (Markdown)" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Lazulite 隐私政策">
 <meta property="og:description" content="查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息、可选技术诊断日志和可选用户问卷。">
@@ -74,7 +80,7 @@ Lazulite 隐私政策
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
+<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -106,7 +112,7 @@ Lazulite 隐私政策
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="打开或关闭导航菜单"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
                 
@@ -127,95 +133,128 @@ Lazulite 隐私政策
                 
                 <li class="headerLanguage">
                     
-                    <div class="headerLanguage__segmented" role="navigation" aria-label="语言" data-language-switcher>
-                        
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="语言">
+                            <span class="headerLanguage__triggerLabel">中文</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="语言">
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/privacy/"
+                                    class="headerLanguage__menuItem "
+                                    lang="en-US"
+                                    hreflang="en"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="en"
+                                    data-url="/privacy/"
+                                >
+                                    <span class="headerLanguage__menuShort">EN</span>
+                                    <span class="headerLanguage__menuFull">English</span>
+                                </a>
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/es/privacy/"
+                                    class="headerLanguage__menuItem "
+                                    lang="es-ES"
+                                    hreflang="es"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="es"
+                                    data-url="/es/privacy/"
+                                >
+                                    <span class="headerLanguage__menuShort">ES</span>
+                                    <span class="headerLanguage__menuFull">Español</span>
+                                </a>
                             
-                            
+                                
+                                
+                                
                                 
                                     
                                 
+                                <a
+                                    href="/zh/privacy/"
+                                    class="headerLanguage__menuItem is-active"
+                                    lang="zh-CN"
+                                    hreflang="zh"
+                                    role="menuitem"
+                                    aria-current="page"
+                                    data-language-option
+                                    data-language="zh"
+                                    data-url="/zh/privacy/"
+                                >
+                                    <span class="headerLanguage__menuShort">中文</span>
+                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                </a>
                             
-                            <a
-                                href="/privacy/"
-                                class="headerLanguage__option "
-                                lang="en-US"
-                                hreflang="en"
-                                title="English"
-                                aria-current="false"
-                                data-language-option
-                                data-language="en"
-                                data-url="/privacy/"
-                            >
-                                EN
-                            </a>
-                        
-                            
-                            
-                            
-                            
+                                
+                                
+                                
                                 
                                     
-                                
-                            
-                            <a
-                                href="/es/privacy/"
-                                class="headerLanguage__option "
-                                lang="es-ES"
-                                hreflang="es"
-                                title="Español"
-                                aria-current="false"
-                                data-language-option
-                                data-language="es"
-                                data-url="/es/privacy/"
-                            >
-                                ES
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
-                            
-                            <a
-                                href="/zh/privacy/"
-                                class="headerLanguage__option is-active"
-                                lang="zh-CN"
-                                hreflang="zh"
-                                title="简体中文"
-                                aria-current="page"
-                                data-language-option
-                                data-language="zh"
-                                data-url="/zh/privacy/"
-                            >
-                                中文
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
+                                        
                                     
                                 
+                                <a
+                                    href="/it/privacy/"
+                                    class="headerLanguage__menuItem "
+                                    lang="it-IT"
+                                    hreflang="it"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="it"
+                                    data-url="/it/privacy/"
+                                >
+                                    <span class="headerLanguage__menuShort">IT</span>
+                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                </a>
                             
-                            <a
-                                href="/it/privacy/"
-                                class="headerLanguage__option "
-                                lang="it-IT"
-                                hreflang="it"
-                                title="Italiano"
-                                aria-current="false"
-                                data-language-option
-                                data-language="it"
-                                data-url="/it/privacy/"
-                            >
-                                IT
-                            </a>
-                        
-                    </div>
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/ja/privacy/"
+                                    class="headerLanguage__menuItem "
+                                    lang="ja-JP"
+                                    hreflang="ja"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="ja"
+                                    data-url="/ja/privacy/"
+                                >
+                                    <span class="headerLanguage__menuShort">日本語</span>
+                                    <span class="headerLanguage__menuFull">日本語</span>
+                                </a>
+                            
+                        </div>
+                    </details>
                     
                 </li>
             </ul>
@@ -243,7 +282,7 @@ Lazulite 隐私政策
 <p>系统日志：用户可以选择向我们发送系统日志，以帮助排查技术问题。虽然这些日志对故障排查很有帮助，但也可能包含设备的敏感信息。发送系统日志完全出于自愿。</p>
 </li>
 <li>
-<p>目标设备供应商查询：如果你开启可选的“查询目标设备供应商”设置，Lazulite 会将已连接蓝牙设备 MAC 地址的前三对字符发送给 MACLookup，以识别其供应商。该设置默认关闭，且地址的其他部分不会被发送。</p>
+<p>目标设备供应商查询：当可选的“查询目标设备供应商”设置开启时，Lazulite 会将已连接蓝牙设备 MAC 地址的前三对字符发送给 MACLookup，以识别其供应商。如果尚未保存偏好设置，该设置默认开启；已保存的选择会保留。你可以在“设置”中关闭此功能。地址的其他部分不会被发送。</p>
 </li>
 </ul>
 <h2 id="我们如何使用你的信息">我们如何使用你的信息</h2>
@@ -254,7 +293,7 @@ Lazulite 隐私政策
 <p>Lazulite 偶尔可能会向你展示关于你的音频设置和听音体验的可选问卷。是否回答完全由你决定，你可以随时忽略它们，不会对应用产生任何影响。如果你选择回答，你的回答（可能包含自由文本评论）将通过安全连接发送给第三方调查服务，以便我们了解 Lazulite 在真实设备和配置下的表现。</p>
 <p>我们只收集你提交的回答。回答完全匿名，不包含设备标识符、账户信息或其他个人数据。回答仅以汇总形式用于研究和产品改进。</p>
 <h2 id="数据共享和传输">数据共享和传输</h2>
-<p>我们<strong>不会</strong>出售或交易你的信息。如果你开启崩溃诊断信息，Google Firebase Crashlytics 会接收和处理这些诊断信息。有关 Google 数据处理方式的更多信息，请参阅 <a href="https://policies.google.com/privacy">Google 隐私权政策</a>。如果你开启了目标设备供应商查询设置，MACLookup 会收到用于识别供应商所需的部分 MAC 地址。如果你回答了可选问卷，调查服务只会收到你提交的回答。</p>
+<p>我们<strong>不会</strong>出售或交易你的信息。如果你开启崩溃诊断信息，Google Firebase Crashlytics 会接收和处理这些诊断信息。有关 Google 数据处理方式的更多信息，请参阅 <a href="https://policies.google.com/privacy">Google 隐私权政策</a>。当目标设备供应商查询设置开启时，MACLookup 会收到用于识别供应商所需的部分 MAC 地址。如果你回答了可选问卷，调查服务只会收到你提交的回答。</p>
 <h2 id="数据保护">数据保护</h2>
 <p>我们采取多种安全措施来保护所收集的数据。尽管我们会尽力保护你的信息，但任何电子存储方式都无法做到 100% 安全，因此我们无法保证绝对安全。</p>
 <h2 id="你的选择和联系方式">你的选择和联系方式</h2>
