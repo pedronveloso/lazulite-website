@@ -3,7 +3,7 @@ title: "Privacidad"
 seoTitle: "Política de privacidad de Lazulite"
 description: "Consulta la política de privacidad de Lazulite, incluidos los diagnósticos opcionales de Firebase Crashlytics, los registros técnicos opcionales y los cuestionarios opcionales de usuario."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-09-23T00:00:00+02:00
+lastmod: 2026-10-11T00:00:00+02:00
 draft: false
 showMetadata: false
 ---

@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "Analizzatore di codec audio Bluetooth per Android. Lazulite mostra il codec realmente in uso, la perdita di pacchetti e se LDAC, aptX HD, AAC o SBC sta davvero raggiungendo le tue cuffie."
+description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qualità di codifica, uscita dell'app e problemi di riproduzione recenti riportati da Android."
 +++
 
 <div class="homepage">
@@ -37,53 +37,56 @@ description = "Analizzatore di codec audio Bluetooth per Android. Lazulite mostr
 
   <div class="two-column">
     <div class="column">
-      <img src="/images/codecs-info-2.webp" alt="Schermata di analisi del codec audio in tempo reale con i dettagli del codec LDAC" class="feature-img" loading="lazy" width="1088" height="1357">
+      {{< app-media role="home" alt="Home di Lazulite con codec aptX Adaptive attivo e percorso audio Bluetooth" >}}
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">Analisi audio in tempo reale</h2>
       <p class="feature-body">
-        Guarda su quale codec si accordano il tuo telefono e le tue cuffie. LDAC, aptX HD, AAC, SBC: qualunque sia il codec scelto, Lazulite te lo mostra in tempo reale.
+        Controlla il codec scelto dal telefono e dalle cuffie: LDAC, aptX HD, AAC, SBC o un altro formato supportato. Aggiorna per vedere l'ultima configurazione riportata da Android.
       </p>
       <p class="feature-body">
-        Scopri quale livello di qualità sta davvero inviando il tuo servizio di streaming via Bluetooth.
+        Consulta frequenza di campionamento, profondità di bit e, quando disponibili, bitrate e impostazioni della qualità di codifica.
       </p>
       <p class="feature-body">
-        Verifica se il tuo equipaggiamento supporta davvero quell'audio hi-res che hai pagato, oppure se è stato silenziosamente degradato.
+        Apri i dettagli del percorso audio per confrontare l'uscita dell'app di riproduzione con il formato Bluetooth e vedere dove Android modifica il formato audio.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Packet Loss Detection -->
+<!-- Playback health -->
 <section class="section">
   <div class="two-column reverse">
     <div class="column">
       <h2 class="section-title section-title--left">Problema col Bluetooth o connessione debole?</h2>
-      <p class="feature-body" style="text-align: center">
-        L'audio si interrompe? Lazulite monitora la trasmissione Bluetooth per rilevare la perdita di pacchetti in tempo reale. Scopri se l'interferenza arriva dal WiFi o da un segnale Bluetooth debole.
+      <p class="feature-body">
+        Lo stato di riproduzione confronta la diagnostica di Android a ogni aggiornamento. Controlla nuovi underrun audio, scarti dei buffer in uscita e problemi di connessione attribuibili al dispositivo che sta riproducendo audio.
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
-        <li>Monitoraggio della perdita di pacchetti</li>
-        <li>Metriche di stabilità della trasmissione</li>
-        <li>Analisi della qualità del segnale</li>
-        <li>Diagnostica in tempo reale</li>
+        <li>Dati insufficienti nel buffer audio</li>
+        <li>Scarti dei buffer audio in uscita</li>
+        <li>Problemi di connessione recenti durante la riproduzione</li>
+        <li>Copertura basata sulla diagnostica disponibile sul dispositivo</li>
       </ul>
+      <p class="feature-body">
+        Queste osservazioni aiutano a indagare sui problemi di riproduzione. Non stabiliscono la causa né se un'interruzione sia stata udibile.
+      </p>
     </div>
     <div class="column">
-      <img src="/images/packet-loss-stats.webp" alt="Grafico delle statistiche di perdita di pacchetti che mostra la qualità della trasmissione Bluetooth nel tempo" class="feature-img" loading="lazy" width="924" height="540">
+      {{< app-media role="playback-health" alt="Scheda dello stato di riproduzione con nuovi underrun audio e scarti dei buffer in uscita" >}}
     </div>
   </div>
 </section>
 
-<!-- Smart Suggestions — full-width to break two-column monotony -->
+<!-- Smart Suggestions -->
 <section class="section section-alt">
   <h2 class="section-title">Suggerimenti intelligenti</h2>
   <p class="section-subtitle">
-    Individua i problemi e risolvili con le azioni rapide integrate.
+    Trova suggerimenti in base alla configurazione e collegamenti alle impostazioni di sistema pertinenti.
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/setup-tips.webp" alt="App Lazulite che mostra suggerimenti di configurazione audio e azioni rapide" class="feature-img" loading="lazy" width="590" height="325">
+      {{< app-media role="setup-tips" alt="Suggerimento per l'alta risoluzione con accesso alle impostazioni Bluetooth" >}}
     </div>
   </div>
 </section>
@@ -92,7 +95,7 @@ description = "Analizzatore di codec audio Bluetooth per Android. Lazulite mostr
 <section class="section app-showcase">
   <h2 class="section-title">Guardala in azione</h2>
   <div class="screenshot-mockup">
-    <img src="/images/lazulite-preview.webp" alt="Presentazione animata dell'app Lazulite che mostra il rilevamento dei codec e il monitoraggio della perdita di pacchetti" width="360" height="780">
+    {{< app-media role="home-video" alt="Registrazione della Home di Lazulite con dettagli LDAC e cornice Pixel 8" >}}
   </div>
 </section>
 

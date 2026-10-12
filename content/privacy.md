@@ -3,7 +3,7 @@ title: "Privacy"
 seoTitle: "Lazulite Privacy Policy"
 description: "Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics, optional diagnostic logs, and optional user questionnaires."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-09-23T00:00:00+02:00
+lastmod: 2026-10-11T00:00:00+02:00
 draft: false
 showMetadata: false
 ---

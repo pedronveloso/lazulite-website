@@ -3,7 +3,7 @@ title: "隐私政策"
 seoTitle: "Lazulite 隐私政策"
 description: "查看 Lazulite 的隐私政策，了解可选的 Firebase Crashlytics 诊断信息、可选技术诊断日志和可选用户问卷。"
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-09-23T00:00:00+02:00
+lastmod: 2026-10-11T00:00:00+02:00
 draft: false
 showMetadata: false
 ---

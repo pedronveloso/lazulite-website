@@ -83,8 +83,9 @@
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.b8613f730ae08252b660260554c0137ecdce606c7311765b02143031ffefacf1.css" rel="stylesheet">
+<link href="/sass/main.min.f5f5d3b1dad22e3041ed7befb8a937716c8ca957d1623c554fa3f1688e858019.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
+<script src="/js/app-media.js" defer></script>
 
 
   
@@ -303,7 +304,7 @@
   </p>
   <div class="two-column">
     <div class="column">
-      <img src="/images/codecs-info-2.webp" alt="AACのコーデック情報を表示したLazuliteの画面（英語表示）" class="feature-img" loading="lazy" width="1088" height="1357">
+      <img src="/images/app/ja/home.webp?v=8cb8d49a7977bb08" alt="使用中のaptX AdaptiveコーデックとBluetooth音声経路を表示したLazuliteのホーム画面" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">使用中のコーデック</h2>
@@ -323,7 +324,7 @@
   <div class="two-column reverse">
     <div class="column">
       <h2 class="section-title section-title--left">音切れが気になるときに</h2>
-      <p class="feature-body" style="text-align: center">
+      <p class="feature-body">
         「再生状態の診断」では、更新のたびにAndroidの診断情報を比較します。新たに報告された音声のアンダーラン、送信バッファーの音声データの破棄、再生中の機器に関する接続の問題を確認できます。
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
@@ -333,29 +334,33 @@
         <li>取得できる診断情報は端末によって異なります</li>
       </ul>
       <p class="feature-body">
-        原因や実際に音切れが聞こえたかどうかは、この情報だけではわかりません。無線で失われたパケット数やWi-Fi干渉を測定するものではありません。
+        再生の問題を調べる手がかりになりますが、原因や実際に音切れが聞こえたかどうかは、この情報だけではわかりません。
       </p>
     </div>
     <div class="column">
-      <img src="/images/packet-loss-stats.webp" alt="LazuliteのBluetooth診断情報の表示例（旧バージョン・英語表示）" class="feature-img" loading="lazy" width="924" height="540">
+      <img src="/images/app/ja/playback-health.webp?v=5183acd06f0a5059" alt="新たに報告された音声のアンダーランと送信バッファーの破棄を表示した再生状態の診断カード" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="560">
     </div>
   </div>
 </section>
 <section class="section section-alt">
   <h2 class="section-title">設定を見直すヒント</h2>
   <p class="section-subtitle">
-    接続中の機器やコーデックに合わせたヒントから、試したい設定を見つけてみてください。
+    接続中の機器やコーデックに合わせたヒントと、関連するシステム設定へのショートカットを確認できます。
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/setup-tips.webp" alt="オーディオ設定のヒントを表示したLazuliteの画面（英語表示）" class="feature-img" loading="lazy" width="590" height="325">
+      <img src="/images/app/ja/setup-tips.webp?v=38ced59f14bb1874" alt="Bluetooth設定へのショートカットがある高解像度オーディオの設定ヒント" class="feature-img app-media app-media--card" loading="lazy" width="840" height="465">
     </div>
   </div>
 </section>
 <section class="section app-showcase">
   <h2 class="section-title">画面で使い方をチェック</h2>
   <div class="screenshot-mockup">
-    <img src="/images/lazulite-preview.webp" alt="Lazuliteでコーデック情報を確認する操作例（旧バージョン・英語表示）" width="360" height="780">
+    <div class="app-video">
+      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/ja/home-video-poster.webp?v=1f1539bff377fe3e" muted loop playsinline controls preload="none" aria-label="Pixel 8のフレーム内でLDACの詳細を表示したLazuliteのホーム画面の録画" data-app-video data-src="/videos/app/ja/home.mp4?v=b71def5ab605ce9f" hidden>
+      </video>
+      <img class="app-media app-media--phone" data-app-video-poster src="/images/app/ja/home-video-poster.webp?v=1f1539bff377fe3e" alt="Pixel 8のフレーム内でLDACの詳細を表示したLazuliteのホーム画面の録画" width="634" height="1334" loading="lazy">
+    </div>
   </div>
 </section>
 <section class="section download-section">

@@ -46,7 +46,7 @@ socialImage = "/images/codecs-info-2.png"
     [languages.en.params]
       footerHtml = 'Lazulite App for Android'
       description = "Real-time Bluetooth audio codec inspection for Android. Monitor LDAC, aptX HD, AAC, SBC and more — see exactly what your wireless audio is doing."
-      homeTitle = "Bluetooth Audio Codec Analyzer for Android | Lazulite App"
+      homeTitle = "Bluetooth Audio Inspector for Android | Lazulite App"
     [[languages.en.menu.header]]
       name = "Privacy Policy"
       weight = 0
@@ -68,7 +68,7 @@ socialImage = "/images/codecs-info-2.png"
     [languages.es.params]
       footerHtml = 'Lazulite App para Android'
       description = "Inspección en tiempo real de códecs de audio Bluetooth para Android. Supervisa LDAC, aptX HD, AAC, SBC y más para ver exactamente qué está haciendo tu audio inalámbrico."
-      homeTitle = "Analizador de códecs Bluetooth para Android | Lazulite App"
+      homeTitle = "Inspector de audio Bluetooth para Android | Lazulite App"
     [[languages.es.menu.header]]
       name = "Privacidad"
       weight = 0
@@ -90,7 +90,7 @@ socialImage = "/images/codecs-info-2.png"
     [languages.zh.params]
       footerHtml = '适用于 Android 的 Lazulite'
       description = "面向 Android 的实时蓝牙音频编解码器检测。监控 LDAC、aptX HD、AAC、SBC 等格式，准确查看无线音频的实际传输情况。"
-      homeTitle = "Android 蓝牙音频编解码器分析工具 | Lazulite App"
+      homeTitle = "Android 蓝牙音频检查工具 | Lazulite App"
     [[languages.zh.menu.header]]
       name = "隐私政策"
       weight = 0
@@ -112,7 +112,7 @@ socialImage = "/images/codecs-info-2.png"
     [languages.it.params]
       footerHtml = 'Lazulite App per Android'
       description = "Ispezione in tempo reale dei codec audio Bluetooth per Android. Monitora LDAC, aptX HD, AAC, SBC e altri codec per vedere esattamente cosa sta facendo il tuo audio wireless."
-      homeTitle = "Analizzatore di codec audio Bluetooth per Android | Lazulite App"
+      homeTitle = "Strumento di ispezione audio Bluetooth per Android | Lazulite App"
     [[languages.it.menu.header]]
       name = "Privacy"
       weight = 0

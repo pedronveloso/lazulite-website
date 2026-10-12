@@ -4,7 +4,8 @@ Website live at: https://lazulite.app
 
 ## Development
 
-**Prerequisites:** Hugo extended v0.101.0+ (Netlify pins to 0.101.0; local newer versions work fine)
+**Prerequisites:** Hugo extended matching `HUGO_VERSION` in `netlify.toml` (currently 0.166.0).
+Use the pinned version when refreshing the tracked SEO snapshot.
 
 ```bash
 # Start local dev server with live reload
@@ -44,3 +45,8 @@ Configuration lives in `.lychee.toml`. The CI workflow (`.github/workflows/link-
 ## Deployment
 
 Netlify deploys automatically on push to `main`. Hugo version and build command are configured in `netlify.toml`.
+
+## Refresh app screenshots and video
+
+Follow [Refresh the localized app media](docs/refresh-app-media.md) to capture all five languages
+with AASG, import dark-mode gesture-navigation media, and validate the website before publication.

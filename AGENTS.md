@@ -62,4 +62,5 @@ The custom "lazulite" theme (based on "Nightfall"):
 ### Static Assets
 - `static/images/` - App screenshots and Google Play badge
 - Hugo copies `static/` contents directly to `public/` during build
+- Refresh localized app images with `scripts/import-app-media.py` from original AASG PNGs, using lossy WebP at quality 90 with lossless transparency (`-q 90 -alpha_q 100`), at 2× CSS display width for Retina, capped at the original resolution. Preserve feathering and aspect ratios; never resize previously generated website images. Follow [the media refresh guide](docs/refresh-app-media.md) for targets, commands, and validation.
 - `public/` and `resources/_gen/` are build artifacts; do not edit them directly
