@@ -1,6 +1,4 @@
 
-# Domande frequenti
-
 <nav class="faq-nav" aria-label="Sezioni FAQ">
   <a href="#permissions">Permessi e configurazione</a>
   <a href="#codecs">Codec e compatibilità</a>

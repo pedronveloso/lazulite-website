@@ -1,6 +1,4 @@
 
-# Informativa sulla privacy di Lazulite
-
 Grazie per aver scelto Lazulite. La tua privacy è importante per noi e ci impegniamo a proteggere i tuoi dati personali. Questa Informativa sulla privacy descrive i tipi di informazioni che raccogliamo, come le utilizziamo e le misure che adottiamo per proteggere i tuoi dati quando usi la nostra applicazione Android disponibile sul Google Play Store.
 
 ## Analisi del sito web:

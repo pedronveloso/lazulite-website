@@ -1,6 +1,4 @@
 
-# Frequently Asked Questions
-
 <nav class="faq-nav" aria-label="FAQ sections">
   <a href="#permissions">Permissions & Setup</a>
   <a href="#codecs">Codecs & Compatibility</a>

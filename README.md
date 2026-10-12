@@ -4,7 +4,7 @@ Website live at: https://lazulite.app
 
 ## Development
 
-**Prerequisites:** Hugo extended matching `HUGO_VERSION` in `netlify.toml` (currently 0.166.0).
+**Prerequisites:** Hugo extended matching `HUGO_VERSION` in `netlify.toml` (currently 0.167.0).
 Use the pinned version when refreshing the tracked SEO snapshot.
 
 ```bash

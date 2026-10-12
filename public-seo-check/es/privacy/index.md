@@ -1,6 +1,4 @@
 
-# Política de privacidad de Lazulite
-
 Gracias por elegir Lazulite. Tu privacidad es importante para nosotros y estamos comprometidos con la protección de tus datos personales. Esta Política de privacidad describe qué información recopilamos, cómo la usamos y qué medidas tomamos para proteger tus datos cuando utilizas nuestra aplicación Android disponible en Google Play.
 
 ## Analítica del sitio web

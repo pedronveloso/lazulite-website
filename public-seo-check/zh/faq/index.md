@@ -1,6 +1,4 @@
 
-# 常见问题
-
 <nav class="faq-nav" aria-label="常见问题分区">
   <a href="#permissions">权限与设置</a>
   <a href="#codecs">编解码器与兼容性</a>
