@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import the complete dark/gestural AASG website set after staging and validation."""
+"""Import localized AASG images and half-resolution Hyperframes website videos."""
 
 import argparse
 import hashlib
@@ -16,6 +16,12 @@ IMAGES = {
     "playback-health": ("cards", "playback-health"),
     "setup-tips": ("cards", "setup-tips-high-resolution"),
 }
+# Display widths in CSS pixels; serve two image pixels per CSS pixel for Retina.
+# Cap at the source resolution. Keep in sync
+# with the sizing table in docs/refresh-app-media.md when the layout changes.
+IMAGE_WIDTHS = {"home": 360, "playback-health": 520, "setup-tips": 420}
+POSTER_WIDTH = 360
+IMAGE_PIXEL_RATIO = 2
 SITE_ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -48,7 +54,16 @@ def public_url(path, url):
     return f"{url}?v={version}"
 
 
-def import_media(artifact_root):
+def image_webp(source, output, display_width):
+    # Always start from the capture, never an already compressed website image.
+    width = min(display_width * IMAGE_PIXEL_RATIO, dimensions(source)["width"])
+    # Compress colors at quality 90 while preserving the resized alpha losslessly.
+    run("cwebp", "-quiet", "-q", "90", "-alpha_q", "100", "-m", "6",
+        "-resize", str(width), "0", str(source), "-o", str(output))
+    return validate(output)
+
+
+def import_media(artifact_root, images_only=False):
     sources = {}
     for lang, locale in LOCALES.items():
         sources[lang] = {
@@ -56,7 +71,9 @@ def import_media(artifact_root):
             for role, (kind, capture) in IMAGES.items()
         }
         sources[lang]["home-video"] = (
-            artifact_root / "videos" / "framed" / locale / "home-video-dark-gestural.mp4"
+            SITE_ROOT / "static" / "videos" / "app" / lang / "home.mp4"
+            if images_only else
+            artifact_root / "videos" / "hyperframes" / locale / "website-demo-dark-gestural.mp4"
         )
     for media in sources.values():
         for path in media.values():
@@ -74,24 +91,28 @@ def import_media(artifact_root):
             video_dir.mkdir(parents=True)
             for role in IMAGES:
                 output = image_dir / f"{role}.webp"
-                run("cwebp", "-quiet", "-q", "90", "-alpha_q", "100", "-m", "6",
-                    str(media[role]), "-o", str(output))
+                size = image_webp(media[role], output, IMAGE_WIDTHS[role])
                 manifest[lang][role] = {
-                    "src": public_url(output, f"/images/app/{lang}/{output.name}"), **validate(output)
+                    "src": public_url(output, f"/images/app/{lang}/{output.name}"), **size
                 }
-            video = video_dir / "home.mp4"
-            # Stream-copy with faststart: preserve AASG's encoded frames and duration.
-            run("ffmpeg", "-v", "error", "-i", str(media["home-video"]),
-                "-map", "0:v:0", "-c", "copy", "-movflags", "+faststart", str(video))
+            video = media["home-video"]
+            if not images_only:
+                video = video_dir / "home.mp4"
+                # Resize only the website copy. Keep full-resolution Android masters.
+                # Round down to even dimensions for H.264/yuv420p compatibility.
+                run("ffmpeg", "-v", "error", "-i", str(media["home-video"]),
+                    "-map", "0:v:0", "-vf", "scale=trunc(iw/4)*2:trunc(ih/4)*2:flags=lanczos,fps=30",
+                    "-an", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
+                    "-movflags", "+faststart", str(video))
             poster = image_dir / "home-video-poster.webp"
             poster_png = staging / f"poster-{lang}.png"
             run("ffmpeg", "-v", "error", "-i", str(video), "-frames:v", "1", str(poster_png))
-            run("cwebp", "-quiet", "-q", "90", "-m", "6", str(poster_png), "-o", str(poster))
+            poster_size = image_webp(poster_png, poster, POSTER_WIDTH)
             poster_png.unlink()
-            validate(poster)
             manifest[lang]["home-video"] = {
                 "src": public_url(video, f"/videos/app/{lang}/home.mp4"),
-                "poster": public_url(poster, f"/images/app/{lang}/{poster.name}"), **validate(video)
+                "poster": public_url(poster, f"/images/app/{lang}/{poster.name}"), **validate(video),
+                "posterWidth": poster_size["width"], "posterHeight": poster_size["height"]
             }
         manifest_path = staging / "data" / "app_media.json"
         manifest_path.parent.mkdir()
@@ -117,19 +138,23 @@ def import_media(artifact_root):
             os.replace(incoming_path, target_manifest)
         finally:
             incoming_path.unlink(missing_ok=True)
-    print("Imported 15 localized images, 5 framed videos, and 5 video posters.")
+    print("Imported 15 resized screenshots and 5 resized video posters. " +
+          ("Existing website videos unchanged." if images_only else
+           "Imported 5 half-resolution website videos."))
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--artifact-root", required=True, type=Path,
                         help="Android repository's AASG artifacts directory")
+    parser.add_argument("--images-only", action="store_true",
+                        help="Resize screenshots and regenerate posters from existing website MP4s; leave videos unchanged")
     args = parser.parse_args()
     for command in ("ffmpeg", "ffprobe", "cwebp"):
         if shutil.which(command) is None:
             parser.exit(1, f"Required tool not found: {command}\n")
     try:
-        import_media(args.artifact_root.resolve())
+        import_media(args.artifact_root.resolve(), images_only=args.images_only)
     except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as error:
         detail = error.stderr if isinstance(error, subprocess.CalledProcessError) else str(error)
         parser.exit(1, f"Media import failed: {detail}\n")

@@ -8,7 +8,7 @@
 <div class="app-video">
   <video class="app-media app-media--video" width="{{ $media.width }}" height="{{ $media.height }}" poster="{{ $media.poster }}" muted loop playsinline controls preload="none" aria-label="{{ $alt }}" data-app-video data-src="{{ $media.src }}" hidden>
   </video>
-  <img class="app-media app-media--phone" data-app-video-poster src="{{ $media.poster }}" alt="{{ $alt }}" width="{{ $media.width }}" height="{{ $media.height }}" loading="lazy">
+  <img class="app-media app-media--phone" data-app-video-poster src="{{ $media.poster }}" alt="{{ $alt }}" width="{{ $media.posterWidth | default $media.width }}" height="{{ $media.posterHeight | default $media.height }}" loading="lazy">
 </div>
 {{- else -}}
 <img src="{{ $media.src }}" alt="{{ $alt }}" class="feature-img app-media app-media--{{ if eq $role "home" }}phone{{ else }}card{{ end }}" loading="lazy" width="{{ $media.width }}" height="{{ $media.height }}">
