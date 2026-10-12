@@ -18,21 +18,23 @@
 {{ $socialImageAlt := $title }}
 {{ $socialImageWidth := .Site.Params.socialImageWidth }}
 {{ $socialImageHeight := .Site.Params.socialImageHeight }}
-{{- with hugo.Data.opengraph_media -}}
-  {{- $socialImage = .src -}}
-  {{- $socialImageAlt = .alt -}}
-  {{- $socialImageWidth = .width -}}
-  {{- $socialImageHeight = .height -}}
-{{- end -}}
-{{ $socialImageURL := absURL $socialImage }}
+{{ $socialImagePath := (urls.Parse $socialImage).Path -}}
 {{ $socialImageType := "image/png" }}
-{{ if strings.HasSuffix $socialImage ".webp" }}
+{{ if strings.HasSuffix $socialImagePath ".webp" }}
   {{ $socialImageType = "image/webp" }}
-{{ else if or (strings.HasSuffix $socialImage ".jpg") (strings.HasSuffix $socialImage ".jpeg") }}
+{{ else if or (strings.HasSuffix $socialImagePath ".jpg") (strings.HasSuffix $socialImagePath ".jpeg") }}
   {{ $socialImageType = "image/jpeg" }}
-{{ else if strings.HasSuffix $socialImage ".svg" }}
+{{ else if strings.HasSuffix $socialImagePath ".svg" }}
   {{ $socialImageType = "image/svg+xml" }}
 {{ end }}
+{{- with hugo.Data.opengraph_media -}}
+  {{- $socialImage = .src -}}
+  {{- $socialImageAlt = i18n "opengraph_image_alt" | default .alt -}}
+  {{- $socialImageWidth = .width -}}
+  {{- $socialImageHeight = .height -}}
+  {{- $socialImageType = .type -}}
+{{- end -}}
+{{ $socialImageURL := absURL $socialImage }}
 {{ $languageCode := .Site.Language.Locale | default .Site.Language.Lang }}
 {{ $defaultPage := . }}
 {{ range .AllTranslations }}

@@ -7,6 +7,9 @@
 [home]
     other = "首页"
 
+[opengraph_image_alt]
+    other = "Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。"
+
 [language]
     other = "语言"
 
