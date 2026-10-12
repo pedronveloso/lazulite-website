@@ -15,8 +15,16 @@
   {{ $title = printf "%s | %s" $title .Site.Title }}
 {{ end }}
 {{ $socialImage := .Site.Params.socialImage | default "/images/lazulite-logo-500.png" }}
-{{ $socialImageURL := absURL $socialImage }}
 {{ $socialImageAlt := $title }}
+{{ $socialImageWidth := .Site.Params.socialImageWidth }}
+{{ $socialImageHeight := .Site.Params.socialImageHeight }}
+{{- with hugo.Data.opengraph_media -}}
+  {{- $socialImage = .src -}}
+  {{- $socialImageAlt = .alt -}}
+  {{- $socialImageWidth = .width -}}
+  {{- $socialImageHeight = .height -}}
+{{- end -}}
+{{ $socialImageURL := absURL $socialImage }}
 {{ $socialImageType := "image/png" }}
 {{ if strings.HasSuffix $socialImage ".webp" }}
   {{ $socialImageType = "image/webp" }}
@@ -65,13 +73,14 @@
 <meta property="og:image" content="{{ $socialImageURL }}">
 <meta property="og:image:alt" content="{{ $socialImageAlt }}">
 <meta property="og:image:type" content="{{ $socialImageType }}">
-<meta property="og:image:width" content="1088">
-<meta property="og:image:height" content="1357">
+{{ with $socialImageWidth }}<meta property="og:image:width" content="{{ . }}">{{ end }}
+{{ with $socialImageHeight }}<meta property="og:image:height" content="{{ . }}">{{ end }}
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $title }}">
 {{ with $description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
 <meta name="twitter:image" content="{{ $socialImageURL }}">
+<meta name="twitter:image:alt" content="{{ $socialImageAlt }}">
 
 {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">

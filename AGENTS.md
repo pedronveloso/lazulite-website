@@ -64,3 +64,6 @@ The custom "lazulite" theme (based on "Nightfall"):
 - Hugo copies `static/` contents directly to `public/` during build
 - Refresh localized app images with `scripts/import-app-media.py` from original AASG PNGs, using lossy WebP at quality 90 with lossless transparency (`-q 90 -alpha_q 100`), at 2× CSS display width for Retina, capped at the original resolution. Preserve feathering and aspect ratios; never resize previously generated website images. Follow [the media refresh guide](docs/refresh-app-media.md) for targets, commands, and validation.
 - `public/` and `resources/_gen/` are build artifacts; do not edit them directly
+- OpenGraph has an independent Android Hyperframes render and `scripts/import-opengraph-media.py`
+  import. Follow `docs/refresh-opengraph-media.md`; a screenshot/video refresh must not regenerate
+  the card. Its lossless 1200 × 630 PNG and `data/opengraph_media.json` are separate from app media.

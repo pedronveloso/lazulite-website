@@ -50,3 +50,9 @@ Netlify deploys automatically on push to `main`. Hugo version and build command 
 
 Follow [Refresh the localized app media](docs/refresh-app-media.md) to capture all five languages
 with AASG, import dark-mode gesture-navigation media, and validate the website before publication.
+
+## Refresh the OpenGraph image
+
+Follow [Refresh the OpenGraph image](docs/refresh-opengraph-media.md) for the separate Android
+Hyperframes render and `scripts/import-opengraph-media.py` import. Screenshot and video refreshes
+leave this 1200 × 630 card unchanged.
