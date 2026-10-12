@@ -15,7 +15,7 @@
 <details data-umami-faq="special_permissions">
 <summary>为什么 Lazulite 需要特殊权限？</summary>
 <div class="faq-body">
-<p>Lazulite 需要读取 Android 系统的音频日志，才能实时显示编解码器信息和蓝牙传输数据。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
+<p>Lazulite 需要读取 Android 系统的音频日志，才能显示蓝牙编解码器和音频路径信息。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
 
 <h3>方式 1：Shizuku（推荐大多数用户使用）</h3>
 <p><strong>适合：</strong>大多数用户，尤其是希望直接在手机上设置 Lazulite 的用户</p>
@@ -71,8 +71,8 @@
 <details data-umami-faq="wired_headphones">
 <summary>我可以把 Lazulite 用在有线耳机上吗？</summary>
 <div class="faq-body">
-<p>Lazulite 监控的是蓝牙音频栈：包括手机和耳机协商使用的编解码器、传输质量以及丢包情况。有线连接会绕过这一整套流程，因此 Lazulite 没有任何可读取的数据。</p>
-<p>使用有线耳机时，音频会直接从设备 DAC 传到你的耳朵，中间没有无线编码，也没有编解码器选择。</p>
+<p>不支持有线音频检查。Lazulite 显示手机与蓝牙音频设备协商使用的编解码器，以及 Android 报告的音频路径。</p>
+<p>有线连接不使用蓝牙，因此没有蓝牙编解码器数据可供 Lazulite 检查。</p>
 </div>
 </details>
 

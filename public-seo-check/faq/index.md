@@ -15,7 +15,7 @@
 <details data-umami-faq="special_permissions">
 <summary>Why does Lazulite need special permissions?</summary>
 <div class="faq-body">
-<p>Lazulite needs permission to read your Android system's audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:</p>
+<p>Lazulite needs permission to read your Android system's audio logs to show Bluetooth codec and audio path information. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:</p>
 
 <h3>Option 1: Shizuku (Recommended for Most Users)</h3>
 <p><strong>Best for:</strong> Most users, especially those who prefer to set up Lazulite directly on their phone</p>
@@ -71,8 +71,8 @@
 <details data-umami-faq="wired_headphones">
 <summary>Can I use Lazulite with wired headphones?</summary>
 <div class="faq-body">
-<p>Lazulite monitors the Bluetooth audio stack: which codec your phone and headphones agreed on, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
-<p>With wired headphones, audio goes straight from your device's DAC to your ears. No wireless encoding, no codec selection.</p>
+<p>Wired audio inspection is not supported. Lazulite shows the codec selected by your phone and Bluetooth audio device, along with the audio path reported by Android.</p>
+<p>Wired connections bypass Bluetooth, so there is no Bluetooth codec data for Lazulite to inspect.</p>
 </div>
 </details>
 

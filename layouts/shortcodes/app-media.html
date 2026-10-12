@@ -7,7 +7,6 @@
 {{- if eq $role "home-video" -}}
 <div class="app-video">
   <video class="app-media app-media--video" width="{{ $media.width }}" height="{{ $media.height }}" poster="{{ $media.poster }}" muted loop playsinline controls preload="none" aria-label="{{ $alt }}" data-app-video data-src="{{ $media.src }}" hidden>
-    <img src="{{ $media.poster }}" alt="{{ $alt }}" width="{{ $media.width }}" height="{{ $media.height }}" loading="lazy">
   </video>
   <img class="app-media app-media--phone" data-app-video-poster src="{{ $media.poster }}" alt="{{ $alt }}" width="{{ $media.width }}" height="{{ $media.height }}" loading="lazy">
 </div>

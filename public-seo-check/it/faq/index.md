@@ -15,7 +15,7 @@
 <details data-umami-faq="special_permissions">
 <summary>Perché Lazulite ha bisogno di permessi speciali?</summary>
 <div class="faq-body">
-<p>Lazulite ha bisogno del permesso di leggere i log audio di sistema di Android per mostrarti in tempo reale le informazioni sul codec e i dati di trasmissione Bluetooth. Android limita l'accesso a questi log per motivi di privacy e sicurezza, quindi dovrai concedere il permesso con uno di questi tre metodi:</p>
+<p>Lazulite ha bisogno del permesso di leggere i log audio di sistema di Android per mostrarti informazioni sui codec Bluetooth e sul percorso audio. Android limita l'accesso a questi log per motivi di privacy e sicurezza, quindi dovrai concedere il permesso con uno di questi tre metodi:</p>
 
 <h3>Opzione 1: Shizuku (consigliata per la maggior parte degli utenti)</h3>
 <p><strong>Ideale per:</strong> la maggior parte degli utenti, in particolare per chi preferisce configurare Lazulite direttamente dal telefono</p>
@@ -71,8 +71,8 @@
 <details data-umami-faq="wired_headphones">
 <summary>Posso usare Lazulite con cuffie cablate?</summary>
 <div class="faq-body">
-<p>Lazulite monitora lo stack audio Bluetooth: su quale codec si sono accordati telefono e cuffie, la qualità della trasmissione, la perdita di pacchetti. Le connessioni cablate saltano tutto questo, quindi non c'è nulla da leggere per Lazulite.</p>
-<p>Con le cuffie cablate, l'audio va direttamente dal DAC del tuo dispositivo alle tue orecchie. Nessuna codifica wireless, nessuna selezione del codec.</p>
+<p>L'ispezione dell'audio cablato non è supportata. Lazulite mostra il codec selezionato dal telefono e dal dispositivo audio Bluetooth, insieme al percorso audio riportato da Android.</p>
+<p>Le connessioni cablate non usano Bluetooth, quindi non ci sono dati sui codec Bluetooth che Lazulite possa esaminare.</p>
 </div>
 </details>
 

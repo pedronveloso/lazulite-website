@@ -3,7 +3,7 @@ title: "プライバシーポリシー"
 seoTitle: "Lazuliteのプライバシーポリシー"
 description: "Lazuliteのデータの取り扱いについて。ウェブサイトの分析、任意のFirebase Crashlytics診断、ログの送信、メーカー検索、アンケートを説明します。"
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-09-23T00:00:00+02:00
+lastmod: 2026-10-11T00:00:00+02:00
 draft: false
 showMetadata: false
 ---

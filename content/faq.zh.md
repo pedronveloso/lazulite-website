@@ -1,18 +1,18 @@
 ---
 title: "常见问题"
 seoTitle: "Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性"
-description: "解答 Lazulite 的权限要求、ADB 设置、Shizuku、蓝牙编解码器支持、丢包监控以及 Android 音频兼容性等问题。"
+description: "解答 Lazulite 的权限要求、ADB 设置、Shizuku、蓝牙编解码器支持、音频路径检查以及 Android 音频兼容性等问题。"
 date: 2023-12-25T16:18:23-07:00
 draft: false
 showMetadata: false
 schemaType: "FAQPage"
 faqSchema:
   - question: "为什么 Lazulite 需要特殊权限？"
-    answer: "Lazulite 需要读取 Android 音频系统日志，才能显示实时蓝牙编解码器信息和传输数据。Android 会限制这些日志，因此必须通过 ADB、Shizuku 或 root 权限授予访问权限。"
+    answer: "Lazulite 读取 Android 音频系统日志，以显示蓝牙编解码器和音频路径信息。Android 会限制这些日志的访问，因此必须通过 ADB、Shizuku 或 root 权限授予访问权限。"
   - question: "Lazulite 支持哪些蓝牙编解码器？"
     answer: "Lazulite 可以检测设备支持并实际协商使用的蓝牙音频编解码器，包括 LDAC、aptX、aptX HD、aptX Adaptive、LC3、MIHC、Opus、各版本 LHDC、AAC、SBC，以及在支持设备上的三星 SSC 编解码器。"
   - question: "Lazulite 可以配合有线耳机使用吗？"
-    answer: "不可以。Lazulite 监控的是蓝牙音频栈，包括编解码器协商和传输质量。有线音频不会经过蓝牙，因此没有蓝牙编解码器数据可供应用分析。"
+    answer: "不支持有线音频检查。Lazulite 检查蓝牙连接的编解码器和 Android 报告的音频路径。有线音频不经过蓝牙，因此没有蓝牙编解码器数据可供应用检查。"
   - question: "Lazulite 会明显耗电吗？"
     answer: "电量影响很小。Lazulite 读取的是系统已经生成的日志，在你不使用应用时不会额外增加蓝牙处理负担。"
 ---
@@ -33,7 +33,7 @@ faqSchema:
 <details data-umami-faq="special_permissions">
 <summary>为什么 Lazulite 需要特殊权限？</summary>
 <div class="faq-body">
-<p>Lazulite 需要读取 Android 系统的音频日志，才能实时显示编解码器信息和蓝牙传输数据。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
+<p>Lazulite 需要读取 Android 系统的音频日志，才能显示蓝牙编解码器和音频路径信息。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
 
 <h3>方式 1：Shizuku（推荐大多数用户使用）</h3>
 <p><strong>适合：</strong>大多数用户，尤其是希望直接在手机上设置 Lazulite 的用户</p>
@@ -89,8 +89,8 @@ faqSchema:
 <details data-umami-faq="wired_headphones">
 <summary>我可以把 Lazulite 用在有线耳机上吗？</summary>
 <div class="faq-body">
-<p>Lazulite 监控的是蓝牙音频栈：包括手机和耳机协商使用的编解码器、传输质量以及丢包情况。有线连接会绕过这一整套流程，因此 Lazulite 没有任何可读取的数据。</p>
-<p>使用有线耳机时，音频会直接从设备 DAC 传到你的耳朵，中间没有无线编码，也没有编解码器选择。</p>
+<p>不支持有线音频检查。Lazulite 显示手机与蓝牙音频设备协商使用的编解码器，以及 Android 报告的音频路径。</p>
+<p>有线连接不使用蓝牙，因此没有蓝牙编解码器数据可供 Lazulite 检查。</p>
 </div>
 </details>
 
