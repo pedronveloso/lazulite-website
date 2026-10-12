@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Android 蓝牙音频编解码器分析工具 | Lazulite App
+        Android 蓝牙音频检查工具 | Lazulite App
     </title>
 
     
@@ -25,21 +25,23 @@
 
 
   
-
-  
-
-  
     
+  
+
+  
+
+  
+
   
 
   
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。">
+<meta name="description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 
-<meta name="generator" content="Hugo 0.166.0">
+<meta name="generator" content="Hugo 0.167.0">
 
 
 <link rel="canonical" href="https://lazulite.app/zh/" >
@@ -57,32 +59,37 @@
   <link rel="alternate" hreflang="it-IT" href="https://lazulite.app/it/" >
   
 
-<link rel="alternate" hreflang="x-default" href="https://lazulite.app/zh/" >
+  
+  <link rel="alternate" hreflang="ja-JP" href="https://lazulite.app/ja/" >
+  
+
+<link rel="alternate" hreflang="x-default" href="https://lazulite.app/" >
   <link href="https://lazulite.app/zh/index.xml" rel="alternate" type="application/rss+xml" title="Lazulite App" >
   <link href="https://lazulite.app/zh/index.xml" rel="feed" type="application/rss+xml" title="Lazulite App" ><meta property="og:site_name" content="Lazulite App">
-<meta property="og:title" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
-<meta property="og:description" content="适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。">
+<meta property="og:title" content="Android 蓝牙音频检查工具 | Lazulite App">
+<meta property="og:description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lazulite.app/zh/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://lazulite.app/images/codecs-info-2.png">
-<meta property="og:image:alt" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
+<meta property="og:image:alt" content="Android 蓝牙音频检查工具 | Lazulite App">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1088">
 <meta property="og:image:height" content="1357">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Android 蓝牙音频编解码器分析工具 | Lazulite App">
-<meta name="twitter:description" content="适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。">
+<meta name="twitter:title" content="Android 蓝牙音频检查工具 | Lazulite App">
+<meta name="twitter:description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
 <meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
 
 
-<link href="/sass/main.min.a0ef8e7726625d00a39110d088ca8692061eb920a0b153cfa04ed19c76bd7fea.css" rel="stylesheet">
+<link href="/sass/main.min.4807b09a454b074bb29167a4dd658df3548f04a720c0da59bf9febd912ee3f42.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
+<script src="/js/app-media.js" defer></script>
 
 
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频编解码器分析工具。Lazulite 会显示实际使用的编解码器、丢包情况，以及真正传到耳机的是 LDAC、aptX HD、AAC 还是 SBC。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/codecs-info-2.png","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/codecs-info-2.png","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","logo":"https://lazulite.app/images/lazulite-logo-500.png","name":"Lazulite App","sameAs":["https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"],"url":"https://lazulite.app/zh/"}</script>
   
@@ -116,7 +123,7 @@
             </a>
         </div>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu" aria-label="Toggle navigation"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="打开或关闭导航菜单"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
                 
@@ -134,99 +141,129 @@
                 
                 
                 
-                
                 <li class="headerLanguage">
-                    
-                    <div class="headerLanguage__segmented" role="navigation" aria-label="语言" data-language-switcher>
-                        
+                    <details class="headerLanguage__menu" data-language-switcher>
+                        <summary class="headerLanguage__trigger" aria-label="语言">
+                            <span class="headerLanguage__triggerLabel">中文</span>
+                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                        </summary>
+                        <div class="headerLanguage__popover" role="menu" aria-label="语言">
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/"
+                                    class="headerLanguage__menuItem "
+                                    lang="en-US"
+                                    hreflang="en"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="en"
+                                    data-url="/"
+                                >
+                                    <span class="headerLanguage__menuShort">EN</span>
+                                    <span class="headerLanguage__menuFull">English</span>
+                                </a>
                             
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/es/"
+                                    class="headerLanguage__menuItem "
+                                    lang="es-ES"
+                                    hreflang="es"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="es"
+                                    data-url="/es/"
+                                >
+                                    <span class="headerLanguage__menuShort">ES</span>
+                                    <span class="headerLanguage__menuFull">Español</span>
+                                </a>
                             
-                            
+                                
+                                
+                                
                                 
                                     
                                 
+                                <a
+                                    href="/zh/"
+                                    class="headerLanguage__menuItem is-active"
+                                    lang="zh-CN"
+                                    hreflang="zh"
+                                    role="menuitem"
+                                    aria-current="page"
+                                    data-language-option
+                                    data-language="zh"
+                                    data-url="/zh/"
+                                >
+                                    <span class="headerLanguage__menuShort">中文</span>
+                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                </a>
                             
-                            <a
-                                href="/"
-                                class="headerLanguage__option "
-                                lang="en-US"
-                                hreflang="en"
-                                title="English"
-                                aria-current="false"
-                                data-language-option
-                                data-language="en"
-                                data-url="/"
-                            >
-                                EN
-                            </a>
-                        
-                            
-                            
-                            
-                            
+                                
+                                
+                                
                                 
                                     
-                                
-                            
-                            <a
-                                href="/es/"
-                                class="headerLanguage__option "
-                                lang="es-ES"
-                                hreflang="es"
-                                title="Español"
-                                aria-current="false"
-                                data-language-option
-                                data-language="es"
-                                data-url="/es/"
-                            >
-                                ES
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
-                            
-                            <a
-                                href="/zh/"
-                                class="headerLanguage__option is-active"
-                                lang="zh-CN"
-                                hreflang="zh"
-                                title="简体中文"
-                                aria-current="page"
-                                data-language-option
-                                data-language="zh"
-                                data-url="/zh/"
-                            >
-                                中文
-                            </a>
-                        
-                            
-                            
-                            
-                            
-                                
+                                        
                                     
                                 
+                                <a
+                                    href="/it/"
+                                    class="headerLanguage__menuItem "
+                                    lang="it-IT"
+                                    hreflang="it"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="it"
+                                    data-url="/it/"
+                                >
+                                    <span class="headerLanguage__menuShort">IT</span>
+                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                </a>
                             
-                            <a
-                                href="/it/"
-                                class="headerLanguage__option "
-                                lang="it-IT"
-                                hreflang="it"
-                                title="Italiano"
-                                aria-current="false"
-                                data-language-option
-                                data-language="it"
-                                data-url="/it/"
-                            >
-                                IT
-                            </a>
-                        
-                    </div>
-                    
+                                
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <a
+                                    href="/ja/"
+                                    class="headerLanguage__menuItem "
+                                    lang="ja-JP"
+                                    hreflang="ja"
+                                    role="menuitem"
+                                    aria-current="false"
+                                    data-language-option
+                                    data-language="ja"
+                                    data-url="/ja/"
+                                >
+                                    <span class="headerLanguage__menuShort">日本語</span>
+                                    <span class="headerLanguage__menuFull">日本語</span>
+                                </a>
+                            
+                        </div>
+                    </details>
                 </li>
             </ul>
         </nav>
@@ -264,18 +301,18 @@
   </p>
   <div class="two-column">
     <div class="column">
-      <img src="/images/codecs-info-2.webp" alt="实时音频编解码器分析界面，显示 LDAC 编解码器详情" class="feature-img" loading="lazy" width="1088" height="1357">
+      <img src="/images/app/zh/home.webp?v=119ca6312e4e6ae5" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">实时音频分析</h2>
       <p class="feature-body">
-        查看手机和耳机最终协商使用的是哪种编解码器。无论是 LDAC、aptX HD、AAC 还是 SBC，Lazulite 都会实时显示。
+        查看手机和耳机协商使用的编解码器：LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。
       </p>
       <p class="feature-body">
-        看清你的流媒体服务通过蓝牙实际发送的是哪一个音质等级。
+        查看采样率、位深，以及设备提供的比特率或编码质量设置。
       </p>
       <p class="feature-body">
-        确认你的设备是否真的支持你付费购买的高解析音频，还是早已被悄悄降级。
+        打开音频路径详情，对比播放应用输出和蓝牙传输格式，了解 Android 在哪个环节转换了音频格式。
       </p>
     </div>
   </div>
@@ -284,36 +321,43 @@
   <div class="two-column reverse">
     <div class="column">
       <h2 class="section-title section-title--left">蓝牙故障，还是连接太差？</h2>
-      <p class="feature-body" style="text-align: center">
-        音频断断续续？Lazulite 会实时监控蓝牙传输中的丢包情况。你可以判断干扰究竟来自 WiFi 频段重叠，还是蓝牙信号过弱。
+      <p class="feature-body">
+        播放健康状态会在每次刷新时对比 Android 诊断信息。查看新报告的音频欠载、输出缓冲区丢弃，以及可归属于当前播放设备的连接问题。
       </p>
       <ul class="feature-body" style="text-align: left; padding-left: 20px;">
-        <li>丢包监控</li>
-        <li>传输稳定性指标</li>
-        <li>信号质量分析</li>
-        <li>实时诊断</li>
+        <li>音频缓冲区数据不足</li>
+        <li>输出音频缓冲区丢弃</li>
+        <li>播放期间近期报告的连接问题</li>
+        <li>检查范围取决于设备提供的诊断信息</li>
       </ul>
+      <p class="feature-body">
+        这些信息有助于排查播放问题，但无法确定原因，也不能证明是否出现了可听见的中断。
+      </p>
     </div>
     <div class="column">
-      <img src="/images/packet-loss-stats.webp" alt="显示蓝牙传输质量随时间变化的丢包统计图表" class="feature-img" loading="lazy" width="924" height="540">
+      <img src="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" alt="播放健康状态卡片，显示新报告的音频欠载和输出缓冲区丢弃" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="560">
     </div>
   </div>
 </section>
 <section class="section section-alt">
   <h2 class="section-title">智能建议</h2>
   <p class="section-subtitle">
-    发现问题，并通过内置快捷操作快速处理。
+    获取适合当前配置的设置建议，并快速打开相关系统设置。
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/setup-tips.webp" alt="Lazulite 应用显示音频设置建议和快捷操作提示" class="feature-img" loading="lazy" width="590" height="325">
+      <img src="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" alt="高解析度设置建议，附有蓝牙设置快捷入口" class="feature-img app-media app-media--card" loading="lazy" width="840" height="425">
     </div>
   </div>
 </section>
 <section class="section app-showcase">
   <h2 class="section-title">实际效果一目了然</h2>
   <div class="screenshot-mockup">
-    <img src="/images/lazulite-preview.webp" alt="Lazulite 应用演示动画，展示编解码器检测和丢包监控" width="360" height="780">
+    <div class="app-video">
+      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" muted loop playsinline controls preload="none" aria-label="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" data-app-video data-src="/videos/app/zh/home.mp4?v=301485c4b7d956a2" hidden>
+      </video>
+      <img class="app-media app-media--phone" data-app-video-poster src="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" alt="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" width="634" height="1334" loading="lazy">
+    </div>
   </div>
 </section>
 <section class="section download-section">

@@ -1,6 +1,4 @@
 
-# 常见问题
-
 <nav class="faq-nav" aria-label="常见问题分区">
   <a href="#permissions">权限与设置</a>
   <a href="#codecs">编解码器与兼容性</a>
@@ -15,7 +13,7 @@
 <details data-umami-faq="special_permissions">
 <summary>为什么 Lazulite 需要特殊权限？</summary>
 <div class="faq-body">
-<p>Lazulite 需要读取 Android 系统的音频日志，才能实时显示编解码器信息和蓝牙传输数据。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
+<p>Lazulite 需要读取 Android 系统的音频日志，才能显示蓝牙编解码器和音频路径信息。出于隐私和安全原因，Android 会限制这些日志的访问，因此你需要通过以下三种方式之一授予权限：</p>
 
 <h3>方式 1：Shizuku（推荐大多数用户使用）</h3>
 <p><strong>适合：</strong>大多数用户，尤其是希望直接在手机上设置 Lazulite 的用户</p>
@@ -71,8 +69,8 @@
 <details data-umami-faq="wired_headphones">
 <summary>我可以把 Lazulite 用在有线耳机上吗？</summary>
 <div class="faq-body">
-<p>Lazulite 监控的是蓝牙音频栈：包括手机和耳机协商使用的编解码器、传输质量以及丢包情况。有线连接会绕过这一整套流程，因此 Lazulite 没有任何可读取的数据。</p>
-<p>使用有线耳机时，音频会直接从设备 DAC 传到你的耳朵，中间没有无线编码，也没有编解码器选择。</p>
+<p>不支持有线音频检查。Lazulite 显示手机与蓝牙音频设备协商使用的编解码器，以及 Android 报告的音频路径。</p>
+<p>有线连接不使用蓝牙，因此没有蓝牙编解码器数据可供 Lazulite 检查。</p>
 </div>
 </details>
 
@@ -96,7 +94,7 @@
 <summary>Lazulite 能告诉我耳机是什么品牌吗？</summary>
 <div class="faq-body">
 <p>可以。在“设置”中开启“查询目标设备供应商”，Lazulite 就会在已连接蓝牙设备的详情旁显示其制造商。</p>
-<p>该功能默认关闭。开启后，Lazulite 只会把目标 MAC 地址的前三对字符发送给 MACLookup 用于识别供应商，地址的其他部分不会被发送。</p>
+<p>如果尚未保存偏好设置，该功能默认开启；已保存的选择会保留。你可以在“设置”中关闭此功能。开启时，Lazulite 只会把目标 MAC 地址的前三对字符发送给 MACLookup 用于识别供应商，地址的其他部分不会被发送。</p>
 </div>
 </details>
 
@@ -109,7 +107,7 @@
 <div class="faq-body">
 <p>Lazulite 的所有音频分析都在你的设备本地完成。除非你主动选择分享，否则不会有任何数据从你的手机发出。</p>
 <p><strong>可选崩溃诊断信息：</strong>Lazulite 不收集应用使用情况分析数据。崩溃诊断信息默认关闭；如果你开启该选项，崩溃报告和技术诊断日志可能会发送给 Google Firebase Crashlytics，以帮助提高稳定性。启用后，本地存储的报告可能会上传。</p>
-<p><strong>可选的供应商查询：</strong>如果你在“设置”中开启“查询目标设备供应商”，Lazulite 会将已连接设备 MAC 地址的前三对字符发送给 MACLookup，以识别其制造商。地址的其他部分不会被发送，且该功能默认关闭，只有你主动开启后才会生效。</p>
+<p><strong>可选的供应商查询：</strong>当“设置”中的“查询目标设备供应商”开启时，Lazulite 会将已连接设备 MAC 地址的前三对字符发送给 MACLookup，以识别其制造商。地址的其他部分不会被发送，如果尚未保存偏好设置，该功能默认开启。已保存的选择会保留，你可以在“设置”中关闭此功能。</p>
 <p><strong>想关闭？</strong> 前往“设置” → 关闭“崩溃诊断信息”或“查询目标设备供应商”。</p>
 </div>
 </details>

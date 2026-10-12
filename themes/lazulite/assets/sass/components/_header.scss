@@ -70,7 +70,6 @@
   position: relative;
 }
 
-.headerLanguage__segmented,
 .headerLanguage__trigger {
   align-items: center;
   background: linear-gradient(180deg, rgba($bg-raised, 0.92), rgba($bg-surface, 0.98));
@@ -82,7 +81,6 @@
   padding: 0.2rem;
 }
 
-.headerLanguage__option,
 .headerLanguage__trigger,
 .headerLanguage__menuItem {
   color: $text-secondary;
@@ -94,20 +92,6 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
-}
-
-.headerLanguage__option {
-  border-radius: 999px;
-  padding: 0.48rem 0.8rem;
-
-  &:hover {
-    color: $text-primary;
-  }
-
-  &.is-active {
-    background: rgba($accent, 0.16);
-    color: $text-primary;
-  }
 }
 
 .headerLanguage__menu {
@@ -276,19 +260,9 @@
     width: 100%;
   }
 
-  .headerLanguage__segmented,
   .headerLanguage__menu {
     max-width: 18rem;
     width: 100%;
-  }
-
-  .headerLanguage__segmented {
-    justify-content: center;
-  }
-
-  .headerLanguage__option {
-    flex: 1 1 0;
-    text-align: center;
   }
 
   .headerLanguage__trigger {

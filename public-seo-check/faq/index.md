@@ -1,6 +1,4 @@
 
-# Frequently Asked Questions
-
 <nav class="faq-nav" aria-label="FAQ sections">
   <a href="#permissions">Permissions & Setup</a>
   <a href="#codecs">Codecs & Compatibility</a>
@@ -15,7 +13,7 @@
 <details data-umami-faq="special_permissions">
 <summary>Why does Lazulite need special permissions?</summary>
 <div class="faq-body">
-<p>Lazulite needs permission to read your Android system's audio logs to show you real-time codec information and Bluetooth transmission data. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:</p>
+<p>Lazulite needs permission to read your Android system's audio logs to show Bluetooth codec and audio path information. Android restricts access to these logs for privacy and security reasons, so you'll need to grant permission using one of three methods:</p>
 
 <h3>Option 1: Shizuku (Recommended for Most Users)</h3>
 <p><strong>Best for:</strong> Most users, especially those who prefer to set up Lazulite directly on their phone</p>
@@ -71,8 +69,8 @@
 <details data-umami-faq="wired_headphones">
 <summary>Can I use Lazulite with wired headphones?</summary>
 <div class="faq-body">
-<p>Lazulite monitors the Bluetooth audio stack: which codec your phone and headphones agreed on, transmission quality, packet loss. Wired connections bypass all of that, so there is nothing for Lazulite to read.</p>
-<p>With wired headphones, audio goes straight from your device's DAC to your ears. No wireless encoding, no codec selection.</p>
+<p>Wired audio inspection is not supported. Lazulite shows the codec selected by your phone and Bluetooth audio device, along with the audio path reported by Android.</p>
+<p>Wired connections bypass Bluetooth, so there is no Bluetooth codec data for Lazulite to inspect.</p>
 </div>
 </details>
 
@@ -96,7 +94,7 @@
 <summary>Can Lazulite tell me the brand of my connected headphones?</summary>
 <div class="faq-body">
 <p>Yes. Turn on "Look up destination vendor" in Settings and Lazulite will show the manufacturer of your connected Bluetooth device next to its other details.</p>
-<p>This is off by default. When you enable it, Lazulite sends only the first three pairs of the destination MAC address to MACLookup to identify the vendor. No other part of the address is ever sent.</p>
+<p>This is on by default when no preference has been saved; existing choices are preserved. You can turn it off in Settings. When enabled, Lazulite sends only the first three pairs of the destination MAC address to MACLookup to identify the vendor. No other part of the address is ever sent.</p>
 </div>
 </details>
 
@@ -109,7 +107,7 @@
 <div class="faq-body">
 <p>Lazulite performs all audio analysis locally on your device. No data leaves your phone unless you choose to share it.</p>
 <p><strong>Optional crash diagnostics:</strong> Lazulite does not collect app usage analytics. Crash diagnostics are off by default; if you enable them, crash reports and technical diagnostic logs may be sent to Google Firebase Crashlytics to help improve stability. Locally stored reports may upload after you opt in.</p>
-<p><strong>Optional vendor lookup:</strong> If you turn on "Look up destination vendor" in Settings, Lazulite sends the first three pairs of your connected device's MAC address to MACLookup to identify its manufacturer. No other part of the address is sent, and the setting stays off unless you enable it.</p>
+<p><strong>Optional vendor lookup:</strong> When "Look up destination vendor" is enabled in Settings, Lazulite sends the first three pairs of your connected device's MAC address to MACLookup to identify its manufacturer. No other part of the address is sent, and the setting is on by default when no preference has been saved. Existing choices are preserved, and you can turn it off in Settings.</p>
 <p><strong>Want to opt out?</strong> Go to Settings → Disable "Crash diagnostics" or "Look up destination vendor".</p>
 </div>
 </details>

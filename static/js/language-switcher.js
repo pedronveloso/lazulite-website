@@ -20,6 +20,10 @@
       return "it";
     }
 
+    if (lower.indexOf("ja") === 0) {
+      return "ja";
+    }
+
     return "en";
   }
 
@@ -46,6 +50,10 @@
 
       if (lang.indexOf("it") === 0) {
         return "it";
+      }
+
+      if (lang.indexOf("ja") === 0) {
+        return "ja";
       }
     }
 

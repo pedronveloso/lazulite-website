@@ -1,6 +1,4 @@
 
-# Política de privacidad de Lazulite
-
 Gracias por elegir Lazulite. Tu privacidad es importante para nosotros y estamos comprometidos con la protección de tus datos personales. Esta Política de privacidad describe qué información recopilamos, cómo la usamos y qué medidas tomamos para proteger tus datos cuando utilizas nuestra aplicación Android disponible en Google Play.
 
 ## Analítica del sitio web
@@ -15,7 +13,7 @@ Crashlytics puede conservar informes localmente mientras los diagnósticos está
 
 - Registros del sistema: los usuarios pueden optar por enviarnos registros del sistema para ayudarnos a resolver problemas técnicos. Aunque estos registros pueden ser útiles para el diagnóstico, también pueden contener información sensible sobre el dispositivo. El envío de registros es completamente voluntario.
 
-- Búsqueda del proveedor del dispositivo de destino: si activas la opción "Buscar proveedor del destino", Lazulite envía los tres primeros pares de la dirección MAC del dispositivo Bluetooth conectado a MACLookup para identificar su proveedor. Esta opción está desactivada de forma predeterminada, y no se envía ninguna otra parte de la dirección.
+- Búsqueda del proveedor del dispositivo de destino: cuando la opción "Buscar proveedor del destino" está activada, Lazulite envía los tres primeros pares de la dirección MAC del dispositivo Bluetooth conectado a MACLookup para identificar su proveedor. Esta opción está activada de forma predeterminada si no hay una preferencia guardada, y se respetan las elecciones existentes. Puedes desactivarla en Ajustes. No se envía ninguna otra parte de la dirección.
 
 ## Cómo usamos tu información
 
@@ -29,7 +27,7 @@ Solo recopilamos las respuestas que envías. Las respuestas son totalmente anón
 
 ## Compartición y transferencia de datos
 
-No **vendemos** ni intercambiamos tu información. Si activas los diagnósticos de fallos, Google Firebase Crashlytics recibe y procesa esos diagnósticos. Consulta la [Política de privacidad de Google](https://policies.google.com/privacy) para obtener información sobre sus prácticas de datos. Si activas la opción de búsqueda del proveedor del destino, MACLookup recibe la parte de la dirección MAC necesaria para identificar el proveedor. Si respondes a un cuestionario opcional, el servicio de encuestas solo recibe las respuestas que enviaste.
+No **vendemos** ni intercambiamos tu información. Si activas los diagnósticos de fallos, Google Firebase Crashlytics recibe y procesa esos diagnósticos. Consulta la [Política de privacidad de Google](https://policies.google.com/privacy) para obtener información sobre sus prácticas de datos. Cuando la opción de búsqueda del proveedor del destino está activada, MACLookup recibe la parte de la dirección MAC necesaria para identificar el proveedor. Si respondes a un cuestionario opcional, el servicio de encuestas solo recibe las respuestas que enviaste.
 
 ## Protección de datos
 

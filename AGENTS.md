@@ -12,7 +12,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - `hugo` - Build static site (outputs to `public/`)
 - `hugo server` - Start local dev server (http://localhost:1313)
 - `hugo server -D` - Include draft content in dev server
-- Netlify deploys automatically on push using Hugo 0.166.0 (configured via `HUGO_VERSION` in `netlify.toml`) — keep this in sync with the local Hugo binary (`hugo version`) when either is upgraded
+- Netlify deploys automatically on push using Hugo 0.167.0 (configured via `HUGO_VERSION` in `netlify.toml`) — keep this in sync with the local Hugo binary (`hugo version`) when either is upgraded
 
 ### Testing
 - There is no automated test setup. `package.json` is empty and no Cypress/test config exists.
@@ -27,9 +27,9 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 
 ### Internationalization
 The site is multilingual. Languages are defined under `[languages.*]` in `config.toml`:
-- `en` (English, default), `es` (Español), `zh` (简体中文), `it` (Italiano)
+- `en` (English, default), `es` (Español), `zh` (简体中文), `it` (Italiano), `ja` (日本語)
 - Each language sets its own `locale`, `params` (`footerHtml`, `description`, `homeTitle`), and menu items under `[[languages.XX.menu.header]]` (weight-based ordering)
-- Translated content uses the `name.<lang>.md` convention (e.g. `faq.es.md`, `faq.zh.md`, `faq.it.md`); the unsuffixed file is English
+- Translated content uses the `name.<lang>.md` convention (e.g. `faq.es.md`, `faq.zh.md`, `faq.it.md`, `faq.ja.md`); the unsuffixed file is English
 
 ### Content Structure
 Content lives in `content/` as markdown files:
@@ -38,9 +38,10 @@ Content lives in `content/` as markdown files:
 - `privacy.md` - Privacy policy page
 - `whats-new.md` - App release notes
 - `posts/` - Blog posts (minimal usage)
-- Each of the above (except `posts/`) has `.es.md`, `.zh.md`, and `.it.md` translations
+- Each of the above (except `posts/`) has `.es.md`, `.zh.md`, `.it.md`, and `.ja.md` translations
 
 ### Content Editing
+- For audience, terminology, and translation tone, consult the shared [Android product reference](../../android/lazulite-android/PRODUCT.md#languages). Japanese uses concise labels and friendly です・ます explanations, familiar audio terms, and natural Japanese punctuation. Avoid em dashes and curly apostrophes.
 - Content markdown files support raw HTML (enabled via `markup.goldmark.renderer.unsafe = true` in `config.toml`) — `_index.md` is almost entirely raw HTML sections
 - New blog posts should be placed in `content/posts/` with draft front matter
 
@@ -61,4 +62,5 @@ The custom "lazulite" theme (based on "Nightfall"):
 ### Static Assets
 - `static/images/` - App screenshots and Google Play badge
 - Hugo copies `static/` contents directly to `public/` during build
+- Refresh localized app images with `scripts/import-app-media.py` from original AASG PNGs, using lossy WebP at quality 90 with lossless transparency (`-q 90 -alpha_q 100`), at 2× CSS display width for Retina, capped at the original resolution. Preserve feathering and aspect ratios; never resize previously generated website images. Follow [the media refresh guide](docs/refresh-app-media.md) for targets, commands, and validation.
 - `public/` and `resources/_gen/` are build artifacts; do not edit them directly

@@ -1,6 +1,4 @@
 
-# Preguntas frecuentes
-
 <nav class="faq-nav" aria-label="Secciones de preguntas frecuentes">
   <a href="#permissions">Permisos y configuración</a>
   <a href="#codecs">Códecs y compatibilidad</a>
@@ -15,7 +13,7 @@
 <details data-umami-faq="special_permissions">
 <summary>¿Por qué Lazulite necesita permisos especiales?</summary>
 <div class="faq-body">
-<p>Lazulite necesita permiso para leer los registros de audio de tu sistema Android y así mostrar información en tiempo real sobre códecs y transmisión Bluetooth. Android restringe el acceso a estos registros por motivos de privacidad y seguridad, así que tendrás que conceder permiso usando uno de estos tres métodos:</p>
+<p>Lazulite necesita permiso para leer los registros de audio de tu sistema Android y así mostrar información sobre códecs Bluetooth y la ruta de audio. Android restringe el acceso a estos registros por motivos de privacidad y seguridad, así que tendrás que conceder permiso usando uno de estos tres métodos:</p>
 
 <h3>Opción 1: Shizuku (recomendado para la mayoría)</h3>
 <p><strong>Ideal para:</strong> la mayoría de usuarios, especialmente quienes prefieren configurar Lazulite directamente desde el teléfono</p>
@@ -71,8 +69,8 @@
 <details data-umami-faq="wired_headphones">
 <summary>¿Puedo usar Lazulite con auriculares con cable?</summary>
 <div class="faq-body">
-<p>Lazulite supervisa la pila de audio Bluetooth: qué códec acordaron usar tu teléfono y tus auriculares, la calidad de transmisión y la pérdida de paquetes. Las conexiones con cable evitan todo eso, así que Lazulite no tiene nada que leer.</p>
-<p>Con auriculares con cable, el audio va directamente del DAC de tu dispositivo a tus oídos. No hay codificación inalámbrica ni selección de códec.</p>
+<p>No se admite la inspección de audio por cable. Lazulite muestra el códec seleccionado por tu teléfono y tu dispositivo de audio Bluetooth, junto con la ruta de audio indicada por Android.</p>
+<p>Las conexiones por cable no usan Bluetooth, así que no hay datos de códec Bluetooth que Lazulite pueda inspeccionar.</p>
 </div>
 </details>
 
@@ -96,7 +94,7 @@
 <summary>¿Puede Lazulite decirme la marca de mis auriculares conectados?</summary>
 <div class="faq-body">
 <p>Sí. Activa "Buscar proveedor del destino" en Ajustes y Lazulite mostrará el fabricante de tu dispositivo Bluetooth conectado junto al resto de sus datos.</p>
-<p>Esta opción está desactivada de forma predeterminada. Cuando la activas, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
+<p>Esta opción está activada de forma predeterminada si no hay una preferencia guardada; se respetan las elecciones existentes. Puedes desactivarla en Ajustes. Cuando está activada, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
 </div>
 </details>
 
@@ -109,7 +107,7 @@
 <div class="faq-body">
 <p>Lazulite realiza todo el análisis de audio localmente en tu dispositivo. No se envía ningún dato desde tu teléfono a menos que elijas compartirlo.</p>
 <p><strong>Diagnósticos de fallos opcionales:</strong> Lazulite no recopila analíticas de uso de la app. Los diagnósticos de fallos están desactivados de forma predeterminada; si los activas, pueden enviarse informes de fallos y registros técnicos de diagnóstico a Google Firebase Crashlytics para mejorar la estabilidad. Los informes almacenados localmente pueden cargarse después de activar la opción.</p>
-<p><strong>Búsqueda opcional de proveedor:</strong> si activas "Buscar proveedor del destino" en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción permanece desactivada a menos que la actives.</p>
+<p><strong>Búsqueda opcional de proveedor:</strong> cuando "Buscar proveedor del destino" está activado en Ajustes, Lazulite envía los tres primeros pares de la dirección MAC de tu dispositivo conectado a MACLookup para identificar su fabricante. No se envía ninguna otra parte de la dirección, y la opción está activada de forma predeterminada si no hay una preferencia guardada. Se respetan las elecciones existentes y puedes desactivarla en Ajustes.</p>
 <p><strong>¿Quieres desactivarlo?</strong> Ve a Ajustes → Desactiva "Diagnósticos de fallos" o "Buscar proveedor del destino".</p>
 </div>
 </details>

@@ -144,3 +144,30 @@
 .content.vertical {
   min-height: calc(100vh - 200px);
 }
+
+// Captured cards already contain their feathered edge; frames supply their own outline.
+.homepage .section .app-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  margin: 0 auto;
+}
+
+.homepage .section .app-media--phone,
+.homepage .section .app-media--video {
+  max-width: 360px;
+}
+
+.homepage .section .app-media--card {
+  max-width: 560px;
+}
+
+.homepage .section .app-media--video {
+  background: #0b1017;
+}
+
+.homepage .section .app-media[hidden] {
+  display: none;
+}

@@ -1,0 +1,71 @@
+[not_found]
+    other = "ページが見つかりません"
+
+[not_found_desc]
+    other = "このページは存在しないか、移動した可能性があります。ホームからお探しください。"
+
+[home]
+    other = "ホーム"
+
+[language]
+    other = "言語"
+
+[language_en]
+    other = "English"
+
+[language_short_en]
+    other = "EN"
+
+[language_es]
+    other = "Español"
+
+[language_short_es]
+    other = "ES"
+
+[language_zh]
+    other = "简体中文"
+
+[language_short_zh]
+    other = "中文"
+
+[language_it]
+    other = "Italiano"
+
+[language_short_it]
+    other = "IT"
+
+[language_ja]
+    other = "日本語"
+
+[language_short_ja]
+    other = "日本語"
+
+[navigation_toggle]
+    other = "メニューを開閉"
+
+[published]
+    other = "公開日"
+
+[reading_time]
+    other = "読む時間の目安"
+
+[reading_time_desc]
+    other = "{{ .Count }}分"
+
+[authors]
+    other = "著者"
+
+[tags]
+    other = "タグ"
+
+[categories]
+    other = "カテゴリ"
+
+[and]
+    other = "と"
+
+[powered_by]
+    other = "使用ツール："
+
+[theme]
+    other = "テーマ"

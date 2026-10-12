@@ -1,6 +1,4 @@
 
-# Privacy Policy for Lazulite
-
 Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.
 
 ## Website Analytics:
@@ -15,7 +13,7 @@ Crashlytics may retain reports locally while diagnostics are disabled. If you la
 
 - System Logs: Users have the option to send us system logs to assist in resolving technical issues. While these logs can provide valuable information for troubleshooting, they may also contain sensitive information about the user's device. Sending system logs is entirely voluntary.
 
-- Destination Device Vendor Lookup: If you turn on the optional "Look up destination vendor" setting, Lazulite sends the first three pairs of your connected Bluetooth device's MAC address to MACLookup to identify its vendor. This setting is off by default, and no other part of the address is ever sent.
+- Destination Device Vendor Lookup: When the optional "Look up destination vendor" setting is enabled, Lazulite sends the first three pairs of your connected Bluetooth device's MAC address to MACLookup to identify its vendor. This setting is on by default when no preference has been saved, and existing choices are preserved. You can turn it off in Settings. No other part of the address is ever sent.
 
 ## How We Use Your Information:
 
@@ -29,7 +27,7 @@ We only collect the answers you submit. Survey responses are completely anonymou
 
 ## Data Sharing and Transfer:
 
-We do **not** sell or trade your information. If you enable Crash diagnostics, Google Firebase Crashlytics receives and processes those diagnostics. See [Google's Privacy Policy](https://policies.google.com/privacy) for information about Google's data practices. If you turn on the destination vendor lookup setting, MACLookup receives the partial MAC address needed to identify the vendor. You can check MACLookup's own privacy practices for details on how it handles that data. If you answer an optional questionnaire, the survey service receives only the answers you submitted.
+We do **not** sell or trade your information. If you enable Crash diagnostics, Google Firebase Crashlytics receives and processes those diagnostics. See [Google's Privacy Policy](https://policies.google.com/privacy) for information about Google's data practices. When destination vendor lookup is enabled, MACLookup receives the partial MAC address needed to identify the vendor. You can check MACLookup's own privacy practices for details on how it handles that data. If you answer an optional questionnaire, the survey service receives only the answers you submitted.
 
 ## Data Protection:
 

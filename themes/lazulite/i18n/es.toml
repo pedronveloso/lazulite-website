@@ -61,3 +61,12 @@
 
 [theme]
   other = "tema"
+
+[language_ja]
+    other = "日本語"
+
+[language_short_ja]
+    other = "日本語"
+
+[navigation_toggle]
+    other = "Abrir o cerrar el menú"
