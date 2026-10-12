@@ -17,8 +17,6 @@ faqSchema:
     answer: "Battery impact is minimal. Lazulite reads system logs that already exist and does not create extra Bluetooth processing when you are not using the app."
 ---
 
-# Frequently Asked Questions
-
 <nav class="faq-nav" aria-label="FAQ sections">
   <a href="#permissions">Permissions & Setup</a>
   <a href="#codecs">Codecs & Compatibility</a>

@@ -17,8 +17,6 @@ faqSchema:
     answer: "El impacto en batería es mínimo. Lazulite lee registros del sistema que ya existen y no crea procesamiento Bluetooth adicional cuando no estás usando la app."
 ---
 
-# Preguntas frecuentes
-
 <nav class="faq-nav" aria-label="Secciones de preguntas frecuentes">
   <a href="#permissions">Permisos y configuración</a>
   <a href="#codecs">Códecs y compatibilidad</a>

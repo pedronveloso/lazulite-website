@@ -8,8 +8,6 @@ draft: false
 showMetadata: false
 ---
 
-# Privacy Policy for Lazulite
-
 Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.
 
 ## Website Analytics:

@@ -18,7 +18,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&hl=ja" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&amp;hl=ja" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
       Google Playで入手
     </a>
     <a href="#features" class="btn btn-purple">
@@ -99,8 +99,8 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
   <p class="section-subtitle">
     Google Playで配信中。サブスクリプションはありません。
   </p>
-  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&hl=ja" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="footer">
-    Google Playで入手
+  <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&amp;hl=ja" data-umami-event="download_intent" data-umami-event-placement="footer">
+    <img src="/images/google-play-badge.png" alt="Google PlayでLazuliteを入手" width="200" height="77" loading="lazy">
   </a>
 </section>
 

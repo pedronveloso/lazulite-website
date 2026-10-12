@@ -18,37 +18,7 @@
                 {{ end }}
                 {{ $page := . }}
                 {{ $sites := sort hugo.Sites "Language.Weight" }}
-                {{ $languageCount := len $sites }}
                 <li class="headerLanguage">
-                    {{ if le $languageCount 4 }}
-                    <div class="headerLanguage__segmented" role="navigation" aria-label="{{ i18n "language" }}" data-language-switcher>
-                        {{ range $sites }}
-                            {{ $langCode := .Language.Lang }}
-                            {{ $targetSite := . }}
-                            {{ $target := $targetSite.Home }}
-                            {{ if eq $page.Lang $langCode }}
-                                {{ $target = $page }}
-                            {{ else }}
-                                {{ with where $page.Translations "Lang" $langCode }}
-                                    {{ $target = index . 0 }}
-                                {{ end }}
-                            {{ end }}
-                            <a
-                                href="{{ $target.RelPermalink }}"
-                                class="headerLanguage__option {{ if eq $page.Lang $langCode }}is-active{{ end }}"
-                                lang="{{ .Language.Locale | default $langCode }}"
-                                hreflang="{{ $langCode }}"
-                                title="{{ i18n (printf "language_%s" $langCode) }}"
-                                aria-current="{{ if eq $page.Lang $langCode }}page{{ else }}false{{ end }}"
-                                data-language-option
-                                data-language="{{ $langCode }}"
-                                data-url="{{ $target.RelPermalink }}"
-                            >
-                                {{ i18n (printf "language_short_%s" $langCode) }}
-                            </a>
-                        {{ end }}
-                    </div>
-                    {{ else }}
                     <details class="headerLanguage__menu" data-language-switcher>
                         <summary class="headerLanguage__trigger" aria-label="{{ i18n "language" }}">
                             <span class="headerLanguage__triggerLabel">{{ i18n (printf "language_short_%s" $page.Lang) }}</span>
@@ -83,7 +53,6 @@
                             {{ end }}
                         </div>
                     </details>
-                    {{ end }}
                 </li>
             </ul>
         </nav>
