@@ -1,73 +1,43 @@
-// Lazulite Design System
-// Aesthetic: Technical, Elite, Well-crafted, Audiophile
-// Palette: deep cool slate + amber/gold + muted teal
+// Lazulite web design tokens.
+//
+// Mirrors the Android app's dark theme (Color.kt, Theme.kt, Typography.kt in the
+// lazulite-android repo). Change the app first, then mirror here. Named by role,
+// never by hue. See DESIGN.md at the repository root.
 
-// ─── Backgrounds ────────────────────────────────────────────────────────────
-// (hex for SCSS function compat; CSS custom props use oklch in _global.scss)
-$bg-base:    #12131A;   // oklch(11% 0.008 255)
-$bg-surface: #191A22;   // oklch(15% 0.008 255)
-$bg-raised:  #20212B;   // oklch(19% 0.008 255)
-$bg-border:  #2B2C38;   // oklch(23% 0.008 255)
-
-// ─── Near-black for text on accent buttons (not pure black — tinted) ────────
-$bg-deep: #0D0D12;
-
-// ─── Accent — Amber/Gold (VU meters, precision instruments, tube warmth) ────
-$accent:        #C49C3C;
-$accent-bright: #D4AE54;
-$accent-dim:    #8C6E28;
-
-// ─── Accent 2 — Muted Teal (data readouts, signal measurement) ──────────────
-$accent-teal:     #3A9E8A;
-$accent-teal-dim: #2A7060;
+// ─── Ground ─────────────────────────────────────────────────────────────────
+$background:     #0B1017;  // LazDarkBackground: mineral navy
+$surface:        #131B25;  // LazDarkSurface
+$surface-raised: #1A2532;  // LazDarkSurfaceRaised
+$hairline:       #223040;  // LazDarkHairline: 1px borders and dividers
 
 // ─── Text ───────────────────────────────────────────────────────────────────
-$text-primary:   #EEEEF4;
-$text-secondary: #8E8EA0;
-$text-tertiary:  #54546A;
+$text-primary:   #E4EAF0;
+$text-secondary: #A3B2C2;
+$text-muted:     #7D8FA3;
 
-// ─── Quality indicators ─────────────────────────────────────────────────────
-$quality-excellent: #3DB87A;
-$quality-good:      #C49C3C;
-$quality-fair:      #C47A3C;
-$quality-poor:      #C44040;
+// ─── Accent: lapis ──────────────────────────────────────────────────────────
+$accent:        #3E8FD8;
+$accent-bright: #6FB2E8;
+$on-accent:     $background;  // text on an accent fill
+
+// ─── Signal ramp ────────────────────────────────────────────────────────────
+// Quality tiers. Always pair with text or an icon; never colour alone.
+$signal-excellent: #D9B36C;
+$signal-good:      #3E8FD8;
+$signal-fair:      #C98A3D;
+$signal-poor:      #CF726A;
 
 // ─── Typography ─────────────────────────────────────────────────────────────
-$fontDisplay:   'Barlow Condensed', system-ui, sans-serif;
-$fontParagraph: 'Epilogue', system-ui, sans-serif;
-$fontCode:      'Fira Mono', 'Courier New', monospace;
-$fontHeader:    $fontDisplay;  // legacy alias
+// Sora is self-hosted (static/fonts/Sora). Sora has no CJK glyphs, so the stack
+// falls through to the platform's UI face; each CJK language gets its own
+// stack so Han characters use the right regional glyph forms.
+$font-sans:    'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-sans-ja: 'Sora', 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans CJK JP', 'Noto Sans JP', system-ui, sans-serif;
+$font-sans-zh: 'Sora', 'PingFang SC', 'Microsoft YaHei UI', 'Noto Sans CJK SC', 'Noto Sans SC', system-ui, sans-serif;
+$font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 
-// ─── Legacy color mappings (for existing components that use old names) ──────
-$backgroundDark:        $bg-base;
-$backgroundDarker:      $bg-surface;
-$card-background:       $bg-surface;
-$card-background-light: $bg-raised;
-$divider-color:         $bg-border;
-$laz-background:        $bg-base;
-
-$white:  $text-primary;
-$grey-6: $text-primary;
-$grey-5: $text-secondary;
-$grey-4: $text-secondary;
-$grey-3: $text-tertiary;
-$black:  $bg-surface;
-$blue:   $accent-teal;
-
-$laz-primary:       $accent;
-$laz-business-name: $text-primary;
-$laz-labels:        $text-secondary;
-$laz-slogan:        $text-secondary;
-$laz-icon:          $text-primary;
-
-// Neon legacy → remapped to non-neon equivalents
-$neon-cyan:   $accent-teal;
-$neon-purple: $accent;
-$neon-blue:   $accent;
-$neon-green:  $quality-excellent;
-$neon-pink:   $quality-poor;
-
-// ─── Spacing (4pt scale) ────────────────────────────────────────────────────
+// ─── Spacing ────────────────────────────────────────────────────────────────
+// 4 / 8 / 12 / 16 / 24 match LazuliteSpacing; 32 and up are page rhythm only.
 $space-xs:   4px;
 $space-sm:   8px;
 $space-md:   12px;
@@ -77,13 +47,12 @@ $space-xl:   32px;
 $space-2xl:  48px;
 $space-3xl:  64px;
 
-// ─── Border Radius ──────────────────────────────────────────────────────────
-$radius-sm:     3px;
-$radius-md:     6px;
-$radius-lg:     10px;
-$radius-xl:     16px;
-$radius-pill:   24px;
-$radius-circle: 50%;
+// ─── Radius ─────────────────────────────────────────────────────────────────
+// LazuliteShapes: instrument panels have tight corners. No pills.
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 10px;
 
 // ─── Layout ─────────────────────────────────────────────────────────────────
 $breakLarge:   992px;

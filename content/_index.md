@@ -7,10 +7,10 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite App logo" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Lazulite App logo" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
 
   <p class="hero-subtitle">
@@ -19,10 +19,10 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       Download Now
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       See Features
     </a>
   </div>
@@ -30,7 +30,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Why Audiophiles Choose <span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">Why Audiophiles Choose <span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     Know exactly what your gear is doing to your audio.
   </p>
@@ -62,7 +62,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
       <p class="feature-body">
         Playback health compares Android diagnostics when you refresh. Check newly reported audio underruns, outgoing buffer drops, and connection issues attributable to the device playing audio.
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>Audio buffer underruns</li>
         <li>Outgoing audio buffer drops</li>
         <li>Recent connection issues during playback</li>

@@ -7,10 +7,10 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
 
   <p class="hero-subtitle">
@@ -19,10 +19,10 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       Scarica ora
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       Scopri le funzioni
     </a>
   </div>
@@ -30,7 +30,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Perché gli audiofili scelgono <span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">Perché gli audiofili scelgono <span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     Scopri esattamente cosa fa il tuo equipaggiamento al tuo audio.
   </p>
@@ -62,7 +62,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
       <p class="feature-body">
         Lo stato di riproduzione confronta la diagnostica di Android a ogni aggiornamento. Controlla nuovi underrun audio, scarti dei buffer in uscita e problemi di connessione attribuibili al dispositivo che sta riproducendo audio.
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>Dati insufficienti nel buffer audio</li>
         <li>Scarti dei buffer audio in uscita</li>
         <li>Problemi di connessione recenti durante la riproduzione</li>

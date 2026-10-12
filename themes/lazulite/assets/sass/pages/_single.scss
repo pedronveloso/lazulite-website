@@ -9,35 +9,33 @@
 
   // Page title
   h1 {
-    font-size: clamp(1.875rem, 4vw, 2.75rem);
-    letter-spacing: 0.1em;
-    margin-bottom: $space-2xl;
+    font-size: clamp(1.75rem, 4vw, 2.125rem);
+    margin: 0 0 $space-2xl;
     padding-bottom: $space-lg;
-    border-bottom: 1px solid $bg-border;
-    color: $text-primary;
+    border-bottom: 1px solid $hairline;
   }
 
   // Section headings
   h2 {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    letter-spacing: 0.1em;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     margin-top: $space-2xl;
     margin-bottom: $space-base;
-    color: $text-primary;
     padding-top: $space-lg;
   }
 
+  // Third level reads as a section label, not a bolded sentence.
   h3 {
-    font-size: 0.875rem;
-    letter-spacing: 0.1em;
-    color: $accent;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $accent-bright;
     margin-top: $space-xl;
     margin-bottom: $space-sm;
   }
 
   p {
     color: $text-secondary;
-    line-height: 1.8;
+    line-height: 1.75;
     margin-bottom: $space-base;
     max-width: 65ch;
     font-size: 0.9375rem;
@@ -45,7 +43,7 @@
 
   ul, ol {
     color: $text-secondary;
-    line-height: 1.8;
+    line-height: 1.75;
     padding-left: $space-xl;
     margin-bottom: $space-base;
     max-width: 65ch;
@@ -57,14 +55,15 @@
   }
 
   a {
-    color: $accent;
+    color: $accent-bright;
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba($accent, 0.4);
+    text-decoration-color: $hairline;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
 
     &:hover {
-      color: $accent-bright;
-      text-decoration-color: rgba($accent-bright, 0.6);
+      color: $text-primary;
+      text-decoration-color: $accent;
     }
   }
 
@@ -75,13 +74,13 @@
 
   hr {
     border: none;
-    border-top: 1px solid $bg-border;
+    border-top: 1px solid $hairline;
     margin: $space-2xl 0;
   }
 
   blockquote {
-    background: rgba($accent, 0.07);
-    border: 1px solid rgba($accent, 0.2);
+    background: $surface;
+    border: 1px solid $hairline;
     border-radius: $radius-md;
     padding: $space-base $space-lg;
     margin: $space-lg 0;
@@ -91,11 +90,11 @@
 }
 
 .postMetadata {
-  font-family: $fontCode;
+  font-family: $font-mono;
   font-size: 0.8125rem;
   display: block;
-  background: $bg-surface;
-  border: 1px solid $bg-border;
+  background: $surface;
+  border: 1px solid $hairline;
   padding: $space-base;
   border-radius: $radius-md;
   color: $text-secondary;
@@ -115,12 +114,11 @@ dl {
 
 dt {
   grid-column-start: 1;
-  color: $text-primary;
-  font-family: $fontDisplay;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  color: $text-muted;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.8125rem;
 }
 
 dd {
@@ -128,98 +126,80 @@ dd {
   color: $text-secondary;
 }
 
-dt::after {
-  content: ":";
-}
-
-// ─── FAQ Jump Nav ─────────────────────────────────────────────────────────────
+// ─── FAQ jump nav ─────────────────────────────────────────────────────────────
 .faq-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-sm $space-base;
+  gap: $space-sm;
   margin: $space-xl 0 $space-2xl;
 
   a {
-    font-family: $fontDisplay;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 500;
     color: $text-secondary;
     text-decoration: none;
-    padding: $space-sm $space-base;
-    border: 1px solid $bg-border;
+    padding: $space-sm $space-md;
+    border: 1px solid $hairline;
     border-radius: $radius-sm;
     transition: color 0.15s ease, border-color 0.15s ease;
 
     &:hover {
-      color: $accent;
-      border-color: rgba($accent, 0.4);
-      text-decoration: none;
+      color: $accent-bright;
+      border-color: $accent;
     }
   }
 }
 
-// ─── Changelog Release Links ─────────────────────────────────────────────────
+// ─── Changelog release links ─────────────────────────────────────────────────
+// Version numbers are measurements: tabular figures, raised surface.
 .postWrapper .changelog-version {
   display: inline-flex;
   margin-top: $space-2xl;
   margin-bottom: $space-lg;
   padding: 0;
-  font-family: $fontCode;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
   text-wrap: balance;
 
   a {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    padding: $space-sm $space-lg;
-    color: $accent-bright;
-    background: rgba($accent, 0.12);
-    border: 1px solid rgba($accent, 0.5);
+    padding: $space-sm $space-base;
+    color: $text-primary;
+    background: $surface-raised;
+    border: 1px solid $hairline;
     border-radius: $radius-sm;
     text-decoration: none;
-    text-underline-offset: initial;
-    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    transition: color 0.15s ease, border-color 0.15s ease;
 
     &::before {
       content: "#";
       margin-right: $space-sm;
-      color: $accent-dim;
+      color: $accent;
     }
 
     &:hover {
-      color: $text-primary;
-      background: rgba($accent, 0.2);
-      border-color: $accent-bright;
-      text-decoration: none;
-    }
-
-    &:focus-visible {
-      outline: 2px solid $accent-bright;
-      outline-offset: 3px;
+      color: $accent-bright;
+      border-color: $accent;
     }
   }
 }
 
-// ─── FAQ Collapsible Items ────────────────────────────────────────────────────
+// ─── FAQ collapsible items ───────────────────────────────────────────────────
 .postWrapper {
   details {
-    border: 1px solid $bg-border;
+    background: $surface;
+    border: 1px solid $hairline;
     border-radius: $radius-md;
-    margin-bottom: $space-base;
-    background: $bg-surface;
-    transition: border-color 0.2s ease;
+    margin-bottom: $space-md;
+    transition: border-color 0.15s ease;
 
+    &:hover,
     &[open] {
-      border-color: rgba($accent, 0.3);
-    }
-
-    &:hover {
-      border-color: rgba($accent, 0.2);
+      border-color: $accent;
     }
 
     summary {
@@ -227,24 +207,21 @@ dt::after {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: $space-base;
       padding: $space-base $space-lg;
       cursor: pointer;
-      font-family: $fontDisplay;
       font-size: 0.9375rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1.4;
       color: $text-primary;
       user-select: none;
-      gap: $space-base;
 
-      // Hide default marker cross-browser
       &::-webkit-details-marker { display: none; }
 
-      // Chevron indicator
+      // Plus marker rotates to a cross when open: motion explains state.
       &::after {
         content: "+";
-        font-family: $fontCode;
+        font-family: $font-mono;
         font-size: 1.125rem;
         font-weight: 400;
         color: $accent;
@@ -264,7 +241,7 @@ dt::after {
 
   p, li {
     color: $text-secondary;
-    line-height: 1.8;
+    line-height: 1.75;
     font-size: 0.9375rem;
     max-width: 65ch;
   }
@@ -278,28 +255,13 @@ dt::after {
     }
   }
 
+  // Option titles carry content, so they read as headings, not labels.
   h3 {
-    font-size: 0.8125rem;
-    letter-spacing: 0.1em;
-    color: $accent;
+    font-size: 0.9375rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: $text-primary;
     margin-top: $space-lg;
     margin-bottom: $space-sm;
-  }
-
-  strong {
-    color: $text-primary;
-    font-weight: 600;
-  }
-
-  a {
-    color: $accent;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: rgba($accent, 0.4);
-
-    &:hover {
-      color: $accent-bright;
-      text-decoration-color: rgba($accent-bright, 0.6);
-    }
   }
 }

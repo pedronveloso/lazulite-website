@@ -1,136 +1,143 @@
 @import "./utils/variables";
 
+// Custom properties mirror utils/_variables.scss. Use these (or the SCSS
+// variables) everywhere; never hard-code a hex value in a component or in content.
 :root {
-  // Backgrounds — OKLCH for perceptual uniformity, tinted toward blue-slate
-  --bg-base:    oklch(11% 0.008 255);
-  --bg-surface: oklch(15% 0.008 255);
-  --bg-raised:  oklch(19% 0.008 255);
-  --bg-border:  oklch(23% 0.008 255);
+  color-scheme: dark;
 
-  // Primary accent — Amber/Gold
-  --accent:        oklch(71% 0.14 75);
-  --accent-bright: oklch(79% 0.12 75);
-  --accent-dim:    oklch(52% 0.12 75);
+  --background:     #{$background};
+  --surface:        #{$surface};
+  --surface-raised: #{$surface-raised};
+  --hairline:       #{$hairline};
 
-  // Secondary accent — Muted Teal (data/measurement)
-  --accent-teal:     oklch(66% 0.13 190);
-  --accent-teal-dim: oklch(50% 0.11 190);
+  --text-primary:   #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-muted:     #{$text-muted};
 
-  // Text
-  --text-primary:   oklch(93% 0.006 255);
-  --text-secondary: oklch(62% 0.006 255);
-  --text-tertiary:  oklch(42% 0.006 255);
+  --accent:        #{$accent};
+  --accent-bright: #{$accent-bright};
 
-  // Quality indicators
-  --quality-excellent: oklch(74% 0.18 145);
-  --quality-good:      oklch(71% 0.14 75);
-  --quality-fair:      oklch(71% 0.14 50);
-  --quality-poor:      oklch(58% 0.22 22);
+  --signal-excellent: #{$signal-excellent};
+  --signal-good:      #{$signal-good};
+  --signal-fair:      #{$signal-fair};
+  --signal-poor:      #{$signal-poor};
 
-  // Spacing
-  --space-xs:   4px;
-  --space-sm:   8px;
-  --space-md:   12px;
-  --space-base: 16px;
-  --space-lg:   24px;
-  --space-xl:   32px;
-  --space-2xl:  48px;
-  --space-3xl:  64px;
+  --space-xs:   #{$space-xs};
+  --space-sm:   #{$space-sm};
+  --space-md:   #{$space-md};
+  --space-base: #{$space-base};
+  --space-lg:   #{$space-lg};
+  --space-xl:   #{$space-xl};
+  --space-2xl:  #{$space-2xl};
+  --space-3xl:  #{$space-3xl};
 
-  // Radius
-  --radius-sm:   3px;
-  --radius-md:   6px;
-  --radius-lg:   10px;
-  --radius-xl:   16px;
-
-  // Legacy aliases (used by inline styles in content files)
-  --grey-3: oklch(42% 0.006 255);
-  --grey-4: oklch(62% 0.006 255);
-  --grey-5: oklch(62% 0.006 255);
-  --grey-6: oklch(93% 0.006 255);
-  --neon-cyan:   oklch(66% 0.13 190);
-  --neon-purple: oklch(71% 0.14 75);
-  --neon-blue:   oklch(71% 0.14 75);
-  --card-background: oklch(15% 0.008 255);
+  --radius-xs: #{$radius-xs};
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  background-color: $background;
+}
+
 body {
-  font-family: $fontParagraph;
+  font-family: $font-sans;
   font-size: 1rem;
-  color: var(--text-secondary);
-  background-color: var(--bg-base);
+  color: $text-secondary;
+  background-color: $background;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+// Regional CJK stacks. Sora still covers Latin text and digits inside CJK copy.
+// Components inherit font-family; only `body` and monospace set one.
+html:lang(ja) body { font-family: $font-sans-ja; }
+html:lang(zh) body { font-family: $font-sans-zh; }
+
 a {
-  color: var(--accent);
+  color: $accent;
   text-decoration: none;
   transition: color 0.15s ease;
 
   &:hover {
-    color: var(--accent-bright);
-    filter: none;
+    color: $accent-bright;
   }
 }
 
 pre code {
-  font-family: $fontCode;
+  font-family: $font-mono;
   font-size: 0.8125rem;
   display: block;
-  background: var(--bg-surface);
-  border: 1px solid var(--bg-border);
+  background: $surface;
+  border: 1px solid $hairline;
   padding: $space-base;
   overflow: auto;
-  border-radius: var(--radius-md);
+  border-radius: $radius-md;
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: $text-primary;
 }
 
 code {
-  font-family: $fontCode;
+  font-family: $font-mono;
   font-size: 0.8125rem;
-  background: color-mix(in oklch, var(--accent-teal) 10%, var(--bg-surface));
+  background: $surface-raised;
   padding: 2px 6px;
-  border-radius: var(--radius-sm);
-  color: var(--accent-teal);
+  border-radius: $radius-sm;
+  color: $accent-bright;
 }
 
-@for $i from 1 through 6 {
-  h#{$i} {
-    font-family: $fontDisplay;
-    color: var(--text-primary);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+// Headings: Sora semibold, sentence case, slightly negative tracking at
+// larger sizes (LazuliteTypography headline styles). Uppercase belongs to
+// `.section-label` and the wordmark only.
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: $text-primary;
+  line-height: 1.25;
 }
+
+h1 { letter-spacing: -0.02em; }
+h2 { letter-spacing: -0.015em; }
+h3, h4 { letter-spacing: -0.01em; }
 
 p {
-  color: var(--text-secondary);
+  color: $text-secondary;
+}
+
+// Anything that shows a measured value renders with tabular figures so
+// digits do not shift (LazuliteMetricValue).
+.metric,
+time {
+  font-variant-numeric: tabular-nums;
 }
 
 // ─── Focus styles ─────────────────────────────────────────────────────────────
-// Applied to keyboard/switch navigation only (not mouse clicks)
+// Keyboard/switch navigation only (not mouse clicks)
 :focus-visible {
-  outline: 2px solid $accent;
+  outline: 2px solid $accent-bright;
   outline-offset: 3px;
   border-radius: $radius-sm;
 }
 
-// Remove focus ring for mouse users
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-@-ms-viewport {
-  width: device-width;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
