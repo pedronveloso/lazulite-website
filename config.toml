@@ -35,7 +35,9 @@ url = "mailto:lazuliteapp@gmail.com"
 readingTime = false  # Show reading time on post page
 published = false  # Show published data on post page
 playStoreUrl = "https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"
-socialImage = "/images/codecs-info-2.png"
+socialImage = "/images/opengraph/lazulite.png"
+socialImageWidth = 1200
+socialImageHeight = 630
 
 [languages]
   [languages.en]

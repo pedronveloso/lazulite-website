@@ -24,6 +24,7 @@
 
 
 
+
   
     
   
@@ -40,6 +41,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B1017">
 
 <meta name="generator" content="Hugo 0.167.0">
 
@@ -71,25 +74,26 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lazulite.app/zh/">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lazulite.app/images/codecs-info-2.png">
-<meta property="og:image:alt" content="Android 蓝牙音频检查工具 | Lazulite App">
+<meta property="og:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
+<meta property="og:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1088">
-<meta property="og:image:height" content="1357">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Android 蓝牙音频检查工具 | Lazulite App">
 <meta name="twitter:description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
-<meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
+<meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
+<meta name="twitter:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 
 
-<link href="/sass/main.min.4807b09a454b074bb29167a4dd658df3548f04a720c0da59bf9febd912ee3f42.css" rel="stylesheet">
+<link href="/sass/main.min.21e66b696572bcb0abce1e8114124b5ac6e13c153933bcb060b3b2b2f23d12e6.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 <script src="/js/app-media.js" defer></script>
 
 
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/codecs-info-2.png","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","logo":"https://lazulite.app/images/lazulite-logo-500.png","name":"Lazulite App","sameAs":["https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"],"url":"https://lazulite.app/zh/"}</script>
   
@@ -97,9 +101,8 @@
 
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Epilogue:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Sora/Sora-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Sora/Sora-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -118,7 +121,8 @@
         <header class="headerWrapper">
     <div class="header">
         <div>
-            <a href="/zh/">
+            <a href="/zh/" class="headerBrand">
+                <img class="headerBrand__logo" src="/images/lazulite-logo-500.png" alt="" width="16" height="16">
                 <span class="terminal">Lazulite App</span>
             </a>
         </div>
@@ -277,25 +281,25 @@
                     
                     <div class="homepage">
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
   <p class="hero-subtitle">
     流媒体应用宣称无损。你的耳机却未必如此。<br>
     Lazulite 会把实际传输到耳机的内容直接展示出来。
   </p>
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       立即下载
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       查看功能
     </a>
   </div>
 </section>
 <section id="features" class="section">
-  <h2 class="section-title">为什么发烧友选择 <span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">为什么发烧友选择 <span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     准确了解你的设备究竟对音频做了什么。
   </p>
@@ -324,7 +328,7 @@
       <p class="feature-body">
         播放健康状态会在每次刷新时对比 Android 诊断信息。查看新报告的音频欠载、输出缓冲区丢弃，以及可归属于当前播放设备的连接问题。
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>音频缓冲区数据不足</li>
         <li>输出音频缓冲区丢弃</li>
         <li>播放期间近期报告的连接问题</li>

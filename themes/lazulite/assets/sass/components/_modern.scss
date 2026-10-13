@@ -1,293 +1,153 @@
 @import "../utils/variables";
 
-// ─── Accent Text ─────────────────────────────────────────────────────────────
-// Replaces the banned gradient-text pattern with a solid accent color
-.gradient-text {
-  color: $accent;
-  font-weight: 700;
+// Shared building blocks. Mixins carry the instrument-panel vocabulary so the
+// same treatment is not re-declared per component.
+
+// Hairline-bordered tonal surface. No shadow, no gradient.
+@mixin panel($fill: $surface) {
+  background-color: $fill;
+  border: 1px solid $hairline;
+  border-radius: $radius-md;
+}
+
+// Uppercase tracked label that carries section hierarchy (LazuliteSectionLabel).
+@mixin section-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  display: inline-block;
+}
+
+// ─── Accent text ─────────────────────────────────────────────────────────────
+.accent-text {
+  color: $accent;
 }
 
 // ─── Buttons ─────────────────────────────────────────────────────────────────
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: $space-sm;
-  padding: 10px $space-xl;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px $space-lg;
   border: 1px solid transparent;
   border-radius: $radius-sm;
-  font-size: 0.875rem;
-  font-weight: 700;
-  font-family: $fontDisplay;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
   cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-
-  &:hover {
-    filter: none;
-  }
-
-  min-height: 44px;
-
-  &:active {
-    transform: translateY(1px);
-  }
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-// Primary CTA — amber/gold fill
-.btn-cyan {
-  background-color: $accent;
-  color: $bg-deep;
-  border-color: $accent;
-
-  &:hover {
-    background-color: $accent-bright;
-    border-color: $accent-bright;
-    color: $bg-deep;
-  }
-}
-
-// Secondary — outline, neutral
-.btn-purple {
-  background-color: transparent;
-  color: $text-secondary;
-  border-color: $bg-border;
-
-  &:hover {
-    border-color: $text-tertiary;
-    color: $text-primary;
-  }
-}
-
-.btn-blue {
-  background-color: transparent;
-  color: $accent-teal;
-  border-color: $accent-teal;
-
-  &:hover {
-    background-color: rgba($accent-teal, 0.08);
-  }
-}
-
+// Primary: lapis fill, text in the ground colour (onPrimary).
 .btn-primary {
   background-color: $accent;
-  color: $bg-deep;
   border-color: $accent;
+  color: $on-accent;
 
   &:hover {
     background-color: $accent-bright;
     border-color: $accent-bright;
+    color: $on-accent;
   }
 }
 
-// ─── Cards ───────────────────────────────────────────────────────────────────
-.card {
-  background-color: $bg-surface;
-  border-radius: $radius-lg;
-  border: 1px solid $bg-border;
-  padding: $space-xl;
-  margin-bottom: $space-base;
-  transition: border-color 0.2s ease;
+// Secondary: hairline outline.
+.btn-secondary {
+  background-color: transparent;
+  border-color: $hairline;
+  color: $text-primary;
 
   &:hover {
-    border-color: rgba($accent, 0.35);
-  }
-
-  &.card-light {
-    background-color: $bg-raised;
-  }
-
-  &.card-glow {
-    border-color: rgba($accent, 0.25);
+    border-color: $accent;
+    color: $accent-bright;
   }
 }
 
-.card-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: $text-primary;
-  margin-bottom: $space-md;
-  font-family: $fontDisplay;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+// ─── Panel and measurements ──────────────────────────────────────────────────
+.panel {
+  @include panel;
+  padding: $space-lg;
+  margin-bottom: $space-base;
+
+  &.panel-raised {
+    background-color: $surface-raised;
+  }
 }
 
-.card-divider {
-  height: 1px;
-  background-color: $bg-border;
-  margin: $space-md 0;
+.section-label {
+  @include section-label;
+  color: $text-muted;
 }
 
-// ─── Badges ──────────────────────────────────────────────────────────────────
-.badge {
-  display: inline-block;
-  padding: 3px $space-md;
-  border-radius: $radius-sm;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-family: $fontDisplay;
-}
-
-.badge-excellent {
-  background-color: rgba($quality-excellent, 0.12);
-  color: $quality-excellent;
-}
-
-.badge-good {
-  background-color: rgba($accent, 0.12);
-  color: $accent;
-}
-
-.badge-neon {
-  background-color: rgba($accent, 0.10);
-  color: $accent;
-  padding: $space-sm $space-base;
-  border-radius: $radius-pill;
-  font-size: 0.8125rem;
-}
-
-// ─── Now Playing Badge ────────────────────────────────────────────────────────
-.now-playing-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: $space-md;
-  padding: $space-sm $space-lg;
+// Label on the left, tabular value on the right, like the app's detail rows.
+.metric-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space-base;
+  padding: $space-sm 0;
+  font-size: 0.875rem;
   color: $text-secondary;
 
-  &.active {
-    color: $accent;
-    font-weight: 600;
-  }
-}
-
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: $radius-circle;
-  background-color: $accent;
-  animation: pulse-fade 2s ease-in-out infinite alternate;
-}
-
-// ─── Animations ──────────────────────────────────────────────────────────────
-@keyframes pulse-fade {
-  from { opacity: 0.25; }
-  to   { opacity: 1; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-7px); }
-}
-
-.animated-float {
-  will-change: transform;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .animated-float {
-    animation: float 4s ease-in-out infinite;
-  }
-}
-
-// ─── Feature Grid ─────────────────────────────────────────────────────────────
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: $space-lg;
-  margin: $space-xl 0;
-
-  @media (max-width: $breakMedium) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.feature-card {
-  background-color: $bg-surface;
-  border: 1px solid $bg-border;
-  border-radius: $radius-lg;
-  padding: $space-xl;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    border-color: rgba($accent, 0.35);
-    transform: translateY(-2px);
-  }
-
-  .feature-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: $radius-md;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: $space-base;
-    font-size: 22px;
-    color: $accent;
-    background: rgba($accent, 0.10);
-  }
-
-  .feature-title {
-    font-size: 0.9375rem;
-    font-weight: 700;
+  .metric-value {
     color: $text-primary;
-    margin-bottom: $space-sm;
-    font-family: $fontDisplay;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .feature-description {
-    color: $text-secondary;
-    line-height: 1.65;
-    font-size: 0.9375rem;
-  }
-
-  .feature-accent {
-    display: none;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
   }
 }
 
-// ─── Hero Section ─────────────────────────────────────────────────────────────
+// ─── Signal badges ───────────────────────────────────────────────────────────
+// Tier chips always carry text; colour supports the label, never replaces it.
+.badge {
+  @include section-label;
+  display: inline-block;
+  padding: 3px $space-sm;
+  border: 1px solid currentColor;
+  border-radius: $radius-xs;
+  color: $text-secondary;
+}
+
+.badge-excellent { color: $signal-excellent; }
+.badge-good      { color: $signal-good; }
+.badge-fair      { color: $signal-fair; }
+.badge-poor      { color: $signal-poor; }
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
 .hero-section {
   text-align: center;
-  padding: $space-3xl * 1.5 $space-lg $space-2xl;
-  position: relative;
+  padding: $space-3xl $space-lg $space-2xl;
 
   @media (max-width: $breakMedium) {
     padding: $space-2xl $space-base $space-xl;
   }
 
+  // The wordmark: uppercase Sora semibold in lapis, as in the app's top bar.
   .hero-title {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 600;
     margin: $space-lg 0 $space-base;
-    font-family: $fontDisplay;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: $text-primary;
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
-    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+    font-size: clamp(1rem, 2vw, 1.125rem);
     color: $text-secondary;
     margin: 0 auto $space-xl;
-    line-height: 1.75;
-    max-width: 440px;
+    line-height: 1.65;
+    max-width: 30em;
   }
 }
 
-// ─── Sections ─────────────────────────────────────────────────────────────────
+// ─── Sections ────────────────────────────────────────────────────────────────
 .section {
   padding: $space-3xl 0;
 
   &.section-alt {
-    background-color: $bg-surface;
+    background-color: $surface;
   }
 
   @media (max-width: $breakMedium) {
@@ -296,13 +156,12 @@
 }
 
 .section-title {
-  font-size: clamp(1.5rem, 3vw, 2.125rem);
-  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
   color: $text-primary;
-  margin-bottom: $space-base;
-  font-family: $fontDisplay;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  margin: 0 0 $space-base;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
   text-align: center;
 }
 
@@ -316,16 +175,17 @@
   color: $text-secondary;
   text-align: center;
   margin: 0 auto $space-xl;
-  line-height: 1.7;
-  max-width: 540px;
+  line-height: 1.65;
+  max-width: 34em;
 }
 
-// ─── Two Column Layout ────────────────────────────────────────────────────────
+// ─── Two column layout ───────────────────────────────────────────────────────
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $space-2xl;
   align-items: center;
+  text-align: left;
 
   @media (max-width: $breakMedium) {
     grid-template-columns: 1fr;
@@ -338,41 +198,4 @@
       .column:last-child  { order: 1; }
     }
   }
-}
-
-// ─── Highlight Box ────────────────────────────────────────────────────────────
-// No border-left accent stripe (absolute ban). Uses full border + tinted background.
-.highlight-box {
-  background: rgba($accent, 0.07);
-  border: 1px solid rgba($accent, 0.25);
-  padding: $space-base $space-lg;
-  border-radius: $radius-md;
-  margin: $space-lg 0;
-
-  p {
-    margin: 0;
-    color: $text-secondary;
-  }
-
-  strong {
-    color: $accent;
-  }
-}
-
-// ─── Mockup Placeholder ───────────────────────────────────────────────────────
-.mockup-placeholder {
-  background: $bg-raised;
-  border: 1px solid $bg-border;
-  border-radius: $radius-lg;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  color: $text-tertiary;
-  font-family: $fontDisplay;
-  font-size: 0.8125rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: $space-xl;
 }

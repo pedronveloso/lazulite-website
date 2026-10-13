@@ -7,6 +7,9 @@
 [home]
     other = "Inicio"
 
+[opengraph_image_alt]
+    other = "Lazulite, inspector de audio Bluetooth. Sigue el audio desde la app de reproducción hasta los auriculares a través de LDAC."
+
 [language]
     other = "Idioma"
 

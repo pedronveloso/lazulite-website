@@ -1,5 +1,8 @@
 # Refresh the localized app media
 
+This flow does not regenerate or import the OpenGraph sharing card. Use the separate
+[OpenGraph refresh guide](refresh-opengraph-media.md) when that asset is requested.
+
 Use this guide when Lazulite's appearance changes and the website needs fresh screenshots or
 video. Capture the real debug app with AASG; do not redraw, manually crop, or edit screenshots.
 The Android repository's `aasg.yaml` and capture instrumentation define the journeys and effects.
@@ -198,7 +201,8 @@ visitors see the corresponding poster. Retain controls so visitors can pause pla
 
 Captured cards and framed phones provide their own edges: do not add website borders or rounding
 that hide feathering or duplicate the device frame. Preserve aspect ratios and check mobile layout.
-Keep shared logos, download badges, and the existing social-preview image intact.
+Keep shared logos, download badges, and the OpenGraph image intact during screenshot/video refreshes.
+For an intentional OpenGraph update, follow the separate [OpenGraph refresh guide](refresh-opengraph-media.md).
 
 ## Validate and hand off
 

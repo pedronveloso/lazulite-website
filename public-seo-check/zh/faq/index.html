@@ -22,6 +22,7 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 
 
 
+
   
     
   
@@ -38,6 +39,8 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="解答 Lazulite 的权限要求、ADB 设置、Shizuku、蓝牙编解码器支持、音频路径检查以及 Android 音频兼容性等问题。">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B1017">
 
 <meta name="generator" content="Hugo 0.167.0">
 
@@ -68,19 +71,20 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lazulite.app/zh/faq/">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lazulite.app/images/codecs-info-2.png">
-<meta property="og:image:alt" content="Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性">
+<meta property="og:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
+<meta property="og:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1088">
-<meta property="og:image:height" content="1357">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性">
 <meta name="twitter:description" content="解答 Lazulite 的权限要求、ADB 设置、Shizuku、蓝牙编解码器支持、音频路径检查以及 Android 音频兼容性等问题。">
-<meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
+<meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
+<meta name="twitter:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 
 
-<link href="/sass/main.min.4807b09a454b074bb29167a4dd658df3548f04a720c0da59bf9febd912ee3f42.css" rel="stylesheet">
+<link href="/sass/main.min.21e66b696572bcb0abce1e8114124b5ac6e13c153933bcb060b3b2b2f23d12e6.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -100,9 +104,8 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite 读取 Android 音频系统日志，以显示蓝牙编解码器和音频路径信息。Android 会限制这些日志的访问，因此必须通过 ADB、Shizuku 或 root 权限授予访问权限。"},"name":"为什么 Lazulite 需要特殊权限？"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite 可以检测设备支持并实际协商使用的蓝牙音频编解码器，包括 LDAC、aptX、aptX HD、aptX Adaptive、LC3、MIHC、Opus、各版本 LHDC、AAC、SBC，以及在支持设备上的三星 SSC 编解码器。"},"name":"Lazulite 支持哪些蓝牙编解码器？"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"不支持有线音频检查。Lazulite 检查蓝牙连接的编解码器和 Android 报告的音频路径。有线音频不经过蓝牙，因此没有蓝牙编解码器数据可供应用检查。"},"name":"Lazulite 可以配合有线耳机使用吗？"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"电量影响很小。Lazulite 读取的是系统已经生成的日志，在你不使用应用时不会额外增加蓝牙处理负担。"},"name":"Lazulite 会明显耗电吗？"}]}</script>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Epilogue:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Sora/Sora-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Sora/Sora-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -121,7 +124,8 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
         <header class="headerWrapper">
     <div class="header">
         <div>
-            <a href="/zh/">
+            <a href="/zh/" class="headerBrand">
+                <img class="headerBrand__logo" src="/images/lazulite-logo-500.png" alt="" width="16" height="16">
                 <span class="terminal">Lazulite App</span>
             </a>
         </div>

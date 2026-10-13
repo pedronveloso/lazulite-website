@@ -22,6 +22,7 @@ Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility
 
 
 
+
   
     
   
@@ -38,6 +39,8 @@ Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Answers about Lazulite permissions, ADB setup, Shizuku, Bluetooth codec support, audio path inspection, and Android audio compatibility.">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B1017">
 
 <meta name="generator" content="Hugo 0.167.0">
 
@@ -68,19 +71,20 @@ Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lazulite.app/faq/">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://lazulite.app/images/codecs-info-2.png">
-<meta property="og:image:alt" content="Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility">
+<meta property="og:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
+<meta property="og:image:alt" content="Lazulite Bluetooth audio inspector. Follow your audio from playback app through LDAC to headphones.">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1088">
-<meta property="og:image:height" content="1357">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility">
 <meta name="twitter:description" content="Answers about Lazulite permissions, ADB setup, Shizuku, Bluetooth codec support, audio path inspection, and Android audio compatibility.">
-<meta name="twitter:image" content="https://lazulite.app/images/codecs-info-2.png">
+<meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
+<meta name="twitter:image:alt" content="Lazulite Bluetooth audio inspector. Follow your audio from playback app through LDAC to headphones.">
 
 
-<link href="/sass/main.min.4807b09a454b074bb29167a4dd658df3548f04a720c0da59bf9febd912ee3f42.css" rel="stylesheet">
+<link href="/sass/main.min.21e66b696572bcb0abce1e8114124b5ac6e13c153933bcb060b3b2b2f23d12e6.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 
 
@@ -100,9 +104,8 @@ Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite reads Android audio system logs to show Bluetooth codec and audio path information. Android restricts access to these logs, so permission must be granted with ADB, Shizuku, or root access."},"name":"Why does Lazulite need special permissions?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite can detect the Bluetooth audio codecs your device supports and negotiates, including LDAC, aptX, aptX HD, aptX Adaptive, LC3, MIHC, Opus, LHDC variants, AAC, SBC, and Samsung SSC codecs when available."},"name":"Which Bluetooth codecs does Lazulite support?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Wired audio inspection is not supported. Lazulite inspects the codecs and reported audio path of Bluetooth connections. Wired audio bypasses Bluetooth, so there is no Bluetooth codec data for the app to inspect."},"name":"Can I use Lazulite with wired headphones?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Battery impact is minimal. Lazulite reads system logs that already exist and does not create extra Bluetooth processing when you are not using the app."},"name":"Will Lazulite drain my battery?"}]}</script>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Epilogue:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Sora/Sora-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Sora/Sora-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -121,7 +124,8 @@ Lazulite FAQ: Permissions, Bluetooth Codecs, Setup &amp; Compatibility
         <header class="headerWrapper">
     <div class="header">
         <div>
-            <a href="/">
+            <a href="/" class="headerBrand">
+                <img class="headerBrand__logo" src="/images/lazulite-logo-500.png" alt="" width="16" height="16">
                 <span class="terminal">Lazulite App</span>
             </a>
         </div>
