@@ -6,10 +6,10 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 <div class="homepage">
 
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
 
   <p class="hero-subtitle">
@@ -18,17 +18,17 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       立即下载
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       查看功能
     </a>
   </div>
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">为什么发烧友选择 <span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">为什么发烧友选择 <span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     准确了解你的设备究竟对音频做了什么。
   </p>
@@ -59,7 +59,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
       <p class="feature-body">
         播放健康状态会在每次刷新时对比 Android 诊断信息。查看新报告的音频欠载、输出缓冲区丢弃，以及可归属于当前播放设备的连接问题。
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>音频缓冲区数据不足</li>
         <li>输出音频缓冲区丢弃</li>
         <li>播放期间近期报告的连接问题</li>

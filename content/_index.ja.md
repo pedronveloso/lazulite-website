@@ -6,10 +6,10 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 <div class="homepage">
 
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Lazuliteのロゴ" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Lazuliteのロゴ" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
 
   <p class="hero-subtitle">
@@ -18,17 +18,17 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&amp;hl=ja" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&amp;hl=ja" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       Google Playで入手
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       機能を見る
     </a>
   </div>
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">オーディオ好きのための<span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">オーディオ好きのための<span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     対応コーデックと、今使っている設定。その両方を確認できます。
   </p>
@@ -59,7 +59,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
       <p class="feature-body">
         「再生状態の診断」では、更新のたびにAndroidの診断情報を比較します。新たに報告された音声のアンダーラン、送信バッファーの音声データの破棄、再生中の機器に関する接続の問題を確認できます。
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>音声バッファーのデータ不足を確認</li>
         <li>送信待ち音声データの破棄を確認</li>
         <li>再生中に報告された接続の問題を確認</li>

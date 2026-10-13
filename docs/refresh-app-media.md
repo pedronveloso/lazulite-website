@@ -201,7 +201,8 @@ visitors see the corresponding poster. Retain controls so visitors can pause pla
 
 Captured cards and framed phones provide their own edges: do not add website borders or rounding
 that hide feathering or duplicate the device frame. Preserve aspect ratios and check mobile layout.
-Keep shared logos, download badges, and the existing social-preview image intact.
+Keep shared logos, download badges, and the OpenGraph image intact during screenshot/video refreshes.
+For an intentional OpenGraph update, follow the separate [OpenGraph refresh guide](refresh-opengraph-media.md).
 
 ## Validate and hand off
 

@@ -1,8 +1,8 @@
 @import "../utils/variables";
 
 .headerWrapper {
-  background-color: $bg-surface;
-  border-bottom: 1px solid $bg-border;
+  background-color: $surface;
+  border-bottom: 1px solid $hairline;
   display: flex;
   justify-content: center;
   flex-shrink: 0;
@@ -21,19 +21,38 @@
   max-width: 100%;
 }
 
+// App icon beside the wordmark, sized to the wordmark's font size. The icon is
+// decorative (the wordmark names the site), so it has empty alt text.
+.headerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+
+  &:hover .terminal {
+    color: $accent-bright;
+  }
+}
+
+.headerBrand__logo {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  border-radius: $radius-xs;
+}
+
+// Wordmark: uppercase Sora semibold in lapis, as in the app's top bar.
 .terminal {
-  font-family: $fontDisplay;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: $text-primary;
+  color: $accent;
   text-decoration: none;
   transition: color 0.15s ease;
 
   &:hover {
-    color: $accent;
-    filter: none;
+    color: $accent-bright;
   }
 }
 
@@ -47,18 +66,14 @@
     gap: $space-xl;
 
     li a {
-      font-family: $fontDisplay;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 0.875rem;
+      font-weight: 500;
       color: $text-secondary;
       text-decoration: none;
       transition: color 0.15s ease;
 
       &:hover {
         color: $text-primary;
-        filter: none;
       }
     }
   }
@@ -72,26 +87,30 @@
 
 .headerLanguage__trigger {
   align-items: center;
-  background: linear-gradient(180deg, rgba($bg-raised, 0.92), rgba($bg-surface, 0.98));
-  border: 1px solid rgba($accent, 0.24);
-  border-radius: 999px;
-  box-shadow: inset 0 1px 0 rgba($white, 0.04);
+  background: transparent;
+  border: 1px solid $hairline;
+  border-radius: $radius-sm;
+  cursor: pointer;
   display: inline-flex;
+  gap: $space-sm;
+  list-style: none;
   min-height: 2.25rem;
-  padding: 0.2rem;
-}
-
-.headerLanguage__trigger,
-.headerLanguage__menuItem {
+  padding: 0.35rem 0.75rem;
   color: $text-secondary;
-  filter: none;
-  font-family: $fontDisplay;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    border-color: $accent;
+    color: $text-primary;
+  }
 }
 
 .headerLanguage__menu {
@@ -99,22 +118,8 @@
 }
 
 .headerLanguage__menu[open] .headerLanguage__trigger {
-  border-color: rgba($accent, 0.42);
-}
-
-.headerLanguage__trigger {
-  cursor: pointer;
-  gap: 0.55rem;
-  list-style: none;
-  padding: 0.48rem 0.85rem 0.48rem 1rem;
-
-  &::-webkit-details-marker {
-    display: none;
-  }
-
-  &:hover {
-    color: $text-primary;
-  }
+  border-color: $accent;
+  color: $text-primary;
 }
 
 .headerLanguage__triggerLabel {
@@ -122,59 +127,59 @@
 }
 
 .headerLanguage__triggerIcon {
-  color: $text-tertiary;
+  color: $text-muted;
   font-size: 0.72rem;
   letter-spacing: 0;
   text-transform: none;
 }
 
 .headerLanguage__popover {
-  background: rgba($bg-surface, 0.98);
-  border: 1px solid rgba($accent, 0.22);
-  border-radius: $radius-lg;
-  box-shadow: 0 18px 40px rgba($bg-deep, 0.4);
+  background: $surface-raised;
+  border: 1px solid $hairline;
+  border-radius: $radius-md;
   display: grid;
-  gap: 0.15rem;
+  gap: 2px;
   min-width: 12rem;
-  padding: 0.35rem;
+  padding: $space-xs;
   position: absolute;
   right: 0;
-  top: calc(100% + 0.5rem);
+  top: calc(100% + #{$space-sm});
+  z-index: 110;
 }
 
 .headerLanguage__menuItem {
   align-items: center;
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
+  color: $text-secondary;
   display: flex;
-  gap: 0.85rem;
+  gap: $space-base;
   justify-content: space-between;
-  padding: 0.7rem 0.8rem;
-  text-transform: none;
+  padding: $space-sm $space-md;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 
   &:hover {
-    background: rgba($accent, 0.1);
+    background: $surface;
     color: $text-primary;
   }
 
   &.is-active {
-    background: rgba($accent, 0.12);
-    color: $text-primary;
+    background: $surface;
+    color: $accent-bright;
   }
 }
 
 .headerLanguage__menuShort {
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   min-width: 2.25rem;
   text-transform: uppercase;
 }
 
 .headerLanguage__menuFull {
-  font-family: $fontParagraph;
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
 }
 
 .hamb {
@@ -235,8 +240,8 @@
     position: fixed;
     top: 56px;
     left: 0;
-    background-color: $bg-base;
-    border-bottom: 1px solid $bg-border;
+    background-color: $background;
+    border-bottom: 1px solid $hairline;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.4s ease-out;
@@ -251,7 +256,6 @@
 
       li a {
         font-size: 1rem;
-        letter-spacing: 0.12em;
       }
     }
   }

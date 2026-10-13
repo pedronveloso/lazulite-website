@@ -2,17 +2,13 @@
 
 .postDate {
   float: right;
-  color: $text-secondary;
+  color: $text-muted;
 }
 
 .postTitle {
-  color: $accent-teal;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: $fontDisplay;
+  color: $accent;
   font-size: 1rem;
-  letter-spacing: 0.06em;
-  font-weight: 700;
+  font-weight: 600;
   float: left;
 }
 
@@ -25,21 +21,20 @@
 }
 
 .postListItem {
-  padding: $space-xl;
-  background-color: $bg-surface;
-  border: 1px solid $bg-border;
-  border-radius: $radius-lg;
-  margin-bottom: $space-lg;
-  transition: border-color 0.2s ease;
+  padding: $space-lg;
+  background-color: $surface;
+  border: 1px solid $hairline;
+  border-radius: $radius-md;
+  margin-bottom: $space-base;
+  transition: border-color 0.15s ease;
 
   &:hover {
-    border-color: rgba($accent, 0.3);
+    border-color: $accent;
   }
 }
 
 .postExcerpt {
   text-align: initial;
-  text-decoration: none;
   color: $text-secondary;
 }
 

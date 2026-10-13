@@ -6,10 +6,10 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 <div class="homepage">
 
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Logotipo de la app Lazulite" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Logotipo de la app Lazulite" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
 
   <p class="hero-subtitle">
@@ -18,17 +18,17 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
   </p>
 
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       Descargar ahora
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       Ver funciones
     </a>
   </div>
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">Por qué los audiófilos eligen <span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">Por qué los audiófilos eligen <span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     Descubre exactamente qué hace tu equipo con tu audio.
   </p>
@@ -59,7 +59,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
       <p class="feature-body">
         El estado de reproducción compara los diagnósticos de Android cada vez que actualizas. Consulta nuevos underruns de audio, descartes de búferes de salida y problemas de conexión atribuibles al dispositivo que está reproduciendo audio.
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>Falta de datos en el búfer de audio</li>
         <li>Descartes de búferes de audio de salida</li>
         <li>Problemas de conexión recientes durante la reproducción</li>

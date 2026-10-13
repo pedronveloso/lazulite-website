@@ -7,6 +7,9 @@
 [home]
     other = "ホーム"
 
+[opengraph_image_alt]
+    other = "Bluetoothオーディオ解析アプリLazulite。再生アプリからLDACを経由してヘッドホンに届くまでの音声経路を確認。"
+
 [language]
     other = "言語"
 

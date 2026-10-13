@@ -41,6 +41,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Inspector audio Bluetooth per Android. Controlla codec attivo, qualità di codifica, uscita dell&#39;app e problemi di riproduzione recenti riportati da Android.">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B1017">
 
 <meta name="generator" content="Hugo 0.167.0">
 
@@ -73,7 +75,7 @@
 <meta property="og:url" content="https://lazulite.app/it/">
 <meta property="og:locale" content="it_IT">
 <meta property="og:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
-<meta property="og:image:alt" content="Lazulite Bluetooth audio inspector. Follow your audio from playback app through LDAC to headphones.">
+<meta property="og:image:alt" content="Lazulite, analizzatore audio Bluetooth. Segui l&#39;audio dall&#39;app di riproduzione alle cuffie tramite LDAC.">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -82,10 +84,10 @@
 <meta name="twitter:title" content="Strumento di ispezione audio Bluetooth per Android | Lazulite App">
 <meta name="twitter:description" content="Inspector audio Bluetooth per Android. Controlla codec attivo, qualità di codifica, uscita dell&#39;app e problemi di riproduzione recenti riportati da Android.">
 <meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
-<meta name="twitter:image:alt" content="Lazulite Bluetooth audio inspector. Follow your audio from playback app through LDAC to headphones.">
+<meta name="twitter:image:alt" content="Lazulite, analizzatore audio Bluetooth. Segui l&#39;audio dall&#39;app di riproduzione alle cuffie tramite LDAC.">
 
 
-<link href="/sass/main.min.4807b09a454b074bb29167a4dd658df3548f04a720c0da59bf9febd912ee3f42.css" rel="stylesheet">
+<link href="/sass/main.min.21e66b696572bcb0abce1e8114124b5ac6e13c153933bcb060b3b2b2f23d12e6.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 <script src="/js/app-media.js" defer></script>
 
@@ -99,9 +101,8 @@
 
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Epilogue:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Sora/Sora-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Sora/Sora-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -120,7 +121,8 @@
         <header class="headerWrapper">
     <div class="header">
         <div>
-            <a href="/it/">
+            <a href="/it/" class="headerBrand">
+                <img class="headerBrand__logo" src="/images/lazulite-logo-500.png" alt="" width="16" height="16">
                 <span class="terminal">Lazulite App</span>
             </a>
         </div>
@@ -280,26 +282,26 @@
                     <div class="homepage">
 <!-- Hero Section -->
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo animated-float" width="270" height="270">
+  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo" width="270" height="270">
   <h1 class="hero-title">
-    <span class="gradient-text">LAZULITE</span>
+    <span class="accent-text">LAZULITE</span>
   </h1>
   <p class="hero-subtitle">
     Le app di streaming promettono audio lossless. Le tue cuffie raccontano un'altra storia.<br>
     Lazulite ti mostra esattamente cosa ti sta arrivando.
   </p>
   <div class="cta-buttons">
-    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-cyan" data-umami-event="download_intent" data-umami-event-placement="hero">
+    <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
       Scarica ora
     </a>
-    <a href="#features" class="btn btn-purple">
+    <a href="#features" class="btn btn-secondary">
       Scopri le funzioni
     </a>
   </div>
 </section>
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Perché gli audiofili scelgono <span class="gradient-text">Lazulite</span></h2>
+  <h2 class="section-title">Perché gli audiofili scelgono <span class="accent-text">Lazulite</span></h2>
   <p class="section-subtitle">
     Scopri esattamente cosa fa il tuo equipaggiamento al tuo audio.
   </p>
@@ -329,7 +331,7 @@
       <p class="feature-body">
         Lo stato di riproduzione confronta la diagnostica di Android a ogni aggiornamento. Controlla nuovi underrun audio, scarti dei buffer in uscita e problemi di connessione attribuibili al dispositivo che sta riproducendo audio.
       </p>
-      <ul class="feature-body" style="text-align: left; padding-left: 20px;">
+      <ul class="feature-body feature-list">
         <li>Dati insufficienti nel buffer audio</li>
         <li>Scarti dei buffer audio in uscita</li>
         <li>Problemi di connessione recenti durante la riproduzione</li>
