@@ -58,11 +58,25 @@
 <p>端末が情報を公開している場合、次のBluetoothオーディオコーデックを検出・表示できます。</p>
 <ul>
 <li>LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus</li>
-<li>LHDC V1、LHDC V2、LHDC V3、LHDC V4、LHDC V5</li>
+<li>LHDC（下の<a href="#lhdc-versions">LHDCバージョンの対応状況</a>をご覧ください）</li>
 <li>AAC、SBC</li>
 <li>SSC、SSC UHQ（Samsung端末のみ）</li>
 </ul>
 <p>スマートフォンと出力先の対応コーデックを別々に確認できます。両方が対応していても、その接続で使われるとは限りません。接続時に選ばれたコーデックは、使用中のコーデックとして表示します。</p>
+</div>
+</details>
+
+<details id="lhdc-versions" data-umami-faq="lhdc_versions">
+<summary>どのLHDCバージョンに対応していますか？</summary>
+<div class="faq-body">
+<p>LazuliteはLHDC V2、V3、V5で動作確認済みです。理論上は現在および将来のすべてのLHDCバージョンに対応できるはずです。</p>
+</div>
+</details>
+
+<details data-umami-faq="bluetooth_audio_devices">
+<summary>LazuliteはBluetoothヘッドホン以外でも使えますか？</summary>
+<div class="faq-body">
+<p>はい。Lazuliteは、ヘッドホンやイヤホンのほか、スピーカー、カーオーディオ、BluetoothオーディオレシーバーなどのBluetoothオーディオ機器で使えます。Androidスマートフォンに機器を接続して音声を再生すると、BluetoothコーデックやAndroidが報告する音声経路を確認できます。表示できる詳細情報は、スマートフォンと接続機器によって異なります。</p>
 </div>
 </details>
 

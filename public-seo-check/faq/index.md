@@ -58,11 +58,25 @@
 <p>Lazulite can detect and display all Bluetooth audio codecs your device supports:</p>
 <ul>
 <li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus</li>
-<li>LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
+<li>LHDC (see <a href="#lhdc-versions">supported LHDC versions</a> below)</li>
 <li>AAC, SBC</li>
 <li>SSC, SSC UHQ (Samsung devices only)</li>
 </ul>
-<p>If your device and headphones support it and agree to use it, Lazulite will show it.</p>
+<p>If your phone and Bluetooth audio device support it and agree to use it, Lazulite will show it.</p>
+</div>
+</details>
+
+<details id="lhdc-versions" data-umami-faq="lhdc_versions">
+<summary>Which LHDC versions does Lazulite support?</summary>
+<div class="faq-body">
+<p>Lazulite has been tested with LHDC V2, V3, and V5. In theory, it should support all current and future LHDC versions.</p>
+</div>
+</details>
+
+<details data-umami-faq="bluetooth_audio_devices">
+<summary>Does Lazulite work only with Bluetooth headphones?</summary>
+<div class="faq-body">
+<p>No. Lazulite works with Bluetooth audio devices, including headphones, earbuds, speakers, car audio systems, and Bluetooth audio receivers. Connect the device to your Android phone and play audio to inspect its Bluetooth codec and reported audio path. Available details depend on the phone and connected device.</p>
 </div>
 </details>
 

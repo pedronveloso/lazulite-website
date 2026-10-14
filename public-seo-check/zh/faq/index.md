@@ -58,11 +58,25 @@
 <p>Lazulite 可以检测并显示你的设备支持的所有蓝牙音频编解码器：</p>
 <ul>
 <li>LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus</li>
-<li>LHDC V1、LHDC V2、LHDC V3、LHDC V4、LHDC V5</li>
+<li>LHDC（请参阅下方的<a href="#lhdc-versions">LHDC 版本支持说明</a>）</li>
 <li>AAC、SBC</li>
 <li>SSC、SSC UHQ（仅限三星设备）</li>
 </ul>
-<p>只要你的设备和耳机都支持，并且最终协商使用该格式，Lazulite 就会显示出来。</p>
+<p>只要你的手机和蓝牙音频设备都支持，并且最终协商使用该格式，Lazulite 就会显示出来。</p>
+</div>
+</details>
+
+<details id="lhdc-versions" data-umami-faq="lhdc_versions">
+<summary>Lazulite 支持哪些 LHDC 版本？</summary>
+<div class="faq-body">
+<p>Lazulite 已通过 LHDC V2、V3 和 V5 的测试。理论上，它应能支持所有当前及未来的 LHDC 版本。</p>
+</div>
+</details>
+
+<details data-umami-faq="bluetooth_audio_devices">
+<summary>Lazulite 只能用于蓝牙耳机吗？</summary>
+<div class="faq-body">
+<p>不是。Lazulite 适用于各类蓝牙音频设备，包括头戴式耳机、入耳式耳机、音箱、车载音响系统和蓝牙音频接收器。将设备连接到 Android 手机并播放音频，即可查看其蓝牙编解码器和 Android 报告的音频路径。可显示的详细信息取决于手机和所连接的设备。</p>
 </div>
 </details>
 

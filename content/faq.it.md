@@ -11,6 +11,10 @@ faqSchema:
     answer: "Lazulite legge i log audio di sistema di Android per mostrare informazioni sui codec Bluetooth e sul percorso audio. Android limita l'accesso a questi log, quindi il permesso va concesso tramite ADB, Shizuku o accesso root."
   - question: "Quali codec Bluetooth supporta Lazulite?"
     answer: "Lazulite può rilevare i codec audio Bluetooth supportati e negoziati dal tuo dispositivo, tra cui LDAC, aptX, aptX HD, aptX Adaptive, LC3, MIHC, Opus, le varianti LHDC, AAC, SBC e i codec Samsung SSC, quando disponibili."
+  - question: "Quali versioni di LHDC supporta Lazulite?"
+    answer: "Lazulite è stato testato con LHDC V2, V3 e V5. In teoria, dovrebbe supportare tutte le versioni attuali e future di LHDC."
+  - question: "Lazulite funziona solo con le cuffie Bluetooth?"
+    answer: "No. Lazulite funziona con i dispositivi audio Bluetooth, tra cui cuffie, auricolari, altoparlanti, sistemi audio per auto e ricevitori audio Bluetooth. Collega il dispositivo al tuo telefono Android e avvia la riproduzione per controllare il codec Bluetooth e il percorso audio riportato da Android. I dettagli disponibili dipendono dal telefono e dal dispositivo collegato."
   - question: "Posso usare Lazulite con cuffie cablate?"
     answer: "L'ispezione dell'audio cablato non è supportata. Lazulite esamina i codec e il percorso audio riportato da Android per le connessioni Bluetooth. L'audio cablato non passa dal Bluetooth, quindi non ci sono dati sui codec Bluetooth da esaminare."
   - question: "Lazulite consuma batteria?"
@@ -76,11 +80,25 @@ faqSchema:
 <p>Lazulite può rilevare e mostrare tutti i codec audio Bluetooth supportati dal tuo dispositivo:</p>
 <ul>
 <li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus</li>
-<li>LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
+<li>LHDC (vedi le <a href="#lhdc-versions">versioni di LHDC supportate</a> qui sotto)</li>
 <li>AAC, SBC</li>
 <li>SSC, SSC UHQ (solo dispositivi Samsung)</li>
 </ul>
-<p>Se il tuo dispositivo e le tue cuffie lo supportano e si accordano per usarlo, Lazulite te lo mostrerà.</p>
+<p>Se il tuo telefono e il tuo dispositivo audio Bluetooth lo supportano e si accordano per usarlo, Lazulite te lo mostrerà.</p>
+</div>
+</details>
+
+<details id="lhdc-versions" data-umami-faq="lhdc_versions">
+<summary>Quali versioni di LHDC supporta Lazulite?</summary>
+<div class="faq-body">
+<p>Lazulite è stato testato con LHDC V2, V3 e V5. In teoria, dovrebbe supportare tutte le versioni attuali e future di LHDC.</p>
+</div>
+</details>
+
+<details data-umami-faq="bluetooth_audio_devices">
+<summary>Lazulite funziona solo con le cuffie Bluetooth?</summary>
+<div class="faq-body">
+<p>No. Lazulite funziona con i dispositivi audio Bluetooth, tra cui cuffie, auricolari, altoparlanti, sistemi audio per auto e ricevitori audio Bluetooth. Collega il dispositivo al tuo telefono Android e avvia la riproduzione per controllare il codec Bluetooth e il percorso audio riportato da Android. I dettagli disponibili dipendono dal telefono e dal dispositivo collegato.</p>
 </div>
 </details>
 
