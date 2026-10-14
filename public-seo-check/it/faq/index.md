@@ -105,9 +105,9 @@
 </details>
 
 <details data-umami-faq="vendor_lookup">
-<summary>Lazulite può dirmi la marca delle mie cuffie connesse?</summary>
+<summary>Che cosa identifica la ricerca del produttore Bluetooth di Lazulite?</summary>
 <div class="faq-body">
-<p>Sì. Attiva "Cerca il fornitore della destinazione" in Impostazioni e Lazulite mostrerà il produttore del tuo dispositivo Bluetooth connesso accanto agli altri dettagli.</p>
+<p>Con "Cerca il fornitore della destinazione" attivo nelle Impostazioni, Lazulite usa il prefisso dell'indirizzo MAC del dispositivo audio Bluetooth collegato per cercare il produttore associato, quando disponibile. Il risultato può identificare il produttore del chipset Bluetooth anziché la marca delle cuffie, dell'altoparlante o di un altro dispositivo audio. Il risultato non è sempre disponibile, ad esempio se l'indirizzo è casuale o la ricerca non trova un record corrispondente.</p>
 <p>Questa opzione è attiva per impostazione predefinita se non è stata salvata una preferenza; le scelte esistenti vengono rispettate. Puoi disattivarla nelle Impostazioni. Quando è attiva, Lazulite invia solo le prime tre coppie dell'indirizzo MAC di destinazione a MACLookup per identificare il fornitore. Nessun'altra parte dell'indirizzo viene mai inviata.</p>
 </div>
 </details>

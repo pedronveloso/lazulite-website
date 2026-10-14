@@ -198,6 +198,13 @@ Crash diagnostics can send reports and technical logs to Firebase Crashlytics
 after consent, including reports stored locally before opting in. Vendor lookup
 sends the first three pairs of the destination MAC address to MACLookup and is on
 by default when no preference has been saved; existing choices are preserved.
+
+Describe vendor lookup as identifying the manufacturer associated with the
+Bluetooth audio device's MAC address prefix, when available. It may identify the
+Bluetooth chipset manufacturer rather than the device's retail brand. Do not
+promise headphone-brand identification or a result for every device; randomized
+addresses and missing lookup records can prevent identification.
+
 Diagnostic logs may contain device names, addresses, playback details, and other
 identifiers, so sharing must be intentional.
 

@@ -379,9 +379,9 @@ Lazulite 常见问题：权限、蓝牙编解码器、设置与兼容性
 </div>
 </details>
 <details data-umami-faq="vendor_lookup">
-<summary>Lazulite 能告诉我耳机是什么品牌吗？</summary>
+<summary>Lazulite 的蓝牙制造商查询能识别什么？</summary>
 <div class="faq-body">
-<p>可以。在“设置”中开启“查询目标设备供应商”，Lazulite 就会在已连接蓝牙设备的详情旁显示其制造商。</p>
+<p>在“设置”中开启“查询目标设备供应商”后，Lazulite 会根据所连接蓝牙音频设备的 MAC 地址前缀查询关联的制造商（如果有相关信息）。查询结果可能是蓝牙芯片制造商，而不是耳机、音箱或其他音频设备的品牌。并非每次都能查到结果，例如设备使用随机地址，或查询数据库中没有匹配记录时。</p>
 <p>如果尚未保存偏好设置，该功能默认开启；已保存的选择会保留。你可以在“设置”中关闭此功能。开启时，Lazulite 只会把目标 MAC 地址的前三对字符发送给 MACLookup 用于识别供应商，地址的其他部分不会被发送。</p>
 </div>
 </details>
