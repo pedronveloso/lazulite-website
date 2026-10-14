@@ -100,8 +100,12 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
   
     
   
+    
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite lee los registros de audio del sistema Android para mostrar información sobre códecs Bluetooth y la ruta de audio. Android restringe el acceso a estos registros, por lo que el permiso debe concederse con ADB, Shizuku o acceso root."},"name":"¿Por qué Lazulite necesita permisos especiales?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite puede detectar los códecs Bluetooth que tu dispositivo admite y negocia, incluidos LDAC, aptX, aptX HD, aptX Adaptive, LC3, MIHC, Opus, variantes de LHDC, AAC, SBC y los códecs Samsung SSC cuando están disponibles."},"name":"¿Qué códecs Bluetooth admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No se admite la inspección de audio por cable. Lazulite inspecciona los códecs y la ruta de audio indicada por Android para las conexiones Bluetooth. El audio por cable no usa Bluetooth, así que no hay datos de códec Bluetooth que inspeccionar."},"name":"¿Puedo usar Lazulite con auriculares con cable?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"El impacto en batería es mínimo. Lazulite lee registros del sistema que ya existen y no crea procesamiento Bluetooth adicional cuando no estás usando la app."},"name":"¿Lazulite consume mucha batería?"}]}</script>
+    
+  
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite lee los registros de audio del sistema Android para mostrar información sobre códecs Bluetooth y la ruta de audio. Android restringe el acceso a estos registros, por lo que el permiso debe concederse con ADB, Shizuku o acceso root."},"name":"¿Por qué Lazulite necesita permisos especiales?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite puede detectar los códecs Bluetooth que tu dispositivo admite y negocia, incluidos LDAC, aptX, aptX HD, aptX Adaptive, LC3, MIHC, Opus, variantes de LHDC, AAC, SBC y los códecs Samsung SSC cuando están disponibles."},"name":"¿Qué códecs Bluetooth admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite se ha probado con LHDC V2, V3 y V5. En teoría, debería admitir todas las versiones actuales y futuras de LHDC."},"name":"¿Qué versiones de LHDC admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No. Lazulite funciona con dispositivos de audio Bluetooth, incluidos auriculares de diadema e intraaurales, altavoces, sistemas de audio del coche y receptores de audio Bluetooth. Conecta el dispositivo a tu teléfono Android y reproduce audio para consultar su códec Bluetooth y la ruta de audio indicada por Android. Los detalles disponibles dependen del teléfono y del dispositivo conectado."},"name":"¿Lazulite solo funciona con auriculares Bluetooth?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No se admite la inspección de audio por cable. Lazulite inspecciona los códecs y la ruta de audio indicada por Android para las conexiones Bluetooth. El audio por cable no usa Bluetooth, así que no hay datos de códec Bluetooth que inspeccionar."},"name":"¿Puedo usar Lazulite con auriculares con cable?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"El impacto en batería es mínimo. Lazulite lee registros del sistema que ya existen y no crea procesamiento Bluetooth adicional cuando no estás usando la app."},"name":"¿Lazulite consume mucha batería?"}]}</script>
 
 
 <link rel="preload" href="/fonts/Sora/Sora-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -334,11 +338,23 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 <p>Lazulite puede detectar y mostrar todos los códecs de audio Bluetooth compatibles con tu dispositivo:</p>
 <ul>
 <li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus</li>
-<li>LHDC V1, LHDC V2, LHDC V3, LHDC V4, LHDC V5</li>
+<li>LHDC (consulta las <a href="#lhdc-versions">versiones de LHDC compatibles</a> más abajo)</li>
 <li>AAC, SBC</li>
 <li>SSC, SSC UHQ (solo en dispositivos Samsung)</li>
 </ul>
-<p>Si tu dispositivo y tus auriculares lo admiten y ambos acuerdan usarlo, Lazulite lo mostrará.</p>
+<p>Si tu teléfono y tu dispositivo de audio Bluetooth lo admiten y ambos acuerdan usarlo, Lazulite lo mostrará.</p>
+</div>
+</details>
+<details id="lhdc-versions" data-umami-faq="lhdc_versions">
+<summary>¿Qué versiones de LHDC admite Lazulite?</summary>
+<div class="faq-body">
+<p>Lazulite se ha probado con LHDC V2, V3 y V5. En teoría, debería admitir todas las versiones actuales y futuras de LHDC.</p>
+</div>
+</details>
+<details data-umami-faq="bluetooth_audio_devices">
+<summary>¿Lazulite solo funciona con auriculares Bluetooth?</summary>
+<div class="faq-body">
+<p>No. Lazulite funciona con dispositivos de audio Bluetooth, incluidos auriculares de diadema e intraaurales, altavoces, sistemas de audio del coche y receptores de audio Bluetooth. Conecta el dispositivo a tu teléfono Android y reproduce audio para consultar su códec Bluetooth y la ruta de audio indicada por Android. Los detalles disponibles dependen del teléfono y del dispositivo conectado.</p>
 </div>
 </details>
 <details data-umami-faq="wired_headphones">
@@ -363,9 +379,9 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 </div>
 </details>
 <details data-umami-faq="vendor_lookup">
-<summary>¿Puede Lazulite decirme la marca de mis auriculares conectados?</summary>
+<summary>¿Qué identifica la búsqueda del fabricante Bluetooth de Lazulite?</summary>
 <div class="faq-body">
-<p>Sí. Activa "Buscar proveedor del destino" en Ajustes y Lazulite mostrará el fabricante de tu dispositivo Bluetooth conectado junto al resto de sus datos.</p>
+<p>Con "Buscar proveedor del destino" activado en Ajustes, Lazulite usa el prefijo de la dirección MAC del dispositivo de audio Bluetooth conectado para buscar el fabricante asociado, cuando está disponible. El resultado puede identificar al fabricante del chipset Bluetooth en lugar de la marca de tus auriculares, altavoz u otro dispositivo de audio. No siempre hay un resultado disponible, por ejemplo, si la dirección es aleatoria o la búsqueda no encuentra un registro coincidente.</p>
 <p>Esta opción está activada de forma predeterminada si no hay una preferencia guardada; se respetan las elecciones existentes. Puedes desactivarla en Ajustes. Cuando está activada, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
 </div>
 </details>

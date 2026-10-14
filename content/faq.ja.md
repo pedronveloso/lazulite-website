@@ -11,6 +11,10 @@ faqSchema:
     answer: "Lazuliteは、Androidのオーディオログを読み取り、Bluetoothコーデックや音声経路の情報を表示します。Androidはこのログへのアクセスを制限しているため、Shizuku、ADB、rootのいずれかで権限を許可する必要があります。"
   - question: "どのBluetoothコーデックに対応していますか？"
     answer: "端末が情報を公開している場合、LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus、LHDC各種、AAC、SBC、SamsungのSSCやSSC UHQなど、機器の対応コーデックと接続で使われているコーデックを確認できます。"
+  - question: "どのLHDCバージョンに対応していますか？"
+    answer: "LazuliteはLHDC V2、V3、V5で動作確認済みです。理論上は現在および将来のすべてのLHDCバージョンに対応できるはずです。"
+  - question: "LazuliteはBluetoothヘッドホン以外でも使えますか？"
+    answer: "はい。Lazuliteは、ヘッドホンやイヤホンのほか、スピーカー、カーオーディオ、BluetoothオーディオレシーバーなどのBluetoothオーディオ機器で使えます。Androidスマートフォンに機器を接続して音声を再生すると、BluetoothコーデックやAndroidが報告する音声経路を確認できます。表示できる詳細情報は、スマートフォンと接続機器によって異なります。"
   - question: "有線ヘッドホンでも使えますか？"
     answer: "有線オーディオの解析には対応していません。LazuliteはBluetooth接続のコーデックや音声経路を調べるアプリです。有線接続はBluetoothを使わないため、解析するBluetoothコーデック情報がありません。"
   - question: "バッテリーの消費は増えますか？"
@@ -76,11 +80,25 @@ faqSchema:
 <p>端末が情報を公開している場合、次のBluetoothオーディオコーデックを検出・表示できます。</p>
 <ul>
 <li>LDAC、aptX、aptX HD、aptX Adaptive、aptX TWS、LC3、MIHC、Opus</li>
-<li>LHDC V1、LHDC V2、LHDC V3、LHDC V4、LHDC V5</li>
+<li>LHDC（下の<a href="#lhdc-versions">LHDCバージョンの対応状況</a>をご覧ください）</li>
 <li>AAC、SBC</li>
 <li>SSC、SSC UHQ（Samsung端末のみ）</li>
 </ul>
 <p>スマートフォンと出力先の対応コーデックを別々に確認できます。両方が対応していても、その接続で使われるとは限りません。接続時に選ばれたコーデックは、使用中のコーデックとして表示します。</p>
+</div>
+</details>
+
+<details id="lhdc-versions" data-umami-faq="lhdc_versions">
+<summary>どのLHDCバージョンに対応していますか？</summary>
+<div class="faq-body">
+<p>LazuliteはLHDC V2、V3、V5で動作確認済みです。理論上は現在および将来のすべてのLHDCバージョンに対応できるはずです。</p>
+</div>
+</details>
+
+<details data-umami-faq="bluetooth_audio_devices">
+<summary>LazuliteはBluetoothヘッドホン以外でも使えますか？</summary>
+<div class="faq-body">
+<p>はい。Lazuliteは、ヘッドホンやイヤホンのほか、スピーカー、カーオーディオ、BluetoothオーディオレシーバーなどのBluetoothオーディオ機器で使えます。Androidスマートフォンに機器を接続して音声を再生すると、BluetoothコーデックやAndroidが報告する音声経路を確認できます。表示できる詳細情報は、スマートフォンと接続機器によって異なります。</p>
 </div>
 </details>
 
@@ -110,9 +128,9 @@ faqSchema:
 </details>
 
 <details data-umami-faq="vendor_lookup">
-<summary>接続したヘッドホンのメーカーもわかりますか？</summary>
+<summary>LazuliteのBluetoothメーカー検索では何がわかりますか？</summary>
 <div class="faq-body">
-<p>設定の「出力先のメーカーを検索」を有効にすると、確認できたメーカー名をBluetooth機器の情報に表示します。アドレスがランダム化されている場合など、確認できないこともあります。</p>
+<p>設定の「出力先のメーカーを検索」を有効にすると、接続したBluetoothオーディオ機器のMACアドレスの先頭部分を使い、関連するメーカー情報があれば表示します。表示されるのは、ヘッドホンやスピーカーなどの製品ブランドではなく、Bluetoothチップセットのメーカーの場合があります。アドレスがランダム化されている場合や、一致する登録情報がない場合など、結果が得られないこともあります。</p>
 <p>この設定は、設定値がまだ保存されていない場合はオンです。保存済みの設定はそのまま引き継がれ、設定画面からオフにできます。有効な場合は、メーカーを調べるためにMACアドレスの先頭3組だけをMACLookupに送信します。残りのアドレスは送信しません。</p>
 </div>
 </details>

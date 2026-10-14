@@ -40,7 +40,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
     <div class="column">
       <h2 class="section-title section-title--left">实时音频分析</h2>
       <p class="feature-body">
-        查看手机和耳机协商使用的编解码器：LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。
+        查看手机和蓝牙音频设备协商使用的编解码器：LHDC、MIHC、LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。
       </p>
       <p class="feature-body">
         查看采样率、位深，以及设备提供的比特率或编码质量设置。

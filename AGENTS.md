@@ -41,7 +41,7 @@ Content lives in `content/` as markdown files:
 - Each of the above (except `posts/`) has `.es.md`, `.zh.md`, `.it.md`, and `.ja.md` translations
 
 ### Content Editing
-- For audience, terminology, and translation tone, consult the shared [Android product reference](../../android/lazulite-android/PRODUCT.md#languages). Japanese uses concise labels and friendly です・ます explanations, familiar audio terms, and natural Japanese punctuation. Avoid em dashes and curly apostrophes.
+- Consult [PRODUCT.md](PRODUCT.md) for website audience, positioning, terminology, voice, translation guidance, and audience-specific copy decisions. The shared [Android product reference](../../android/lazulite-android/PRODUCT.md) remains the source of truth for app capabilities and shared product identity.
 - Content markdown files support raw HTML (enabled via `markup.goldmark.renderer.unsafe = true` in `config.toml`) — `_index.md` is almost entirely raw HTML sections
 - Style content with the theme's semantic classes (`btn btn-primary`, `btn-secondary`, `accent-text`, `section-title`, `feature-body`, `feature-list`, `panel`, `section-label`, `metric-row`, `badge-*`). Do not add inline `style=` attributes, hard-coded colours, or colour-named classes; add a class to the theme instead.
 - New blog posts should be placed in `content/posts/` with draft front matter
