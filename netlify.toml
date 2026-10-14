@@ -27,6 +27,11 @@
   to = "/zh/whats-new"
   status = 301
 
+[[redirects]]
+  from = "/ja/changelog"
+  to = "/ja/whats-new"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

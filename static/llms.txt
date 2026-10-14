@@ -1,15 +1,19 @@
 # Lazulite
 
-> Lazulite is an Android app that shows the real Bluetooth audio codec in use between your phone and your headphones, in real time.
+> Lazulite is a Bluetooth audio inspector for Android. It shows the codec and encoding quality in use between your phone and a connected Bluetooth audio device, alongside the audio path reported by Android.
 
-Lazulite reads Android's Bluetooth audio stack to reveal what streaming apps and manufacturers often hide: the actual codec negotiated (LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, LHDC V1-V5, AAC, SBC, and Samsung SSC/SSC UHQ where available), packet loss, and transmission/signal quality — instead of relying on what a streaming app claims to be sending.
+Lazulite reads Android system audio logs to show the codecs supported by the phone and receiving device, the codec negotiated for the current connection, and available sample rate, bit depth, bitrate, and encoding quality information. Supported codecs include LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, LHDC, MIHC, Opus, AAC, SBC, and Samsung SSC/SSC UHQ where available. Lazulite has been tested with LHDC V2, V3, and V5. In theory, it should support all current and future LHDC versions.
+
+Bluetooth audio devices include headphones, earbuds, speakers, car audio systems, and Bluetooth audio receivers. Available details depend on Android, the phone, playback app, codec, and connected device. A supported codec is not necessarily the codec currently in use.
 
 Key facts:
-- Platform: Android only (no iOS version, no wired/desktop support — it specifically monitors the Bluetooth audio stack)
+- Platform: Android only; inspects Bluetooth audio, not wired audio
 - Distribution: Google Play Store, paid app (one-time purchase, price set on the Play Store)
-- Core features: real-time Bluetooth codec detection, packet loss monitoring, transmission stability metrics, signal quality analysis, and setup suggestions
-- Setup: requires reading Android system audio logs, granted via ADB, Shizuku, or root access
-- Privacy: all audio analysis runs locally on-device; optional anonymous crash/usage telemetry via Firebase, can be disabled in Settings; optional user questionnaires submitted via a survey service and used only in aggregate
+- Core features: supported and active codec inspection, reported encoding quality, playback app output and audio path details, recent Android-reported playback issues, and setup suggestions
+- Refresh behavior: observations update on refresh, with optional playback-change updates and timed refresh while Home is visible; no continuous background monitoring
+- Playback health: reports newly observed audio underruns, outgoing buffer drops, and attributable connection problems; does not establish a cause, audible disruption, or measured wireless packet loss. Missing diagnostics are unavailable, and partial checks are not a full all-clear
+- Setup: requires access to Android system audio logs; Shizuku is recommended for most users, with ADB or existing root access as alternatives
+- Privacy: core inspection and decoding happen locally. Optional crash diagnostics are off by default and may send crash reports and technical logs to Firebase Crashlytics, including locally stored reports after opting in; the app does not collect usage analytics. Optional destination-vendor lookup sends only the first three pairs of the device's MAC address to MACLookup and is on by default when no preference has been saved; existing choices are preserved. Optional questionnaires send submitted answers to a survey service for aggregate use. Users can also choose to share diagnostic logs
 
 Links:
 - Homepage: https://lazulite.app/
@@ -18,4 +22,4 @@ Links:
 - Privacy policy: https://lazulite.app/privacy/
 - Contact: lazuliteapp@gmail.com
 
-Also available in Spanish (https://lazulite.app/es/), Simplified Chinese (https://lazulite.app/zh/), and Italian (https://lazulite.app/it/).
+Also available in Spanish (https://lazulite.app/es/), Simplified Chinese (https://lazulite.app/zh/), Italian (https://lazulite.app/it/), and Japanese (https://lazulite.app/ja/).
