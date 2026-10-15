@@ -29,6 +29,9 @@ jobs:
           hugo-version: '0.167.0'
           extended: true
 
+      - name: Check theme and media behavior
+        run: node --test scripts/test-*.mjs
+
       - name: Check tracked SEO snapshot
         run: ./scripts/seo-snapshot.sh
 

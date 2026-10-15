@@ -72,3 +72,15 @@
 
 [navigation_toggle]
     other = "打开或关闭导航菜单"
+
+[appearance]
+    other = "外观"
+
+[theme_system]
+    other = "跟随系统"
+
+[theme_light]
+    other = "浅色"
+
+[theme_dark]
+    other = "深色"

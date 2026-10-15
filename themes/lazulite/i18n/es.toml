@@ -73,3 +73,15 @@
 
 [navigation_toggle]
     other = "Abrir o cerrar el menú"
+
+[appearance]
+    other = "Apariencia"
+
+[theme_system]
+    other = "Sistema"
+
+[theme_light]
+    other = "Claro"
+
+[theme_dark]
+    other = "Oscuro"

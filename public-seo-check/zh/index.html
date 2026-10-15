@@ -41,8 +41,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0B1017">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B1017" data-dark="#0B1017" data-light="#F3F6F9" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F6F9" media="(prefers-color-scheme: light)">
+<script src="/js/theme.js"></script>
 
 <meta name="generator" content="Hugo 0.167.0">
 
@@ -87,7 +89,7 @@
 <meta name="twitter:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 
 
-<link href="/sass/main.min.21e66b696572bcb0abce1e8114124b5ac6e13c153933bcb060b3b2b2f23d12e6.css" rel="stylesheet">
+<link href="/sass/main.min.094fe0db548ee3470a4976e918fee615adbd733c2d33558f76164f895a1c0470.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 <script src="/js/app-media.js" defer></script>
 
@@ -126,9 +128,9 @@
                 <span class="terminal">Lazulite App</span>
             </a>
         </div>
-        <input class="side-menu" type="checkbox" id="side-menu">
+        <input class="side-menu" type="checkbox" id="side-menu" aria-label="打开或关闭导航菜单" aria-controls="header-links">
         <label class="hamb" for="side-menu" aria-label="打开或关闭导航菜单"><span class="hamb-line"></span></label>
-        <nav class="headerLinks">
+        <nav class="headerLinks" id="header-links">
             <ul>
                 
                 <li>
@@ -145,13 +147,38 @@
                 
                 
                 
-                <li class="headerLanguage">
-                    <details class="headerLanguage__menu" data-language-switcher>
-                        <summary class="headerLanguage__trigger" aria-label="语言">
-                            <span class="headerLanguage__triggerLabel">中文</span>
-                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                <li class="headerSelector" hidden>
+                    <details class="headerSelector__menu" data-theme-switcher>
+                        <summary class="headerSelector__trigger" aria-label="外观">
+                            <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" stroke="none"/></svg>
+                            <span class="headerSelector__triggerLabel" data-theme-label>跟随系统</span>
+                            <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
                         </summary>
-                        <div class="headerLanguage__popover" role="menu" aria-label="语言">
+                        <fieldset class="headerSelector__popover headerSelector__choices">
+                            <legend class="visually-hidden">外观</legend>
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="system" data-label="跟随系统" checked>
+                                <span>跟随系统</span>
+                            </label>
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="light" data-label="浅色" >
+                                <span>浅色</span>
+                            </label>
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="dark" data-label="深色" >
+                                <span>深色</span>
+                            </label>
+                        </fieldset>
+                    </details>
+                </li>
+                <li class="headerSelector">
+                    <details class="headerSelector__menu" data-language-switcher>
+                        <summary class="headerSelector__trigger" aria-label="语言">
+                            <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+                            <span class="headerSelector__triggerLabel">中文</span>
+                            <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </summary>
+                        <div class="headerSelector__popover" role="menu" aria-label="语言">
                             
                                 
                                 
@@ -163,7 +190,7 @@
                                 
                                 <a
                                     href="/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="en-US"
                                     hreflang="en"
                                     role="menuitem"
@@ -172,8 +199,8 @@
                                     data-language="en"
                                     data-url="/"
                                 >
-                                    <span class="headerLanguage__menuShort">EN</span>
-                                    <span class="headerLanguage__menuFull">English</span>
+                                    <span class="headerSelector__menuShort">EN</span>
+                                    <span class="headerSelector__menuFull">English</span>
                                 </a>
                             
                                 
@@ -186,7 +213,7 @@
                                 
                                 <a
                                     href="/es/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="es-ES"
                                     hreflang="es"
                                     role="menuitem"
@@ -195,8 +222,8 @@
                                     data-language="es"
                                     data-url="/es/"
                                 >
-                                    <span class="headerLanguage__menuShort">ES</span>
-                                    <span class="headerLanguage__menuFull">Español</span>
+                                    <span class="headerSelector__menuShort">ES</span>
+                                    <span class="headerSelector__menuFull">Español</span>
                                 </a>
                             
                                 
@@ -207,7 +234,7 @@
                                 
                                 <a
                                     href="/zh/"
-                                    class="headerLanguage__menuItem is-active"
+                                    class="headerSelector__menuItem is-active"
                                     lang="zh-CN"
                                     hreflang="zh"
                                     role="menuitem"
@@ -216,8 +243,8 @@
                                     data-language="zh"
                                     data-url="/zh/"
                                 >
-                                    <span class="headerLanguage__menuShort">中文</span>
-                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                    <span class="headerSelector__menuShort">中文</span>
+                                    <span class="headerSelector__menuFull">简体中文</span>
                                 </a>
                             
                                 
@@ -230,7 +257,7 @@
                                 
                                 <a
                                     href="/it/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="it-IT"
                                     hreflang="it"
                                     role="menuitem"
@@ -239,8 +266,8 @@
                                     data-language="it"
                                     data-url="/it/"
                                 >
-                                    <span class="headerLanguage__menuShort">IT</span>
-                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                    <span class="headerSelector__menuShort">IT</span>
+                                    <span class="headerSelector__menuFull">Italiano</span>
                                 </a>
                             
                                 
@@ -253,7 +280,7 @@
                                 
                                 <a
                                     href="/ja/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="ja-JP"
                                     hreflang="ja"
                                     role="menuitem"
@@ -262,8 +289,8 @@
                                     data-language="ja"
                                     data-url="/ja/"
                                 >
-                                    <span class="headerLanguage__menuShort">日本語</span>
-                                    <span class="headerLanguage__menuFull">日本語</span>
+                                    <span class="headerSelector__menuShort">日本語</span>
+                                    <span class="headerSelector__menuFull">日本語</span>
                                 </a>
                             
                         </div>

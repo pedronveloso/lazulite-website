@@ -1,20 +1,47 @@
 ---
 name: Lazulite Website
-description: A mineral-navy, lapis-accented instrument panel for a Bluetooth audio inspector. Dark, hairline-ruled, set in Sora.
+description: A lapis-accented instrument panel for a Bluetooth audio inspector, with app-matched dark and light themes.
 colors:
-  background: "#0B1017"
-  surface: "#131B25"
-  surface-raised: "#1A2532"
-  hairline: "#223040"
-  text-primary: "#E4EAF0"
-  text-secondary: "#A3B2C2"
-  text-muted: "#7D8FA3"
-  accent: "#3E8FD8"
-  accent-bright: "#6FB2E8"
-  signal-excellent: "#D9B36C"
-  signal-good: "#3E8FD8"
-  signal-fair: "#C98A3D"
-  signal-poor: "#CF726A"
+  dark-background: "#0B1017"
+  dark-surface: "#131B25"
+  dark-surface-raised: "#1A2532"
+  dark-hairline: "#223040"
+  dark-text-primary: "#E4EAF0"
+  dark-text-secondary: "#A3B2C2"
+  dark-text-muted: "#7D8FA3"
+  dark-accent: "#3E8FD8"
+  dark-accent-bright: "#6FB2E8"
+  dark-on-accent: "#0B1017"
+  dark-signal-excellent: "#D9B36C"
+  dark-signal-good: "#3E8FD8"
+  dark-signal-fair: "#C98A3D"
+  dark-signal-poor: "#CF726A"
+  dark-interactive-text: "#6FB2E8"
+  dark-link-hover: "#6FB2E8"
+  dark-button-hover: "#6FB2E8"
+  dark-button-hover-border: "#6FB2E8"
+  dark-media-background: "#0B1017"
+  dark-focus-ring: "#6FB2E8"
+  light-background: "#F3F6F9"
+  light-surface: "#FFFFFF"
+  light-surface-raised: "#E9EEF4"
+  light-hairline: "#D2DBE5"
+  light-text-primary: "#0E151D"
+  light-text-secondary: "#3C4C5C"
+  light-text-muted: "#5A6C7D"
+  light-accent: "#1E6DB5"
+  light-accent-bright: "#3E8FD8"
+  light-on-accent: "#FFFFFF"
+  light-signal-excellent: "#8E6E23"
+  light-signal-good: "#1E6DB5"
+  light-signal-fair: "#8A5A16"
+  light-signal-poor: "#A3382F"
+  light-interactive-text: "#1E6DB5"
+  light-link-hover: "#0E151D"
+  light-button-hover: "#1E6DB5"
+  light-button-hover-border: "#0E151D"
+  light-media-background: "#0B1017"
+  light-focus-ring: "#1E6DB5"
 typography:
   wordmark:
     fontFamily: "Sora, system-ui, sans-serif"
@@ -65,38 +92,133 @@ spacing:
   2xl: "48px"
   3xl: "64px"
 components:
-  button-primary:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.background}"
+  button-primary-dark:
+    backgroundColor: "{colors.dark-accent}"
+    textColor: "{colors.dark-on-accent}"
     typography: "{typography.title}"
     rounded: "{rounded.sm}"
     padding: "10px 24px"
     height: "44px"
-  button-primary-hover:
-    backgroundColor: "{colors.accent-bright}"
-    textColor: "{colors.background}"
-  button-secondary:
-    backgroundColor: "{colors.background}"
-    textColor: "{colors.text-primary}"
+  button-primary-hover-dark:
+    backgroundColor: "{colors.dark-button-hover}"
+    textColor: "{colors.dark-on-accent}"
+  button-secondary-dark:
+    backgroundColor: "transparent"
+    textColor: "{colors.dark-text-primary}"
     typography: "{typography.title}"
     rounded: "{rounded.sm}"
     padding: "10px 24px"
     height: "44px"
-  panel:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.text-secondary}"
+  button-secondary-hover-dark:
+    backgroundColor: "transparent"
+    textColor: "{colors.dark-link-hover}"
+  panel-dark:
+    backgroundColor: "{colors.dark-surface}"
+    textColor: "{colors.dark-text-secondary}"
     rounded: "{rounded.md}"
     padding: "24px"
-  panel-raised:
-    backgroundColor: "{colors.surface-raised}"
-    textColor: "{colors.text-secondary}"
+  panel-raised-dark:
+    backgroundColor: "{colors.dark-surface-raised}"
+    textColor: "{colors.dark-text-secondary}"
     rounded: "{rounded.md}"
     padding: "24px"
-  section-label:
-    textColor: "{colors.text-muted}"
+  header-selector-dark:
+    backgroundColor: "transparent"
+    textColor: "{colors.dark-text-secondary}"
+    rounded: "{rounded.sm}"
+    padding: "0.35rem 0.75rem"
+    height: "44px"
+  header-selector-popover-dark:
+    backgroundColor: "{colors.dark-surface-raised}"
+    textColor: "{colors.dark-text-secondary}"
+    rounded: "{rounded.md}"
+    padding: "4px"
+    width: "12rem"
+  section-label-dark:
+    textColor: "{colors.dark-text-muted}"
     typography: "{typography.label}"
-  badge:
-    textColor: "{colors.text-secondary}"
+  badge-excellent-dark:
+    textColor: "{colors.dark-signal-excellent}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  badge-good-dark:
+    textColor: "{colors.dark-signal-good}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  badge-fair-dark:
+    textColor: "{colors.dark-signal-fair}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  badge-poor-dark:
+    textColor: "{colors.dark-signal-poor}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  button-primary-light:
+    backgroundColor: "{colors.light-accent}"
+    textColor: "{colors.light-on-accent}"
+    typography: "{typography.title}"
+    rounded: "{rounded.sm}"
+    padding: "10px 24px"
+    height: "44px"
+  button-primary-hover-light:
+    backgroundColor: "{colors.light-button-hover}"
+    textColor: "{colors.light-on-accent}"
+  button-secondary-light:
+    backgroundColor: "transparent"
+    textColor: "{colors.light-text-primary}"
+    typography: "{typography.title}"
+    rounded: "{rounded.sm}"
+    padding: "10px 24px"
+    height: "44px"
+  button-secondary-hover-light:
+    backgroundColor: "transparent"
+    textColor: "{colors.light-link-hover}"
+  panel-light:
+    backgroundColor: "{colors.light-surface}"
+    textColor: "{colors.light-text-secondary}"
+    rounded: "{rounded.md}"
+    padding: "24px"
+  panel-raised-light:
+    backgroundColor: "{colors.light-surface-raised}"
+    textColor: "{colors.light-text-secondary}"
+    rounded: "{rounded.md}"
+    padding: "24px"
+  header-selector-light:
+    backgroundColor: "transparent"
+    textColor: "{colors.light-text-secondary}"
+    rounded: "{rounded.sm}"
+    padding: "0.35rem 0.75rem"
+    height: "44px"
+  header-selector-popover-light:
+    backgroundColor: "{colors.light-surface-raised}"
+    textColor: "{colors.light-text-secondary}"
+    rounded: "{rounded.md}"
+    padding: "4px"
+    width: "12rem"
+  section-label-light:
+    textColor: "{colors.light-text-muted}"
+    typography: "{typography.label}"
+  badge-excellent-light:
+    textColor: "{colors.light-signal-excellent}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  badge-good-light:
+    textColor: "{colors.light-signal-good}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  badge-fair-light:
+    textColor: "{colors.light-signal-fair}"
+    typography: "{typography.label}"
+    rounded: "{rounded.xs}"
+    padding: "3px 8px"
+  badge-poor-light:
+    textColor: "{colors.light-signal-poor}"
     typography: "{typography.label}"
     rounded: "{rounded.xs}"
     padding: "3px 8px"
@@ -104,171 +226,140 @@ components:
 
 # Design System: Lazulite Website
 
-## 1. Overview
+## Overview
 
-**Creative North Star: "The Instrument Panel."**
+**Creative North Star: "The Instrument Panel"**
 
-The website is the app's identity carried onto a page, not a separate brand. Lazulite is a
-measurement tool: its surfaces are quiet mineral-navy panels, ruled with hairlines, with a single
-lapis-blue accent and numbers that stay put. Nothing decorates; everything informs. Dark is home.
-The audience (see `PRODUCT.md` in the Android repository) is informed, skeptical, and
-evidence-minded, so the page earns trust through precision and plain statements rather than
-spectacle.
+The website carries the app's identity onto a page. Lazulite is a measurement tool: quiet tonal panels, hairline rules, a single lapis-blue accent, and numbers that stay put. Mineral navy gives the dark theme its ground; the light theme uses cool, pale neutrals with the same restrained structure. Nothing decorates; everything informs.
 
-**Source of truth.** The Android app defines this system. Tokens mirror
-`ui/main/Color.kt`, `Theme.kt`, and `Typography.kt` in `lazulite-android` (dark theme). Change
-the app first, then mirror here. Product intent, terminology, and voice live in that repo's
-`PRODUCT.md`; this file covers the website's visual implementation only.
+The audience is informed, skeptical, and evidence-minded, so the page earns trust through precision and plain statements. The Android app defines the shared palettes and typography in `Color.kt`, `Theme.kt`, and `Typography.kt`; mirror changes here after the app. Website-specific interaction roles live in `themes/lazulite/assets/sass/utils/_variables.scss`. Product intent, terminology, and voice belong in `PRODUCT.md` and the shared Android product reference.
 
-**Key characteristics**
+**Key Characteristics:**
 
-- Dark only. Mineral navy ground, tonal surfaces, 1px hairlines. No shadows, gradients, or glows.
-- One accent (lapis). Gold, amber, and muted red appear only as signal tiers, and always with text.
-- Sora everywhere, sentence case. Uppercase is reserved for the wordmark and section labels.
-- Tight corners (2 to 10 px). No pills, no large radii.
-- Measured values use tabular figures; label left, value right.
-- Motion explains state (a disclosure opening, a border brightening). It never decorates.
+- App-matched dark and light palettes; tonal surfaces and 1px hairlines.
+- One lapis accent; gold, amber, and muted red only support labeled signal tiers.
+- Sora, sentence case, tight corners, and tabular measured values.
+- Flat surfaces without shadows, gradients, glows, or decorative motion.
+- Existing dark app captures remain authentic in both website themes.
 
-**Anti-references.** The previous amber and teal identity, Barlow Condensed all-caps headings,
-neon or cyan-on-dark gradients, gradient text, glassmorphism, rounded SaaS cards with drop
-shadows, generic Material or Pixel app styling, and AI-product-page tropes.
+**Anti-references.** The previous amber and teal identity, Barlow Condensed all-caps headings, neon or cyan gradients, gradient text, glassmorphism, pill-shaped SaaS cards with drop shadows, generic Material or Pixel app styling, and AI-product-page tropes.
 
-## 2. Colors
+## Colors
 
-A navy-tinted neutral ladder with one lapis accent and a four-step signal ramp. Names are roles,
-never hues. Tokens live in `themes/lazulite/assets/sass/utils/_variables.scss` and are exposed as
-CSS custom properties in `_global.scss`.
+The frontmatter records both complete palettes. Prefixes identify the palette; runtime CSS properties use the unprefixed role, such as `--surface`. SCSS component aliases resolve to `var(--role)` at runtime. The maps in `utils/_variables.scss` and their exposure in `sass/_global.scss` are the implementation source of truth.
 
-### Neutrals (ground and text)
+### Primary
 
-- **Mineral Navy** (`background`, `#0B1017`): the page and the app's own ground. Also the text colour on accent fills and the video letterbox colour.
-- **Surface** (`surface`, `#131B25`): header, footer, alternate sections, panels, FAQ items.
-- **Raised Surface** (`surface-raised`, `#1A2532`): popovers, code chips, version chips; one step above Surface.
-- **Hairline** (`hairline`, `#223040`): every border and divider, 1px.
-- **Text Primary** (`text-primary`, `#E4EAF0`): headings, emphasised values, wordmark neighbours.
-- **Text Secondary** (`text-secondary`, `#A3B2C2`): body copy.
-- **Text Muted** (`text-muted`, `#7D8FA3`): section labels, footer, metadata. Still above 4.5:1 on the ground; do not go lower.
+- **Lapis / Deep Lapis** (`accent`): dark-theme lapis and light-theme deep lapis respectively. Use for wordmarks, primary fills, markers, and ordinary links.
+- **Lapis Bright** (`accent-bright`): a brighter accent step, not a universal interactive-text or focus token. Its light-theme value does not meet 3:1 against Raised Surface.
+- **On Accent** (`on-accent`): text and selection foreground on accent fills. It is Mineral Navy in dark mode and white in light mode; do not derive it from the page background.
+- **Interactive Text** (`interactive-text`): inline code and links embedded in running copy. Bright lapis in dark mode, deep lapis in light mode.
+- **Link Hover** (`link-hover`): general link and secondary-button hover text. Bright lapis in dark mode, primary text in light mode. Reading-column links and header navigation retain their component-specific primary-text hover.
+- **Button Hover / Border** (`button-hover`, `button-hover-border`): dark primary buttons brighten their fill and border; light primary buttons retain the deep-lapis fill and change the border to primary text. Keep `on-accent` text in both states.
+- **Focus Ring** (`focus-ring`): the visible keyboard outline, bright lapis in dark mode and deep lapis in light mode. The light ring uses the deeper accent to preserve contrast on raised surfaces.
 
-### Accent
+### Neutral
 
-- **Lapis** (`accent`, `#3E8FD8`): wordmark, primary button fill, markers, links on the ground, focus-adjacent emphasis.
-- **Lapis Bright** (`accent-bright`, `#6FB2E8`): hover state, focus ring, body-copy links, inline code.
+- **Ground** (`background`): page canvas and mobile navigation sheet; mineral navy in dark mode, cool pale ground in light mode.
+- **Surface** (`surface`): header, footer, panels, FAQ items, and the alternate section surface.
+- **Raised Surface** (`surface-raised`): selector popovers, inline code backgrounds, and version chips. A tonal step, not a shadow.
+- **Hairline** (`hairline`): borders and dividers, normally 1px.
+- **Primary / Secondary / Muted Text** (`text-primary`, `text-secondary`, `text-muted`): headings and values / body text / labels and metadata. Choose text by hierarchy and retain readable contrast.
+- **Media Ground** (`media-background`): fixed Mineral Navy in both palettes, independently defined for video letterboxing. It must not follow the light page ground.
 
 ### Signal ramp
 
-| Token | Hex | Meaning |
-| --- | --- | --- |
-| `signal-excellent` | `#D9B36C` | Gold: top tier |
-| `signal-good` | `#3E8FD8` | Lapis: good / nominal |
-| `signal-fair` | `#C98A3D` | Amber: caution |
-| `signal-poor` | `#CF726A` | Muted red: poor or error |
+The `signal-excellent`, `signal-good`, `signal-fair`, and `signal-poor` roles retain gold, lapis, amber, and muted red classifications with palette-specific contrast. These are interface classifications, not promises about what a listener will hear. Always pair status color with visible text or an icon.
 
-These are interface classifications, not promises about what a listener will hear. Always pair
-with visible text or an icon (PRODUCT.md principle 5).
+**The One Accent Rule.** Lapis is the only brand accent. Gold and amber belong to the signal ramp; do not reintroduce amber as a brand color or teal as a data color.
 
-**The One Accent Rule.** Lapis is the only accent. Never reintroduce amber as a brand colour or
-teal as a data colour; amber and gold exist solely inside the signal ramp.
+**The Semantic Role Rule.** Use the runtime role for the job. Page ground, text on accent, interactive text, hover, focus, and media ground remain distinct even when dark-theme values coincide.
 
-## 3. Typography
+## Typography
 
-**Face:** Sora (300 to 700 weights shipped by the app; the site self-hosts 400, 500, 600, 700 as
-woff2 under `themes/lazulite/static/fonts/Sora/`, SIL OFL 1.1). Fallback: `system-ui`. Sora has
-no CJK glyphs, so `html:lang(ja)` and `html:lang(zh)` select regional stacks (Hiragino Sans /
-Yu Gothic UI / Noto Sans CJK JP; PingFang SC / Microsoft YaHei UI / Noto Sans CJK SC). Monospace
-(`ui-monospace` stack) is for command snippets and inline code only.
+**Face:** Sora; the site self-hosts weights 400, 500, 600, and 700 under `themes/lazulite/static/fonts/Sora/` (SIL OFL 1.1). Fallback is the platform UI stack. Sora has no CJK glyphs: Japanese uses Hiragino Sans / Yu Gothic UI / Noto Sans CJK JP, and Simplified Chinese uses PingFang SC / Microsoft YaHei UI / Noto Sans CJK SC. Components inherit the regional family. System monospace is reserved for commands and inline code.
 
-- **Wordmark** (600, 0.06em, uppercase, lapis): "LAZULITE" in the header and hero.
-- **Headline** (600, -0.02em, sentence case): page and section titles; h1 to h4 step down with tracking from -0.02em to -0.01em.
-- **Title** (600, 15 px): FAQ questions, buttons, card titles.
-- **Body** (400, 15 to 16 px, 1.7 line height, 65ch measure): all running text, secondary colour.
-- **Section label** (600, 11 px, 0.08em, uppercase, muted): hierarchy and metadata, never body copy.
-- **Metric** (400, `font-variant-numeric: tabular-nums`): bitrates, versions, dates; any value a refresh could change. Sora's `tnum` keeps digits from shifting.
+- **Wordmark:** uppercase semibold lapis; the hero uses the responsive wordmark token, while the header uses a compact 1rem size with 0.08em tracking.
+- **Headline:** semibold sentence case, slightly negative tracking; responsive section and page titles.
+- **Title:** semibold, 15px, for FAQ questions, buttons, and panel titles.
+- **Body:** regular, 15–16px, with approximately 1.7 line height and a 65ch reading measure. The base body uses 1.6; reading-page paragraphs use 1.75.
+- **Label:** semibold, 11px, tracked uppercase for section hierarchy and metadata.
+- **Metric:** tabular figures for bitrates, versions, dates, and changing measurements.
 
-**The Sentence Case Rule.** Headings are sentence case at semibold weight. All-caps is a label
-treatment, applied by the `section-label` mixin or the wordmark and nowhere else. Uppercase does
-nothing in CJK, so never rely on it to carry hierarchy.
+**The Sentence Case Rule.** Headings use sentence case. Uppercase belongs to the wordmark and section-label treatment, including reading-page label-style third-level headings. CJK hierarchy must remain clear without case changes.
 
-## 4. Elevation
+## Layout
 
-Flat. Depth comes from tonal layering (Ground, Surface, Raised Surface) and 1px hairlines, exactly
-as in the app. There are no box shadows, text shadows, or blurs. The only overlay (the language
-popover) sits on Raised Surface with a hairline and `z-index` above the sticky header.
+The main container is 1200px, with a 720px reading column and 65ch running-copy measure. Spacing steps of 4 / 8 / 12 / 16 / 24px mirror the app; 32 / 48 / 64px provide page rhythm. Two-column feature rows collapse at 768px. The header switches to its hamburger sheet at 992px, independently of feature rows; the small-screen breakpoint is 576px.
 
-Interactive emphasis is a border or text colour shift to `accent` / `accent-bright` over 150 ms.
-Elements do not lift, scale, or glow on hover.
+Sections use hairline separation; the established alternate Surface band remains available. Preserve the page composition and density when extending a palette. The mobile sheet scrolls within the viewport below the 56px header, and selector popovers flow inside it rather than clipping beyond the screen.
 
-**The No-Shadow Rule.** If something needs to stand out, change its tone or border. Do not add a
-shadow.
+## Elevation & Depth
 
-## 5. Components
+Flat. Depth comes from Ground, Surface, Raised Surface, and 1px hairlines. There are no box shadows, text shadows, blurs, gradients, or glows. Both header popovers sit on Raised Surface above the sticky header.
+
+Interactive emphasis is a border, fill, or text-color change over 150ms ease. FAQ markers rotate over 200ms; hamburger strokes use 200ms ease-out and the mobile sheet uses 400ms ease-out. These transitions explain state. Reduced-motion preferences reduce transition and animation durations to 0.01ms.
+
+**The No-Shadow Rule.** If something needs to stand out, change its tone or border. Do not add a shadow.
+
+## Shapes
+
+Tight corners follow the established scale: 2px badges and icon edges, 4px buttons and selector triggers, 6px panels and popovers, and a 10px maximum token for existing larger shapes. Borders remain thin and deliberate. Do not introduce pills or large rounded cards.
+
+## Components
 
 ### Buttons
 
-Sora 600, sentence case, 44 px minimum height, 4 px radius. **Primary** (`btn btn-primary`) is a
-lapis fill with Mineral Navy text; hover moves to `accent-bright`. **Secondary** (`btn
-btn-secondary`) is a hairline outline with primary text; hover moves the border to lapis. Class
-names are semantic; do not reintroduce colour names (`btn-cyan`, `btn-purple`).
+Sora semibold, sentence case, 44px minimum height, 4px corners, and 10px × 24px padding. Primary buttons use `accent` and `on-accent`; hover uses the independent button fill and border roles. In light mode this means white text on deep lapis, with an unchanged hover fill and a primary-text hover border. Secondary buttons are transparent with a hairline outline and primary text; hover changes the border to accent and the text to `link-hover`.
 
-### Panel and FAQ items
+All keyboard focus uses a 2px `focus-ring` outline with a 3px offset. Never substitute the brighter light accent for this role.
 
-`panel` (and `<details>` in `.postWrapper`) is Surface fill, 1px hairline, 6 px radius. Open or
-hovered, the border turns lapis. The FAQ marker is a `+` in lapis that rotates 45 degrees when
-open.
+### Panels and FAQ items
 
-### Header and footer
+Panels use Surface, a 1px hairline, 6px corners, and 24px padding; the raised variant uses Raised Surface. FAQ disclosures use the same surface and outline, with an accent border on hover or open. Their plus marker rotates 45 degrees when open. Static panels do not acquire interaction states merely because they look like a disclosure.
 
-56 px sticky header on Surface with a bottom hairline: wordmark left (lapis, uppercase), sentence
-case links in secondary text, a 4 px-radius outlined language trigger. Mobile uses a hamburger
-that opens a full-width Mineral Navy sheet. The footer is a Surface strip with a top hairline and
-muted 12 px text.
+### Header, appearance, and language
 
-### Section label and metric row
+The 56px sticky header uses Surface and a bottom hairline: app icon and lapis wordmark left, sentence-case navigation right. The appearance dropdown sits beside language on desktop; both live inside the hamburger sheet at 992px and below. Both triggers include a decorative 16px inline SVG: a half-filled appearance circle and a language globe, followed by the selected label and a matching 12px chevron. Icons inherit the current text color, remain hidden from assistive technology, and require no font or external asset request. They share the `headerSelector` visual treatment: outlined 4px trigger, 44px minimum target, Raised Surface popover with 6px corners, 4px inset, and at least 44px choice rows.
 
-`section-label` is the uppercase tracked muted label. `metric-row` puts a label on the left and a
-tabular value on the right, like the app's detail rows. Use them for any "name: measured value"
-presentation instead of a table or a bullet list.
+Appearance choices are native radios labeled System, Light, and Dark, translated in English, Spanish, Italian, Simplified Chinese, and Japanese. Use native radio keyboard behavior, visible focus, Escape to close and return to the trigger, outside-click dismissal, and at most one open selector. The trigger displays the saved preference, so System remains labeled System even when the resolved palette is light or dark.
 
-### Badges (signal chips)
+The preference persists in `localStorage` as `lazulite-theme`, with `system` as the default for absent or invalid data. System prioritizes a reported browser color preference. If neither light nor dark is exposed, visitor-local time uses light from 07:00 inclusive to 19:00 exclusive and dark otherwise. Follow live browser preference changes, the next fallback time boundary, page return, focus, visibility restoration, and cross-tab storage changes. The root `data-theme` carries only the resolved `light` or `dark` value. Resolution runs before stylesheet paint and updates browser chrome; it needs no backend API.
 
-Uppercase 11 px label in a signal colour with a 1px currentColor outline and 2 px radius. Tiers
-are `badge-excellent`, `badge-good`, `badge-fair`, `badge-poor`; the text always names the tier.
+Without JavaScript, CSS follows the browser preference, with dark as its unsupported-browser fallback, and the inactive appearance control stays hidden. The time fallback and saved manual preference require JavaScript.
 
-### Code and commands
+The footer remains a Surface strip with a top hairline and muted 12px text.
 
-Inline `code` sits on Raised Surface in `accent-bright`; `pre code` blocks are Surface with a
-hairline and 6 px radius, primary text colour.
+### Section labels and metric rows
+
+Labels use the tracked muted treatment. A metric row places its label left and a tabular primary-text value right, separated by a 16px gap and 8px vertical padding. Use this established pattern for compact measured-value presentations.
+
+### Badges and code
+
+Signal badges use the label treatment, 3px × 8px padding, a 1px current-color outline, and 2px corners. Every badge names its tier. They are status displays, not interactive controls. Inline code uses Raised Surface and `interactive-text`; command blocks use Surface, a hairline, 6px corners, and primary text.
 
 ### App media
 
-Screenshots, cards, and video are real AASG dark-mode captures; never redraw or restyle them.
-Phone frames and feathered cards supply their own edges, so media has no extra border, radius, or
-shadow. Video letterboxing uses the Mineral Navy ground.
+Screenshots, semantic cards, and video remain real dark-mode AASG captures in both themes. Preserve their files, colors, feathering, proportions, and frames. Media supplies its own edges; do not add an outer border, radius, shadow, tint, filter, or redraw. Video letterboxing uses the independent fixed-dark `media-background` role. A website appearance change does not require recapturing app media.
 
-### Layout and responsiveness
-
-Container 1200 px (`$width`), reading column 720 px (`$width-narrow`) with 65ch paragraphs.
-Breakpoints at 992, 768, and 576 px; two-column feature rows collapse to one column at 768 px
-and the header collapses to a hamburger. Spacing steps 4 / 8 / 12 / 16 / 24 mirror the app; 32,
-48, and 64 px are page rhythm only. Sections are separated by hairlines, not background bands,
-except the single alternate Surface band for Smart Suggestions.
-
-## 6. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
-- **Do** read colours, type, radii, and spacing from `_variables.scss` (SCSS) or the CSS custom properties; never hard-code a hex value in a component or in content markdown.
-- **Do** keep the app and site in lockstep: when `Color.kt`, `Theme.kt`, or `Typography.kt` change, update tokens here and `DESIGN.md` together.
-- **Do** keep copy within the product claim boundaries in the Android `PRODUCT.md`: report evidence, never a cause or a guaranteed audible effect.
-- **Do** keep text contrast at 4.5:1 or better and keep the 2 px `accent-bright` focus ring visible.
-- **Do** verify every page in English and Japanese; wrapping and fallback fonts differ.
-- **Do** use `tabular-nums` for anything that is a measurement, version, or date.
+- **Do** use runtime semantic color properties in components and keep both palette maps aligned with the app.
+- **Do** keep page ground, on-accent text, interactive text, hover, focus, and media ground as separate roles.
+- **Do** keep text contrast at 4.5:1 or better and preserve the 2px theme-specific focus ring.
+- **Do** verify English and Japanese at desktop and mobile widths in both themes.
+- **Do** use tabular figures for measurements, versions, and dates.
+- **Do** preserve native radio keyboard behavior and translated System, Light, and Dark choices in all five languages.
+- **Do** preserve authentic dark app media and its fixed dark video background in both themes.
 
 ### Don't
 
-- **Don't** use amber, gold, or teal outside the signal ramp, or add a second accent.
-- **Don't** add shadows, gradients, glows, gradient text, glass, or pill shapes.
-- **Don't** set headings in all caps or condensed faces; do not reintroduce Barlow Condensed, Epilogue, or Fira Mono.
-- **Don't** use colour as the only carrier of status.
-- **Don't** add decorative motion (floating logo, parallax, pulsing dots); honour `prefers-reduced-motion`.
-- **Don't** use inline `style=` attributes or colour-named classes in content; add a semantic class to the theme instead.
-- **Don't** add a light theme without recapturing light-mode media and updating this file; the site is dark-only.
+- **Don't** use amber, gold, or teal as additional brand accents.
+- **Don't** add shadows, gradients, glows, glass, or pill shapes.
+- **Don't** set ordinary headings in all caps or condensed faces, or reintroduce Barlow Condensed, Epilogue, or Fira Mono.
+- **Don't** use color as the only carrier of status.
+- **Don't** add decorative motion; honor reduced-motion preferences.
+- **Don't** hard-code component colors, add inline styles in content, or use color-named classes.
+- **Don't** infer light-theme button text, focus, hover, or media colors from a dark-theme coincidence.

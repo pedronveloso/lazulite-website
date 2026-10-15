@@ -179,8 +179,10 @@ audio device does not support.
 
 Carry the app's mineral navy ground, lapis accent, Sora typography, restrained
 borders, and deliberate spacing into the website. The website mirrors the app's
-dark theme and is dark-only; use [DESIGN.md](DESIGN.md) for web tokens, CJK font
-fallbacks, components, and responsive behavior.
+dark and light themes, defaults to System appearance, and lets visitors choose
+Light or Dark. Existing dark-mode app captures appear in both themes. Use
+[DESIGN.md](DESIGN.md) for web tokens, CJK font fallbacks, components, and
+responsive behavior.
 
 Keep the homepage scannable and reveal technical depth through FAQ answers.
 Make the playback app, phone, Bluetooth transport, and receiving device easy to

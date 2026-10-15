@@ -40,15 +40,15 @@
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-// Primary: lapis fill, text in the ground colour (onPrimary).
+// Primary: lapis fill with theme-specific on-accent text (onPrimary).
 .btn-primary {
   background-color: $accent;
   border-color: $accent;
   color: $on-accent;
 
   &:hover {
-    background-color: $accent-bright;
-    border-color: $accent-bright;
+    background-color: $button-hover;
+    border-color: $button-hover-border;
     color: $on-accent;
   }
 }
@@ -61,7 +61,7 @@
 
   &:hover {
     border-color: $accent;
-    color: $accent-bright;
+    color: $link-hover;
   }
 }
 

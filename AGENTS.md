@@ -15,7 +15,10 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - Netlify deploys automatically on push using Hugo 0.167.0 (configured via `HUGO_VERSION` in `netlify.toml`) — keep this in sync with the local Hugo binary (`hugo version`) when either is upgraded
 
 ### Testing
-- There is no automated test setup. `package.json` is empty and no Cypress/test config exists.
+- Run `node --test scripts/test-*.mjs` for theme resolution/selector and app-media behavior.
+- Run `python3 -m unittest discover -s scripts -p 'test_*.py'` for media-import and metadata checks.
+- `./scripts/seo-snapshot.sh` checks the tracked Hugo output. Use the Hugo version pinned in CI and Netlify.
+- There is no browser test framework; verify desktop/mobile behavior in the local preview.
 
 ## Architecture
 
@@ -48,8 +51,8 @@ Content lives in `content/` as markdown files:
 
 ### Design System
 - [`DESIGN.md`](DESIGN.md) is the visual source of truth for the site: tokens, typography, components, and do's and don'ts. Read it before changing styles, markup, or media treatment, and keep it updated with any token or component change.
-- The site mirrors the Android app's dark theme (`Color.kt`, `Theme.kt`, `Typography.kt` in `lazulite-android`). Change the app first, then mirror here. Product intent, terminology, and the shared visual language live in the Android [PRODUCT.md](../../android/lazulite-android/PRODUCT.md#visual-language).
-- The site is dark-only. Do not add a light theme without recapturing light-mode media (see `docs/refresh-app-media.md`).
+- The site mirrors the Android app's dark and light themes (`Color.kt`, `Theme.kt`, `Typography.kt` in `lazulite-android`). Change the app first, then mirror here. Product intent, terminology, and the shared visual language live in the Android [PRODUCT.md](../../android/lazulite-android/PRODUCT.md#visual-language).
+- Default to System appearance, following browser preference with a 07:00–19:00 local-time light fallback when neither preference is exposed. Keep existing dark-mode app media in both themes; a theme change does not authorize recapturing it.
 
 ### Theme Architecture
 The custom "lazulite" theme (based on "Nightfall"):
@@ -63,7 +66,7 @@ The custom "lazulite" theme (based on "Nightfall"):
   - Shared UI components (buttons, panel, section label, metric row, badges, hero, sections, two-column) are in `components/_modern.scss`
   - Single-page (FAQ, privacy, what's new) styles are in `pages/_single.scss`; homepage layout styles are in `pages/_index.scss`
 - **Fonts**: Sora (the app's brand face), self-hosted as woff2 in `themes/lazulite/static/fonts/Sora/` (weights 400/500/600/700, SIL OFL licence alongside) and declared in `utils/_fonts.scss`; the two body weights are preloaded in `partials/custom-head.html`. There are no third-party font requests. Sora has no CJK glyphs, so `html:lang(ja)` / `html:lang(zh)` select regional system stacks in `_global.scss`. Code uses the system monospace stack.
-- **Design**: Dark only. Mineral navy ground (`#0B1017`), tonal surfaces and 1px hairlines, a single lapis accent (`#3E8FD8`), and the app's four-step signal ramp, with tight 2 to 10 px radii, no shadows, gradients, or glows. Tokens are named by role and live only in `utils/_variables.scss` (SCSS) and `_global.scss` (CSS custom properties); never hard-code a hex value in a component or content file. Components are in `components/_modern.scss` and the page stylesheets. See [`DESIGN.md`](DESIGN.md).
+- **Design**: Dark and light palettes mirrored from Android, tonal surfaces and 1px hairlines, a single lapis accent, and the app's four-step signal ramp, with tight 2 to 10 px radii, no shadows, gradients, or glows. Palette values live in `utils/_variables.scss`; `_global.scss` exposes them as theme-aware CSS custom properties. Component SCSS aliases resolve at runtime; never hard-code a hex value in a component or content file. Components are in `components/_modern.scss` and the page stylesheets. See [`DESIGN.md`](DESIGN.md).
 
 ### Static Assets
 - `static/images/` - App screenshots and Google Play badge

@@ -13,6 +13,7 @@
 
 .header {
   padding: 0 $space-lg;
+  position: relative;
   height: 56px;
   display: flex;
   justify-content: space-between;
@@ -29,7 +30,7 @@
   gap: $space-sm;
 
   &:hover .terminal {
-    color: $accent-bright;
+    color: $link-hover;
   }
 }
 
@@ -52,7 +53,7 @@
   transition: color 0.15s ease;
 
   &:hover {
-    color: $accent-bright;
+    color: $link-hover;
   }
 }
 
@@ -63,7 +64,7 @@
     margin: 0;
     display: flex;
     align-items: center;
-    gap: $space-xl;
+    gap: $space-lg;
 
     li a {
       font-size: 0.875rem;
@@ -79,13 +80,13 @@
   }
 }
 
-.headerLanguage {
+.headerSelector {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.headerLanguage__trigger {
+.headerSelector__trigger {
   align-items: center;
   background: transparent;
   border: 1px solid $hairline;
@@ -94,13 +95,12 @@
   display: inline-flex;
   gap: $space-sm;
   list-style: none;
-  min-height: 2.25rem;
+  min-height: 44px;
   padding: 0.35rem 0.75rem;
   color: $text-secondary;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition: border-color 0.15s ease, color 0.15s ease;
 
   &::-webkit-details-marker {
@@ -113,27 +113,31 @@
   }
 }
 
-.headerLanguage__menu {
+.headerSelector__menu {
   position: relative;
 }
 
-.headerLanguage__menu[open] .headerLanguage__trigger {
+.headerSelector__menu[open] .headerSelector__trigger {
   border-color: $accent;
   color: $text-primary;
 }
 
-.headerLanguage__triggerLabel {
+.headerSelector__triggerLabel {
   color: inherit;
+  flex: 1;
 }
 
-.headerLanguage__triggerIcon {
+.headerSelector__icon,
+.headerSelector__chevron {
+  display: block;
+  flex-shrink: 0;
+}
+
+.headerSelector__chevron {
   color: $text-muted;
-  font-size: 0.72rem;
-  letter-spacing: 0;
-  text-transform: none;
 }
 
-.headerLanguage__popover {
+.headerSelector__popover {
   background: $surface-raised;
   border: 1px solid $hairline;
   border-radius: $radius-md;
@@ -147,7 +151,7 @@
   z-index: 110;
 }
 
-.headerLanguage__menuItem {
+.headerSelector__menuItem {
   align-items: center;
   border-radius: $radius-sm;
   color: $text-secondary;
@@ -165,11 +169,11 @@
 
   &.is-active {
     background: $surface;
-    color: $accent-bright;
+    color: $link-hover;
   }
 }
 
-.headerLanguage__menuShort {
+.headerSelector__menuShort {
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -177,7 +181,7 @@
   text-transform: uppercase;
 }
 
-.headerLanguage__menuFull {
+.headerSelector__menuFull {
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -186,7 +190,9 @@
   cursor: pointer;
   float: right;
   display: none;
-  padding: 12px 4px;
+  padding: 12px 11px;
+  min-height: 44px;
+  align-items: center;
 }
 
 .hamb-line {
@@ -233,7 +239,7 @@
   top: 0;
 }
 
-@media screen and (max-width: $breakMedium) {
+@media screen and (max-width: $breakLarge) {
   .headerLinks {
     width: 100%;
     height: 100%;
@@ -244,6 +250,7 @@
     border-bottom: 1px solid $hairline;
     overflow: hidden;
     max-height: 0;
+    visibility: hidden;
     transition: max-height 0.4s ease-out;
     display: flex;
     align-items: center;
@@ -260,27 +267,105 @@
     }
   }
 
-  .headerLanguage {
+  .headerSelector {
     width: 100%;
   }
 
-  .headerLanguage__menu {
+  .headerSelector__menu {
     max-width: 18rem;
     width: 100%;
   }
 
-  .headerLanguage__trigger {
+  .headerSelector__trigger {
     justify-content: space-between;
     width: 100%;
   }
 
-  .headerLanguage__popover {
+  .headerSelector__popover {
     left: 0;
     min-width: 100%;
     right: auto;
   }
 
-  .hamb {
+  .hamb { display: flex; }
+
+  .side-menu {
     display: block;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: $space-lg;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
   }
+
+  .side-menu:focus-visible + .hamb {
+    outline: 2px solid $focus-ring;
+    outline-offset: 3px;
+    border-radius: $radius-sm;
+  }
+}
+
+// Both header selectors share their tonal treatment and touch target size.
+.headerSelector[hidden] { display: none; }
+
+.headerSelector__choices {
+  margin: 0;
+}
+
+.headerSelector__choice {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  min-height: 44px;
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  color: $text-secondary;
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  input {
+    margin: 0;
+    accent-color: $accent;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  &:hover, &:focus-within {
+    background: $surface;
+    color: $text-primary;
+  }
+
+  &:has(input:checked) {
+    background: $surface;
+    color: $accent;
+  }
+}
+
+.headerSelector__menuItem { min-height: 44px; }
+
+// Expanded selectors flow within the mobile sheet rather than clipping below it.
+@media screen and (max-width: $breakLarge) {
+  .headerLinks {
+    height: calc(100dvh - 56px);
+    overflow-y: auto;
+    align-items: flex-start;
+
+    > ul {
+      width: 100%;
+      max-width: 22rem;
+      padding: $space-lg;
+    }
+  }
+
+  .headerSelector__popover {
+    position: static;
+    margin-top: $space-sm;
+  }
+}
+
+@media screen and (max-width: $breakLarge) {
+  .side-menu:checked ~ .headerLinks { visibility: visible; }
 }

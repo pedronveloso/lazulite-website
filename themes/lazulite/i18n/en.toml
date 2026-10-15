@@ -73,3 +73,15 @@
 
 [navigation_toggle]
     other = "Toggle navigation"
+
+[appearance]
+    other = "Appearance"
+
+[theme_system]
+    other = "System"
+
+[theme_light]
+    other = "Light"
+
+[theme_dark]
+    other = "Dark"
