@@ -6,9 +6,9 @@
                 <span class="terminal">{{ .Site.Title }}</span>
             </a>
         </div>
-        <input class="side-menu" type="checkbox" id="side-menu">
+        <input class="side-menu" type="checkbox" id="side-menu" aria-label="{{ i18n "navigation_toggle" }}" aria-controls="header-links">
         <label class="hamb" for="side-menu" aria-label="{{ i18n "navigation_toggle" }}"><span class="hamb-line"></span></label>
-        <nav class="headerLinks">
+        <nav class="headerLinks" id="header-links">
             <ul>
                 {{ range .Site.Menus.header }}
                 <li>
@@ -19,13 +19,37 @@
                 {{ end }}
                 {{ $page := . }}
                 {{ $sites := sort hugo.Sites "Language.Weight" }}
-                <li class="headerLanguage">
-                    <details class="headerLanguage__menu" data-language-switcher>
-                        <summary class="headerLanguage__trigger" aria-label="{{ i18n "language" }}">
-                            <span class="headerLanguage__triggerLabel">{{ i18n (printf "language_short_%s" $page.Lang) }}</span>
-                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                <li class="headerSelector headerSelector--theme">
+                    <details class="headerSelector__menu" data-theme-switcher>
+                        <summary class="headerSelector__trigger" aria-label="{{ i18n "appearance" }}">
+                            <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" stroke="none"/></svg>
+                            <span class="headerSelector__triggerLabel headerSelector__themeLabel">
+                                <span data-theme-label>{{ i18n "theme_system" }}</span>
+                                {{- range slice "system" "light" "dark" }}
+                                <span class="headerSelector__labelSizer" aria-hidden="true">{{ i18n (printf "theme_%s" .) }}</span>
+                                {{- end }}
+                            </span>
+                            <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
                         </summary>
-                        <div class="headerLanguage__popover" role="menu" aria-label="{{ i18n "language" }}">
+                        <fieldset class="headerSelector__popover headerSelector__choices">
+                            <legend class="visually-hidden">{{ i18n "appearance" }}</legend>
+                            {{- range slice "system" "light" "dark" }}
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="{{ . }}" data-label="{{ i18n (printf "theme_%s" .) }}" {{ if eq . "system" }}checked{{ end }}>
+                                <span>{{ i18n (printf "theme_%s" .) }}</span>
+                            </label>
+                            {{- end }}
+                        </fieldset>
+                    </details>
+                </li>
+                <li class="headerSelector">
+                    <details class="headerSelector__menu" data-language-switcher>
+                        <summary class="headerSelector__trigger" aria-label="{{ i18n "language" }}">
+                            <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+                            <span class="headerSelector__triggerLabel">{{ i18n (printf "language_short_%s" $page.Lang) }}</span>
+                            <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </summary>
+                        <div class="headerSelector__popover" role="menu" aria-label="{{ i18n "language" }}">
                             {{ range $sites }}
                                 {{ $langCode := .Language.Lang }}
                                 {{ $targetSite := . }}
@@ -39,7 +63,7 @@
                                 {{ end }}
                                 <a
                                     href="{{ $target.RelPermalink }}"
-                                    class="headerLanguage__menuItem {{ if eq $page.Lang $langCode }}is-active{{ end }}"
+                                    class="headerSelector__menuItem {{ if eq $page.Lang $langCode }}is-active{{ end }}"
                                     lang="{{ .Language.Locale | default $langCode }}"
                                     hreflang="{{ $langCode }}"
                                     role="menuitem"
@@ -48,8 +72,8 @@
                                     data-language="{{ $langCode }}"
                                     data-url="{{ $target.RelPermalink }}"
                                 >
-                                    <span class="headerLanguage__menuShort">{{ i18n (printf "language_short_%s" $langCode) }}</span>
-                                    <span class="headerLanguage__menuFull">{{ i18n (printf "language_%s" $langCode) }}</span>
+                                    <span class="headerSelector__menuShort">{{ i18n (printf "language_short_%s" $langCode) }}</span>
+                                    <span class="headerSelector__menuFull">{{ i18n (printf "language_%s" $langCode) }}</span>
                                 </a>
                             {{ end }}
                         </div>

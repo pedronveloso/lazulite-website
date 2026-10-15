@@ -1,0 +1,12 @@
+{{- $poster := eq .role "home-video" -}}
+{{- $dark := .dark -}}
+{{- $light := .light -}}
+{{- if $poster -}}
+  {{- $dark = dict "src" .dark.poster "width" .dark.posterWidth "height" .dark.posterHeight -}}
+  {{- $light = dict "src" .light.poster "width" .light.posterWidth "height" .light.posterHeight -}}
+{{- end -}}
+<picture data-app-picture{{ if $poster }} data-app-video-poster{{ end }}>
+  <source data-theme="light" media="(prefers-color-scheme: light)" srcset="{{ $light.src }}" width="{{ $light.width }}" height="{{ $light.height }}">
+  <source data-theme="dark" srcset="{{ $dark.src }}" width="{{ $dark.width }}" height="{{ $dark.height }}">
+  <img src="{{ $dark.src }}" alt="{{ .alt }}" class="feature-img app-media app-media--{{ if or (eq .role "home") $poster }}phone{{ else }}card{{ end }}" loading="lazy" width="{{ $dark.width }}" height="{{ $dark.height }}">
+</picture>

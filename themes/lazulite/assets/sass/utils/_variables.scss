@@ -1,31 +1,74 @@
 // Lazulite web design tokens.
 //
-// Mirrors the Android app's dark theme (Color.kt, Theme.kt, Typography.kt in the
-// lazulite-android repo). Change the app first, then mirror here. Named by role,
-// never by hue. See DESIGN.md at the repository root.
+// Mirrors both Android palettes in Color.kt and Theme.kt. See DESIGN.md.
+// Raw colors live here; components consume runtime semantic properties.
 
-// ─── Ground ─────────────────────────────────────────────────────────────────
-$background:     #0B1017;  // LazDarkBackground: mineral navy
-$surface:        #131B25;  // LazDarkSurface
-$surface-raised: #1A2532;  // LazDarkSurfaceRaised
-$hairline:       #223040;  // LazDarkHairline: 1px borders and dividers
+$dark-colors: (
+  "background": #0B1017,
+  "surface": #131B25,
+  "surface-raised": #1A2532,
+  "hairline": #223040,
+  "text-primary": #E4EAF0,
+  "text-secondary": #A3B2C2,
+  "text-muted": #7D8FA3,
+  "accent": #3E8FD8,
+  "accent-bright": #6FB2E8,
+  "on-accent": #0B1017,
+  "signal-excellent": #D9B36C,
+  "signal-good": #3E8FD8,
+  "signal-fair": #C98A3D,
+  "signal-poor": #CF726A,
+  "interactive-text": #6FB2E8,
+  "link-hover": #6FB2E8,
+  "button-hover": #6FB2E8,
+  "button-hover-border": #6FB2E8,
+  "media-background": #0B1017,
+  "focus-ring": #6FB2E8,
+);
 
-// ─── Text ───────────────────────────────────────────────────────────────────
-$text-primary:   #E4EAF0;
-$text-secondary: #A3B2C2;
-$text-muted:     #7D8FA3;
+$light-colors: (
+  "background": #F3F6F9,
+  "surface": #FFFFFF,
+  "surface-raised": #E9EEF4,
+  "hairline": #D2DBE5,
+  "text-primary": #0E151D,
+  "text-secondary": #3C4C5C,
+  "text-muted": #5A6C7D,
+  "accent": #1E6DB5,
+  "accent-bright": #3E8FD8,
+  "on-accent": #FFFFFF,
+  "signal-excellent": #8E6E23,
+  "signal-good": #1E6DB5,
+  "signal-fair": #8A5A16,
+  "signal-poor": #A3382F,
+  "interactive-text": #1E6DB5,
+  "link-hover": #0E151D,
+  "button-hover": #1E6DB5,
+  "button-hover-border": #0E151D,
+  "media-background": #F3F6F9,
+  "focus-ring": #1E6DB5,
+);
 
-// ─── Accent: lapis ──────────────────────────────────────────────────────────
-$accent:        #3E8FD8;
-$accent-bright: #6FB2E8;
-$on-accent:     $background;  // text on an accent fill
-
-// ─── Signal ramp ────────────────────────────────────────────────────────────
-// Quality tiers. Always pair with text or an icon; never colour alone.
-$signal-excellent: #D9B36C;
-$signal-good:      #3E8FD8;
-$signal-fair:      #C98A3D;
-$signal-poor:      #CF726A;
+$background: var(--background);
+$surface: var(--surface);
+$surface-raised: var(--surface-raised);
+$hairline: var(--hairline);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted: var(--text-muted);
+$accent: var(--accent);
+$accent-bright: var(--accent-bright);
+$on-accent: var(--on-accent);
+$signal-excellent: var(--signal-excellent);
+$signal-good: var(--signal-good);
+$signal-fair: var(--signal-fair);
+$signal-poor: var(--signal-poor);
+$interactive-text: var(--interactive-text);
+$link-hover: var(--link-hover);
+$button-hover: var(--button-hover);
+$button-hover-border: var(--button-hover-border);
+$media-background: var(--media-background);
+$focus-ring: var(--focus-ring);
 
 // ─── Typography ─────────────────────────────────────────────────────────────
 // Sora is self-hosted (static/fonts/Sora). Sora has no CJK glyphs, so the stack

@@ -1,127 +1,262 @@
 {
   "en": {
-    "home": {
-      "src": "/images/app/en/home.webp?v=e27c6be8da853921",
-      "width": 720,
-      "height": 1516
+    "light": {
+      "home": {
+        "src": "/images/app/en/light/home.webp?v=ecf0c5d73ae25152",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/en/light/playback-health.webp?v=75ea8999e6e06522",
+        "width": 1016,
+        "height": 555
+      },
+      "setup-tips": {
+        "src": "/images/app/en/light/setup-tips.webp?v=5e395f784c4fe8d6",
+        "width": 840,
+        "height": 456
+      },
+      "home-video": {
+        "src": "/videos/app/en/light/home.mp4?v=42e43af28e09862a",
+        "poster": "/images/app/en/light/home-video-poster.webp?v=e53ecf0af57caf6d",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     },
-    "playback-health": {
-      "src": "/images/app/en/playback-health.webp?v=e7e5a4f6b23eb1a3",
-      "width": 1016,
-      "height": 555
-    },
-    "setup-tips": {
-      "src": "/images/app/en/setup-tips.webp?v=42c2a3a43f460144",
-      "width": 840,
-      "height": 456
-    },
-    "home-video": {
-      "src": "/videos/app/en/home.mp4?v=691fd5b57537e6c6",
-      "poster": "/images/app/en/home-video-poster.webp?v=baf3093c558492b1",
-      "width": 634,
-      "height": 1334,
-      "posterWidth": 634,
-      "posterHeight": 1334
+    "dark": {
+      "home": {
+        "src": "/images/app/en/home.webp?v=e27c6be8da853921",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/en/playback-health.webp?v=e7e5a4f6b23eb1a3",
+        "width": 1016,
+        "height": 555
+      },
+      "setup-tips": {
+        "src": "/images/app/en/setup-tips.webp?v=42c2a3a43f460144",
+        "width": 840,
+        "height": 456
+      },
+      "home-video": {
+        "src": "/videos/app/en/home.mp4?v=691fd5b57537e6c6",
+        "poster": "/images/app/en/home-video-poster.webp?v=baf3093c558492b1",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     }
   },
   "es": {
-    "home": {
-      "src": "/images/app/es/home.webp?v=d66cb07e8c002583",
-      "width": 720,
-      "height": 1516
+    "light": {
+      "home": {
+        "src": "/images/app/es/light/home.webp?v=3cf2cd3898eab140",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/es/light/playback-health.webp?v=509633fcba15a600",
+        "width": 1016,
+        "height": 727
+      },
+      "setup-tips": {
+        "src": "/images/app/es/light/setup-tips.webp?v=1a9820f4bf334c1c",
+        "width": 840,
+        "height": 456
+      },
+      "home-video": {
+        "src": "/videos/app/es/light/home.mp4?v=d2f832cd88c84169",
+        "poster": "/images/app/es/light/home-video-poster.webp?v=133c107a4565427d",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     },
-    "playback-health": {
-      "src": "/images/app/es/playback-health.webp?v=a0cdf393fe3c7c28",
-      "width": 1016,
-      "height": 727
-    },
-    "setup-tips": {
-      "src": "/images/app/es/setup-tips.webp?v=0a779fddbf020c1c",
-      "width": 840,
-      "height": 456
-    },
-    "home-video": {
-      "src": "/videos/app/es/home.mp4?v=feed7a5f02971b1c",
-      "poster": "/images/app/es/home-video-poster.webp?v=3096584c9f31ceca",
-      "width": 634,
-      "height": 1334,
-      "posterWidth": 634,
-      "posterHeight": 1334
+    "dark": {
+      "home": {
+        "src": "/images/app/es/home.webp?v=d66cb07e8c002583",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/es/playback-health.webp?v=a0cdf393fe3c7c28",
+        "width": 1016,
+        "height": 727
+      },
+      "setup-tips": {
+        "src": "/images/app/es/setup-tips.webp?v=0a779fddbf020c1c",
+        "width": 840,
+        "height": 456
+      },
+      "home-video": {
+        "src": "/videos/app/es/home.mp4?v=feed7a5f02971b1c",
+        "poster": "/images/app/es/home-video-poster.webp?v=3096584c9f31ceca",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     }
   },
   "it": {
-    "home": {
-      "src": "/images/app/it/home.webp?v=e30ebacca70a0ae6",
-      "width": 720,
-      "height": 1516
+    "light": {
+      "home": {
+        "src": "/images/app/it/light/home.webp?v=b0c879efa74d3f16",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/it/light/playback-health.webp?v=294c7105b910e65b",
+        "width": 1016,
+        "height": 603
+      },
+      "setup-tips": {
+        "src": "/images/app/it/light/setup-tips.webp?v=50224f8bf9e0cf72",
+        "width": 840,
+        "height": 456
+      },
+      "home-video": {
+        "src": "/videos/app/it/light/home.mp4?v=ba66771cedea794f",
+        "poster": "/images/app/it/light/home-video-poster.webp?v=c2221326dc28e613",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     },
-    "playback-health": {
-      "src": "/images/app/it/playback-health.webp?v=5ec316227acb8bed",
-      "width": 1016,
-      "height": 603
-    },
-    "setup-tips": {
-      "src": "/images/app/it/setup-tips.webp?v=1baedf32682935ff",
-      "width": 840,
-      "height": 456
-    },
-    "home-video": {
-      "src": "/videos/app/it/home.mp4?v=180a0c3bbd8260e7",
-      "poster": "/images/app/it/home-video-poster.webp?v=bbdae9cd1d20d5e5",
-      "width": 634,
-      "height": 1334,
-      "posterWidth": 634,
-      "posterHeight": 1334
+    "dark": {
+      "home": {
+        "src": "/images/app/it/home.webp?v=e30ebacca70a0ae6",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/it/playback-health.webp?v=5ec316227acb8bed",
+        "width": 1016,
+        "height": 603
+      },
+      "setup-tips": {
+        "src": "/images/app/it/setup-tips.webp?v=1baedf32682935ff",
+        "width": 840,
+        "height": 456
+      },
+      "home-video": {
+        "src": "/videos/app/it/home.mp4?v=180a0c3bbd8260e7",
+        "poster": "/images/app/it/home-video-poster.webp?v=bbdae9cd1d20d5e5",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     }
   },
   "zh": {
-    "home": {
-      "src": "/images/app/zh/home.webp?v=119ca6312e4e6ae5",
-      "width": 720,
-      "height": 1516
+    "light": {
+      "home": {
+        "src": "/images/app/zh/light/home.webp?v=c745869bde0cc719",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/zh/light/playback-health.webp?v=5a03c5a5d02d40ad",
+        "width": 1016,
+        "height": 560
+      },
+      "setup-tips": {
+        "src": "/images/app/zh/light/setup-tips.webp?v=90844c8ca5caea2f",
+        "width": 840,
+        "height": 425
+      },
+      "home-video": {
+        "src": "/videos/app/zh/light/home.mp4?v=f64b0e861461bc89",
+        "poster": "/images/app/zh/light/home-video-poster.webp?v=faf6d811a38983fe",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     },
-    "playback-health": {
-      "src": "/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8",
-      "width": 1016,
-      "height": 560
-    },
-    "setup-tips": {
-      "src": "/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72",
-      "width": 840,
-      "height": 425
-    },
-    "home-video": {
-      "src": "/videos/app/zh/home.mp4?v=301485c4b7d956a2",
-      "poster": "/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76",
-      "width": 634,
-      "height": 1334,
-      "posterWidth": 634,
-      "posterHeight": 1334
+    "dark": {
+      "home": {
+        "src": "/images/app/zh/home.webp?v=119ca6312e4e6ae5",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8",
+        "width": 1016,
+        "height": 560
+      },
+      "setup-tips": {
+        "src": "/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72",
+        "width": 840,
+        "height": 425
+      },
+      "home-video": {
+        "src": "/videos/app/zh/home.mp4?v=301485c4b7d956a2",
+        "poster": "/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     }
   },
   "ja": {
-    "home": {
-      "src": "/images/app/ja/home.webp?v=8cb8d49a7977bb08",
-      "width": 720,
-      "height": 1516
+    "light": {
+      "home": {
+        "src": "/images/app/ja/light/home.webp?v=2e908df6ff9d4f05",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/ja/light/playback-health.webp?v=e4c4791b52c4a89e",
+        "width": 1016,
+        "height": 560
+      },
+      "setup-tips": {
+        "src": "/images/app/ja/light/setup-tips.webp?v=d4d5adeecfbb3fdf",
+        "width": 840,
+        "height": 465
+      },
+      "home-video": {
+        "src": "/videos/app/ja/light/home.mp4?v=f5101fa3e0444672",
+        "poster": "/images/app/ja/light/home-video-poster.webp?v=8ce3ba8ae70ef8e3",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     },
-    "playback-health": {
-      "src": "/images/app/ja/playback-health.webp?v=5183acd06f0a5059",
-      "width": 1016,
-      "height": 560
-    },
-    "setup-tips": {
-      "src": "/images/app/ja/setup-tips.webp?v=38ced59f14bb1874",
-      "width": 840,
-      "height": 465
-    },
-    "home-video": {
-      "src": "/videos/app/ja/home.mp4?v=b71def5ab605ce9f",
-      "poster": "/images/app/ja/home-video-poster.webp?v=1f1539bff377fe3e",
-      "width": 634,
-      "height": 1334,
-      "posterWidth": 634,
-      "posterHeight": 1334
+    "dark": {
+      "home": {
+        "src": "/images/app/ja/home.webp?v=8cb8d49a7977bb08",
+        "width": 720,
+        "height": 1516
+      },
+      "playback-health": {
+        "src": "/images/app/ja/playback-health.webp?v=5183acd06f0a5059",
+        "width": 1016,
+        "height": 560
+      },
+      "setup-tips": {
+        "src": "/images/app/ja/setup-tips.webp?v=38ced59f14bb1874",
+        "width": 840,
+        "height": 465
+      },
+      "home-video": {
+        "src": "/videos/app/ja/home.mp4?v=b71def5ab605ce9f",
+        "poster": "/images/app/ja/home-video-poster.webp?v=1f1539bff377fe3e",
+        "width": 634,
+        "height": 1334,
+        "posterWidth": 634,
+        "posterHeight": 1334
+      }
     }
   }
 }

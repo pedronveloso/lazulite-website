@@ -41,10 +41,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0B1017">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B1017" data-dark="#0B1017" data-light="#F3F6F9" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F6F9" media="(prefers-color-scheme: light)"><script>(function(){var t,s,o,a,i="lazulite-theme",d=document.documentElement,n=[];function r(e){return e==="light"||e==="dark"?e:"system"}function c(){try{return r(window.localStorage.getItem(i))}catch{return"system"}}function l(e){try{return window.matchMedia("(prefers-color-scheme: "+e+")")}catch{return null}}t=c(),s=l("dark"),o=l("light");function e(){window.clearTimeout(a);var r,c,l,u,h,m,f,p,i=t;if(t==="system"&&(s&&s.matches?i="dark":o&&o.matches?i="light":(l=new Date,r=l.getHours(),i=r>=7&&r<19?"light":"dark",m=new Date(l.getTime()),m.setHours(r<7?7:r<19?19:31,0,0,0),a=window.setTimeout(e,m.getTime()-l.getTime()))),d.setAttribute("data-theme",i),c=document.querySelector('meta[name="theme-color"]'),u=c&&c.getAttribute("data-"+i),u&&u.trim()){c.setAttribute("content",u),c.removeAttribute("media");for(f=document.querySelectorAll('meta[name="theme-color"]'),h=1;h<f.length;h+=1)f[h].remove()}p=document.querySelector('meta[name="color-scheme"]'),p&&p.setAttribute("content",i),n.slice().forEach(function(e){e()})}function u(n){t=r(n);try{window.localStorage.setItem(i,t)}catch{}e()}window.LazuliteTheme={getPreference:function(){return t},setPreference:u,subscribe:function(e){return n.push(e),function(){n=n.filter(function(t){return t!==e})}}},e(),[s,o].forEach(function(t){if(!t)return;t.addEventListener?t.addEventListener("change",e):t.addListener&&t.addListener(e)}),window.addEventListener("pageshow",e),window.addEventListener("focus",e),document.addEventListener("visibilitychange",function(){document.hidden||e()}),window.addEventListener("storage",function(n){(n.key===i||n.key===null)&&(t=c(),e())})})()</script>
 
-<meta name="generator" content="Hugo 0.167.0">
+<meta name="generator" content="Hugo 0.168.0">
 
 
 <link rel="canonical" href="https://lazulite.app/zh/" >
@@ -87,7 +88,8 @@
 <meta name="twitter:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 
 
-<link href="/sass/main.min.21e66b696572bcb0abce1e8114124b5ac6e13c153933bcb060b3b2b2f23d12e6.css" rel="stylesheet">
+<link href="/sass/main.min.1aab6d919724224baf9e372d24f31d38920d1479399b1cdd57687bec72b79feb.css" rel="stylesheet">
+<script src="/js/theme.js" defer></script>
 <script src="/js/language-switcher.js" defer></script>
 <script src="/js/app-media.js" defer></script>
 
@@ -126,9 +128,9 @@
                 <span class="terminal">Lazulite App</span>
             </a>
         </div>
-        <input class="side-menu" type="checkbox" id="side-menu">
+        <input class="side-menu" type="checkbox" id="side-menu" aria-label="打开或关闭导航菜单" aria-controls="header-links">
         <label class="hamb" for="side-menu" aria-label="打开或关闭导航菜单"><span class="hamb-line"></span></label>
-        <nav class="headerLinks">
+        <nav class="headerLinks" id="header-links">
             <ul>
                 
                 <li>
@@ -145,13 +147,43 @@
                 
                 
                 
-                <li class="headerLanguage">
-                    <details class="headerLanguage__menu" data-language-switcher>
-                        <summary class="headerLanguage__trigger" aria-label="语言">
-                            <span class="headerLanguage__triggerLabel">中文</span>
-                            <span class="headerLanguage__triggerIcon" aria-hidden="true">▾</span>
+                <li class="headerSelector headerSelector--theme">
+                    <details class="headerSelector__menu" data-theme-switcher>
+                        <summary class="headerSelector__trigger" aria-label="外观">
+                            <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" stroke="none"/></svg>
+                            <span class="headerSelector__triggerLabel headerSelector__themeLabel">
+                                <span data-theme-label>跟随系统</span>
+                                <span class="headerSelector__labelSizer" aria-hidden="true">跟随系统</span>
+                                <span class="headerSelector__labelSizer" aria-hidden="true">浅色</span>
+                                <span class="headerSelector__labelSizer" aria-hidden="true">深色</span>
+                            </span>
+                            <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
                         </summary>
-                        <div class="headerLanguage__popover" role="menu" aria-label="语言">
+                        <fieldset class="headerSelector__popover headerSelector__choices">
+                            <legend class="visually-hidden">外观</legend>
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="system" data-label="跟随系统" checked>
+                                <span>跟随系统</span>
+                            </label>
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="light" data-label="浅色" >
+                                <span>浅色</span>
+                            </label>
+                            <label class="headerSelector__choice">
+                                <input type="radio" name="theme-preference" value="dark" data-label="深色" >
+                                <span>深色</span>
+                            </label>
+                        </fieldset>
+                    </details>
+                </li>
+                <li class="headerSelector">
+                    <details class="headerSelector__menu" data-language-switcher>
+                        <summary class="headerSelector__trigger" aria-label="语言">
+                            <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+                            <span class="headerSelector__triggerLabel">中文</span>
+                            <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </summary>
+                        <div class="headerSelector__popover" role="menu" aria-label="语言">
                             
                                 
                                 
@@ -163,7 +195,7 @@
                                 
                                 <a
                                     href="/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="en-US"
                                     hreflang="en"
                                     role="menuitem"
@@ -172,8 +204,8 @@
                                     data-language="en"
                                     data-url="/"
                                 >
-                                    <span class="headerLanguage__menuShort">EN</span>
-                                    <span class="headerLanguage__menuFull">English</span>
+                                    <span class="headerSelector__menuShort">EN</span>
+                                    <span class="headerSelector__menuFull">English</span>
                                 </a>
                             
                                 
@@ -186,7 +218,7 @@
                                 
                                 <a
                                     href="/es/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="es-ES"
                                     hreflang="es"
                                     role="menuitem"
@@ -195,8 +227,8 @@
                                     data-language="es"
                                     data-url="/es/"
                                 >
-                                    <span class="headerLanguage__menuShort">ES</span>
-                                    <span class="headerLanguage__menuFull">Español</span>
+                                    <span class="headerSelector__menuShort">ES</span>
+                                    <span class="headerSelector__menuFull">Español</span>
                                 </a>
                             
                                 
@@ -207,7 +239,7 @@
                                 
                                 <a
                                     href="/zh/"
-                                    class="headerLanguage__menuItem is-active"
+                                    class="headerSelector__menuItem is-active"
                                     lang="zh-CN"
                                     hreflang="zh"
                                     role="menuitem"
@@ -216,8 +248,8 @@
                                     data-language="zh"
                                     data-url="/zh/"
                                 >
-                                    <span class="headerLanguage__menuShort">中文</span>
-                                    <span class="headerLanguage__menuFull">简体中文</span>
+                                    <span class="headerSelector__menuShort">中文</span>
+                                    <span class="headerSelector__menuFull">简体中文</span>
                                 </a>
                             
                                 
@@ -230,7 +262,7 @@
                                 
                                 <a
                                     href="/it/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="it-IT"
                                     hreflang="it"
                                     role="menuitem"
@@ -239,8 +271,8 @@
                                     data-language="it"
                                     data-url="/it/"
                                 >
-                                    <span class="headerLanguage__menuShort">IT</span>
-                                    <span class="headerLanguage__menuFull">Italiano</span>
+                                    <span class="headerSelector__menuShort">IT</span>
+                                    <span class="headerSelector__menuFull">Italiano</span>
                                 </a>
                             
                                 
@@ -253,7 +285,7 @@
                                 
                                 <a
                                     href="/ja/"
-                                    class="headerLanguage__menuItem "
+                                    class="headerSelector__menuItem "
                                     lang="ja-JP"
                                     hreflang="ja"
                                     role="menuitem"
@@ -262,8 +294,8 @@
                                     data-language="ja"
                                     data-url="/ja/"
                                 >
-                                    <span class="headerLanguage__menuShort">日本語</span>
-                                    <span class="headerLanguage__menuFull">日本語</span>
+                                    <span class="headerSelector__menuShort">日本語</span>
+                                    <span class="headerSelector__menuFull">日本語</span>
                                 </a>
                             
                         </div>
@@ -305,7 +337,12 @@
   </p>
   <div class="two-column">
     <div class="column">
-      <img src="/images/app/zh/home.webp?v=119ca6312e4e6ae5" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/home.webp?v=c745869bde0cc719" width="720" height="1516">
+        <source data-theme="dark" srcset="/images/app/zh/home.webp?v=119ca6312e4e6ae5" width="720" height="1516">
+        <img src="/images/app/zh/home.webp?v=119ca6312e4e6ae5" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
+      </picture>
+
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">实时音频分析</h2>
@@ -339,7 +376,12 @@
       </p>
     </div>
     <div class="column">
-      <img src="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" alt="播放健康状态卡片，显示新报告的音频欠载和输出缓冲区丢弃" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="560">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/playback-health.webp?v=5a03c5a5d02d40ad" width="1016" height="560">
+        <source data-theme="dark" srcset="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" width="1016" height="560">
+        <img src="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" alt="播放健康状态卡片，显示新报告的音频欠载和输出缓冲区丢弃" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="560">
+      </picture>
+
     </div>
   </div>
 </section>
@@ -350,7 +392,12 @@
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" alt="高解析度设置建议，附有蓝牙设置快捷入口" class="feature-img app-media app-media--card" loading="lazy" width="840" height="425">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/setup-tips.webp?v=90844c8ca5caea2f" width="840" height="425">
+        <source data-theme="dark" srcset="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" width="840" height="425">
+        <img src="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" alt="高解析度设置建议，附有蓝牙设置快捷入口" class="feature-img app-media app-media--card" loading="lazy" width="840" height="425">
+      </picture>
+
     </div>
   </div>
 </section>
@@ -358,9 +405,13 @@
   <h2 class="section-title">实际效果一目了然</h2>
   <div class="screenshot-mockup">
     <div class="app-video">
-      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" muted loop playsinline controls preload="none" aria-label="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" data-app-video data-src="/videos/app/zh/home.mp4?v=301485c4b7d956a2" hidden>
+      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" muted loop playsinline controls preload="none" aria-label="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" data-app-video data-dark="{&#34;height&#34;:1334,&#34;poster&#34;:&#34;/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76&#34;,&#34;posterHeight&#34;:1334,&#34;posterWidth&#34;:634,&#34;src&#34;:&#34;/videos/app/zh/home.mp4?v=301485c4b7d956a2&#34;,&#34;width&#34;:634}" data-light="{&#34;height&#34;:1334,&#34;poster&#34;:&#34;/images/app/zh/light/home-video-poster.webp?v=faf6d811a38983fe&#34;,&#34;posterHeight&#34;:1334,&#34;posterWidth&#34;:634,&#34;src&#34;:&#34;/videos/app/zh/light/home.mp4?v=f64b0e861461bc89&#34;,&#34;width&#34;:634}" hidden>
       </video>
-      <img class="app-media app-media--phone" data-app-video-poster src="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" alt="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" width="634" height="1334" loading="lazy">
+      <picture data-app-picture data-app-video-poster>
+      <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/home-video-poster.webp?v=faf6d811a38983fe" width="634" height="1334">
+      <source data-theme="dark" srcset="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" width="634" height="1334">
+      <img src="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" alt="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" class="feature-img app-media app-media--phone" loading="lazy" width="634" height="1334">
+    </picture>
     </div>
   </div>
 </section>

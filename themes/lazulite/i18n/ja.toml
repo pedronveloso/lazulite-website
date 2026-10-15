@@ -72,3 +72,15 @@
 
 [theme]
     other = "テーマ"
+
+[appearance]
+    other = "表示テーマ"
+
+[theme_system]
+    other = "システム"
+
+[theme_light]
+    other = "ライト"
+
+[theme_dark]
+    other = "ダーク"
