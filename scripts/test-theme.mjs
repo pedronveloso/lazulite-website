@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { runInNewContext } from 'node:vm';
+import { createContext, runInContext } from 'node:vm';
 import test from 'node:test';
 
+const core = readFileSync(new URL('../themes/lazulite/assets/js/theme-core.js', import.meta.url), 'utf8');
 const source = readFileSync(new URL('../static/js/theme.js', import.meta.url), 'utf8');
 
-function setup({ stored = null, browser = 'dark', hour = 12, storageFails = false, legacy = false } = {}) {
+function setup({ stored = null, browser = 'dark', hour = 12, storageFails = false, legacy = false, chromeAttributes = {}, noMetadata = false } = {}) {
   let now = new Date(2026, 9, 15, hour, 0, 0).getTime();
   let persisted = stored;
   let timeout;
@@ -13,10 +14,14 @@ function setup({ stored = null, browser = 'dark', hour = 12, storageFails = fals
   const events = {};
   const windowEvents = {};
   const root = {};
-  const chrome = { 'data-light': '#F3F6F9', 'data-dark': '#0B1017' };
+  const chrome = { 'data-light': '#F3F6F9', 'data-dark': '#0B1017', content: '#0B1017', media: '(prefers-color-scheme: dark)', ...chromeAttributes };
+  const secondary = { content: '#F3F6F9', media: '(prefers-color-scheme: light)' };
+  const metas = noMetadata ? [] : [chrome, secondary];
+  const readyAttributes = {};
   const scheme = {};
   const attributeNode = attributes => ({
-    getAttribute: name => attributes[name],
+    getAttribute: name => attributes[name] ?? null,
+    remove() { metas.splice(metas.indexOf(attributes), 1); },
     removeAttribute: name => { delete attributes[name]; },
     setAttribute: (name, value) => { attributes[name] = value; },
   });
@@ -37,7 +42,7 @@ function setup({ stored = null, browser = 'dark', hour = 12, storageFails = fals
   const trigger = { focus() { trigger.focused = true; } };
   const switcher = {
     open: false,
-    parentElement: { hidden: true },
+    parentElement: attributeNode(readyAttributes),
     querySelector: selector => selector === 'summary' ? trigger : label,
     querySelectorAll: () => options,
     addEventListener: (name, callback) => { menuEvents[name] = callback; },
@@ -48,9 +53,9 @@ function setup({ stored = null, browser = 'dark', hour = 12, storageFails = fals
     hidden: false,
     documentElement: attributeNode(root),
     addEventListener: (name, callback) => { events[name] = callback; },
-    querySelector: selector => selector.includes('theme-color') ? attributeNode(chrome)
+    querySelector: selector => selector.includes('theme-color') ? (metas.length ? attributeNode(metas[0]) : null)
       : selector.includes('color-scheme') ? attributeNode(scheme) : switcher,
-    querySelectorAll: () => [switcher],
+    querySelectorAll: selector => selector.includes('theme-color') ? metas.map(attributeNode) : [switcher],
   };
   const window = {
     localStorage: {
@@ -67,12 +72,14 @@ function setup({ stored = null, browser = 'dark', hour = 12, storageFails = fals
   class Clock extends Date {
     constructor(...args) { super(...(args.length ? args : [now])); }
   }
-  runInNewContext(source, { window, document, Date: Clock });
+  const context = createContext({ window, document, Date: Clock });
+  runInContext(core, context);
   return {
-    root, chrome, scheme, options, switcher, trigger, label, document,
+    root, chrome, secondary, metas, scheme, options, switcher, trigger, label, document,
+    controller: window.LazuliteTheme,
     get stored() { return persisted; },
     get delay() { return delay; },
-    ready() { events.DOMContentLoaded(); },
+    ready() { runInContext(source, context); },
     choose(value) { menuEvents.change({ target: options.find(option => option.value === value) }); },
     browser(value) {
       media.forEach((query, i) => { query.matches = value === ['dark', 'light'][i]; });
@@ -161,7 +168,7 @@ test('system tracks live browser changes, including legacy media listeners', () 
 test('choices persist and returning to system immediately resumes automatic behavior', () => {
   const app = setup({ browser: 'dark' });
   app.ready();
-  assert.equal(app.switcher.parentElement.hidden, false);
+  assert.equal(app.switcher.parentElement.getAttribute("data-theme-ready"), "");
   app.choose('light');
   assert.equal(app.stored, 'light');
   assert.equal(app.root['data-theme'], 'light');
@@ -237,4 +244,60 @@ test('both palettes keep text and focus indicators legible on tonal surfaces', (
       assert.ok(contrast(palette['on-accent'], palette[fill]) >= 4.5, `${name}: primary button ${fill}`);
     }
   }
+});
+
+
+test('startup and subsequent overrides leave one authoritative browser color', () => {
+  const app = setup({ browser: 'light', stored: 'dark' });
+  assert.equal(app.metas.length, 1);
+  assert.equal(app.chrome.content, '#0B1017');
+  assert.equal(app.chrome.media, undefined);
+  app.ready();
+  app.choose('light');
+  assert.equal(app.metas.length, 1);
+  assert.equal(app.chrome.content, '#F3F6F9');
+});
+
+test('missing and empty color attributes preserve existing valid metadata', () => {
+  for (const value of [null, '', '   ']) {
+    const app = setup({ browser: 'light', chromeAttributes: { 'data-light': value } });
+    assert.equal(app.root['data-theme'], 'light');
+    assert.equal(app.metas.length, 2);
+    assert.equal(app.chrome.content, '#0B1017');
+    assert.equal(app.chrome.media, '(prefers-color-scheme: dark)');
+    assert.equal(app.secondary.content, '#F3F6F9');
+    app.ready();
+    app.choose('dark');
+    assert.equal(app.metas.length, 1);
+    assert.equal(app.chrome.content, '#0B1017');
+  }
+});
+
+test('themes still work without any browser color metadata', () => {
+  const app = setup({ noMetadata: true });
+  app.ready();
+  app.choose('light');
+  assert.equal(app.root['data-theme'], 'light');
+  assert.equal(app.scheme.content, 'light');
+});
+
+test('core stays active while menu code is delayed or unavailable', () => {
+  const app = setup({ browser: 'dark' });
+  assert.equal(app.switcher.parentElement.getAttribute('data-theme-ready'), null);
+  app.external('light');
+  assert.equal(app.root['data-theme'], 'light');
+  app.ready();
+  assert.equal(app.label.textContent, 'light');
+  assert.equal(app.switcher.parentElement.getAttribute('data-theme-ready'), '');
+});
+
+test('controller subscriptions observe preference changes and can unsubscribe', () => {
+  const app = setup();
+  const observed = [];
+  const unsubscribe = app.controller.subscribe(() => observed.push(app.controller.getPreference()));
+  app.controller.setPreference('light');
+  unsubscribe();
+  app.controller.setPreference('dark');
+  assert.deepEqual(observed, ['light']);
+  assert.equal(app.root['data-theme'], 'dark');
 });

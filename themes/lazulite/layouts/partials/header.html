@@ -19,11 +19,16 @@
                 {{ end }}
                 {{ $page := . }}
                 {{ $sites := sort hugo.Sites "Language.Weight" }}
-                <li class="headerSelector" hidden>
+                <li class="headerSelector headerSelector--theme">
                     <details class="headerSelector__menu" data-theme-switcher>
                         <summary class="headerSelector__trigger" aria-label="{{ i18n "appearance" }}">
                             <svg class="headerSelector__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" stroke="none"/></svg>
-                            <span class="headerSelector__triggerLabel" data-theme-label>{{ i18n "theme_system" }}</span>
+                            <span class="headerSelector__triggerLabel headerSelector__themeLabel">
+                                <span data-theme-label>{{ i18n "theme_system" }}</span>
+                                {{- range slice "system" "light" "dark" }}
+                                <span class="headerSelector__labelSizer" aria-hidden="true">{{ i18n (printf "theme_%s" .) }}</span>
+                                {{- end }}
+                            </span>
                             <svg class="headerSelector__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5"/></svg>
                         </summary>
                         <fieldset class="headerSelector__popover headerSelector__choices">

@@ -242,21 +242,25 @@
 @media screen and (max-width: $breakLarge) {
   .headerLinks {
     width: 100%;
-    height: 100%;
+    height: calc(100dvh - 56px);
     position: fixed;
     top: 56px;
     left: 0;
     background-color: $background;
     border-bottom: 1px solid $hairline;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     max-height: 0;
     visibility: hidden;
     transition: max-height 0.4s ease-out;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
-    ul {
+    > ul {
+      width: 100%;
+      max-width: 22rem;
+      padding: $space-lg;
       flex-direction: column;
       align-items: center;
       gap: $space-lg;
@@ -281,11 +285,16 @@
     width: 100%;
   }
 
+  // Expanded selectors flow within the mobile sheet instead of clipping.
   .headerSelector__popover {
+    position: static;
+    margin-top: $space-sm;
     left: 0;
     min-width: 100%;
     right: auto;
   }
+
+  .side-menu:checked ~ .headerLinks { visibility: visible; }
 
   .hamb { display: flex; }
 
@@ -308,7 +317,25 @@
 }
 
 // Both header selectors share their tonal treatment and touch target size.
-.headerSelector[hidden] { display: none; }
+// CSS-only visitors have no inactive control; the inline core reserves its space.
+.headerSelector--theme { display: none; }
+
+:root[data-theme] .headerSelector--theme {
+  display: flex;
+  visibility: hidden;
+}
+
+:root[data-theme] .headerSelector--theme[data-theme-ready] {
+  visibility: inherit;
+}
+
+.headerSelector__themeLabel {
+  display: inline-grid;
+
+  > span { grid-area: 1 / 1; }
+}
+
+.headerSelector__labelSizer { visibility: hidden; }
 
 .headerSelector__choices {
   margin: 0;
@@ -345,27 +372,3 @@
 }
 
 .headerSelector__menuItem { min-height: 44px; }
-
-// Expanded selectors flow within the mobile sheet rather than clipping below it.
-@media screen and (max-width: $breakLarge) {
-  .headerLinks {
-    height: calc(100dvh - 56px);
-    overflow-y: auto;
-    align-items: flex-start;
-
-    > ul {
-      width: 100%;
-      max-width: 22rem;
-      padding: $space-lg;
-    }
-  }
-
-  .headerSelector__popover {
-    position: static;
-    margin-top: $space-sm;
-  }
-}
-
-@media screen and (max-width: $breakLarge) {
-  .side-menu:checked ~ .headerLinks { visibility: visible; }
-}

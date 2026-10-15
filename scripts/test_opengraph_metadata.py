@@ -53,6 +53,9 @@ class OpenGraphMetadataTest(unittest.TestCase):
         styles = self.site / "assets/sass"
         styles.mkdir(parents=True)
         (styles / "main.scss").write_text("body { margin: 0; }\n")
+        core = self.site / "assets/js"
+        core.mkdir()
+        shutil.copyfile(SITE_ROOT / "themes/lazulite/assets/js/theme-core.js", core / "theme-core.js")
         layout = '<html><head>{{ partial "head.html" . }}</head><body></body></html>'
         (self.site / "layouts/index.html").write_text(layout)
         defaults = self.site / "layouts/_default"
@@ -89,6 +92,17 @@ class OpenGraphMetadataTest(unittest.TestCase):
         prefix = "" if lang == "en" else f"{lang}/"
         path = self.site / "public" / prefix / page / "index.html"
         return Metadata(path.read_text()).tags
+
+    def test_theme_startup_is_inline_before_styles_and_menu_wiring_is_deferred(self):
+        self.build()
+        html = (self.site / "public/index.html").read_text()
+        self.assertIn("LazuliteTheme", html)
+        self.assertLess(html.index("LazuliteTheme"), html.index('rel="stylesheet"'))
+        self.assertIn('<script src="/js/theme.js" defer></script>', html)
+        self.assertNotIn('<script src="/js/theme.js"></script>', html)
+        self.assertIn('media="(prefers-color-scheme: dark)"', html)
+        self.assertIn('media="(prefers-color-scheme: light)"', html)
+        self.assertEqual(html.count('name="theme-color"'), 2)
 
     def test_manifest_type_is_authoritative_for_versioned_urls(self):
         for source in ("/images/card.webp?v=abc123", "/images/card.png?v=abc123"):
