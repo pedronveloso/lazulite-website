@@ -40,7 +40,7 @@ colors:
   light-link-hover: "#0E151D"
   light-button-hover: "#1E6DB5"
   light-button-hover-border: "#0E151D"
-  light-media-background: "#0B1017"
+  light-media-background: "#F3F6F9"
   light-focus-ring: "#1E6DB5"
 typography:
   wordmark:
@@ -240,7 +240,7 @@ The audience is informed, skeptical, and evidence-minded, so the page earns trus
 - One lapis accent; gold, amber, and muted red only support labeled signal tiers.
 - Sora, sentence case, tight corners, and tabular measured values.
 - Flat surfaces without shadows, gradients, glows, or decorative motion.
-- Existing dark app captures remain authentic in both website themes.
+- Authentic app captures match the resolved website theme.
 
 **Anti-references.** The previous amber and teal identity, Barlow Condensed all-caps headings, neon or cyan gradients, gradient text, glassmorphism, pill-shaped SaaS cards with drop shadows, generic Material or Pixel app styling, and AI-product-page tropes.
 
@@ -265,7 +265,7 @@ The frontmatter records both complete palettes. Prefixes identify the palette; r
 - **Raised Surface** (`surface-raised`): selector popovers, inline code backgrounds, and version chips. A tonal step, not a shadow.
 - **Hairline** (`hairline`): borders and dividers, normally 1px.
 - **Primary / Secondary / Muted Text** (`text-primary`, `text-secondary`, `text-muted`): headings and values / body text / labels and metadata. Choose text by hierarchy and retain readable contrast.
-- **Media Ground** (`media-background`): fixed Mineral Navy in both palettes, independently defined for video letterboxing. It must not follow the light page ground.
+- **Media Ground** (`media-background`): Mineral Navy in dark mode and cool pale ground in light mode, matching the background rendered into each framed video. Keep this an independent video role.
 
 ### Signal ramp
 
@@ -340,7 +340,7 @@ Signal badges use the label treatment, 3px × 8px padding, a 1px current-color o
 
 ### App media
 
-Screenshots, semantic cards, and video remain real dark-mode AASG captures in both themes. Preserve their files, colors, feathering, proportions, and frames. Media supplies its own edges; do not add an outer border, radius, shadow, tint, filter, or redraw. Video letterboxing uses the independent fixed-dark `media-background` role. A website appearance change does not require recapturing app media.
+Screenshots, semantic cards, video, and posters are real AASG captures for each theme and language. Select the variant using the resolved root `data-theme`, including manual and automatic changes. Without JavaScript, pictures follow the browser color preference with a dark fallback. Preserve capture colors, feathering, proportions, and frames. Media supplies its own edges; do not add an outer border, radius, shadow, tint, filter, or redraw. Video letterboxing uses the theme-specific `media-background` role. Changing appearance restarts the matching demo from zero; load video only when visible and reduced motion is disabled. Reduced-motion and no-JavaScript visitors see the matching poster. Retain native playback controls. Refresh captures only through the documented media workflow.
 
 ## Do's and Don'ts
 
@@ -352,7 +352,7 @@ Screenshots, semantic cards, and video remain real dark-mode AASG captures in bo
 - **Do** verify English and Japanese at desktop and mobile widths in both themes.
 - **Do** use tabular figures for measurements, versions, and dates.
 - **Do** preserve native radio keyboard behavior and translated System, Light, and Dark choices in all five languages.
-- **Do** preserve authentic dark app media and its fixed dark video background in both themes.
+- **Do** use authentic app media for each language and appearance, with a matching video background and poster.
 
 ### Don't
 

@@ -63,18 +63,28 @@ def image_webp(source, output, display_width):
     return validate(output)
 
 
-def import_media(artifact_root, images_only=False):
+def asset_directory(lang, theme):
+    # Keep existing dark URLs stable; light captures have their own directory.
+    return lang if theme == "dark" else f"{lang}/light"
+
+
+def import_media(artifact_root, images_only=False, theme="all"):
+    if theme not in ("light", "dark", "all"):
+        raise ValueError(f"Unsupported theme: {theme}")
+    themes = ("dark", "light") if theme == "all" else (theme,)
     sources = {}
     for lang, locale in LOCALES.items():
-        sources[lang] = {
-            role: artifact_root / "screenshots" / kind / locale / f"{capture}-dark-gestural.png"
-            for role, (kind, capture) in IMAGES.items()
-        }
-        sources[lang]["home-video"] = (
-            SITE_ROOT / "static" / "videos" / "app" / lang / "home.mp4"
-            if images_only else
-            artifact_root / "videos" / "hyperframes" / locale / "website-demo-dark-gestural.mp4"
-        )
+        for appearance in themes:
+            directory = asset_directory(lang, appearance)
+            sources[lang, appearance] = {
+                role: artifact_root / "screenshots" / kind / locale / f"{capture}-{appearance}-gestural.png"
+                for role, (kind, capture) in IMAGES.items()
+            }
+            sources[lang, appearance]["home-video"] = (
+                SITE_ROOT / "static" / "videos" / "app" / directory / "home.mp4"
+                if images_only else
+                artifact_root / "videos" / "hyperframes" / locale / f"website-demo-{appearance}-gestural.mp4"
+            )
     for media in sources.values():
         for path in media.values():
             validate(path)
@@ -83,17 +93,19 @@ def import_media(artifact_root, images_only=False):
     with tempfile.TemporaryDirectory(prefix="lazulite-media-") as temporary:
         staging = Path(temporary)
         manifest = {}
-        for lang, media in sources.items():
-            manifest[lang] = {}
-            image_dir = staging / "static" / "images" / "app" / lang
-            video_dir = staging / "static" / "videos" / "app" / lang
+        for (lang, appearance), media in sources.items():
+            directory = asset_directory(lang, appearance)
+            entries = {}
+            manifest.setdefault(lang, {})[appearance] = entries
+            image_dir = staging / "static" / "images" / "app" / directory
+            video_dir = staging / "static" / "videos" / "app" / directory
             image_dir.mkdir(parents=True)
             video_dir.mkdir(parents=True)
             for role in IMAGES:
                 output = image_dir / f"{role}.webp"
                 size = image_webp(media[role], output, IMAGE_WIDTHS[role])
-                manifest[lang][role] = {
-                    "src": public_url(output, f"/images/app/{lang}/{output.name}"), **size
+                entries[role] = {
+                    "src": public_url(output, f"/images/app/{directory}/{output.name}"), **size
                 }
             video = media["home-video"]
             if not images_only:
@@ -105,15 +117,24 @@ def import_media(artifact_root, images_only=False):
                     "-an", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
                     "-movflags", "+faststart", str(video))
             poster = image_dir / "home-video-poster.webp"
-            poster_png = staging / f"poster-{lang}.png"
+            poster_png = staging / f"poster-{lang}-{appearance}.png"
             run("ffmpeg", "-v", "error", "-i", str(video), "-frames:v", "1", str(poster_png))
             poster_size = image_webp(poster_png, poster, POSTER_WIDTH)
             poster_png.unlink()
-            manifest[lang]["home-video"] = {
-                "src": public_url(video, f"/videos/app/{lang}/home.mp4"),
-                "poster": public_url(poster, f"/images/app/{lang}/{poster.name}"), **validate(video),
+            entries["home-video"] = {
+                "src": public_url(video, f"/videos/app/{directory}/home.mp4"),
+                "poster": public_url(poster, f"/images/app/{directory}/{poster.name}"), **validate(video),
                 "posterWidth": poster_size["width"], "posterHeight": poster_size["height"]
             }
+        # Merge only after every conversion succeeds. Older manifests contain dark roles
+        # directly under each language; migrate those entries without touching their files.
+        existing_path = SITE_ROOT / "data" / "app_media.json"
+        if existing_path.exists():
+            existing = json.loads(existing_path.read_text())
+            for lang, entries in existing.items():
+                retained = {"dark": entries} if "home" in entries else entries
+                for appearance, roles in retained.items():
+                    manifest.setdefault(lang, {}).setdefault(appearance, roles)
         manifest_path = staging / "data" / "app_media.json"
         manifest_path.parent.mkdir()
         manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
@@ -138,9 +159,10 @@ def import_media(artifact_root, images_only=False):
             os.replace(incoming_path, target_manifest)
         finally:
             incoming_path.unlink(missing_ok=True)
-    print("Imported 15 resized screenshots and 5 resized video posters. " +
+    count = len(sources)
+    print(f"Imported {count * 3} resized screenshots and {count} resized video posters. " +
           ("Existing website videos unchanged." if images_only else
-           "Imported 5 half-resolution website videos."))
+           f"Imported {count} half-resolution website videos."))
 
 
 def main():
@@ -149,12 +171,14 @@ def main():
                         help="Android repository's AASG artifacts directory")
     parser.add_argument("--images-only", action="store_true",
                         help="Resize screenshots and regenerate posters from existing website MP4s; leave videos unchanged")
+    parser.add_argument("--theme", choices=("light", "dark", "all"), default="all",
+                        help="Appearance to import; preserve other appearances (default: all)")
     args = parser.parse_args()
     for command in ("ffmpeg", "ffprobe", "cwebp"):
         if shutil.which(command) is None:
             parser.exit(1, f"Required tool not found: {command}\n")
     try:
-        import_media(args.artifact_root.resolve(), images_only=args.images_only)
+        import_media(args.artifact_root.resolve(), images_only=args.images_only, theme=args.theme)
     except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as error:
         detail = error.stderr if isinstance(error, subprocess.CalledProcessError) else str(error)
         parser.exit(1, f"Media import failed: {detail}\n")

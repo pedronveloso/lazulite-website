@@ -27,7 +27,7 @@ class ImportFailureTest(unittest.TestCase):
                 media, "validate", side_effect=lambda path: inputs.append(path)
             ), patch.object(media, "run", side_effect=OSError("stop before conversion")):
                 with self.assertRaisesRegex(OSError, "stop before conversion"):
-                    media.import_media(root / "captures")
+                    media.import_media(root / "captures", theme="dark")
             self.assertEqual(inputs[3::4], [
                 root / "captures" / "videos" / "hyperframes" / locale /
                 "website-demo-dark-gestural.mp4" for locale in media.LOCALES.values()
@@ -41,7 +41,7 @@ class ImportFailureTest(unittest.TestCase):
             marker.write_text("existing manifest")
             with patch.object(media, "SITE_ROOT", root):
                 with self.assertRaisesRegex(ValueError, "Missing or empty"):
-                    media.import_media(root / "missing")
+                    media.import_media(root / "missing", theme="dark")
             self.assertEqual(marker.read_text(), "existing manifest")
             self.assertFalse((root / "static").exists())
 
@@ -61,7 +61,7 @@ class ImportFailureTest(unittest.TestCase):
 
             with patch.object(media, "SITE_ROOT", root), patch.object(media, "validate", reject_last):
                 with self.assertRaisesRegex(ValueError, "Corrupt last video"):
-                    media.import_media(root / "captures")
+                    media.import_media(root / "captures", theme="dark")
             self.assertEqual(marker.read_bytes(), b"existing image")
             self.assertFalse((root / "data").exists())
 
@@ -74,18 +74,19 @@ class ImportFailureTest(unittest.TestCase):
                 media.validate(corrupt)
 
     def test_conversion_failure_leaves_existing_assets_unchanged(self):
-        with tempfile.TemporaryDirectory() as folder:
-            root = Path(folder)
-            marker = root / "data" / "app_media.json"
-            marker.parent.mkdir()
-            marker.write_text("existing manifest")
-            with patch.object(media, "SITE_ROOT", root), patch.object(
-                media, "validate", return_value={"width": 100, "height": 200}
-            ), patch.object(media, "run", side_effect=OSError("conversion failed")):
-                with self.assertRaisesRegex(OSError, "conversion failed"):
-                    media.import_media(root / "captures")
-            self.assertEqual(marker.read_text(), "existing manifest")
-            self.assertFalse((root / "static").exists())
+        for theme in ("light", "dark", "all"):
+            with self.subTest(theme=theme), tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                marker = root / "data" / "app_media.json"
+                marker.parent.mkdir()
+                marker.write_text("existing manifest")
+                with patch.object(media, "SITE_ROOT", root), patch.object(
+                    media, "validate", return_value={"width": 100, "height": 200}
+                ), patch.object(media, "run", side_effect=OSError("conversion failed")):
+                    with self.assertRaisesRegex(OSError, "conversion failed"):
+                        media.import_media(root / "captures", theme=theme)
+                self.assertEqual(marker.read_text(), "existing manifest")
+                self.assertFalse((root / "static").exists())
 
 
 @unittest.skipUnless(all(shutil.which(tool) for tool in ("ffmpeg", "ffprobe", "cwebp")),
@@ -101,17 +102,17 @@ class WebsiteVideoTest(unittest.TestCase):
         self.assertIn(b"VP8 ", chunks, "Lossy WebP required")
         self.assertNotIn(b"VP8L", chunks)
 
-    def fixture(self, artifact_root, width=100, height=204):
-        image = artifact_root / "fixture.png"
+    def fixture(self, artifact_root, width=100, height=204, theme="dark"):
+        image = artifact_root / f"fixture-{theme}.png"
         image.parent.mkdir(parents=True, exist_ok=True)
         media.run("ffmpeg", "-v", "error", "-f", "lavfi", "-i", "color=c=blue:s=32x48",
                   "-frames:v", "1", str(image))
         for locale, color in zip(media.LOCALES.values(), ("red", "green", "blue", "yellow", "cyan")):
             for kind, capture in media.IMAGES.values():
-                target = artifact_root / "screenshots" / kind / locale / f"{capture}-dark-gestural.png"
+                target = artifact_root / "screenshots" / kind / locale / f"{capture}-{theme}-gestural.png"
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(image, target)
-            video = artifact_root / "videos" / "hyperframes" / locale / "website-demo-dark-gestural.mp4"
+            video = artifact_root / "videos" / "hyperframes" / locale / f"website-demo-{theme}-gestural.mp4"
             video.parent.mkdir(parents=True, exist_ok=True)
             media.run("ffmpeg", "-v", "error", "-f", "lavfi", "-i",
                       f"color=c={color}:s={width}x{height}:r=30", "-t", "0.4", "-an",
@@ -126,7 +127,7 @@ class WebsiteVideoTest(unittest.TestCase):
                 originals = {path: hashlib.sha256(path.read_bytes()).hexdigest()
                              for path in captures.rglob("*") if path.is_file()}
                 with patch.object(media, "SITE_ROOT", site):
-                    media.import_media(captures)
+                    media.import_media(captures, theme="dark")
                 manifest = json.loads((site / "data" / "app_media.json").read_text())
                 hashes = set()
                 for lang in media.LOCALES:
@@ -135,10 +136,10 @@ class WebsiteVideoTest(unittest.TestCase):
                     expected = {"width": 50, "height": 102}
                     self.assertEqual(media.validate(video), expected)
                     self.assertEqual(media.validate(poster), expected)
-                    self.assertEqual({k: manifest[lang]["home-video"][k] for k in expected}, expected)
-                    self.assertEqual(manifest[lang]["home-video"]["src"],
+                    self.assertEqual({k: manifest[lang]["dark"]["home-video"][k] for k in expected}, expected)
+                    self.assertEqual(manifest[lang]["dark"]["home-video"]["src"],
                                      media.public_url(video, f"/videos/app/{lang}/home.mp4"))
-                    self.assertEqual(manifest[lang]["home-video"]["poster"],
+                    self.assertEqual(manifest[lang]["dark"]["home-video"]["poster"],
                                      media.public_url(poster, f"/images/app/{lang}/home-video-poster.webp"))
                     probe = json.loads(media.run("ffprobe", "-v", "error", "-show_streams",
                                                  "-show_format", "-of", "json", str(video)))
@@ -159,7 +160,7 @@ class WebsiteVideoTest(unittest.TestCase):
             captures, site = root / "captures", root / "site"
             self.fixture(captures, width=800, height=1280)
             with patch.object(media, "SITE_ROOT", site):
-                media.import_media(captures)
+                media.import_media(captures, theme="dark")
             videos = {path: path.read_bytes() for path in (site / "static/videos").rglob("*.mp4")}
             previous = json.loads((site / "data/app_media.json").read_text())
             # Screenshot-only imports must not need the Hyperframes masters.
@@ -178,7 +179,7 @@ class WebsiteVideoTest(unittest.TestCase):
             for path in originals:
                 path.write_bytes(png)
             with patch.object(media, "SITE_ROOT", site):
-                media.import_media(captures, images_only=True)
+                media.import_media(captures, images_only=True, theme="dark")
             manifest = json.loads((site / "data/app_media.json").read_text())
             for lang in media.LOCALES:
                 for role, width in media.IMAGE_WIDTHS.items():
@@ -187,8 +188,8 @@ class WebsiteVideoTest(unittest.TestCase):
                     width = min(width * media.IMAGE_PIXEL_RATIO, 1024)
                     self.assertEqual(size["width"], width)
                     self.assertLessEqual(abs(size["height"] - width * 640 / 1024), 1)
-                    self.assertEqual({key: manifest[lang][role][key] for key in size}, size)
-                    self.assertNotEqual(manifest[lang][role]["src"], previous[lang][role]["src"])
+                    self.assertEqual({key: manifest[lang]["dark"][role][key] for key in size}, size)
+                    self.assertNotEqual(manifest[lang]["dark"][role]["src"], previous[lang]["dark"][role]["src"])
                     self.assert_lossy_webp(output)
                     alpha = subprocess.run([
                         "ffmpeg", "-v", "error", "-i", str(output), "-vf", "alphaextract",
@@ -203,9 +204,9 @@ class WebsiteVideoTest(unittest.TestCase):
                 poster = site / "static/images/app" / lang / "home-video-poster.webp"
                 self.assertEqual(media.validate(poster), {"width": 400, "height": 640})
                 self.assert_lossy_webp(poster)
-                entry = manifest[lang]["home-video"]
+                entry = manifest[lang]["dark"]["home-video"]
                 self.assertEqual((entry["posterWidth"], entry["posterHeight"]), (400, 640))
-                self.assertEqual(entry["src"], previous[lang]["home-video"]["src"])
+                self.assertEqual(entry["src"], previous[lang]["dark"]["home-video"]["src"])
                 self.assertEqual((entry["width"], entry["height"]), (400, 640))
             self.assertTrue(all(path.read_bytes() == data for path, data in videos.items()))
             self.assertTrue(all(path.read_bytes() == png for path in originals))
@@ -216,12 +217,12 @@ class WebsiteVideoTest(unittest.TestCase):
             captures, site = root / "captures", root / "site"
             self.fixture(captures)
             with patch.object(media, "SITE_ROOT", site):
-                media.import_media(captures)
+                media.import_media(captures, theme="dark")
             (site / "static/videos/app/ja/home.mp4").unlink()
             before = {path: path.read_bytes() for path in site.rglob("*") if path.is_file()}
             with patch.object(media, "SITE_ROOT", site):
                 with self.assertRaisesRegex(ValueError, "Missing or empty"):
-                    media.import_media(captures, images_only=True)
+                    media.import_media(captures, images_only=True, theme="dark")
             self.assertEqual(before, {path: path.read_bytes() for path in site.rglob("*")
                                       if path.is_file()})
 
@@ -240,9 +241,52 @@ class WebsiteVideoTest(unittest.TestCase):
             marker.write_text("previous website manifest")
             with patch.object(media, "SITE_ROOT", site):
                 with self.assertRaisesRegex(ValueError, "Missing or empty"):
-                    media.import_media(captures)
+                    media.import_media(captures, theme="dark")
             self.assertEqual(marker.read_text(), "previous website manifest")
             self.assertFalse((site / "static").exists())
+
+
+    def test_light_import_migrates_legacy_dark_entries_without_changing_dark_assets(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            captures, site = root / "captures", root / "site"
+            self.fixture(captures)
+            self.fixture(captures, theme="light")
+            with patch.object(media, "SITE_ROOT", site):
+                media.import_media(captures, theme="dark")
+                manifest_path = site / "data/app_media.json"
+                dark = json.loads(manifest_path.read_text())
+                legacy = {lang: entries["dark"] for lang, entries in dark.items()}
+                manifest_path.write_text(json.dumps(legacy))
+                files = {path: path.read_bytes() for path in (site / "static").rglob("*") if path.is_file()}
+                media.import_media(captures, theme="light")
+                manifest = json.loads(manifest_path.read_text())
+                for lang in media.LOCALES:
+                    self.assertEqual(manifest[lang]["dark"], legacy[lang])
+                    self.assertIn(f"/app/{lang}/light/", manifest[lang]["light"]["home"]["src"])
+                    video = site / "static/videos/app" / lang / "light/home.mp4"
+                    self.assertEqual(media.validate(video), {"width": 50, "height": 102})
+                self.assertTrue(all(path.read_bytes() == data for path, data in files.items()))
+                videos = {path: path.read_bytes() for path in (site / "static/videos").rglob("*.mp4")}
+                media.import_media(captures, theme="light", images_only=True)
+                self.assertTrue(all(path.read_bytes() == data for path, data in videos.items()))
+                self.assertEqual(json.loads(manifest_path.read_text()), manifest)
+
+    def test_default_import_requires_both_themes_and_preserves_site_on_missing_light(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            captures, site = root / "captures", root / "site"
+            self.fixture(captures)
+            self.fixture(captures, theme="light")
+            with patch.object(media, "SITE_ROOT", site):
+                media.import_media(captures)
+                manifest = json.loads((site / "data/app_media.json").read_text())
+                self.assertTrue(all(set(entries) == {"dark", "light"} for entries in manifest.values()))
+                before = {path: path.read_bytes() for path in site.rglob("*") if path.is_file()}
+                (captures / "videos/hyperframes/ja/website-demo-light-gestural.mp4").unlink()
+                with self.assertRaisesRegex(ValueError, "Missing or empty"):
+                    media.import_media(captures)
+                self.assertEqual(before, {path: path.read_bytes() for path in site.rglob("*") if path.is_file()})
 
 
 if __name__ == "__main__":

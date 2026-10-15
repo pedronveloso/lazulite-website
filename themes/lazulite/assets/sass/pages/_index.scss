@@ -139,11 +139,19 @@
   max-width: 560px;
 }
 
-// The app's dark background, so video letterboxing is invisible.
+// Match the background baked into each appearance of the framed recording.
 .homepage .section .app-media--video {
   background: $media-background;
 }
 
 .homepage .section .app-media[hidden] {
+  display: none;
+}
+
+.homepage .section [data-app-picture] {
+  display: block;
+}
+
+.homepage .section [data-app-video-poster][hidden] {
   display: none;
 }

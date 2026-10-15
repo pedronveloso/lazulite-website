@@ -52,7 +52,7 @@ Content lives in `content/` as markdown files:
 ### Design System
 - [`DESIGN.md`](DESIGN.md) is the visual source of truth for the site: tokens, typography, components, and do's and don'ts. Read it before changing styles, markup, or media treatment, and keep it updated with any token or component change.
 - The site mirrors the Android app's dark and light themes (`Color.kt`, `Theme.kt`, `Typography.kt` in `lazulite-android`). Change the app first, then mirror here. Product intent, terminology, and the shared visual language live in the Android [PRODUCT.md](../../android/lazulite-android/PRODUCT.md#visual-language).
-- Default to System appearance, following browser preference with a 07:00–19:00 local-time light fallback when neither preference is exposed. Keep existing dark-mode app media in both themes; a theme change does not authorize recapturing it.
+- Default to System appearance, following browser preference with a 07:00–19:00 local-time light fallback when neither preference is exposed. App screenshots, cards, video, and posters follow the resolved website appearance. Capture refreshes require an explicit media request; use the theme-aware importer and preserve unselected appearances.
 
 ### Theme Architecture
 The custom "lazulite" theme (based on "Nightfall"):

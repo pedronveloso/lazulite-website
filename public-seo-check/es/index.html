@@ -89,7 +89,7 @@
 <meta name="twitter:image:alt" content="Lazulite, inspector de audio Bluetooth. Sigue el audio desde la app de reproducción hasta los auriculares a través de LDAC.">
 
 
-<link href="/sass/main.min.094fe0db548ee3470a4976e918fee615adbd733c2d33558f76164f895a1c0470.css" rel="stylesheet">
+<link href="/sass/main.min.665c0961201ebc5e5fe1d8e0748eb41d7a27fa53d8a1930b871624b674164f1b.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 <script src="/js/app-media.js" defer></script>
 
@@ -332,7 +332,12 @@
   </p>
   <div class="two-column">
     <div class="column">
-      <img src="/images/app/es/home.webp?v=d66cb07e8c002583" alt="Inicio de Lazulite con el códec aptX Adaptive activo y la ruta de audio Bluetooth" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/es/light/home.webp?v=3cf2cd3898eab140" width="720" height="1516">
+        <source data-theme="dark" srcset="/images/app/es/home.webp?v=d66cb07e8c002583" width="720" height="1516">
+        <img src="/images/app/es/home.webp?v=d66cb07e8c002583" alt="Inicio de Lazulite con el códec aptX Adaptive activo y la ruta de audio Bluetooth" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
+      </picture>
+
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">Análisis de audio en tiempo real</h2>
@@ -366,7 +371,12 @@
       </p>
     </div>
     <div class="column">
-      <img src="/images/app/es/playback-health.webp?v=a0cdf393fe3c7c28" alt="Tarjeta de estado de reproducción con nuevos underruns de audio y descartes de búferes de salida" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="727">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/es/light/playback-health.webp?v=509633fcba15a600" width="1016" height="727">
+        <source data-theme="dark" srcset="/images/app/es/playback-health.webp?v=a0cdf393fe3c7c28" width="1016" height="727">
+        <img src="/images/app/es/playback-health.webp?v=a0cdf393fe3c7c28" alt="Tarjeta de estado de reproducción con nuevos underruns de audio y descartes de búferes de salida" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="727">
+      </picture>
+
     </div>
   </div>
 </section>
@@ -377,7 +387,12 @@
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/app/es/setup-tips.webp?v=0a779fddbf020c1c" alt="Consejo de alta resolución con acceso a los ajustes de Bluetooth" class="feature-img app-media app-media--card" loading="lazy" width="840" height="456">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/es/light/setup-tips.webp?v=1a9820f4bf334c1c" width="840" height="456">
+        <source data-theme="dark" srcset="/images/app/es/setup-tips.webp?v=0a779fddbf020c1c" width="840" height="456">
+        <img src="/images/app/es/setup-tips.webp?v=0a779fddbf020c1c" alt="Consejo de alta resolución con acceso a los ajustes de Bluetooth" class="feature-img app-media app-media--card" loading="lazy" width="840" height="456">
+      </picture>
+
     </div>
   </div>
 </section>
@@ -385,9 +400,13 @@
   <h2 class="section-title">Mírala en acción</h2>
   <div class="screenshot-mockup">
     <div class="app-video">
-      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/es/home-video-poster.webp?v=3096584c9f31ceca" muted loop playsinline controls preload="none" aria-label="Grabación del inicio de Lazulite con detalles de LDAC y un marco de Pixel 8" data-app-video data-src="/videos/app/es/home.mp4?v=feed7a5f02971b1c" hidden>
+      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/es/home-video-poster.webp?v=3096584c9f31ceca" muted loop playsinline controls preload="none" aria-label="Grabación del inicio de Lazulite con detalles de LDAC y un marco de Pixel 8" data-app-video data-dark="{&#34;height&#34;:1334,&#34;poster&#34;:&#34;/images/app/es/home-video-poster.webp?v=3096584c9f31ceca&#34;,&#34;posterHeight&#34;:1334,&#34;posterWidth&#34;:634,&#34;src&#34;:&#34;/videos/app/es/home.mp4?v=feed7a5f02971b1c&#34;,&#34;width&#34;:634}" data-light="{&#34;height&#34;:1334,&#34;poster&#34;:&#34;/images/app/es/light/home-video-poster.webp?v=133c107a4565427d&#34;,&#34;posterHeight&#34;:1334,&#34;posterWidth&#34;:634,&#34;src&#34;:&#34;/videos/app/es/light/home.mp4?v=d2f832cd88c84169&#34;,&#34;width&#34;:634}" hidden>
       </video>
-      <img class="app-media app-media--phone" data-app-video-poster src="/images/app/es/home-video-poster.webp?v=3096584c9f31ceca" alt="Grabación del inicio de Lazulite con detalles de LDAC y un marco de Pixel 8" width="634" height="1334" loading="lazy">
+      <picture data-app-picture data-app-video-poster>
+      <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/es/light/home-video-poster.webp?v=133c107a4565427d" width="634" height="1334">
+      <source data-theme="dark" srcset="/images/app/es/home-video-poster.webp?v=3096584c9f31ceca" width="634" height="1334">
+      <img src="/images/app/es/home-video-poster.webp?v=3096584c9f31ceca" alt="Grabación del inicio de Lazulite con detalles de LDAC y un marco de Pixel 8" class="feature-img app-media app-media--phone" loading="lazy" width="634" height="1334">
+    </picture>
     </div>
   </div>
 </section>

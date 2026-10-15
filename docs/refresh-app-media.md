@@ -9,7 +9,7 @@ The Android repository's `aasg.yaml` and capture instrumentation define the jour
 
 ## Required result
 
-Every website language gets its own **dark-mode, gesture-navigation** assets:
+Every website language gets its own **light- and dark-mode, gesture-navigation** assets:
 
 | Website section | Capture ID | Published rendition |
 | --- | --- | --- |
@@ -17,6 +17,11 @@ Every website language gets its own **dark-mode, gesture-navigation** assets:
 | Bluetooth Glitch or Bad Connection? | `playback-health` | Transparent, feathered Playback health card |
 | Smart Suggestions | `setup-tips-high-resolution` | Transparent, feathered setup card |
 | See It In Action | `website-demo` | Hyperframes glass cues, Pixel 8 frame, half-resolution MP4 and matching poster |
+
+For a light-only addition, run the capture commands with `--theme light` (20 variants),
+render only `light` for every locale, then import with `--theme light`. Keep successful dark
+assets in place. For an image-only single-theme refresh, combine `--images-only --theme light`
+or `--images-only --theme dark`.
 
 The website languages `en`, `es`, `it`, and `ja` match AASG's locale IDs. Website `zh` maps to
 AASG `zh-CN` (Simplified Chinese). Never use English captures as substitutes for another language.
@@ -38,7 +43,7 @@ is retained. The old `home-video` capture remains available independently, outsi
 
 - Android and website repositories checked out, with unrelated changes preserved.
 - The Android repository's supported JDK, Android SDK, and Gradle wrapper.
-- AASG 0.16.0+ supporting schema 10.
+- AASG 0.15.0 supporting the Android repository's schema 9 configuration.
 - `adb`, `ffmpeg`, `ffprobe`, `cwebp`, Python 3.9+, Node.js 22+ (for local Hyperframes and playback tests), a local Chrome/Chromium browser, and Hugo extended. Match Hugo to the version
   pinned in the website's `netlify.toml` and CI when refreshing the tracked snapshot.
 - A dedicated API 33+ Android device or emulator, ADB-authorized and capable of gesture navigation.
@@ -54,22 +59,22 @@ Run from the Android repository. Identify the dedicated target with `adb devices
 
 ```bash
 aasg doctor
-aasg capture website --device <serial> --locale all --theme dark --navigation gestural --non-interactive --dry-run
-aasg capture website --device <serial> --locale all --theme dark --navigation gestural --non-interactive
+aasg capture website --device <serial> --locale all --theme all --navigation gestural --non-interactive --dry-run
+aasg capture website --device <serial> --locale all --theme all --navigation gestural --non-interactive
 ```
 
-The dry run must list 20 capture variants: four captures in each of five locales. The real run
-must finish with 20 successes and no failures. AASG uses the app's theme setting and manages device
+The dry run must list 40 capture variants: four captures in each of five locales and two themes. The real run
+must finish with 40 successes and no failures. AASG uses the app's theme setting and manages device
 navigation; the two card captures explicitly require gesture navigation even outside this group.
 Do not trust the interactive picker's remembered appearance or locale choices.
 
 Expected inputs to the website importer, with `<locale>` from `en`, `es`, `it`, `zh-CN`, `ja`:
 
 ```text
-artifacts/screenshots/framed/<locale>/home-dark-gestural.png
-artifacts/screenshots/cards/<locale>/playback-health-dark-gestural.png
-artifacts/screenshots/cards/<locale>/setup-tips-high-resolution-dark-gestural.png
-artifacts/videos/hyperframes/<locale>/website-demo-dark-gestural.mp4
+artifacts/screenshots/framed/<locale>/home-<theme>-gestural.png
+artifacts/screenshots/cards/<locale>/playback-health-<theme>-gestural.png
+artifacts/screenshots/cards/<locale>/setup-tips-high-resolution-<theme>-gestural.png
+artifacts/videos/hyperframes/<locale>/website-demo-<theme>-gestural.mp4
 ```
 
 Raw media, card-region metadata, and per-run reports remain in the Android repository's ignored
@@ -87,8 +92,10 @@ cd ../../android/lazulite-android/tools/video
 npm ci
 npm test
 capture_run=<successful-run-id>
-for locale in en es it zh-CN ja; do
-  npm run render -- --locale "$locale" --theme dark --metadata "../../artifacts/aasg/runs/$capture_run/staging/website-demo/gestural/$locale/dark/metadata/website-demo-dark.metadata.json" || break
+for theme in dark light; do
+  for locale in en es it zh-CN ja; do
+    npm run render -- --locale "$locale" --theme "$theme" --metadata "../../artifacts/aasg/runs/$capture_run/staging/website-demo/gestural/$locale/$theme/metadata/website-demo-$theme.metadata.json" || exit 1
+  done
 done
 ```
 
@@ -97,7 +104,7 @@ Set `AASG_BIN` and `HYPERFRAMES_BROWSER_PATH` if needed; see the
 Every render must succeed. The renderer checks that each sidecar matches the raw capture,
 validates the composition, and fully decodes the pending master before replacing an older one.
 Full-resolution raw, native-framed, and Hyperframes masters remain in the Android artifacts.
-For a video-only refresh, capture `website-demo --locale all --theme dark --non-interactive`
+For a video-only refresh, capture `website-demo --locale all --theme all --non-interactive`
 and retain the existing screenshot inputs.
 
 ## Import and integrate
@@ -109,7 +116,7 @@ python3 scripts/import-app-media.py --artifact-root ../../android/lazulite-andro
 ```
 
 Supply the actual artifact directory if the checkouts have a different arrangement. The importer
-validates all 20 inputs and stages every conversion before replacing website files. It creates:
+validates all 40 inputs and stages every conversion before replacing website files. It creates:
 
 - `static/images/app/<language>/home.webp`, `playback-health.webp`, `setup-tips.webp`, and
   `home-video-poster.webp` (quality-90 lossy WebP with lossless transparency, at Retina sizing,
@@ -117,12 +124,19 @@ validates all 20 inputs and stages every conversion before replacing website fil
 - `static/videos/app/<language>/home.mp4` (the localized Hyperframes master resized to half width
   and height with Lanczos, rounded down to even dimensions, encoded as silent H.264/yuv420p,
   30 fps, CRF 18, with faststart). Current 1268×2668 masters become 634×1334 copies.
-- `data/app_media.json` (language-specific paths, content hashes, and the resized media dimensions).
+- `data/app_media.json` (language → theme → role, with paths, content hashes, and resized media dimensions).
+
+Dark files retain their original paths and URLs. Light files use
+`static/images/app/<language>/light/` and `static/videos/app/<language>/light/`, with the same
+filenames. `--theme light` or `--theme dark` imports only that appearance and preserves the other
+set byte-for-byte; the default `--theme all` refreshes both. Older manifests are migrated into the
+`dark` key without rewriting their existing files. A missing theme or language is never replaced
+with another capture.
 
 Posters come from the resized videos and use the same Retina sizing and encoding as screenshots.
 Their dimensions are stored separately as `posterWidth` and `posterHeight`; video `width` and
 `height` continue to describe the MP4. The importer never resizes or replaces the full-resolution
-Android masters. A full import requires a Hyperframes video for every locale; there is no fallback
+Android masters. A full import requires a Hyperframes video for every selected locale and theme; there is no fallback
 to the old Home video, native cues, or another language.
 
 ### Image dimensions and network optimization
@@ -136,7 +150,7 @@ It preserves aspect ratios and feathered transparency, never enlarges a smaller 
 and updates manifest dimensions and content hashes. Always regenerate from originals, never from
 previously generated website WebPs.
 
-The reference desktop targets are **360 px** for framed Home, **520 px** for Playback health,
+The reference desktop targets for each appearance are **360 px** for framed Home, **520 px** for Playback health,
 **420 px** for Smart Suggestions, and **360 px** for posters. For one displayed pixel on a 2× Retina
 screen, supply two image pixels: **output width = min(display width × 2, original width)**.
 The file targets are therefore **720, 1040, 840, and 720 px**, respectively, before the source cap.
@@ -179,21 +193,27 @@ To resize or refresh images without re-encoding or replacing any website video, 
 python3 scripts/import-app-media.py --artifact-root ../../android/lazulite-android/artifacts --images-only
 ```
 
-This mode validates all 15 PNG captures and the five existing `static/videos/app/<language>/home.mp4`
-files before conversion. It regenerates the screenshots and posters, then updates the manifest;
+This mode validates all 30 PNG captures and the ten existing MP4s under `static/videos/app/<language>/` (dark) and
+`static/videos/app/<language>/light/` (light) before conversion. It regenerates the screenshots and posters, then updates the manifest;
 MP4 bytes and video URLs stay unchanged. It does not require the Hyperframes masters. Missing or
 invalid inputs and conversion failures leave the published files unchanged. Use the normal import
 command when refreshing videos too.
 
 Measure file sizes again after future captures. Keep the Retina pixel dimensions when optimizing
 compression; reducing to 1× CSS dimensions makes text softer on high-density displays.
-The October 12, 2026 quality-90 Retina set totals **887,708 bytes** across 20 images, down from
+The October 12, 2026 dark quality-90 Retina set totals **887,708 bytes** across 20 images, down from
 1,813,620 bytes for the same dimensions encoded losslessly (51.1% smaller).
 
-The `app-media` Hugo shortcode selects assets using the page language and role. The four homepage
+The `app-media` Hugo shortcode selects both theme variants using the page language and role. Pictures follow the browser color
+preference without JavaScript. With JavaScript, media follows the resolved root `data-theme`,
+including saved manual choices, live System changes, and cross-tab updates. The four homepage
 roles are `home`, `playback-health`, `setup-tips`, and `home-video`. The manifest adds content hashes to asset URLs to invalidate the site's immutable image cache.
 Stable filenames mean ordinary
 refreshes require no homepage edits. If the UI meaning changes, revise translated descriptions too.
+
+On an actual theme change, unload the previous recording and restart the matching one from zero
+when visible and reduced motion is disabled. Update the poster even while offscreen or under
+reduced motion; do not download an inactive video.
 
 The video is muted, looping, inline, and has native playback controls. It loads when visible and
 plays automatically only when reduced motion is disabled. Reduced motion and no-JavaScript
@@ -207,9 +227,9 @@ For an intentional OpenGraph update, follow the separate [OpenGraph refresh guid
 ## Validate and hand off
 
 1. Inspect all localized Home images, both cards, and video posters. Confirm the correct language,
-   dark theme, gesture navigation on full screens, hidden debug icon, readable text, complete cards,
+   matching theme, gesture navigation on full screens, hidden debug icon, readable text, complete cards,
    both Playback health issue rows, and feathered transparency.
-2. Play all five videos; verify the frame, language, silent audio, duration, looping and pause controls.
+2. Play all ten videos; verify the frame, language, silent audio, duration, looping and pause controls.
 3. Build the website, update its tracked snapshot, and check it:
 
    ```bash
@@ -223,8 +243,9 @@ For an intentional OpenGraph update, follow the separate [OpenGraph refresh guid
      --no-progress 'public/**/*.html'
    ```
 
-4. Preview `/`, `/es/`, `/it/`, `/zh/`, and `/ja/` at desktop and mobile widths. Check media selection
-   after language switching, video controls, reduced-motion preference changes, and poster fallback.
+4. Preview `/`, `/es/`, `/it/`, `/zh/`, and `/ja/` at desktop and mobile widths in both themes.
+   Include saved Light/Dark overrides, System changes, cross-tab changes, and no JavaScript. Check media selection
+   after language and appearance switching, video restart behavior, native controls, reduced-motion preference changes, and poster fallback.
 5. If capture code changed, run `./gradlew spotlessApply`, the Android CI validation command from
    `AGENTS.md`, and the focused `CaptureCompositionTest` on the dedicated device. Do not generate
    baseline profiles or run macrobenchmarks for a media refresh.

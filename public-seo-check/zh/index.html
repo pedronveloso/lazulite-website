@@ -89,7 +89,7 @@
 <meta name="twitter:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 
 
-<link href="/sass/main.min.094fe0db548ee3470a4976e918fee615adbd733c2d33558f76164f895a1c0470.css" rel="stylesheet">
+<link href="/sass/main.min.665c0961201ebc5e5fe1d8e0748eb41d7a27fa53d8a1930b871624b674164f1b.css" rel="stylesheet">
 <script src="/js/language-switcher.js" defer></script>
 <script src="/js/app-media.js" defer></script>
 
@@ -332,7 +332,12 @@
   </p>
   <div class="two-column">
     <div class="column">
-      <img src="/images/app/zh/home.webp?v=119ca6312e4e6ae5" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/home.webp?v=c745869bde0cc719" width="720" height="1516">
+        <source data-theme="dark" srcset="/images/app/zh/home.webp?v=119ca6312e4e6ae5" width="720" height="1516">
+        <img src="/images/app/zh/home.webp?v=119ca6312e4e6ae5" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" class="feature-img app-media app-media--phone" loading="lazy" width="720" height="1516">
+      </picture>
+
     </div>
     <div class="column">
       <h2 class="section-title section-title--left">实时音频分析</h2>
@@ -366,7 +371,12 @@
       </p>
     </div>
     <div class="column">
-      <img src="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" alt="播放健康状态卡片，显示新报告的音频欠载和输出缓冲区丢弃" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="560">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/playback-health.webp?v=5a03c5a5d02d40ad" width="1016" height="560">
+        <source data-theme="dark" srcset="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" width="1016" height="560">
+        <img src="/images/app/zh/playback-health.webp?v=61b2bf4706b0cdf8" alt="播放健康状态卡片，显示新报告的音频欠载和输出缓冲区丢弃" class="feature-img app-media app-media--card" loading="lazy" width="1016" height="560">
+      </picture>
+
     </div>
   </div>
 </section>
@@ -377,7 +387,12 @@
   </p>
   <div class="improve-section">
     <div class="improve-section__image">
-      <img src="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" alt="高解析度设置建议，附有蓝牙设置快捷入口" class="feature-img app-media app-media--card" loading="lazy" width="840" height="425">
+      <picture data-app-picture>
+        <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/setup-tips.webp?v=90844c8ca5caea2f" width="840" height="425">
+        <source data-theme="dark" srcset="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" width="840" height="425">
+        <img src="/images/app/zh/setup-tips.webp?v=8bcc6fa38cc29f72" alt="高解析度设置建议，附有蓝牙设置快捷入口" class="feature-img app-media app-media--card" loading="lazy" width="840" height="425">
+      </picture>
+
     </div>
   </div>
 </section>
@@ -385,9 +400,13 @@
   <h2 class="section-title">实际效果一目了然</h2>
   <div class="screenshot-mockup">
     <div class="app-video">
-      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" muted loop playsinline controls preload="none" aria-label="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" data-app-video data-src="/videos/app/zh/home.mp4?v=301485c4b7d956a2" hidden>
+      <video class="app-media app-media--video" width="634" height="1334" poster="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" muted loop playsinline controls preload="none" aria-label="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" data-app-video data-dark="{&#34;height&#34;:1334,&#34;poster&#34;:&#34;/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76&#34;,&#34;posterHeight&#34;:1334,&#34;posterWidth&#34;:634,&#34;src&#34;:&#34;/videos/app/zh/home.mp4?v=301485c4b7d956a2&#34;,&#34;width&#34;:634}" data-light="{&#34;height&#34;:1334,&#34;poster&#34;:&#34;/images/app/zh/light/home-video-poster.webp?v=faf6d811a38983fe&#34;,&#34;posterHeight&#34;:1334,&#34;posterWidth&#34;:634,&#34;src&#34;:&#34;/videos/app/zh/light/home.mp4?v=f64b0e861461bc89&#34;,&#34;width&#34;:634}" hidden>
       </video>
-      <img class="app-media app-media--phone" data-app-video-poster src="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" alt="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" width="634" height="1334" loading="lazy">
+      <picture data-app-picture data-app-video-poster>
+      <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/zh/light/home-video-poster.webp?v=faf6d811a38983fe" width="634" height="1334">
+      <source data-theme="dark" srcset="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" width="634" height="1334">
+      <img src="/images/app/zh/home-video-poster.webp?v=28c7843cc61dbb76" alt="带 Pixel 8 设备边框的 Lazulite 主页录像，显示 LDAC 详情" class="feature-img app-media app-media--phone" loading="lazy" width="634" height="1334">
+    </picture>
     </div>
   </div>
 </section>

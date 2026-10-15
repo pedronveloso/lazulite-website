@@ -180,7 +180,7 @@ audio device does not support.
 Carry the app's mineral navy ground, lapis accent, Sora typography, restrained
 borders, and deliberate spacing into the website. The website mirrors the app's
 dark and light themes, defaults to System appearance, and lets visitors choose
-Light or Dark. Existing dark-mode app captures appear in both themes. Use
+Light or Dark. Authentic app screenshots, cards, and video match the resolved website theme. Use
 [DESIGN.md](DESIGN.md) for web tokens, CJK font fallbacks, components, and
 responsive behavior.
 
