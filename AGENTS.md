@@ -12,7 +12,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - `hugo` - Build static site (outputs to `public/`)
 - `hugo server` - Start local dev server (http://localhost:1313)
 - `hugo server -D` - Include draft content in dev server
-- Netlify deploys automatically on push using Hugo 0.167.0 (configured via `HUGO_VERSION` in `netlify.toml`) — keep this in sync with the local Hugo binary (`hugo version`) when either is upgraded
+- Netlify deploys automatically on push using Hugo 0.168.0 (configured via `HUGO_VERSION` in `netlify.toml`) — keep this in sync with the local Hugo binary (`hugo version`) when either is upgraded
 
 ### Testing
 - Run `node --test scripts/test-*.mjs` for theme resolution/selector and app-media behavior.

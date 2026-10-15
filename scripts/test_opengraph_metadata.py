@@ -18,11 +18,13 @@ class Metadata(HTMLParser):
     def __init__(self, html):
         super().__init__()
         self.tags = {}
+        self.metas = []
         self.feed(html)
 
     def handle_starttag(self, tag, attrs):
         if tag == "meta":
             attrs = dict(attrs)
+            self.metas.append(attrs)
             key = attrs.get("property", attrs.get("name"))
             if key:
                 self.tags[key] = attrs.get("content")
@@ -102,7 +104,7 @@ class OpenGraphMetadataTest(unittest.TestCase):
         self.assertNotIn('<script src="/js/theme.js"></script>', html)
         self.assertIn('media="(prefers-color-scheme: dark)"', html)
         self.assertIn('media="(prefers-color-scheme: light)"', html)
-        self.assertEqual(html.count('name="theme-color"'), 2)
+        self.assertEqual(len([meta for meta in Metadata(html).metas if meta.get('name') == 'theme-color']), 2)
 
     def test_manifest_type_is_authoritative_for_versioned_urls(self):
         for source in ("/images/card.webp?v=abc123", "/images/card.png?v=abc123"):
