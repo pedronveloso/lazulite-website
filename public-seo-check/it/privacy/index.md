@@ -25,6 +25,14 @@ Lazulite può mostrarti di tanto in tanto questionari facoltativi sul tuo setup 
 
 Raccogliamo solo le risposte che invii. Le risposte sono del tutto anonime: non includono identificativi del dispositivo, dati dell'account né altre informazioni personali. Vengono utilizzate in forma aggregata per ricerca e miglioramenti del prodotto.
 
+## Catture diagnostiche facoltative del dispositivo:
+
+Lazulite può invitarti a condividere una cattura diagnostica se non ne abbiamo ancora una per il tuo modello e la tua versione di Android. La condivisione è del tutto facoltativa. La cattura viene inviata privatamente al team di Lazulite e usata solo per migliorare Lazulite. È separata dai questionari e dalla diagnostica degli arresti anomali e non modifica le relative impostazioni.
+
+La cattura contiene l'esportazione diagnostica completa dell'aggiornamento mostrato nella schermata Home: informazioni sul dispositivo e su Android, log Bluetooth, metriche multimediali e i log audio e di instradamento disponibili. Può includere nomi dei dispositivi, indirizzi Bluetooth, app di riproduzione, dettagli dei brani e altri identificatori. Queste catture non sono anonime. I fornitori coinvolti nell'invio e nell'archiviazione privati elaborano la cattura per nostro conto.
+
+Non pubblichiamo né vendiamo queste catture e non le distribuiamo a terzi per il loro uso. Solo produttore, modello e versione principale di Android possono essere aggiunti al catalogo pubblico dopo una revisione manuale. Ignorare l'invito o condividere con successo una cattura interrompe gli inviti su questa installazione, anche dopo gli aggiornamenti di Android. Le catture non vengono salvate sul dispositivo per un invio successivo in background.
+
 ## Condivisione e trasferimento dei dati:
 
 Non vendiamo né scambiamo le tue informazioni. Se attivi la diagnostica degli arresti anomali, Google Firebase Crashlytics riceve ed elabora tali dati diagnostici. Per maggiori dettagli sulle pratiche relative ai dati di Google, consulta l'[Informativa sulla privacy di Google](https://policies.google.com/privacy). Quando l'opzione di ricerca del fornitore della destinazione è attiva, MACLookup riceve la parte dell'indirizzo MAC necessaria per identificare il fornitore. Se rispondi a un questionario facoltativo, il servizio di sondaggi riceve solo le risposte che hai inviato.
@@ -40,12 +48,4 @@ La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla 
 ## Modifiche a questa Informativa sulla privacy:
 
 Potremmo aggiornare periodicamente la nostra Informativa sulla privacy. Eventuali modifiche saranno pubblicate su questa pagina, quindi ti consigliamo di consultarla periodicamente per verificarne gli aggiornamenti.
-
-## Catture diagnostiche facoltative del dispositivo
-
-Lazulite può invitarti a condividere una cattura diagnostica se non ne abbiamo ancora una per il tuo modello e la tua versione di Android. La condivisione è del tutto facoltativa. La cattura viene inviata privatamente al team di Lazulite e usata solo per migliorare Lazulite. È separata dai questionari e dalla diagnostica degli arresti anomali e non modifica le relative impostazioni.
-
-La cattura contiene l'esportazione diagnostica completa dell'aggiornamento mostrato nella schermata Home: informazioni sul dispositivo e su Android, log Bluetooth, metriche multimediali e i log audio e di instradamento disponibili. Può includere nomi dei dispositivi, indirizzi Bluetooth, app di riproduzione, dettagli dei brani e altri identificatori. Queste catture non sono anonime. I fornitori coinvolti nell'invio e nell'archiviazione privati elaborano la cattura per nostro conto.
-
-Non pubblichiamo né vendiamo queste catture e non le distribuiamo a terzi per il loro uso. Solo produttore, modello e versione principale di Android possono essere aggiunti al catalogo pubblico dopo una revisione manuale. Ignorare l'invito o condividere con successo una cattura interrompe gli inviti su questa installazione, anche dopo gli aggiornamenti di Android. Le catture non vengono salvate sul dispositivo per un invio successivo in background.
 

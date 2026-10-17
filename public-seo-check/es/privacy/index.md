@@ -25,6 +25,14 @@ Lazulite puede mostrarte ocasionalmente cuestionarios opcionales sobre tu config
 
 Solo recopilamos las respuestas que envías. Las respuestas son totalmente anónimas: no incluyen identificadores del dispositivo, datos de la cuenta ni otra información personal. Se usan de forma agregada para investigación y mejoras del producto.
 
+## Capturas de diagnóstico del dispositivo opcionales
+
+Lazulite puede invitarte a compartir una captura de diagnóstico si aún no tenemos una de tu modelo y versión de Android. Compartir es totalmente opcional. La captura se envía de forma privada al equipo de Lazulite y se usa únicamente para mejorar Lazulite. Es independiente de los cuestionarios y del diagnóstico de fallos, y no cambia ninguno de sus ajustes.
+
+La captura contiene la exportación completa de diagnóstico de la actualización mostrada en Inicio: información del dispositivo y de Android, registros de Bluetooth, métricas multimedia y los registros de audio y rutas disponibles. Puede incluir nombres de dispositivos, direcciones Bluetooth, aplicaciones de reproducción, detalles de pistas y otros identificadores. Estas capturas no son anónimas. Los proveedores que intervienen en el envío y almacenamiento privados procesan la captura por nuestra cuenta.
+
+No publicamos ni vendemos estas capturas, ni las distribuimos a terceros para su propio uso. Solo el fabricante, el modelo y la versión principal de Android pueden añadirse al catálogo público tras una revisión manual. Descartar la invitación o compartir correctamente una captura impide nuevas invitaciones en esa instalación, incluso después de actualizar Android. No se guardan capturas en el dispositivo para enviarlas más tarde en segundo plano.
+
 ## Compartición y transferencia de datos
 
 No **vendemos** ni intercambiamos tu información. Si activas los diagnósticos de fallos, Google Firebase Crashlytics recibe y procesa esos diagnósticos. Consulta la [Política de privacidad de Google](https://policies.google.com/privacy) para obtener información sobre sus prácticas de datos. Cuando la opción de búsqueda del proveedor del destino está activada, MACLookup recibe la parte de la dirección MAC necesaria para identificar el proveedor. Si respondes a un cuestionario opcional, el servicio de encuestas solo recibe las respuestas que enviaste.
@@ -40,12 +48,4 @@ Los diagnósticos de fallos son opcionales. Puedes activarlos o retirarlos en cu
 ## Cambios en esta política de privacidad
 
 Podemos actualizar esta Política de privacidad periódicamente. Cualquier cambio se publicará en esta página y te recomendamos revisarla de vez en cuando.
-
-## Capturas de diagnóstico del dispositivo opcionales
-
-Lazulite puede invitarte a compartir una captura de diagnóstico si aún no tenemos una de tu modelo y versión de Android. Compartir es totalmente opcional. La captura se envía de forma privada al equipo de Lazulite y se usa únicamente para mejorar Lazulite. Es independiente de los cuestionarios y del diagnóstico de fallos, y no cambia ninguno de sus ajustes.
-
-La captura contiene la exportación completa de diagnóstico de la actualización mostrada en Inicio: información del dispositivo y de Android, registros de Bluetooth, métricas multimedia y los registros de audio y rutas disponibles. Puede incluir nombres de dispositivos, direcciones Bluetooth, aplicaciones de reproducción, detalles de pistas y otros identificadores. Estas capturas no son anónimas. Los proveedores que intervienen en el envío y almacenamiento privados procesan la captura por nuestra cuenta.
-
-No publicamos ni vendemos estas capturas, ni las distribuimos a terceros para su propio uso. Solo el fabricante, el modelo y la versión principal de Android pueden añadirse al catálogo público tras una revisión manual. Descartar la invitación o compartir correctamente una captura impide nuevas invitaciones en esa instalación, incluso después de actualizar Android. No se guardan capturas en el dispositivo para enviarlas más tarde en segundo plano.
 
