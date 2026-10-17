@@ -6,6 +6,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 <div class="homepage">
 
 <section class="hero-section">
+  {{< audio-art kind="headphone" >}}
   <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -48,6 +49,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
       <p class="feature-body">
         打开音频路径详情，对比播放应用输出和蓝牙传输格式，了解 Android 在哪个环节转换了音频格式。
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -81,6 +83,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
     获取适合当前配置的设置建议，并快速打开相关系统设置。
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="高解析度设置建议，附有蓝牙设置快捷入口" >}}
     </div>

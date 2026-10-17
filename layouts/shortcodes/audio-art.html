@@ -1,0 +1,10 @@
+{{- $kind := .Get "kind" -}}
+{{- if eq $kind "wave" -}}
+<div class="analysis-signal" aria-hidden="true">
+  <canvas class="signal-field" width="720" height="240" data-signal-field></canvas>
+</div>
+{{- else -}}
+<div class="audio-art audio-art--{{ $kind }}" data-audio-scene="{{ $kind }}" aria-hidden="true">
+  {{ partial (printf "audio-art/%s.html" $kind) . | strings.TrimSpace | safeHTML }}
+</div>
+{{- end -}}

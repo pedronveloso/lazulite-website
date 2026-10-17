@@ -7,6 +7,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- Hero Section -->
 <section class="hero-section">
+  {{< audio-art kind="headphone" >}}
   <img src="/images/lazulite-logo-500.png" alt="Lazulite App logo" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -50,6 +51,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
       <p class="feature-body">
         Open Audio path details to compare playback app output with the Bluetooth format and see where Android changes the audio format.
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -85,6 +87,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
     Find contextual setup tips and shortcuts to relevant system settings.
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="High-resolution setup tip with a shortcut to Bluetooth settings" >}}
     </div>

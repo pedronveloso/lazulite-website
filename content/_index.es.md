@@ -6,6 +6,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 <div class="homepage">
 
 <section class="hero-section">
+  {{< audio-art kind="headphone" >}}
   <img src="/images/lazulite-logo-500.png" alt="Logotipo de la app Lazulite" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -48,6 +49,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
       <p class="feature-body">
         Abre los detalles de la ruta de audio para comparar la salida de la app de reproducción con el formato Bluetooth y ver dónde Android transforma el audio.
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -81,6 +83,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
     Encuentra consejos según tu configuración y accesos a los ajustes del sistema correspondientes.
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="Consejo de alta resolución con acceso a los ajustes de Bluetooth" >}}
     </div>

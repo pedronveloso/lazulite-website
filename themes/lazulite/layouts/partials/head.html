@@ -93,7 +93,11 @@
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 <script src="{{ "js/theme.js" | relURL }}" defer></script>
 <script src="{{ "js/language-switcher.js" | relURL }}" defer></script>
-{{ if .IsHome }}<script src="{{ "js/app-media.js" | relURL }}" defer></script>{{ end }}
+{{ if .IsHome }}
+<script src="{{ "js/app-media.js" | relURL }}" defer></script>
+{{ $homeMotion := resources.Get "js/home-motion.js" | js.Build (dict "minify" true "target" "es2018") | fingerprint }}
+<script src="{{ $homeMotion.RelPermalink }}" defer></script>
+{{ end }}
 
 {{ if .IsHome }}
   {{ $appSchema := dict

@@ -230,7 +230,7 @@ components:
 
 **Creative North Star: "The Instrument Panel"**
 
-The website carries the app's identity onto a page. Lazulite is a measurement tool: quiet tonal panels, hairline rules, a single lapis-blue accent, and numbers that stay put. Mineral navy gives the dark theme its ground; the light theme uses cool, pale neutrals with the same restrained structure. Nothing decorates; everything informs.
+The website carries the app's identity onto a page. Lazulite is a measurement tool: quiet tonal panels, hairline rules, a single lapis-blue accent, and numbers that stay put. Mineral navy gives the dark theme its ground; the light theme uses cool, pale neutrals with the same restrained structure. Restrained engineering illustrations on the homepage express looking inside the audio path while keeping content dominant.
 
 The audience is informed, skeptical, and evidence-minded, so the page earns trust through precision and plain statements. The Android app defines the shared palettes and typography in `Color.kt`, `Theme.kt`, and `Typography.kt`; mirror changes here after the app. Website-specific interaction roles live in `themes/lazulite/assets/sass/utils/_variables.scss`. Product intent, terminology, and voice belong in `PRODUCT.md` and the shared Android product reference.
 
@@ -239,7 +239,7 @@ The audience is informed, skeptical, and evidence-minded, so the page earns trus
 - App-matched dark and light palettes; tonal surfaces and 1px hairlines.
 - One lapis accent; gold, amber, and muted red only support labeled signal tiers.
 - Sora, sentence case, tight corners, and tabular measured values.
-- Flat surfaces without shadows, gradients, glows, or decorative motion.
+- Flat surfaces without shadows, gradients, or glows; bounded homepage assembly motion with long periods of rest.
 - Authentic app captures match the resolved website theme.
 
 **Anti-references.** The previous amber and teal identity, Barlow Condensed all-caps headings, neon or cyan gradients, gradient text, glassmorphism, pill-shaped SaaS cards with drop shadows, generic Material or Pixel app styling, and AI-product-page tropes.
@@ -299,6 +299,18 @@ Sections use hairline separation; the established alternate Surface band remains
 Flat. Depth comes from Ground, Surface, Raised Surface, and 1px hairlines. There are no box shadows, text shadows, blurs, gradients, or glows. Both header popovers sit on Raised Surface above the sticky header.
 
 Interactive emphasis is a border, fill, or text-color change over 150ms ease. FAQ markers rotate over 200ms; hamburger strokes use 200ms ease-out and the mobile sheet uses 400ms ease-out. These transitions explain state. Reduced-motion preferences reduce transition and animation durations to 0.01ms.
+
+### Homepage engineering illustrations
+
+The centered content remains the anchor. At 1100px and above, the hero has a single near-side headphone earcup to its left, with a cropped arch fading through an SVG opacity mask. The right hero margin stays empty. The mask controls transparency only, never a colored surface or glow. At 992px and above, a flat playback waveform sits below the audio-analysis copy alongside the existing phone, replacing the former speaker. A smaller earbud stays left of the setup-tip capture within Smart Suggestions. Below these breakpoints the decorations leave layout entirely; the setup tip returns to its centered single column.
+
+The devices are schematic, decorative SVGs hidden from assistive technology and colored through the existing muted-text, accent, ground and surface roles. The waveform is a decorative canvas using muted-text and accent, with pixel density capped at 2×. Its 41 fine, evenly spaced vertical strokes have tapered ends, varying irregular peaks, and no perspective, rotation, or glow. A 360 × 120 CSS area holds the approximately 240px-wide waveform, with strokes up to 72px tall. These synthetic samples never represent live playback or diagnostic data. Opaque ground-colored component faces let the SVG parts assemble in both themes. Authentic app captures remain untouched.
+
+The headphone arrives from 180px above its resting position, fading in over 1 second with GSAP's `power3.out` easing. It holds expanded for another 350ms, then its components assemble over 1800ms with 140ms offsets. The earbud retains its 850ms expanded hold before assembly. Each device plays once on its first arrival; completed sequences never replay on scrolling back. Active sequences pause offscreen, at hidden breakpoints, and in hidden tabs. Reduced motion skips these entrances and keeps the artwork static; enabling it mid-sequence settles the device immediately.
+
+The waveform evolves continuously through smooth, bounded shape changes. Each sequence contains 12–18 freshly generated frames interpolated over 550–850ms per frame with `sine.inOut`, then holds its last shape for a variable 1.4–3.2 seconds. New sequences begin from the actual current bar heights rather than resetting. Shared amplitude envelopes keep the motion coherent; individual strokes never jump or move sideways. There is no pause control. The canvas draws only on GSAP tween updates, resize, and theme changes; pauses request no new frames. Motion stops offscreen, in hidden tabs, at hidden breakpoints, and under reduced motion. Canvas creation is lazy and skipped on mobile.
+
+JavaScript failure leaves ordinary content visible and the SVG devices expanded; the decorative canvas stays empty. The existing app captures retain a brief, already-visible entrance and text is never hidden or delayed. There is no scroll pinning, scrubbing, or parallax. GSAP remains the only animation framework and is bundled locally by Hugo from the pinned npm dependency; the homepage loads a fingerprinted bundle with no CDN requests.
 
 **The No-Shadow Rule.** If something needs to stand out, change its tone or border. Do not add a shadow.
 
@@ -360,6 +372,6 @@ Screenshots, semantic cards, video, and posters are real AASG captures for each 
 - **Don't** add shadows, gradients, glows, glass, or pill shapes.
 - **Don't** set ordinary headings in all caps or condensed faces, or reintroduce Barlow Condensed, Epilogue, or Fira Mono.
 - **Don't** use color as the only carrier of status.
-- **Don't** add decorative motion; honor reduced-motion preferences.
+- **Don't** add motion beyond the authored homepage assembly and signal treatment; honor reduced-motion preferences.
 - **Don't** hard-code component colors, add inline styles in content, or use color-named classes.
 - **Don't** infer light-theme button text, focus, hover, or media colors from a dark-theme coincidence.

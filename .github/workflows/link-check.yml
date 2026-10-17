@@ -29,6 +29,9 @@ jobs:
           hugo-version: '0.168.0'
           extended: true
 
+      - name: Install animation dependencies
+        run: npm ci
+
       - name: Check theme and media behavior
         run: node --test scripts/test-*.mjs
 

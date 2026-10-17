@@ -188,7 +188,12 @@ Keep the homepage scannable and reveal technical depth through FAQ answers.
 Make the playback app, phone, Bluetooth transport, and receiving device easy to
 distinguish. Use consistent units and readable measurements. Use color by
 semantic role with text or icons, never as the only explanation of a status.
-Motion should explain an interaction or state change.
+Motion should explain an interaction or state change, or express the homepage's
+audio-inspection story through restrained engineering illustrations. The headphone
+enters from above, briefly holds its expanded view, and assembles once; the
+earbud also assembles once on arrival. A playback waveform below the analysis
+copy evolves smoothly with occasional short rests. Keep the
+centered content dominant and honor reduced-motion preferences.
 
 ## Privacy and trust
 

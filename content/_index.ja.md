@@ -6,6 +6,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 <div class="homepage">
 
 <section class="hero-section">
+  {{< audio-art kind="headphone" >}}
   <img src="/images/lazulite-logo-500.png" alt="Lazuliteのロゴ" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -48,6 +49,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
       <p class="feature-body">
         「音声経路の詳細」では、再生アプリの音声出力とBluetooth伝送の形式を見比べられます。サンプリング周波数が変換されている可能性も表示します。元の音源の品質や、耳に届く音を測定するものではありません。
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -81,6 +83,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
     接続中の機器やコーデックに合わせたヒントと、関連するシステム設定へのショートカットを確認できます。
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="Bluetooth設定へのショートカットがある高解像度オーディオの設定ヒント" >}}
     </div>

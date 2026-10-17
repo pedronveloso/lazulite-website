@@ -7,6 +7,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 
 <!-- Hero Section -->
 <section class="hero-section">
+  {{< audio-art kind="headphone" >}}
   <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -50,6 +51,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
       <p class="feature-body">
         Apri i dettagli del percorso audio per confrontare l'uscita dell'app di riproduzione con il formato Bluetooth e vedere dove Android modifica il formato audio.
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -85,6 +87,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
     Trova suggerimenti in base alla configurazione e collegamenti alle impostazioni di sistema pertinenti.
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="Suggerimento per l'alta risoluzione con accesso alle impostazioni Bluetooth" >}}
     </div>

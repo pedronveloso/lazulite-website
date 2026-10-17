@@ -1,0 +1,79 @@
+@import "../utils/variables";
+
+// Engineering illustrations share the site's palette, not the app-media layer.
+.audio-art,
+.analysis-signal {
+  display: none;
+}
+
+.audio-art {
+  color: $text-muted;
+  pointer-events: none;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    stroke: currentColor;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    * {
+      vector-effect: non-scaling-stroke;
+    }
+  }
+
+  .art-surface { fill: var(--art-ground, var(--background)); }
+  .art-detail { opacity: 0.45; }
+  .art-accent { stroke: $accent; opacity: 0.8; }
+}
+
+.homepage .hero-section { position: relative; }
+
+@media (min-width: 1100px) {
+  .audio-art--headphone {
+    display: block;
+    position: absolute;
+    width: clamp(260px, 24vw, 340px);
+    left: -40px;
+    top: 0;
+    opacity: 0.62;
+  }
+
+}
+
+.signal-field {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  pointer-events: none;
+}
+
+@media (min-width: $breakLarge) {
+  .analysis-signal {
+    display: block;
+    width: 360px;
+    max-width: 100%;
+    margin: $space-lg auto 0;
+  }
+
+  .homepage .improve-section {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 420px);
+    gap: $space-2xl;
+    max-width: 752px;
+    margin: 0 auto;
+    padding: 0 $space-xl;
+
+    .audio-art--earbud {
+      --art-ground: var(--surface);
+      display: block;
+      width: 220px;
+      opacity: 0.65;
+    }
+  }
+}
+

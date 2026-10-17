@@ -9,6 +9,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 ## Key Commands
 
 ### Build and Deploy
+- `npm ci` - Install the pinned GSAP dependency before the first Hugo build. Hugo bundles `assets/js/home-motion.js` and `assets/js/signal-field.js`; no CDN or separate JavaScript build step is required.
 - `hugo` - Build static site (outputs to `public/`)
 - `hugo server` - Start local dev server (http://localhost:1313)
 - `hugo server -D` - Include draft content in dev server
