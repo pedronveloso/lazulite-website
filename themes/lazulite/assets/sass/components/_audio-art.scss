@@ -58,6 +58,8 @@
     width: 360px;
     max-width: 100%;
     margin: $space-lg auto 0;
+    // Optically align with the copy and lower the artwork without moving text.
+    transform: translate(-16px, 50px);
   }
 
   .homepage .improve-section {
