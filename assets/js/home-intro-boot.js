@@ -5,7 +5,7 @@
   const restored = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
   if (reduced.matches || !window.IntersectionObserver || location.hash || window.scrollY > 8 || restored) return;
 
-  const events = ['wheel', 'touchmove', 'pointerdown', 'keydown', 'focusin', 'scroll', 'pagehide'];
+  const events = ['pagehide'];
   const removeListeners = () => events.forEach(name => window.removeEventListener(name, cancel, true));
   const cancel = () => {
     clearTimeout(timer);

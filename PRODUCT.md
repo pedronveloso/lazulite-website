@@ -190,13 +190,15 @@ distinguish. Use consistent units and readable measurements. Use color by
 semantic role with text or icons, never as the only explanation of a status.
 Motion should explain an interaction or state change, or express the homepage's
 audio-inspection story through restrained engineering illustrations. The centered
-hero enters in a short, coordinated sequence before the headphone arrives from
-above, briefly holds its expanded view, and assembles once. The lower page
-appears together as soon as the headphone finishes descending, while its assembly
-continues; visitors can skip the introduction simply by
-interacting or scrolling. The earbud assembles once on arrival. A playback waveform
-below the analysis copy evolves smoothly with occasional short rests. Keep the
-centered content dominant and honor reduced-motion preferences.
+hero enters in a short, coordinated sequence, followed by a brief pause, a
+word-by-word feature heading, another brief pause, and the lower page appearing
+together. Matching assembled headphone earcups descend slowly on an independent
+timeline. The left opens after landing, holds the pieces apart for two seconds,
+and reassembles once; the right stays assembled. Scrolling never cancels the
+headphones, and page content never waits for them. Keyboard and pointer use can
+reveal the content immediately. The earbud assembles once on arrival. A playback
+waveform below the analysis copy evolves smoothly with occasional short rests.
+Keep the centered content dominant and honor reduced-motion preferences.
 
 ## Privacy and trust
 

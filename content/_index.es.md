@@ -7,6 +7,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
   <img src="/images/lazulite-logo-500.png" alt="Logotipo de la app Lazulite" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -29,7 +30,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">Por qué los audiófilos eligen <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>Por</span> <span data-intro-word>qué</span> <span data-intro-word>los</span> <span data-intro-word>audiófilos</span> <span data-intro-word>eligen</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     Descubre exactamente qué hace tu equipo con tu audio.
   </p>

@@ -8,6 +8,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 <!-- Hero Section -->
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
   <img src="/images/lazulite-logo-500.png" alt="Lazulite App logo" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -31,7 +32,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Why Audiophiles Choose <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>Why</span> <span data-intro-word>Audiophiles</span> <span data-intro-word>Choose</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     Know exactly what your gear is doing to your audio.
   </p>

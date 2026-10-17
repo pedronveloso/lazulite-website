@@ -33,15 +33,22 @@
 .homepage .hero-section { position: relative; }
 
 @media (min-width: 1100px) {
-  .audio-art--headphone {
+  .audio-art--headphone,
+  .audio-art--headphone-right {
     display: block;
     position: absolute;
-    width: clamp(260px, 24vw, 340px);
-    left: -40px;
+    width: clamp(286px, 26.4vw, 374px);
     top: 0;
     opacity: 0.62;
   }
 
+  .audio-art--headphone { left: -40px; }
+
+  .audio-art--headphone-right {
+    right: -40px;
+
+    svg { transform: scaleX(-1); }
+  }
 }
 
 .signal-field {

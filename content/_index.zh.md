@@ -7,6 +7,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
   <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
@@ -29,7 +30,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">为什么发烧友选择 <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>为什么</span><span data-intro-word>发烧友</span><span data-intro-word>选择</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     准确了解你的设备究竟对音频做了什么。
   </p>

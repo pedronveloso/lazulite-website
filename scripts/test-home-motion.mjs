@@ -19,12 +19,16 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
     getAttribute: name => attrs.get(name),
     removeAttribute: name => attrs.delete(name),
   };
-  const scenes = ['headphone', 'earbud'].map(kind => {
-    const parts = Array.from({ length: 3 }, (_, i) => ({ transform: `translate(${-55 - i * 47} 0)` }));
+  const scenes = ['headphone', 'earbud', 'headphone-right'].map(kind => {
+    const parts = Array.from({ length: kind === 'headphone-right' ? 0 : 3 }, (_, i) => ({
+      transform: kind === 'headphone' ? 'translate(0 0)' : `translate(${-55 - i * 47} 0)`,
+      dataset: { expandedTransform: `translate(${-55 - i * 47} 0)` },
+    }));
     return { dataset: { audioScene: kind }, parts, querySelectorAll: () => parts };
   });
   const canvas = {};
   const logo = {}, wordmark = {}, subtitle = {}, buttons = [{}, {}], lower = [{}, {}];
+  const words = Array.from({ length: 4 }, () => ({}));
   const hero = {
     querySelector: selector => ({ '.hero-logo': logo, '.hero-title .accent-text': wordmark,
       '.hero-subtitle': subtitle })[selector],
@@ -79,7 +83,8 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   };
   const document = {
     documentElement: root, hidden: false,
-    querySelectorAll: selector => selector === '[data-audio-scene]' ? scenes : lower,
+    querySelectorAll: selector => selector === '[data-audio-scene]' ? scenes :
+      selector === '#features [data-intro-word]' ? words : lower,
     querySelector: selector => selector === '[data-signal-field]' ? canvas : hero,
     addEventListener: window.addEventListener,
   };
@@ -105,7 +110,7 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   runInNewContext(bootSource, scope);
   if (!bootOnly) start();
   return {
-    scenes, canvas, timelines, logo, wordmark, subtitle, buttons, lower, attrs, emit, start,
+    scenes, canvas, timelines, logo, wordmark, subtitle, buttons, lower, words, attrs, emit, start,
     get field() { return field; }, get fieldsCreated() { return fieldsCreated; },
     expireBoot() { timer?.(); },
     visible(target, value = true) { observers[0]?.callback([{ target, isIntersecting: value }]); },
@@ -125,106 +130,139 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   };
 }
 
-test('the lower page reveals after headphone descent while assembly continues', () => {
+test('content reveals the feature heading word by word, pauses, then reveals the rest', () => {
   const app = setup();
-  const intro = app.timelines[0];
-  const find = target => intro.steps.find(step => step.target === target ||
-    (target === app.lower && step.target?.[0] === app.lower[0]));
-  assert.equal(intro.paused, false);
-  assert.equal(find(app.logo).from.scale, 0.94);
-  assert.equal(find(app.logo).position, 0);
-  assert.equal(find(app.wordmark).from.yPercent, 110);
-  assert.equal(find(app.wordmark).position, 0.16);
-  assert.equal(find(app.subtitle).position, 0.44);
-  assert.equal(find(app.buttons[0]).position, 0.82);
-  assert.ok(Math.abs(find(app.buttons[1]).position - 0.9) < 0.0001);
-  const entry = find(app.scenes[0]);
-  assert.equal(entry.position, 1.45);
-  assert.equal(entry.from.y, -180);
-  assert.equal(entry.vars.ease, 'power3.out');
-  const assembly = find(app.scenes[0].parts[0]);
-  assert.ok(assembly.position - entry.position - entry.vars.duration >= 0.34);
-  const lastPart = find(app.scenes[0].parts[2]);
-  assert.equal(lastPart.position + lastPart.vars.duration, 4.88);
-  assert.equal(find(app.lower).position, entry.position + entry.vars.duration);
-  assert.ok(find(app.lower).position < assembly.position);
-  assert.equal(find(app.lower).vars.duration, 0.45);
-  intro.complete();
+  const content = app.timelines[0];
+  const step = target => content.steps.find(item => item.target === target);
+  const reveal = content.steps.find(item => item.target?.[0] === app.lower[0]);
+  const wordSteps = app.words.map(step);
+  assert.equal(step(app.logo).position, 0);
+  assert.equal(step(app.wordmark).position, 0.16);
+  assert.equal(step(app.subtitle).position, 0.44);
+  const buttonsEnd = Math.max(...app.buttons.map(button => step(button).position + step(button).vars.duration));
+  assert.ok(Math.abs(wordSteps[0].position - buttonsEnd - 0.35) < 0.0001);
+  assert.ok(wordSteps.every((word, index) => index === 0 || word.position > wordSteps[index - 1].position));
+  const wordsEnd = Math.max(...wordSteps.map(word => word.position + word.vars.duration));
+  assert.ok(Math.abs(reveal.position - wordsEnd - 0.25) < 0.0001);
+  assert.equal(reveal.vars.duration, 0.45);
+  assert.ok(Math.abs(reveal.position + reveal.vars.duration - 3.21) < 0.0001);
+  content.complete();
   assert.equal(app.attrs.has('data-home-intro'), false);
-  assert.ok(app.scenes[0].parts.every(part => part.transform === 'translate(0 0)'));
-  assert.ok(app.buttons.every(button => button.cleaned));
-  app.visible(app.scenes[0]);
-  assert.equal(app.timelines.length, 1, 'headphone never independently starts or replays');
+  assert.ok(app.words.every(word => word.cleaned));
+  assert.ok(!app.timelines[1].killed, 'content completion does not finish the headphones');
 });
 
-test('lower decoration starts when the page reveal finishes, before headphone assembly completes', () => {
+test('headphones descend slowly on their own timeline, then open, hold, and reassemble once', () => {
+  const app = setup();
+  const motion = app.timelines[1];
+  const entry = motion.steps.find(step => step.target === app.scenes[0]);
+  const rightEntry = motion.steps.find(step => step.target === app.scenes[2]);
+  assert.equal(entry.position, 1.7);
+  assert.equal(entry.vars.duration, 2);
+  assert.equal(entry.from.y, -180);
+  assert.equal(rightEntry.position, entry.position);
+  assert.equal(rightEntry.vars.duration, entry.vars.duration);
+  assert.equal(app.scenes[2].parts.length, 0);
+  const parts = app.scenes[0].parts.map(part => motion.steps.filter(step => step.target === part));
+  const opening = parts.map(steps => steps[0]);
+  const returning = parts.map(steps => steps[1]);
+  assert.ok(parts.every(steps => steps.length === 2));
+  assert.equal(Math.min(...opening.map(step => step.position)), entry.position + entry.vars.duration);
+  const expandedAt = Math.max(...opening.map(step => step.position + step.vars.duration));
+  const collapseAt = Math.min(...returning.map(step => step.position));
+  assert.ok(Math.abs(collapseAt - expandedAt - 2) < 0.0001);
+  opening.forEach(step => assert.equal(step.vars.attr.transform, step.target.dataset.expandedTransform));
+  returning.forEach(step => assert.equal(step.vars.attr.transform, 'translate(0 0)'));
+  motion.complete();
+  assert.ok(app.scenes[0].parts.every(part => part.transform === 'translate(0 0)'));
+  assert.ok(!app.timelines[0].killed, 'headphone completion does not change content timing');
+  app.timelines[0].complete();
+  app.visible(app.scenes[0]);
+  app.visible(app.scenes[2]);
+  assert.equal(app.timelines.length, 2, 'neither headphone replays on return');
+});
+
+test('content timing is identical on desktop and mobile', () => {
+  const desktop = setup();
+  const mobile = setup({ width: 390 });
+  const schedule = app => app.timelines[0].steps.map(step => ({ position: step.position, duration: step.vars.duration }));
+  assert.deepEqual(schedule(desktop), schedule(mobile));
+  assert.equal(mobile.timelines.length, 1);
+  mobile.timelines[0].complete();
+  mobile.visible(mobile.canvas);
+  assert.equal(mobile.fieldsCreated, 0);
+});
+
+test('scrolling and touch gestures leave both sequences running even before the bundle starts', () => {
+  const app = setup();
+  for (const event of ['wheel', 'touchmove', 'scroll']) app.emit(event);
+  app.scroll(700);
+  app.visible(app.scenes[0], false);
+  assert.equal(app.attrs.get('data-home-intro'), 'pending');
+  assert.ok(app.timelines.every(timeline => !timeline.killed && !timeline.paused));
+  const early = setup({ bootOnly: true });
+  early.scroll(700);
+  early.emit('wheel');
+  early.start();
+  assert.equal(early.timelines.length, 2);
+  assert.ok(early.timelines.every(timeline => !timeline.killed));
+});
+
+test('keyboard, focus, and activation reveal content without cancelling the headphones', () => {
+  for (const event of ['keydown', 'focusin', 'pointerdown']) {
+    const app = setup();
+    app.emit(event, { preventDefault() { assert.fail('navigation remains native'); } });
+    assert.equal(app.attrs.has('data-home-intro'), false);
+    assert.equal(app.timelines[0].killed, true);
+    assert.ok(!app.timelines[1].killed);
+    app.scroll(700);
+    assert.ok(!app.timelines[1].killed);
+  }
+});
+
+test('hidden tabs pause both timelines and resume them without restarting', () => {
+  const app = setup();
+  app.hidden(true);
+  assert.ok(app.timelines.every(timeline => timeline.paused));
+  app.hidden(false);
+  assert.ok(app.timelines.every(timeline => !timeline.paused));
+  assert.equal(app.timelines.length, 2);
+});
+
+test('lower decorations wait for content, then retain offscreen and hidden-tab handling', () => {
   const app = setup();
   app.visible(app.canvas);
   app.visible(app.scenes[1]);
   assert.equal(app.fieldsCreated, 0);
-  assert.equal(app.timelines.length, 1);
-  const intro = app.timelines[0];
-  const reveal = intro.steps.find(step => step.target?.[0] === app.lower[0]);
-  intro.time(reveal.position + reveal.vars.duration);
-  reveal.vars.onComplete();
-  assert.ok(intro.time() < 4.88);
-  assert.ok(!intro.killed, 'the headphone assembly is still active');
-  assert.equal(app.attrs.has('data-home-intro'), true);
+  app.timelines[0].complete();
   assert.equal(app.fieldsCreated, 1);
+  assert.equal(app.field.timeline.paused, false);
+  assert.ok(!app.timelines[1].killed);
+  const earbud = app.timelines[2];
+  app.visible(app.scenes[1], false);
+  assert.equal(earbud.paused, true);
+  app.visible(app.scenes[1]);
+  app.hidden(true);
+  assert.equal(earbud.paused, true);
+  assert.equal(app.field.timeline.paused, true);
+  app.hidden(false);
+  assert.equal(earbud.paused, false);
   assert.equal(app.field.timeline.paused, false);
   app.visible(app.canvas, false);
   assert.equal(app.field.timeline.paused, true);
-  app.visible(app.canvas);
-  app.hidden(true);
-  assert.equal(app.field.timeline.paused, true);
-  app.hidden(false);
-  assert.equal(app.field.timeline.paused, false);
-});
-
-test('scroll intent, keyboard, focus, and activation skip immediately without consuming the action', () => {
-  for (const event of ['wheel', 'touchmove', 'keydown', 'focusin', 'pointerdown', 'pagehide']) {
-    const app = setup();
-    app.emit(event, { preventDefault() { assert.fail('navigation must remain native'); } });
-    assert.equal(app.attrs.has('data-home-intro'), false, event);
-    assert.equal(app.timelines[0].killed, true);
-    assert.ok(app.scenes[0].parts.every(part => part.transform === 'translate(0 0)'));
-  }
-  const app = setup();
-  app.scroll(100);
-  assert.equal(app.attrs.has('data-home-intro'), false);
-});
-
-test('the intro pauses in a hidden tab and resumes without creating another sequence', () => {
-  const app = setup();
-  app.hidden(true);
-  assert.equal(app.timelines[0].paused, true);
-  app.hidden(false);
-  assert.equal(app.timelines[0].paused, false);
-  assert.equal(app.timelines.length, 1);
-});
-
-test('earbud assembly pauses offscreen and in hidden tabs after the introduction', () => {
-  const app = setup();
-  app.timelines[0].complete();
-  app.visible(app.scenes[1]);
-  const earbud = app.timelines[1];
-  app.visible(app.scenes[1], false);
-  assert.equal(earbud.paused, true);
-  app.visible(app.scenes[1]);
-  assert.equal(earbud.paused, false);
-  app.hidden(true);
-  assert.equal(earbud.paused, true);
-  app.hidden(false);
   earbud.complete();
-  app.visible(app.scenes[1], false);
   app.visible(app.scenes[1]);
-  assert.equal(app.timelines.length, 2);
+  assert.equal(app.timelines.length, 4);
 });
 
-test('reduced motion bypasses or settles the intro and keeps the waveform static', () => {
+test('reduced motion bypasses or settles both sequences and keeps the waveform static', () => {
   for (const initial of [true, false]) {
     const app = setup({ reduced: initial });
-    if (!initial) app.reduce(true);
+    if (!initial) {
+      app.scenes[0].parts.forEach(part => { part.transform = part.dataset.expandedTransform; });
+      app.reduce(true);
+      assert.ok(app.timelines.every(timeline => timeline.killed));
+    }
     assert.equal(app.attrs.has('data-home-intro'), false);
     assert.ok(app.scenes.every(scene => scene.parts.every(part => part.transform === 'translate(0 0)')));
     app.visible(app.canvas);
@@ -234,47 +272,35 @@ test('reduced motion bypasses or settles the intro and keeps the waveform static
   }
 });
 
-test('narrow layouts omit the headphone stage and mobile never creates the waveform', () => {
-  for (const width of [390, 1050]) {
-    const app = setup({ width });
-    const intro = app.timelines[0];
-    assert.equal(intro.steps.find(step => step.target?.[0] === app.lower[0]).position, 1.35);
-    assert.equal(intro.steps.some(step => step.target === app.scenes[0]), false);
-    intro.complete();
-    app.visible(app.canvas);
-    assert.equal(app.fieldsCreated, width === 390 ? 0 : 1);
-  }
+test('resizing hides and settles only the headphones without advancing the content', () => {
+  const app = setup();
+  app.timelines[0].time(0.7);
+  app.timelines[1].time(4.5);
+  app.resize(800);
+  assert.equal(app.timelines[1].killed, true);
+  assert.equal(app.timelines[0].time(), 0.7);
+  assert.ok(!app.timelines[0].killed);
+  app.resize(1440);
+  assert.equal(app.timelines.length, 2);
 });
 
-test('resizing during or before the headphone stage skips its remaining wait', () => {
-  for (const time of [0.7, 2.5, 3.5]) {
-    const app = setup();
-    const intro = app.timelines[0];
-    intro.time(time);
-    app.resize(800);
-    if (time < 1.35) {
-      intro.time(1.35);
-      intro.steps.find(step => step.callback).callback();
-    }
-    assert.equal(intro.time(), 4.88);
-    assert.ok(app.scenes[0].parts.every(part => part.transform === 'translate(0 0)'));
-  }
-});
-
-test('direct anchors, history restoration, and missing observation bypass startup hiding', () => {
+test('direct anchors, restored positions, and unsupported observation bypass the introduction', () => {
   for (const options of [{ hash: '#features' }, { scrollY: 300 },
     { navigation: 'back_forward' }, { supported: false }]) {
     const app = setup(options);
     assert.equal(app.timelines.length, 0);
     assert.equal(app.attrs.has('data-home-intro'), false);
   }
-  const app = setup();
-  app.emit('pageshow', { persisted: true });
-  assert.equal(app.attrs.has('data-home-intro'), false);
+  for (const event of ['pageshow', 'pagehide']) {
+    const app = setup();
+    app.emit(event, { persisted: true });
+    assert.ok(app.timelines.every(timeline => timeline.killed));
+    assert.equal(app.attrs.has('data-home-intro'), false);
+  }
 });
 
-test('failed or late initialization reveals content and cannot restart the intro', () => {
-  for (const cancel of [app => app.expireBoot(), app => app.emit('keydown')]) {
+test('failed or late initialization releases the page without replaying it later', () => {
+  for (const cancel of [app => app.expireBoot(), app => app.emit('pagehide')]) {
     const app = setup({ bootOnly: true });
     assert.equal(app.attrs.get('data-home-intro'), 'pending');
     cancel(app);
@@ -282,9 +308,9 @@ test('failed or late initialization reveals content and cannot restart the intro
     app.start();
     assert.equal(app.timelines.length, 0);
   }
-  const app = setup({ failedTimeline: true });
-  assert.equal(app.attrs.has('data-home-intro'), false);
-  assert.ok(app.logo.cleaned);
+  const failed = setup({ failedTimeline: true });
+  assert.equal(failed.attrs.has('data-home-intro'), false);
+  assert.ok(failed.logo.cleaned);
 });
 
 const fieldSource = readFileSync(new URL('../assets/js/signal-field.js', import.meta.url), 'utf8')

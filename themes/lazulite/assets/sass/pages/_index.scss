@@ -164,6 +164,8 @@
   .accent-text { display: inline-block; }
 }
 
+.homepage [data-intro-word] { display: inline-block; }
+
 html[data-home-intro] {
   .homepage .hero-title__clip { overflow: hidden; }
 
@@ -172,7 +174,10 @@ html[data-home-intro] {
   .homepage .hero-subtitle,
   .homepage .cta-buttons .btn,
   .homepage .audio-art--headphone,
-  .homepage > .section,
+  .homepage .audio-art--headphone-right,
+  .homepage > .section:not(#features),
+  .homepage #features > :not(.feature-intro-title),
+  .homepage [data-intro-word],
   .footer { opacity: 0; }
 }
 
@@ -184,9 +189,12 @@ html[data-home-intro] {
     .homepage .hero-title .accent-text,
     .homepage .hero-subtitle,
     .homepage .cta-buttons .btn,
-    .homepage > .section,
+    .homepage > .section:not(#features),
+    .homepage #features > :not(.feature-intro-title),
+    .homepage [data-intro-word],
     .footer { opacity: 1; }
 
-    .homepage .audio-art--headphone { opacity: 0.62; }
+    .homepage .audio-art--headphone,
+    .homepage .audio-art--headphone-right { opacity: 0.62; }
   }
 }

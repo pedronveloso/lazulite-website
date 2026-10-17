@@ -4,7 +4,8 @@
   <canvas class="signal-field" width="720" height="240" data-signal-field></canvas>
 </div>
 {{- else -}}
+{{- $partialKind := cond (eq $kind "headphone-right") "headphone" $kind -}}
 <div class="audio-art audio-art--{{ $kind }}" data-audio-scene="{{ $kind }}" aria-hidden="true">
-  {{ partial (printf "audio-art/%s.html" $kind) . | strings.TrimSpace | safeHTML }}
+  {{ partial (printf "audio-art/%s.html" $partialKind) (dict "id" $kind "assembled" (eq $kind "headphone-right")) | strings.TrimSpace | safeHTML }}
 </div>
 {{- end -}}

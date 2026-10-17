@@ -1,7 +1,7 @@
 import { gsap } from 'gsap';
 import { createSignalField } from './signal-field.js';
 
-// One authored introduction; lower-page devices retain their visibility lifecycle.
+// Content and headphones have independent timelines; scrolling never cancels motion.
 (() => {
   const root = document.documentElement;
   const claimed = window.LazuliteIntro?.claim() || false;
@@ -10,48 +10,63 @@ import { createSignalField } from './signal-field.js';
   const wide = window.matchMedia('(min-width: 1100px)');
   const hero = document.querySelector('.homepage .hero-section');
   const scenes = [...document.querySelectorAll('[data-audio-scene]')];
+  const headphones = scenes.filter(scene => scene.dataset.audioScene.startsWith('headphone'));
   const headphone = scenes.find(scene => scene.dataset.audioScene === 'headphone');
   const canvas = document.querySelector('[data-signal-field]');
   const visible = new Set();
   const started = new Set();
   const active = new Map();
-  const lower = [...document.querySelectorAll('.homepage > .section, .footer')];
+  const lower = [...document.querySelectorAll('.homepage > .section:not(#features), #features > :not(.feature-intro-title), .footer')];
+  const words = [...document.querySelectorAll('#features [data-intro-word]')];
   const logo = hero?.querySelector('.hero-logo');
   const wordmark = hero?.querySelector('.hero-title .accent-text');
   const subtitle = hero?.querySelector('.hero-subtitle');
   const buttons = [...(hero?.querySelectorAll('.cta-buttons .btn') || [])];
-  const introTargets = [logo, wordmark, subtitle, ...buttons, headphone, ...lower].filter(Boolean);
-  const hasHeadphoneStage = wide.matches && !!headphone;
-  const headphoneEnd = 4.88;
-  const lowerAt = hasHeadphoneStage ? 2.45 : 1.35;
-  const inputEvents = ['wheel', 'touchmove', 'pointerdown', 'keydown', 'focusin', 'pagehide'];
+  const contentTargets = [logo, wordmark, subtitle, ...buttons, ...words, ...lower].filter(Boolean);
+  const featureAt = 1.7; // The 1.35s hero entrance, followed by a 350ms breath.
+  const wordGap = words.length > 1 ? 0.36 / (words.length - 1) : 0;
+  const restAt = featureAt + (words.length ? 0.45 + wordGap * (words.length - 1) + 0.25 : 0);
+  const headphoneParts = [...(headphone?.querySelectorAll('[data-assembly-part]') || [])];
+  const lastPart = Math.max(0, headphoneParts.length - 1);
+  const descentDuration = 2;
+  const openAt = featureAt + descentDuration;
+  const expandedAt = openAt + 0.9 + lastPart * 0.12;
+  const collapseAt = expandedAt + 2;
+  const inputEvents = ['pointerdown', 'keydown', 'focusin'];
   let intro;
+  let headphoneMotion;
   let introducing = false;
+  let movingHeadphones = false;
   let unlocked = !claimed;
   let field;
 
   const settle = scene => {
     if (!scene) return;
     started.add(scene);
-    gsap.set([...scene.querySelectorAll('[data-assembly-part]')], {
-      attr: { transform: 'translate(0 0)' },
-    });
+    const parts = [...scene.querySelectorAll('[data-assembly-part]')];
+    if (parts.length) gsap.set(parts, { attr: { transform: 'translate(0 0)' } });
   };
-  const finishIntro = () => {
+  const finishHeadphones = () => {
+    movingHeadphones = false;
+    headphoneMotion?.kill();
+    if (headphones.length) gsap.set(headphones, { clearProps: 'opacity,visibility,transform' });
+    headphones.forEach(settle);
+  };
+  const finishContent = () => {
     introducing = false;
     unlocked = true;
     intro?.kill();
     root.removeAttribute('data-home-intro');
-    gsap.set(introTargets, { clearProps: 'opacity,visibility,transform' });
-    settle(headphone);
-    inputEvents.forEach(name => window.removeEventListener(name, finishIntro, true));
-    window.removeEventListener('scroll', onScroll);
-    window.removeEventListener('pageshow', onPageShow);
+    gsap.set(contentTargets, { clearProps: 'opacity,visibility,transform' });
+    inputEvents.forEach(name => window.removeEventListener(name, finishContent, true));
     update();
   };
-  const onScroll = () => { if (window.scrollY > 8) finishIntro(); };
-  const onPageShow = event => { if (event.persisted || window.scrollY > 8) finishIntro(); };
-  const sceneEnabled = scene => desktop.matches && scene !== headphone;
+  const finishAll = () => {
+    finishHeadphones();
+    finishContent();
+  };
+  const onPageShow = event => { if (event.persisted) finishAll(); };
+  const sceneEnabled = scene => desktop.matches && !headphones.includes(scene);
   const canRun = target => unlocked && !reduced.matches && !document.hidden &&
     visible.has(target) && (target === canvas ? desktop.matches : sceneEnabled(target));
 
@@ -66,16 +81,15 @@ import { createSignalField } from './signal-field.js';
     active.set(scene, timeline);
   };
   function update() {
+    if (reduced.matches && (introducing || movingHeadphones)) finishAll();
     if (introducing) {
-      if (reduced.matches) finishIntro();
-      else {
-        if (hasHeadphoneStage && !wide.matches && intro.time() >= 1.35 && intro.time() < headphoneEnd) {
-          settle(headphone);
-          intro.time(headphoneEnd, false);
-        }
-        if (document.hidden) intro.pause();
-        else intro.play();
-      }
+      if (document.hidden) intro.pause();
+      else intro.play();
+    }
+    if (movingHeadphones) {
+      if (!wide.matches) finishHeadphones();
+      else if (document.hidden) headphoneMotion.pause();
+      else headphoneMotion.play();
     }
     scenes.forEach(scene => {
       if (reduced.matches) {
@@ -89,7 +103,6 @@ import { createSignalField } from './signal-field.js';
         else timeline.pause();
       }
     });
-    // Hidden or unrevealed sections never allocate or animate a canvas.
     if (unlocked && canvas && desktop.matches && visible.has(canvas) && !field) {
       field = createSignalField(canvas, gsap);
     }
@@ -108,14 +121,13 @@ import { createSignalField } from './signal-field.js';
         });
         update();
       }, { threshold: 0.25 });
-      scenes.filter(scene => scene !== headphone).forEach(scene => observer.observe(scene));
+      scenes.filter(scene => !headphones.includes(scene)).forEach(scene => observer.observe(scene));
       if (canvas) observer.observe(canvas);
     }
 
-    if (claimed && hero && logo && wordmark && subtitle && !reduced.matches &&
-        !location.hash && window.scrollY <= 8) {
+    if (claimed && hero && logo && wordmark && subtitle && !reduced.matches && !location.hash) {
       introducing = true;
-      intro = gsap.timeline({ paused: true, onComplete: finishIntro });
+      intro = gsap.timeline({ paused: true, onComplete: finishContent });
       intro.fromTo(logo, { scale: 0.94, opacity: 0 }, {
         scale: 1, opacity: 1, duration: 0.55, ease: 'power3.out',
       }, 0);
@@ -130,38 +142,44 @@ import { createSignalField } from './signal-field.js';
           y: 0, opacity: 1, duration: 0.45, ease: 'power3.out',
         }, 0.82 + index * 0.08);
       });
-      if (hasHeadphoneStage) {
-        intro.fromTo(headphone, { y: -180, autoAlpha: 0 }, {
-          y: 0, autoAlpha: 0.62, duration: 1, ease: 'power3.out',
-        }, 1.45);
-        [...headphone.querySelectorAll('[data-assembly-part]')].forEach((part, index) => {
-          intro.to(part, {
-            attr: { transform: 'translate(0 0)' }, duration: 1.8, ease: 'power3.out',
-          }, 2.8 + index * 0.14);
-        });
-        // A breakpoint change during the hero still omits the headphone wait.
-        intro.call(() => { if (!wide.matches) update(); }, [], 1.35);
-      }
+      words.forEach((word, index) => {
+        intro.fromTo(word, { y: 8, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.45, ease: 'power3.out',
+        }, featureAt + index * wordGap);
+      });
       intro.fromTo(lower, { opacity: 0 }, {
         opacity: 1, duration: 0.45, ease: 'power3.out',
-        onComplete: () => {
-          unlocked = true;
-          update();
-        },
-      }, lowerAt);
-      inputEvents.forEach(name => window.addEventListener(name, finishIntro, { capture: true, passive: true }));
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('pageshow', onPageShow);
-    } else finishIntro();
+      }, restAt);
+
+      if (wide.matches && headphone) {
+        movingHeadphones = true;
+        headphoneMotion = gsap.timeline({ paused: true, onComplete: finishHeadphones });
+        headphones.forEach(scene => {
+          headphoneMotion.fromTo(scene, { y: -180, autoAlpha: 0 }, {
+            y: 0, autoAlpha: 0.62, duration: descentDuration, ease: 'power3.out',
+          }, featureAt);
+        });
+        headphoneParts.forEach((part, index) => {
+          headphoneMotion.to(part, {
+            attr: { transform: part.dataset.expandedTransform }, duration: 0.9, ease: 'power3.out',
+          }, openAt + (lastPart - index) * 0.12);
+          headphoneMotion.to(part, {
+            attr: { transform: 'translate(0 0)' }, duration: 1.8, ease: 'power3.out',
+          }, collapseAt + index * 0.14);
+        });
+      } else finishHeadphones();
+      inputEvents.forEach(name => window.addEventListener(name, finishContent, { capture: true, passive: true }));
+    } else finishAll();
 
     reduced.addEventListener('change', update);
     desktop.addEventListener('change', update);
     wide.addEventListener('change', update);
     document.addEventListener('visibilitychange', update);
+    window.addEventListener('pagehide', finishAll);
+    window.addEventListener('pageshow', onPageShow);
     update();
   } catch (error) {
-    finishIntro();
-    // Preserve readable content even if a decorative enhancement cannot initialize.
+    finishAll();
     console.warn('Homepage motion unavailable', error);
   }
 })();
