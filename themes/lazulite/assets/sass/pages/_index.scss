@@ -155,3 +155,38 @@
 .homepage .section [data-app-video-poster][hidden] {
   display: none;
 }
+
+// The pre-paint guard expires unless the GSAP introduction claims it.
+.homepage .hero-title__clip {
+  display: inline-block;
+  vertical-align: top;
+
+  .accent-text { display: inline-block; }
+}
+
+html[data-home-intro] {
+  .homepage .hero-title__clip { overflow: hidden; }
+
+  .homepage .hero-logo,
+  .homepage .hero-title .accent-text,
+  .homepage .hero-subtitle,
+  .homepage .cta-buttons .btn,
+  .homepage .audio-art--headphone,
+  .homepage > .section,
+  .footer { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-home-intro] {
+    .homepage .hero-title__clip { overflow: visible; }
+
+    .homepage .hero-logo,
+    .homepage .hero-title .accent-text,
+    .homepage .hero-subtitle,
+    .homepage .cta-buttons .btn,
+    .homepage > .section,
+    .footer { opacity: 1; }
+
+    .homepage .audio-art--headphone { opacity: 0.62; }
+  }
+}

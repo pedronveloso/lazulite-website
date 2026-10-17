@@ -89,6 +89,11 @@
 <meta name="twitter:image" content="{{ $socialImageURL }}">
 <meta name="twitter:image:alt" content="{{ $socialImageAlt }}">
 
+{{ if .IsHome }}
+{{- $introBoot := resources.Get "js/home-intro-boot.js" | minify -}}
+<script>{{ $introBoot.Content | safeJS }}</script>
+{{ end }}
+
 {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 <script src="{{ "js/theme.js" | relURL }}" defer></script>

@@ -10,7 +10,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
   <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
 
   <h1 class="hero-title">
-    <span class="accent-text">LAZULITE</span>
+    <span class="hero-title__clip"><span class="accent-text">LAZULITE</span></span>
   </h1>
 
   <p class="hero-subtitle">
