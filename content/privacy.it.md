@@ -3,7 +3,7 @@ title: "Privacy"
 seoTitle: "Informativa sulla privacy di Lazulite"
 description: "Leggi l'informativa sulla privacy di Lazulite, inclusi i dati diagnostici opzionali di Firebase Crashlytics, i log tecnici opzionali e i questionari facoltativi per l'utente."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-10-11T00:00:00+02:00
+lastmod: 2026-10-17T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -49,3 +49,11 @@ La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla 
 ## Modifiche a questa Informativa sulla privacy:
 
 Potremmo aggiornare periodicamente la nostra Informativa sulla privacy. Eventuali modifiche saranno pubblicate su questa pagina, quindi ti consigliamo di consultarla periodicamente per verificarne gli aggiornamenti.
+
+## Catture diagnostiche facoltative del dispositivo
+
+Lazulite può invitarti a condividere una cattura diagnostica se non ne abbiamo ancora una per il tuo modello e la tua versione di Android. La condivisione è del tutto facoltativa. La cattura viene inviata privatamente al team di Lazulite e usata solo per migliorare Lazulite. È separata dai questionari e dalla diagnostica degli arresti anomali e non modifica le relative impostazioni.
+
+La cattura contiene l'esportazione diagnostica completa dell'aggiornamento mostrato nella schermata Home: informazioni sul dispositivo e su Android, log Bluetooth, metriche multimediali e i log audio e di instradamento disponibili. Può includere nomi dei dispositivi, indirizzi Bluetooth, app di riproduzione, dettagli dei brani e altri identificatori. Queste catture non sono anonime. I fornitori coinvolti nell'invio e nell'archiviazione privati elaborano la cattura per nostro conto.
+
+Non pubblichiamo né vendiamo queste catture e non le distribuiamo a terzi per il loro uso. Solo produttore, modello e versione principale di Android possono essere aggiunti al catalogo pubblico dopo una revisione manuale. Ignorare l'invito o condividere con successo una cattura interrompe gli inviti su questa installazione, anche dopo gli aggiornamenti di Android. Le catture non vengono salvate sul dispositivo per un invio successivo in background.

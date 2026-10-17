@@ -3,7 +3,7 @@ title: "Privacy"
 seoTitle: "Lazulite Privacy Policy"
 description: "Read the Lazulite privacy policy, including optional Firebase Crashlytics diagnostics, optional diagnostic logs, and optional user questionnaires."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-10-11T00:00:00+02:00
+lastmod: 2026-10-17T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -49,3 +49,11 @@ Crash diagnostics are optional. You can enable or withdraw them at any time in L
 ## Changes to This Privacy Policy:
 
 We may update our Privacy Policy from time to time. Any changes will be posted on this page, and we advise you to review this page periodically for any changes.
+
+## Optional Device Diagnostic Captures
+
+Lazulite may invite you to share a diagnostic capture when we have not yet collected one for your device model and Android version. Sharing is entirely optional. The capture is sent privately to the Lazulite team and used only to improve Lazulite. It is separate from questionnaires and Crash diagnostics and does not change either setting.
+
+A capture contains the full diagnostic export from the refresh shown on Home, including device and Android information, Bluetooth logs, media metrics, and available audio and routing logs. It may contain device names, Bluetooth addresses, playback apps, track details, and other identifiers. These captures are not anonymous. Service providers involved in private delivery and storage process the capture on our behalf.
+
+We do not publish or sell these captures, or distribute them to third parties for their own use. Only the manufacturer, model, and Android major version may be added to our public device catalog after manual review. Dismissing the invitation or successfully sharing a capture stops further invitations on that installation, including after Android upgrades. Captures are not saved on your device for later background sending.

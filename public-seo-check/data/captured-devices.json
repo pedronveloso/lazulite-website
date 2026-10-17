@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "payloadFormatVersion": 2,
+  "devices": [
+    {
+      "manufacturer": "Google",
+      "model": "Pixel",
+      "androidMajor": 10
+    },
+    {
+      "manufacturer": "Google",
+      "model": "Pixel 8a",
+      "androidMajor": 17
+    },
+    {
+      "manufacturer": "LENOVO",
+      "model": "Lenovo TB128FU",
+      "androidMajor": 13
+    },
+    {
+      "manufacturer": "OnePlus",
+      "model": "CPH2747",
+      "androidMajor": 16
+    },
+    {
+      "manufacturer": "samsung",
+      "model": "SM-A256E",
+      "androidMajor": 16
+    },
+    {
+      "manufacturer": "samsung",
+      "model": "SM-G980F",
+      "androidMajor": 12
+    },
+    {
+      "manufacturer": "samsung",
+      "model": "SM-S921U1",
+      "androidMajor": 16
+    },
+    {
+      "manufacturer": "samsung",
+      "model": "SM-S931B",
+      "androidMajor": 17
+    },
+    {
+      "manufacturer": "Xiaomi",
+      "model": "25113PN0EG",
+      "androidMajor": 16
+    }
+  ]
+}

@@ -56,3 +56,25 @@ with AASG, import dark-mode gesture-navigation media, and validate the website b
 Follow [Refresh the OpenGraph image](docs/refresh-opengraph-media.md) for the separate Android
 Hyperframes render and `scripts/import-opengraph-media.py` import. Screenshot and video refreshes
 leave this 1200 × 630 card unchanged.
+
+## Captured-device catalog
+
+`static/data/captured-devices.json` is published at
+<https://lazulite.app/data/captured-devices.json>. It records phones and tablets
+with a reviewed Lazulite v2 diagnostic capture, not a compatibility guarantee.
+The initial entries come from the diagnostic-summary headers of the Android
+repository's current-format debug assets.
+
+After manually reviewing a private submission, add its `manufacturer`, `model`,
+and numeric Android major version (`androidMajor`) to `devices`. Copy the values
+from the export header, not the filename or receiver name. Keep entries sorted
+by manufacturer/model (case-insensitive), then Android version, with no duplicate
+combinations. Keep `schemaVersion: 1` and `payloadFormatVersion: 2`.
+
+Only this metadata is public. Do not add submitted logs, addresses, destination
+names, playback details, or contributor identifiers to this repository or public
+Android fixtures. Uploading a capture does not automatically update the catalog.
+Publish the catalog before releasing the Android invitation feature.
+
+Validate with `node --test scripts/test-captured-devices.mjs`, then refresh the
+tracked output using `./scripts/seo-snapshot.sh --update`.
