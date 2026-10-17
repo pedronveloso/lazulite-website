@@ -1,9 +1,9 @@
 ---
 title: "Privacy"
 seoTitle: "Informativa sulla privacy di Lazulite"
-description: "Leggi l'informativa sulla privacy di Lazulite, inclusi i dati diagnostici opzionali di Firebase Crashlytics, i log tecnici opzionali e i questionari facoltativi per l'utente."
+description: "Privacy di Lazulite: analisi del sito, diagnostica facoltativa degli arresti anomali, ricerca del produttore, questionari, log e catture diagnostiche private."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-10-11T00:00:00+02:00
+lastmod: 2026-10-17T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -33,6 +33,14 @@ Crashlytics può conservare report localmente mentre la diagnostica è disattiva
 Lazulite può mostrarti di tanto in tanto questionari facoltativi sul tuo setup audio e sulla tua esperienza di ascolto. Rispondere è del tutto volontario e puoi ignorarli in qualsiasi momento senza alcun effetto sull'app. Se decidi di rispondere, le tue risposte (che possono includere commenti a testo libero) vengono inviate tramite una connessione sicura a un servizio di sondaggi di terze parti, così possiamo capire come Lazulite si comporta su dispositivi e configurazioni reali.
 
 Raccogliamo solo le risposte che invii. Le risposte sono del tutto anonime: non includono identificativi del dispositivo, dati dell'account né altre informazioni personali. Vengono utilizzate in forma aggregata per ricerca e miglioramenti del prodotto.
+
+## Catture diagnostiche facoltative del dispositivo:
+
+Lazulite può invitarti a condividere una cattura diagnostica se non ne abbiamo ancora una per il tuo modello e la tua versione di Android. La condivisione è del tutto facoltativa. La cattura viene inviata privatamente al team di Lazulite e usata solo per migliorare Lazulite. È separata dai questionari e dalla diagnostica degli arresti anomali e non modifica le relative impostazioni.
+
+La cattura contiene l'esportazione diagnostica completa dell'aggiornamento mostrato nella schermata Home: informazioni sul dispositivo e su Android, log Bluetooth, metriche multimediali e i log audio e di instradamento disponibili. Può includere nomi dei dispositivi, indirizzi Bluetooth, app di riproduzione, dettagli dei brani e altri identificatori. Queste catture non sono anonime. I fornitori coinvolti nell'invio e nell'archiviazione privati elaborano la cattura per nostro conto.
+
+Non pubblichiamo né vendiamo queste catture e non le distribuiamo a terzi per il loro uso. Solo produttore, modello e versione principale di Android possono essere aggiunti al catalogo pubblico dopo una revisione manuale. Ignorare l'invito o condividere con successo una cattura interrompe gli inviti su questa installazione, anche dopo gli aggiornamenti di Android. Le catture non vengono salvate sul dispositivo per un invio successivo in background.
 
 ## Condivisione e trasferimento dei dati:
 

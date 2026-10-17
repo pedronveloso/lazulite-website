@@ -1,9 +1,9 @@
 ---
 title: "Privacidad"
 seoTitle: "Política de privacidad de Lazulite"
-description: "Consulta la política de privacidad de Lazulite, incluidos los diagnósticos opcionales de Firebase Crashlytics, los registros técnicos opcionales y los cuestionarios opcionales de usuario."
+description: "Privacidad en Lazulite: analítica web, diagnósticos de fallos opcionales, consulta de fabricante, cuestionarios, registros y capturas de diagnóstico privadas del dispositivo."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-10-11T00:00:00+02:00
+lastmod: 2026-10-17T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -33,6 +33,14 @@ Crashlytics puede conservar informes localmente mientras los diagnósticos está
 Lazulite puede mostrarte ocasionalmente cuestionarios opcionales sobre tu configuración de audio y tu experiencia de escucha. Responder es totalmente voluntario, y puedes descartarlos cuando quieras sin que eso afecte la app. Si decides responder, tus respuestas (que pueden incluir comentarios de texto libre) se envían a través de una conexión segura a un servicio de encuestas de terceros para que podamos entender cómo funciona Lazulite con dispositivos y configuraciones reales.
 
 Solo recopilamos las respuestas que envías. Las respuestas son totalmente anónimas: no incluyen identificadores del dispositivo, datos de la cuenta ni otra información personal. Se usan de forma agregada para investigación y mejoras del producto.
+
+## Capturas de diagnóstico del dispositivo opcionales
+
+Lazulite puede invitarte a compartir una captura de diagnóstico si aún no tenemos una de tu modelo y versión de Android. Compartir es totalmente opcional. La captura se envía de forma privada al equipo de Lazulite y se usa únicamente para mejorar Lazulite. Es independiente de los cuestionarios y del diagnóstico de fallos, y no cambia ninguno de sus ajustes.
+
+La captura contiene la exportación completa de diagnóstico de la actualización mostrada en Inicio: información del dispositivo y de Android, registros de Bluetooth, métricas multimedia y los registros de audio y rutas disponibles. Puede incluir nombres de dispositivos, direcciones Bluetooth, aplicaciones de reproducción, detalles de pistas y otros identificadores. Estas capturas no son anónimas. Los proveedores que intervienen en el envío y almacenamiento privados procesan la captura por nuestra cuenta.
+
+No publicamos ni vendemos estas capturas, ni las distribuimos a terceros para su propio uso. Solo el fabricante, el modelo y la versión principal de Android pueden añadirse al catálogo público tras una revisión manual. Descartar la invitación o compartir correctamente una captura impide nuevas invitaciones en esa instalación, incluso después de actualizar Android. No se guardan capturas en el dispositivo para enviarlas más tarde en segundo plano.
 
 ## Compartición y transferencia de datos
 

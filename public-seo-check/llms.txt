@@ -13,13 +13,14 @@ Key facts:
 - Refresh behavior: observations update on refresh, with optional playback-change updates and timed refresh while Home is visible; no continuous background monitoring
 - Playback health: reports newly observed audio underruns, outgoing buffer drops, and attributable connection problems; does not establish a cause, audible disruption, or measured wireless packet loss. Missing diagnostics are unavailable, and partial checks are not a full all-clear
 - Setup: requires access to Android system audio logs; Shizuku is recommended for most users, with ADB or existing root access as alternatives
-- Privacy: core inspection and decoding happen locally. Optional crash diagnostics are off by default and may send crash reports and technical logs to Firebase Crashlytics, including locally stored reports after opting in; the app does not collect usage analytics. Optional destination-vendor lookup sends only the first three pairs of the device's MAC address to MACLookup and is on by default when no preference has been saved; existing choices are preserved. Optional questionnaires send submitted answers to a survey service for aggregate use. Users can also choose to share diagnostic logs
+- Privacy: core inspection and decoding happen locally. Optional crash diagnostics are off by default and may send crash reports and technical logs to Firebase Crashlytics, including locally stored reports after opting in; the app does not collect usage analytics. Optional destination-vendor lookup sends only the first three pairs of the device's MAC address to MACLookup and is on by default when no preference has been saved; existing choices are preserved. Optional questionnaires send submitted answers to a survey service for aggregate use. Users can also choose to share diagnostic logs for troubleshooting. Optional full device diagnostic captures are sent privately to the Lazulite team, solely to improve Lazulite; they can contain identifying information and are not published. Only manufacturer, model, and Android major version may be added to the public device catalog after manual review.
 
 Links:
 - Homepage: https://lazulite.app/
 - Play Store listing: https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite
 - FAQ: https://lazulite.app/faq/
 - Privacy policy: https://lazulite.app/privacy/
+- Captured-device catalog (manufacturer, model, and Android major version only): https://lazulite.app/data/captured-devices.json
 - Contact: lazuliteapp@gmail.com
 
 Also available in Spanish (https://lazulite.app/es/), Simplified Chinese (https://lazulite.app/zh/), Italian (https://lazulite.app/it/), and Japanese (https://lazulite.app/ja/).
