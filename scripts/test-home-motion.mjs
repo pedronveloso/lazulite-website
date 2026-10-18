@@ -19,7 +19,7 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
     getAttribute: name => attrs.get(name),
     removeAttribute: name => attrs.delete(name),
   };
-  const scenes = ['headphone', 'earbud', 'headphone-right'].map(kind => {
+  const scenes = ['headphone', 'headphone-right'].map(kind => {
     const parts = Array.from({ length: kind === 'headphone-right' ? 0 : 3 }, (_, i) => ({
       transform: kind === 'headphone' ? 'translate(0 0)' : `translate(${-55 - i * 47} 0)`,
       dataset: { expandedTransform: `translate(${-55 - i * 47} 0)` },
@@ -95,6 +95,7 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   let timer, fieldsCreated = 0, field;
   const scope = {
     gsap, window, document, location: { hash },
+    ScrollTrigger: {}, createEarbudScroll() {},
     performance: { getEntriesByType: () => [{ type: navigation }] },
     setTimeout: callback => { timer = callback; return 1; },
     clearTimeout: () => { timer = null; },
@@ -156,13 +157,13 @@ test('headphones descend slowly on their own timeline, then open, hold, and reas
   const app = setup();
   const motion = app.timelines[1];
   const entry = motion.steps.find(step => step.target === app.scenes[0]);
-  const rightEntry = motion.steps.find(step => step.target === app.scenes[2]);
+  const rightEntry = motion.steps.find(step => step.target === app.scenes[1]);
   assert.equal(entry.position, 1.7);
   assert.equal(entry.vars.duration, 2);
   assert.equal(entry.from.y, -180);
   assert.equal(rightEntry.position, entry.position);
   assert.equal(rightEntry.vars.duration, entry.vars.duration);
-  assert.equal(app.scenes[2].parts.length, 0);
+  assert.equal(app.scenes[1].parts.length, 0);
   const parts = app.scenes[0].parts.map(part => motion.steps.filter(step => step.target === part));
   const opening = parts.map(steps => steps[0]);
   const returning = parts.map(steps => steps[1]);
@@ -178,7 +179,7 @@ test('headphones descend slowly on their own timeline, then open, hold, and reas
   assert.ok(!app.timelines[0].killed, 'headphone completion does not change content timing');
   app.timelines[0].complete();
   app.visible(app.scenes[0]);
-  app.visible(app.scenes[2]);
+  app.visible(app.scenes[1]);
   assert.equal(app.timelines.length, 2, 'neither headphone replays on return');
 });
 
@@ -229,30 +230,21 @@ test('hidden tabs pause both timelines and resume them without restarting', () =
   assert.equal(app.timelines.length, 2);
 });
 
-test('lower decorations wait for content, then retain offscreen and hidden-tab handling', () => {
+test('the waveform waits for content, then pauses offscreen and in hidden tabs', () => {
   const app = setup();
   app.visible(app.canvas);
-  app.visible(app.scenes[1]);
   assert.equal(app.fieldsCreated, 0);
   app.timelines[0].complete();
   assert.equal(app.fieldsCreated, 1);
   assert.equal(app.field.timeline.paused, false);
   assert.ok(!app.timelines[1].killed);
-  const earbud = app.timelines[2];
-  app.visible(app.scenes[1], false);
-  assert.equal(earbud.paused, true);
-  app.visible(app.scenes[1]);
   app.hidden(true);
-  assert.equal(earbud.paused, true);
   assert.equal(app.field.timeline.paused, true);
   app.hidden(false);
-  assert.equal(earbud.paused, false);
   assert.equal(app.field.timeline.paused, false);
   app.visible(app.canvas, false);
   assert.equal(app.field.timeline.paused, true);
-  earbud.complete();
-  app.visible(app.scenes[1]);
-  assert.equal(app.timelines.length, 4);
+  assert.equal(app.timelines.length, 3, 'only content, headphones, and waveform have timelines');
 });
 
 test('reduced motion bypasses or settles both sequences and keeps the waveform static', () => {

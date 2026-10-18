@@ -1,4 +1,6 @@
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { createEarbudScroll } from './earbud-scroll.js';
 import { createSignalField } from './signal-field.js';
 
 // Content and headphones have independent timelines; scrolling never cancels motion.
@@ -14,8 +16,6 @@ import { createSignalField } from './signal-field.js';
   const headphone = scenes.find(scene => scene.dataset.audioScene === 'headphone');
   const canvas = document.querySelector('[data-signal-field]');
   const visible = new Set();
-  const started = new Set();
-  const active = new Map();
   const lower = [...document.querySelectorAll('.homepage > .section:not(#features), #features > :not(.feature-intro-title), .footer')];
   const words = [...document.querySelectorAll('#features [data-intro-word]')];
   const logo = hero?.querySelector('.hero-logo');
@@ -42,7 +42,6 @@ import { createSignalField } from './signal-field.js';
 
   const settle = scene => {
     if (!scene) return;
-    started.add(scene);
     const parts = [...scene.querySelectorAll('[data-assembly-part]')];
     if (parts.length) gsap.set(parts, { attr: { transform: 'translate(0 0)' } });
   };
@@ -66,20 +65,9 @@ import { createSignalField } from './signal-field.js';
     finishContent();
   };
   const onPageShow = event => { if (event.persisted) finishAll(); };
-  const sceneEnabled = scene => desktop.matches && !headphones.includes(scene);
-  const canRun = target => unlocked && !reduced.matches && !document.hidden &&
-    visible.has(target) && (target === canvas ? desktop.matches : sceneEnabled(target));
+  const canRunField = () => unlocked && !reduced.matches && !document.hidden &&
+    visible.has(canvas) && desktop.matches;
 
-  const assemble = scene => {
-    started.add(scene);
-    const timeline = gsap.timeline({ paused: true, onComplete: () => active.delete(scene) });
-    [...scene.querySelectorAll('[data-assembly-part]')].forEach((part, index) => {
-      timeline.to(part, {
-        attr: { transform: 'translate(0 0)' }, duration: 1.8, ease: 'power3.out',
-      }, 0.85 + index * 0.14);
-    });
-    active.set(scene, timeline);
-  };
   function update() {
     if (reduced.matches && (introducing || movingHeadphones)) finishAll();
     if (introducing) {
@@ -91,23 +79,11 @@ import { createSignalField } from './signal-field.js';
       else if (document.hidden) headphoneMotion.pause();
       else headphoneMotion.play();
     }
-    scenes.forEach(scene => {
-      if (reduced.matches) {
-        active.get(scene)?.kill();
-        active.delete(scene);
-        settle(scene);
-      } else if (canRun(scene) && !started.has(scene)) assemble(scene);
-      const timeline = active.get(scene);
-      if (timeline) {
-        if (canRun(scene)) timeline.play();
-        else timeline.pause();
-      }
-    });
     if (unlocked && canvas && desktop.matches && visible.has(canvas) && !field) {
       field = createSignalField(canvas, gsap);
     }
     if (field) {
-      if (canRun(canvas)) field.timeline.play();
+      if (canRunField()) field.timeline.play();
       else field.timeline.pause();
     }
   }
@@ -121,7 +97,6 @@ import { createSignalField } from './signal-field.js';
         });
         update();
       }, { threshold: 0.25 });
-      scenes.filter(scene => !headphones.includes(scene)).forEach(scene => observer.observe(scene));
       if (canvas) observer.observe(canvas);
     }
 
@@ -178,6 +153,7 @@ import { createSignalField } from './signal-field.js';
     window.addEventListener('pagehide', finishAll);
     window.addEventListener('pageshow', onPageShow);
     update();
+    createEarbudScroll(document.querySelector('.audio-art--earbud'), gsap, ScrollTrigger);
   } catch (error) {
     finishAll();
     console.warn('Homepage motion unavailable', error);

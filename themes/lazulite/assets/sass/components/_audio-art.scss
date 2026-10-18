@@ -78,11 +78,24 @@
     padding: 0 $space-xl;
 
     .audio-art--earbud {
-      --art-ground: var(--surface);
       display: block;
-      width: 220px;
-      opacity: 0.65;
+      width: 198px;
+      // Preserve the grid and capture position while moving only the illustration.
+      transform: translateX(-70px);
     }
   }
 }
 
+
+// A raster alpha mask keeps the approved static drawing identical in both themes.
+// Unsupported mask rendering simply omits this nonessential decoration.
+@supports ((mask-image: url("")) or (-webkit-mask-image: url(""))) {
+  .audio-art__earbud-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: $text-secondary;
+    -webkit-mask: url("/images/audio-art/earbud-stemmed.2107c4427583.png") center / contain no-repeat;
+    mask: url("/images/audio-art/earbud-stemmed.2107c4427583.png") center / contain no-repeat;
+  }
+}

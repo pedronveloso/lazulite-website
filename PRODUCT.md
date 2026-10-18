@@ -196,7 +196,7 @@ together. Matching assembled headphone earcups descend slowly on an independent
 timeline. The left opens after landing, holds the pieces apart for two seconds,
 and reassembles once; the right stays assembled. Scrolling never cancels the
 headphones, and page content never waits for them. Keyboard and pointer use can
-reveal the content immediately. The earbud assembles once on arrival. A playback
+reveal the content immediately. The earbud is a transparent raster engineering illustration that follows the theme, gently straightening from a 40° leftward tilt as scrolling continues after it becomes fully visible. Reduced motion keeps it upright. A playback
 waveform below the analysis copy evolves smoothly with occasional short rests.
 Keep the centered content dominant and honor reduced-motion preferences.
 

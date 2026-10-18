@@ -3,6 +3,10 @@
 <div class="analysis-signal" aria-hidden="true">
   <canvas class="signal-field" width="720" height="240" data-signal-field></canvas>
 </div>
+{{- else if eq $kind "earbud" -}}
+<div class="audio-art audio-art--earbud" aria-hidden="true">
+  <span class="audio-art__earbud-image"></span>
+</div>
 {{- else -}}
 {{- $partialKind := cond (eq $kind "headphone-right") "headphone" $kind -}}
 <div class="audio-art audio-art--{{ $kind }}" data-audio-scene="{{ $kind }}" aria-hidden="true">
