@@ -6,6 +6,25 @@ draft: false
 showMetadata: false
 ---
 
+<h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Enlace a la versión 2026.10">2026.10</a></h2>
+
+### Novedades
+
+- ¡Compatibilidad con tablets! Lazulite ahora aprovecha mejor las pantallas grandes.
+- La nueva tarjeta Estado de reproducción en la pantalla de inicio muestra los nuevos casos de falta de datos en el búfer de audio, los descartes de búferes de audio de salida y los problemas de conexión de audio que Android comunica y que se observan al actualizar durante la reproducción.
+- Japonés ya disponible 🇯🇵.
+
+### Mejoras
+
+- La sección de descarga de hardware A2DP ahora distingue entre "Disponible" y "Activado". "Activado" solo aparece cuando la opción de descarga del sistema está activada, se está reproduciendo audio y el códec activo figura en la lista de códecs compatibles con la descarga.
+- La dirección Bluetooth del dispositivo conectado se resuelve de forma más fiable, lo que mejora la consulta del fabricante y los detalles del dispositivo.
+- Los iconos ahora reflejan mejor el tipo de dispositivo que usas para escuchar, con iconos distintos para altavoces, auriculares, relojes, sistemas de audio para coche y receptores de audio.
+- Ahora se puede consultar el nivel de batería de más dispositivos de audio conectados.
+
+### Correcciones
+
+- Varias correcciones de errores menores.
+
 <h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Enlace a la versión 2026.09">2026.09</a></h2>
 
 - Una pantalla de inicio renovada facilita seguir la ruta del audio.
