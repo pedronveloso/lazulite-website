@@ -21,12 +21,23 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   };
   const scenes = ['headphone', 'headphone-right'].map(kind => {
     const parts = Array.from({ length: kind === 'headphone-right' ? 0 : 3 }, (_, i) => ({
-      transform: kind === 'headphone' ? 'translate(0 0)' : `translate(${-55 - i * 47} 0)`,
-      dataset: { expandedTransform: `translate(${-55 - i * 47} 0)` },
+      '--headphone-open': 0, '--headphone-seat': 0,
+      dataset: { headphonePart: ['driver', 'baffle', 'cushion'][i] },
     }));
-    return { dataset: { audioScene: kind }, parts, querySelectorAll: () => parts };
+    const assembled = { defaultAlpha: 1 };
+    const layers = kind === 'headphone' ? { defaultAlpha: 0, '--headphone-splay': 0 } : null;
+    return { dataset: { audioScene: kind }, parts, assembled, layers,
+      querySelectorAll: () => parts,
+      querySelector: selector => selector === '[data-headphone-layers]' ? layers : assembled,
+    };
   });
   const canvas = {};
+  const replayListeners = new Map();
+  const replay = {
+    hidden: true, attributes: new Map(),
+    setAttribute(name, value) { this.attributes.set(name, value); },
+    addEventListener(name, callback) { replayListeners.set(name, callback); },
+  };
   const logo = {}, wordmark = {}, subtitle = {}, buttons = [{}, {}], lower = [{}, {}];
   const words = Array.from({ length: 4 }, () => ({}));
   const hero = {
@@ -36,8 +47,16 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   };
   const set = (targets, vars) => {
     for (const target of Array.isArray(targets) ? targets : [targets]) {
-      if (vars.attr) target.transform = vars.attr.transform;
-      if (vars.clearProps) target.cleaned = true;
+      for (const key of ['--headphone-open', '--headphone-seat', '--headphone-splay']) {
+        if (vars[key] !== undefined) target[key] = vars[key];
+        if (vars.clearProps?.includes(key)) target[key] = 0;
+      }
+      if (vars.autoAlpha !== undefined) target.autoAlpha = vars.autoAlpha;
+      if (vars.clearProps) {
+        target.cleaned = true;
+        if (vars.clearProps.includes('transform')) target.xPercent = 0;
+        if (vars.clearProps.includes('opacity')) target.autoAlpha = target.defaultAlpha ?? 1;
+      }
     }
   };
   const gsap = {
@@ -53,7 +72,11 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
         call(callback, args, position) { this.steps.push({ callback, position }); return this; },
         time(value) { if (value === undefined) return this.clock; this.clock = value; return this; },
         pause() { this.paused = true; return this; },
-        play() { this.paused = false; return this; },
+        play(position) {
+          this.paused = false;
+          if (position !== undefined) { this.clock = position; this.replays = (this.replays || 0) + 1; }
+          return this;
+        },
         kill() { this.killed = true; return this; },
         complete() {
           this.steps.forEach(({ target, vars }) => { if (target) set(target, vars); });
@@ -85,7 +108,8 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
     documentElement: root, hidden: false,
     querySelectorAll: selector => selector === '[data-audio-scene]' ? scenes :
       selector === '#features [data-intro-word]' ? words : lower,
-    querySelector: selector => selector === '[data-signal-field]' ? canvas : hero,
+    querySelector: selector => selector === '[data-signal-field]' ? canvas :
+      selector === '[data-headphone-replay]' ? replay : hero,
     addEventListener: window.addEventListener,
   };
   class Observer {
@@ -111,7 +135,8 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   runInNewContext(bootSource, scope);
   if (!bootOnly) start();
   return {
-    scenes, canvas, timelines, logo, wordmark, subtitle, buttons, lower, words, attrs, emit, start,
+    scenes, canvas, timelines, logo, wordmark, subtitle, buttons, lower, words, attrs, emit, start, replay,
+    activateHeadphone() { replayListeners.get('click')?.(); },
     get field() { return field; }, get fieldsCreated() { return fieldsCreated; },
     expireBoot() { timer?.(); },
     visible(target, value = true) { observers[0]?.callback([{ target, isIntersecting: value }]); },
@@ -164,23 +189,91 @@ test('headphones descend slowly on their own timeline, then open, hold, and reas
   assert.equal(rightEntry.position, entry.position);
   assert.equal(rightEntry.vars.duration, entry.vars.duration);
   assert.equal(app.scenes[1].parts.length, 0);
-  const parts = app.scenes[0].parts.map(part => motion.steps.filter(step => step.target === part));
+  const parts = app.scenes[0].parts.map(part => motion.steps.filter(step => step.target === part && '--headphone-open' in step.vars));
   const opening = parts.map(steps => steps[0]);
   const returning = parts.map(steps => steps[1]);
   assert.ok(parts.every(steps => steps.length === 2));
   assert.equal(Math.min(...opening.map(step => step.position)), entry.position + entry.vars.duration);
   const expandedAt = Math.max(...opening.map(step => step.position + step.vars.duration));
   const collapseAt = Math.min(...returning.map(step => step.position));
-  assert.ok(Math.abs(collapseAt - expandedAt - 2) < 0.0001);
-  opening.forEach(step => assert.equal(step.vars.attr.transform, step.target.dataset.expandedTransform));
-  returning.forEach(step => assert.equal(step.vars.attr.transform, 'translate(0 0)'));
+  assert.ok(Math.abs(collapseAt - expandedAt - 1.4) < 0.0001);
+  opening.forEach(step => {
+    assert.equal(step.vars['--headphone-open'], 1);
+    assert.equal(step.vars.ease, 'power2.inOut');
+    assert.equal(step.vars.duration, 1.3);
+  });
+  returning.forEach(step => assert.equal(step.vars['--headphone-open'], 0));
   motion.complete();
-  assert.ok(app.scenes[0].parts.every(part => part.transform === 'translate(0 0)'));
+  assert.ok(app.scenes[0].parts.every(part => part['--headphone-open'] === 0 && part['--headphone-seat'] === 0));
+  assert.equal(app.scenes[0].layers.autoAlpha, 0);
+  assert.equal(app.scenes[0].assembled.autoAlpha, 1);
   assert.ok(!app.timelines[0].killed, 'headphone completion does not change content timing');
   app.timelines[0].complete();
   app.visible(app.scenes[0]);
   app.visible(app.scenes[1]);
   assert.equal(app.timelines.length, 2, 'neither headphone replays on return');
+});
+
+test('raster internals appear only for disassembly and settle to the clean assembled plate', () => {
+  const app = setup();
+  const left = app.scenes[0];
+  const motion = app.timelines[1];
+  const plateSteps = motion.steps.filter(step => step.target === left.assembled);
+  const layerSteps = motion.steps.filter(step => step.target === left.layers);
+  const openingAt = 3.7;
+  assert.equal(plateSteps[0].position, openingAt);
+  assert.equal(plateSteps[0].vars.autoAlpha, 0);
+  assert.equal(layerSteps[0].position, openingAt);
+  assert.equal(layerSteps[0].from.autoAlpha, 0);
+  assert.equal(layerSteps[0].vars.autoAlpha, 1);
+  assert.equal(layerSteps[0].vars.duration, plateSteps[0].vars.duration,
+    'the component stack appears with the plate crossfade, independently of the slower movement');
+  const splay = layerSteps.find(step => step.vars['--headphone-splay'] === 1);
+  assert.equal(splay.position, openingAt);
+  assert.equal(splay.vars.ease, 'power2.inOut');
+  assert.equal(splay.vars.duration, 1.3);
+  const end = plateSteps[1].position + plateSteps[1].vars.duration;
+  assert.ok(Math.abs(end - 8.96) < 0.0001);
+  assert.equal(plateSteps[1].vars.autoAlpha, 1);
+  assert.equal(layerSteps.at(-1).vars.autoAlpha, 0);
+  assert.ok(!motion.steps.some(step => step.target === app.scenes[1].assembled),
+    'the right earcup remains a single assembled image');
+  app.emit('pagehide');
+  assert.equal(left.layers.autoAlpha, 0);
+  assert.equal(left.layers['--headphone-splay'], 0);
+  assert.equal(left.assembled.autoAlpha, 1);
+});
+
+test('cushion slows to a gap, pauses, pulls into contact, then holds before the plate handoff', () => {
+  const app = setup();
+  const left = app.scenes[0];
+  const motion = app.timelines[1];
+  const cushion = left.parts[2];
+  const steps = motion.steps.filter(step => step.target === cushion);
+  const approach = steps.find(step => step.vars['--headphone-seat'] === 1);
+  const pull = steps.find(step => step.vars['--headphone-seat'] === 0);
+  const handoff = motion.steps.find(step => step.target === left.assembled && step.vars.autoAlpha === 1);
+  assert.equal(approach.vars['--headphone-open'], 0);
+  assert.equal(approach.vars.duration, 1.6);
+  assert.equal(approach.vars.ease, 'power3.out');
+  assert.ok(Math.abs(pull.position - approach.position - approach.vars.duration - 0.1) < 0.0001);
+  assert.equal(pull.vars.duration, 0.14);
+  assert.equal(pull.vars.ease, 'power2.in');
+  assert.ok(Math.abs(handoff.position - pull.position - pull.vars.duration - 0.08) < 0.0001);
+  assert.ok(Math.abs(handoff.vars.duration - 0.12) < 0.0001);
+  for (const part of left.parts.slice(0, 2)) {
+    const closing = motion.steps.find(step => step.target === part && step.vars['--headphone-open'] === 0);
+    assert.equal(closing.vars.duration, 1.8);
+    assert.ok(closing.position + closing.vars.duration <= pull.position);
+  }
+  const housing = motion.steps.find(step => step.target === left.layers && step.vars['--headphone-splay'] === 0);
+  assert.ok(housing.position + housing.vars.duration <= pull.position);
+  cushion['--headphone-open'] = 0.3;
+  cushion['--headphone-seat'] = 1;
+  app.reduce(true);
+  assert.equal(cushion['--headphone-open'], 0);
+  assert.equal(cushion['--headphone-seat'], 0);
+  assert.equal(left.layers.autoAlpha, 0);
 });
 
 test('content timing is identical on desktop and mobile', () => {
@@ -192,6 +285,90 @@ test('content timing is identical on desktop and mobile', () => {
   mobile.timelines[0].complete();
   mobile.visible(mobile.canvas);
   assert.equal(mobile.fieldsCreated, 0);
+});
+
+test('manual replay reuses only the assembly sequence and ignores activation while moving', () => {
+  const app = setup();
+  const motion = app.timelines[1];
+  assert.equal(app.replay.attributes.get('aria-disabled'), 'true');
+  app.activateHeadphone();
+  assert.equal(motion.replays, undefined, 'the initial descent cannot be interrupted');
+  app.timelines[0].complete();
+  motion.complete();
+  assert.equal(app.replay.hidden, false);
+  assert.equal(app.replay.attributes.get('aria-disabled'), 'false');
+  for (let count = 1; count <= 3; count++) {
+    app.activateHeadphone();
+    assert.equal(motion.time(), 3.7, 'seek past the descent directly to disassembly');
+    assert.equal(motion.replays, count);
+    assert.equal(app.timelines.length, 2, 'reuse the timeline instead of allocating more tweens');
+    assert.equal(app.replay.attributes.get('aria-disabled'), 'true');
+    motion.time(5.5);
+    app.activateHeadphone();
+    assert.equal(motion.time(), 5.5, 'an expanded headphone cannot restart or queue a replay');
+    assert.equal(motion.replays, count);
+    motion.complete();
+    assert.equal(app.replay.attributes.get('aria-disabled'), 'false');
+    assert.equal(app.scenes[0].assembled.autoAlpha, 1);
+  }
+});
+
+test('static assembled visits can replay without introducing the content or either headphone', () => {
+  for (const options of [{ hash: '#features' }, { scrollY: 300 }, { navigation: 'back_forward' }]) {
+    const app = setup(options);
+    assert.equal(app.timelines.length, 0);
+    app.activateHeadphone();
+    const motion = app.timelines[0];
+    assert.equal(motion.time(), 3.7);
+    assert.ok(!motion.steps.some(step => app.scenes.includes(step.target)), 'neither earcup descends');
+    assert.equal(app.attrs.has('data-home-intro'), false);
+    motion.complete();
+    app.activateHeadphone();
+    assert.equal(app.timelines.length, 1);
+  }
+});
+
+test('replay respects reduced motion, breakpoints, hidden tabs, and page departure', () => {
+  for (const options of [{ reduced: true }, { width: 390 }, { failedTimeline: true }]) {
+    const app = setup(options);
+    const count = app.timelines.length;
+    app.activateHeadphone();
+    assert.equal(app.timelines.length, count);
+    assert.equal(app.replay.hidden, true);
+  }
+  const app = setup();
+  app.timelines.forEach(motion => motion.complete());
+  app.hidden(true);
+  app.activateHeadphone();
+  assert.equal(app.timelines[1].replays, undefined);
+  app.hidden(false);
+  app.activateHeadphone();
+  const replay = app.timelines[1];
+  app.scroll(700);
+  assert.equal(replay.paused, false);
+  app.hidden(true);
+  assert.equal(replay.paused, true);
+  app.hidden(false);
+  assert.equal(replay.paused, false);
+  app.reduce(true);
+  assert.equal(replay.killed, true);
+  assert.equal(app.replay.hidden, true);
+  app.reduce(false);
+  app.activateHeadphone();
+  const resized = app.timelines.at(-1);
+  app.resize(800);
+  assert.equal(resized.killed, true);
+  assert.equal(app.replay.hidden, true);
+  app.resize(1440);
+  app.activateHeadphone();
+  app.emit('pagehide');
+  assert.equal(app.timelines.at(-1).killed, true);
+  assert.equal(app.replay.hidden, true);
+  const count = app.timelines.length;
+  app.activateHeadphone();
+  assert.equal(app.timelines.length, count);
+  app.emit('pageshow', { persisted: true });
+  assert.equal(app.replay.hidden, false);
 });
 
 test('scrolling and touch gestures leave both sequences running even before the bundle starts', () => {
@@ -251,12 +428,12 @@ test('reduced motion bypasses or settles both sequences and keeps the waveform s
   for (const initial of [true, false]) {
     const app = setup({ reduced: initial });
     if (!initial) {
-      app.scenes[0].parts.forEach(part => { part.transform = part.dataset.expandedTransform; });
+      app.scenes[0].parts.forEach(part => { part['--headphone-open'] = 1; });
       app.reduce(true);
       assert.ok(app.timelines.every(timeline => timeline.killed));
     }
     assert.equal(app.attrs.has('data-home-intro'), false);
-    assert.ok(app.scenes.every(scene => scene.parts.every(part => part.transform === 'translate(0 0)')));
+    assert.ok(app.scenes.every(scene => scene.parts.every(part => part['--headphone-open'] === 0 && part['--headphone-seat'] === 0)));
     app.visible(app.canvas);
     assert.equal(app.field.timeline.paused, true);
     app.reduce(false);

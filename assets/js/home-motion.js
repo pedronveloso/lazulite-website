@@ -27,29 +27,54 @@ import { createSignalField } from './signal-field.js';
   const wordGap = words.length > 1 ? 0.36 / (words.length - 1) : 0;
   const restAt = featureAt + (words.length ? 0.45 + wordGap * (words.length - 1) + 0.25 : 0);
   const headphoneParts = [...(headphone?.querySelectorAll('[data-assembly-part]') || [])];
+  const headphoneLayers = headphone?.querySelector('[data-headphone-layers]');
+  const headphoneAssembled = headphone?.querySelector('[data-headphone-assembled]');
+  const replay = document.querySelector('[data-headphone-replay]');
   const lastPart = Math.max(0, headphoneParts.length - 1);
   const descentDuration = 2;
   const openAt = featureAt + descentDuration;
-  const expandedAt = openAt + 0.9 + lastPart * 0.12;
-  const collapseAt = expandedAt + 2;
+  const expandedAt = openAt + 1.3 + lastPart * 0.12;
+  const collapseAt = expandedAt + 1.4;
+  const cushionAt = collapseAt + lastPart * 0.14;
+  const magneticAt = cushionAt + 1.6 + 0.1;
+  const seatedAt = magneticAt + 0.14;
+  const handoffAt = seatedAt + 0.08;
+  const assembledAt = handoffAt + 0.12;
   const inputEvents = ['pointerdown', 'keydown', 'focusin'];
   let intro;
   let headphoneMotion;
   let introducing = false;
   let movingHeadphones = false;
+  let motionReady = false;
+  let departing = false;
   let unlocked = !claimed;
   let field;
 
   const settle = scene => {
     if (!scene) return;
     const parts = [...scene.querySelectorAll('[data-assembly-part]')];
-    if (parts.length) gsap.set(parts, { attr: { transform: 'translate(0 0)' } });
+    if (parts.length) gsap.set(parts, { clearProps: '--headphone-open,--headphone-seat,opacity,visibility' });
+    const layers = scene.querySelector('[data-headphone-layers]');
+    const assembled = scene.querySelector('[data-headphone-assembled]');
+    if (layers) gsap.set(layers, { clearProps: 'opacity,visibility,--headphone-splay' });
+    if (assembled) gsap.set(assembled, { clearProps: 'opacity,visibility' });
   };
-  const finishHeadphones = () => {
+  const updateReplay = () => {
+    if (!replay) return;
+    replay.hidden = !motionReady || !wide.matches || reduced.matches || departing;
+    replay.setAttribute('aria-disabled', String(movingHeadphones || document.hidden));
+  };
+  const settleHeadphones = () => {
     movingHeadphones = false;
-    headphoneMotion?.kill();
+    headphoneMotion?.pause();
     if (headphones.length) gsap.set(headphones, { clearProps: 'opacity,visibility,transform' });
     headphones.forEach(settle);
+    updateReplay();
+  };
+  const finishHeadphones = () => {
+    headphoneMotion?.kill();
+    headphoneMotion = undefined;
+    settleHeadphones();
   };
   const finishContent = () => {
     introducing = false;
@@ -64,7 +89,10 @@ import { createSignalField } from './signal-field.js';
     finishHeadphones();
     finishContent();
   };
-  const onPageShow = event => { if (event.persisted) finishAll(); };
+  const onPageHide = () => { departing = true; finishAll(); };
+  const onPageShow = event => {
+    if (event.persisted) { departing = false; finishAll(); }
+  };
   const canRunField = () => unlocked && !reduced.matches && !document.hidden &&
     visible.has(canvas) && desktop.matches;
 
@@ -86,7 +114,63 @@ import { createSignalField } from './signal-field.js';
       if (canRunField()) field.timeline.play();
       else field.timeline.pause();
     }
+    updateReplay();
   }
+
+  function createHeadphoneMotion(withEntrance = false) {
+    const motion = gsap.timeline({ paused: true, onComplete: settleHeadphones });
+    if (withEntrance) headphones.forEach(scene => {
+      motion.fromTo(scene, { y: -180, autoAlpha: 0 }, {
+        y: 0, autoAlpha: 0.62, duration: descentDuration, ease: 'power3.out',
+      }, featureAt);
+    });
+    // Real raster silhouettes occlude the components behind them. A small outward
+    // shift gives the inward-facing layers room without entering the centered copy.
+    motion.to(headphoneAssembled, { autoAlpha: 0, duration: 0.18 }, openAt);
+    motion.fromTo(headphoneLayers, { autoAlpha: 0 }, {
+      autoAlpha: 1, duration: 0.18,
+    }, openAt);
+    motion.fromTo(headphoneLayers, { '--headphone-splay': 0 }, {
+      '--headphone-splay': 1, duration: 1.3, ease: 'power2.inOut',
+    }, openAt);
+    motion.to(headphoneLayers, {
+      '--headphone-splay': 0, duration: 1.8, ease: 'power3.out',
+    }, collapseAt);
+    headphoneParts.forEach((part, index) => {
+      motion.to(part, {
+        '--headphone-open': 1, duration: 1.3, ease: 'power2.inOut',
+      }, openAt + (lastPart - index) * 0.12);
+      if (part.dataset.headphonePart === 'cushion') {
+        motion.to(part, {
+          '--headphone-open': 0, '--headphone-seat': 1, duration: 1.6, ease: 'power3.out',
+        }, cushionAt);
+        motion.to(part, {
+          '--headphone-seat': 0, duration: 0.14, ease: 'power2.in',
+        }, magneticAt);
+      } else {
+        const returnAt = collapseAt + index * 0.14;
+        motion.to(part, {
+          '--headphone-open': 0, duration: 1.8, ease: 'power3.out',
+        }, returnAt);
+        // Once recessed behind the pad, internal detail no longer reads through
+        // the ear opening in the closed illustration.
+        motion.to(part, { autoAlpha: 0, duration: 0.16 }, returnAt + 1.64);
+      }
+    });
+    motion.to(headphoneAssembled, { autoAlpha: 1, duration: assembledAt - handoffAt }, handoffAt);
+    motion.to(headphoneLayers, { autoAlpha: 0, duration: assembledAt - handoffAt }, handoffAt);
+    return motion;
+  }
+
+  const replayHeadphone = () => {
+    if (!motionReady || movingHeadphones || reduced.matches || !wide.matches ||
+      document.hidden || departing || !headphone) return;
+    // Reuse the settled timeline, seeking past the entrance on every manual replay.
+    headphoneMotion ||= createHeadphoneMotion();
+    movingHeadphones = true;
+    updateReplay();
+    headphoneMotion.play(openAt);
+  };
 
   try {
     if (window.IntersectionObserver) {
@@ -128,20 +212,7 @@ import { createSignalField } from './signal-field.js';
 
       if (wide.matches && headphone) {
         movingHeadphones = true;
-        headphoneMotion = gsap.timeline({ paused: true, onComplete: finishHeadphones });
-        headphones.forEach(scene => {
-          headphoneMotion.fromTo(scene, { y: -180, autoAlpha: 0 }, {
-            y: 0, autoAlpha: 0.62, duration: descentDuration, ease: 'power3.out',
-          }, featureAt);
-        });
-        headphoneParts.forEach((part, index) => {
-          headphoneMotion.to(part, {
-            attr: { transform: part.dataset.expandedTransform }, duration: 0.9, ease: 'power3.out',
-          }, openAt + (lastPart - index) * 0.12);
-          headphoneMotion.to(part, {
-            attr: { transform: 'translate(0 0)' }, duration: 1.8, ease: 'power3.out',
-          }, collapseAt + index * 0.14);
-        });
+        headphoneMotion = createHeadphoneMotion(true);
       } else finishHeadphones();
       inputEvents.forEach(name => window.addEventListener(name, finishContent, { capture: true, passive: true }));
     } else finishAll();
@@ -150,10 +221,13 @@ import { createSignalField } from './signal-field.js';
     desktop.addEventListener('change', update);
     wide.addEventListener('change', update);
     document.addEventListener('visibilitychange', update);
-    window.addEventListener('pagehide', finishAll);
+    window.addEventListener('pagehide', onPageHide);
     window.addEventListener('pageshow', onPageShow);
     update();
     createEarbudScroll(document.querySelector('.audio-art--earbud'), gsap, ScrollTrigger);
+    replay?.addEventListener('click', replayHeadphone);
+    motionReady = true;
+    updateReplay();
   } catch (error) {
     finishAll();
     console.warn('Homepage motion unavailable', error);

@@ -192,9 +192,14 @@ Motion should explain an interaction or state change, or express the homepage's
 audio-inspection story through restrained engineering illustrations. The centered
 hero enters in a short, coordinated sequence, followed by a brief pause, a
 word-by-word feature heading, another brief pause, and the lower page appearing
-together. Matching assembled headphone earcups descend slowly on an independent
-timeline. The left opens after landing, holds the pieces apart for two seconds,
-and reassembles once; the right stays assembled. Scrolling never cancels the
+together. Matching assembled raster headphone earcups descend slowly on an
+independent timeline. Their cushions face the centered content, with upright
+partial arches that bend gently higher up and fade into the page. The left opens
+gently after landing, accelerates through the middle, holds the
+pieces apart for 1.4 seconds, and reassembles with a clean magnetic cushion
+seating and no rebound; the right stays assembled. Once assembled, the left
+headphone can replay its opening and assembly on click or keyboard activation;
+activations during motion are ignored. Scrolling never cancels the
 headphones, and page content never waits for them. Keyboard and pointer use can
 reveal the content immediately. The earbud is a transparent raster engineering illustration that follows the theme, gently straightening from a 40° leftward tilt as scrolling continues after it becomes fully visible. Reduced motion keeps it upright. A playback
 waveform below the analysis copy evolves smoothly with occasional short rests.

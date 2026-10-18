@@ -85,3 +85,6 @@
 
 [theme_dark]
     other = "Oscuro"
+
+[replay_headphone_animation]
+    other = "Repetir la animación del auricular"

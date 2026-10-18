@@ -21,6 +21,11 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - `./scripts/seo-snapshot.sh` checks the tracked Hugo output. Use the Hugo version pinned in CI and Netlify.
 - There is no browser test framework; verify desktop/mobile behavior in the local preview.
 
+### GSAP Skills
+- Consult the repository's `.agents/skills/gsap-*/SKILL.md` guidance when implementing or reviewing GSAP animations. Always read [gsap-performance](.agents/skills/gsap-performance/SKILL.md); performance is a priority for all motion work.
+- Read [gsap-core](.agents/skills/gsap-core/SKILL.md), [gsap-timeline](.agents/skills/gsap-timeline/SKILL.md), [gsap-scrolltrigger](.agents/skills/gsap-scrolltrigger/SKILL.md), and the other installed GSAP skills as relevant to the change.
+- Prefer transforms and opacity, batch layout reads and writes, avoid unnecessary per-frame work, and clean up animations according to the lifecycle specified in `PRODUCT.md` and `DESIGN.md`. Preserve the requirement that scrolling does not cancel headphone motion.
+
 ## Architecture
 
 ### Site Configuration
