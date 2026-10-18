@@ -4,6 +4,7 @@ seoTitle: "What's New in Lazulite"
 description: "Discover what's new in Lazulite for Android, including a refreshed Home screen, clearer audio flow, and improved device compatibility."
 draft: false
 showMetadata: false
+motion: changelog
 ---
 
 <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Link to version 2026.10">2026.10</a></h2>

@@ -206,6 +206,7 @@ headphones, and page content never waits for them. Keyboard and pointer use can
 reveal the content immediately. The earbud is a transparent raster engineering illustration that follows the theme, gently straightening from a 40° leftward tilt as scrolling continues after it becomes fully visible. Reduced motion keeps it upright. A playback
 waveform below the analysis copy evolves smoothly with occasional short rests.
 Keep the centered content dominant and honor reduced-motion preferences.
+The What's New page reveals its release notes with a quiet, one-time rise-and-fade as each item scrolls into view; it is static for reduced motion and direct links.
 
 ## Privacy and trust
 

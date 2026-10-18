@@ -4,6 +4,7 @@ seoTitle: "Lazulite 新功能"
 description: "了解 Lazulite for Android 的新功能，包括焕新的主屏幕、更清晰的音频路径和更好的设备兼容性。"
 draft: false
 showMetadata: false
+motion: changelog
 ---
 
 <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="链接到版本 2026.10">2026.10</a></h2>

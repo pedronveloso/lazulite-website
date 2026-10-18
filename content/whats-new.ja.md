@@ -4,6 +4,7 @@ seoTitle: "Lazuliteの更新情報"
 description: "AndroidアプリLazuliteの更新情報。ホーム画面や音声経路の表示、対応機器の改善などを紹介します。"
 draft: false
 showMetadata: false
+motion: changelog
 ---
 
 <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="バージョン2026.10へのリンク">2026.10</a></h2>

@@ -381,6 +381,10 @@ Screenshots, semantic cards, video, and posters are real AASG captures for each 
 - **Don't** add shadows, gradients, glows, glass, or pill shapes.
 - **Don't** set ordinary headings in all caps or condensed faces, or reintroduce Barlow Condensed, Epilogue, or Fira Mono.
 - **Don't** use color as the only carrier of status.
-- **Don't** add motion beyond the authored homepage introduction, assembly, and signal treatment; honor reduced-motion preferences.
+- **Don't** add motion beyond the authored homepage introduction, assembly, and signal treatment, and the What's New reveal; honor reduced-motion preferences.
 - **Don't** hard-code component colors, add inline styles in content, or use color-named classes.
 - **Don't** infer light-theme button text, focus, hover, or media colors from a dark-theme coincidence.
+
+### What's New Reveal
+
+The What's New page (front matter `motion: changelog`) loads a separate fingerprinted GSAP bundle, `changelog-motion.js`, and a tiny pre-paint `changelog-boot.js`. The page title, release headings, section labels, paragraphs, and list items each rise 12px while fading in over 600ms with `power3.out`. `ScrollTrigger.batch` reveals items as they pass 92% of the viewport height, once, with items that enter together (collected over 100ms) sharing one document-order stagger of 60ms each, capped at 600ms in total; it never scrubs, pins, or reverses. Only transform and opacity animate, and GSAP clears its inline styles when each item finishes. Reduced motion, direct anchors, restored scroll positions, back/forward restoration, and missing IntersectionObserver leave the page static. A failed or late bundle releases the pre-paint guard after 1.5 seconds. Without JavaScript the page is fully visible.

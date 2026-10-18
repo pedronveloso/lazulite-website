@@ -4,6 +4,7 @@ seoTitle: "Novità di Lazulite"
 description: "Scopri le novità di Lazulite per Android, tra cui una schermata Home rinnovata, un percorso audio più chiaro e una migliore compatibilità con i dispositivi."
 draft: false
 showMetadata: false
+motion: changelog
 ---
 
 <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Link alla versione 2026.10">2026.10</a></h2>

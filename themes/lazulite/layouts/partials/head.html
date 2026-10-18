@@ -93,6 +93,10 @@
 {{- $introBoot := resources.Get "js/home-intro-boot.js" | minify -}}
 <script>{{ $introBoot.Content | safeJS }}</script>
 {{ end }}
+{{ if eq .Params.motion "changelog" }}
+{{- $changelogBoot := resources.Get "js/changelog-boot.js" | minify -}}
+<script>{{ $changelogBoot.Content | safeJS }}</script>
+{{ end }}
 
 {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">
@@ -102,6 +106,10 @@
 <script src="{{ "js/app-media.js" | relURL }}" defer></script>
 {{ $homeMotion := resources.Get "js/home-motion.js" | js.Build (dict "minify" true "target" "es2018") | fingerprint }}
 <script src="{{ $homeMotion.RelPermalink }}" defer></script>
+{{ end }}
+{{ if eq .Params.motion "changelog" }}
+{{ $changelogMotion := resources.Get "js/changelog-motion.js" | js.Build (dict "minify" true "target" "es2018") | fingerprint }}
+<script src="{{ $changelogMotion.RelPermalink }}" defer></script>
 {{ end }}
 
 {{ if .IsHome }}
