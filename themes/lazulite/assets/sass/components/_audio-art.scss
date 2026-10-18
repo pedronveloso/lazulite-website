@@ -1,0 +1,204 @@
+@import "../utils/variables";
+
+// Engineering illustrations share the site's palette, not the app-media layer.
+.audio-art,
+.analysis-signal {
+  display: none;
+}
+
+.audio-art {
+  pointer-events: none;
+}
+
+.homepage .hero-section { position: relative; }
+
+.headphone-replay {
+  position: absolute;
+  left: 10%;
+  top: 8%;
+  width: 62%;
+  height: 86%;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: $radius-md;
+  pointer-events: auto;
+  cursor: pointer;
+
+  &[aria-disabled="true"] { cursor: default; }
+}
+
+@media (min-width: 1100px) {
+  .audio-art--headphone,
+  .audio-art--headphone-right {
+    display: block;
+    position: absolute;
+    width: clamp(343.2px, 31.68vw, 448.8px);
+    --headphone-outset: clamp(52px, calc(50vw - 556px), 92px);
+    top: 0;
+    opacity: 0.62;
+  }
+
+  .audio-art--headphone { left: calc(-1 * var(--headphone-outset)); }
+
+  .audio-art--headphone-right {
+    right: calc(-1 * var(--headphone-outset));
+
+    .headphone-raster { transform: scaleX(-1); }
+  }
+}
+
+.headphone-raster-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.headphone-ground-color { flood-color: $background; }
+.headphone-ink-color { flood-color: $text-secondary; }
+
+.headphone-raster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 420 / 460;
+  // Transparency fades only the arch, including during the exploded sequence.
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 35%);
+  mask-image: linear-gradient(to bottom, transparent, black 35%);
+}
+
+.headphone-raster__assembled,
+.headphone-raster__layers { position: absolute; inset: 0; }
+
+.headphone-raster__layers {
+  --headphone-splay: 0;
+  --headphone-housing-travel: -8%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(var(--headphone-splay) * var(--headphone-housing-travel)));
+}
+
+.headphone-piece {
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  &[data-assembly-part] {
+    --headphone-open: 0;
+    --headphone-seat: 0;
+    // All travel scales with the artwork; 3.90167% is an 8px cushion gap at 448.8px.
+    transform: translateX(calc(var(--headphone-open) * var(--headphone-travel) + var(--headphone-seat) * 3.90167%));
+  }
+
+  &__pose { position: absolute; inset: 0; transform-origin: 0 0; }
+
+  picture {
+    position: absolute;
+    inset: 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    max-width: none;
+  }
+
+  &__ground img { filter: url(#headphone-ground); }
+  &__ink img { filter: url(#headphone-ink); }
+}
+
+// Native-resolution sheet. Alignment lives inside the animated wrapper so cleanup
+// cannot erase the closed pose, and no resampling or redrawing changes the artwork.
+$headphone-sprites: (
+  assembled: (0, 475, 30),
+  housing: (475, 415, 31.56),
+  driver: (890, 275, 130),
+  baffle: (1165, 239, 141),
+  cushion: (1404, 370, 82.854075)
+);
+
+@each $kind, $sprite in $headphone-sprites {
+  $source-x: nth($sprite, 1);
+  $source-width: nth($sprite, 2);
+  $assembled-x: nth($sprite, 3);
+
+  .headphone-piece--#{$kind} {
+    left: percentage($assembled-x / 420);
+    width: percentage($source-width / 887 * 460 / 420);
+
+    img {
+      left: percentage(-$source-x / $source-width);
+      width: percentage(1774 / $source-width);
+    }
+  }
+}
+
+.headphone-piece--driver { --headphone-travel: 14%; }
+.headphone-piece--baffle { --headphone-travel: 44%; }
+.headphone-piece--cushion {
+  top: percentage(2.273977 / 460);
+
+  --headphone-travel: 48%;
+
+  // Contour registration against the assembled plate, independent of motion.
+  .headphone-piece__pose { transform: matrix(0.999613, -0.010416, -0.005947, 0.988133, 0, 0); }
+}
+
+@media (max-width: 1279px) {
+  .headphone-raster__layers { --headphone-housing-travel: -4.8%; }
+  .headphone-piece--driver { --headphone-travel: 8.4%; }
+  .headphone-piece--baffle { --headphone-travel: 26.4%; }
+  .headphone-piece--cushion { --headphone-travel: 28.8%; }
+}
+
+.signal-field {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  pointer-events: none;
+}
+
+@media (min-width: $breakLarge) {
+  .analysis-signal {
+    display: block;
+    width: 360px;
+    max-width: 100%;
+    margin: $space-lg auto 0;
+    // Optically align with the copy and lower the artwork without moving text.
+    transform: translate(-16px, 50px);
+  }
+
+  .homepage .improve-section {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 420px);
+    gap: $space-2xl;
+    max-width: 752px;
+    margin: 0 auto;
+    padding: 0 $space-xl;
+
+    .audio-art--earbud {
+      display: block;
+      width: 198px;
+      // Preserve the grid and capture position while moving only the illustration.
+      transform: translateX(-70px);
+    }
+  }
+}
+
+
+// A raster alpha mask keeps the approved static drawing identical in both themes.
+// Unsupported mask rendering simply omits this nonessential decoration.
+@supports ((mask-image: url("")) or (-webkit-mask-image: url(""))) {
+  .audio-art__earbud-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: $text-secondary;
+    -webkit-mask: url("/images/audio-art/earbud-stemmed.cc163f26e7a8.png") center / contain no-repeat;
+    mask: url("/images/audio-art/earbud-stemmed.cc163f26e7a8.png") center / contain no-repeat;
+  }
+}

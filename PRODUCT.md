@@ -188,7 +188,25 @@ Keep the homepage scannable and reveal technical depth through FAQ answers.
 Make the playback app, phone, Bluetooth transport, and receiving device easy to
 distinguish. Use consistent units and readable measurements. Use color by
 semantic role with text or icons, never as the only explanation of a status.
-Motion should explain an interaction or state change.
+Motion should explain an interaction or state change, or express the homepage's
+audio-inspection story through restrained engineering illustrations. The centered
+hero begins as flat blueprint outlines of the app logo and Sora wordmark, then smoothly
+fills into the existing logo and lapis lettering after the desktop headphones finish
+descending, or earlier on smaller layouts, followed by a brief pause, a
+word-by-word feature heading, another brief pause, and the lower page appearing
+together. Matching assembled raster headphone earcups descend slowly on an
+independent timeline. Their cushions face the centered content, with upright
+partial arches that bend gently higher up and fade into the page. The left opens
+gently after landing, accelerates through the middle, holds the
+pieces apart for 1.4 seconds, and reassembles with a clean magnetic cushion
+seating and no rebound; the right stays assembled. Once assembled, the left
+headphone can replay its opening and assembly on click or keyboard activation;
+activations during motion are ignored. Scrolling never cancels the
+headphones, and page content never waits for them. Keyboard and pointer use can
+reveal the content immediately. The earbud is a transparent raster engineering illustration that follows the theme, gently straightening from a 40° leftward tilt as scrolling continues after it becomes fully visible. Reduced motion keeps it upright. A playback
+waveform below the analysis copy evolves smoothly with occasional short rests.
+Keep the centered content dominant and honor reduced-motion preferences.
+The What's New page reveals its release notes with a quiet, one-time rise-and-fade as each item scrolls into view; it is static for reduced motion and direct links.
 
 ## Privacy and trust
 

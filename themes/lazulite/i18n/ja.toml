@@ -84,3 +84,6 @@
 
 [theme_dark]
     other = "ダーク"
+
+[replay_headphone_animation]
+    other = "ヘッドホンのアニメーションをもう一度再生"

@@ -4,7 +4,27 @@ seoTitle: "Novità di Lazulite"
 description: "Scopri le novità di Lazulite per Android, tra cui una schermata Home rinnovata, un percorso audio più chiaro e una migliore compatibilità con i dispositivi."
 draft: false
 showMetadata: false
+motion: changelog
 ---
+
+<h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Link alla versione 2026.10">2026.10</a></h2>
+
+### Novità
+
+- Supporto per tablet! Lazulite ora sfrutta meglio gli schermi più grandi.
+- La nuova scheda Stato della riproduzione nella schermata Home mostra i nuovi underrun audio (quando un buffer audio non riceve dati a sufficienza), gli scarti dei buffer audio in uscita e i problemi di connessione audio segnalati da Android e rilevati durante gli aggiornamenti mentre ascolti.
+- Ora è disponibile il giapponese 🇯🇵.
+
+### Miglioramenti
+
+- La sezione dell'offload hardware A2DP ora distingue tra "Disponibile" e "Abilitato". "Abilitato" appare solo quando l'opzione di offload del sistema è attiva, l'audio è in riproduzione e il codec attivo è nell'elenco dei codec supportati per l'offload.
+- La risoluzione più affidabile dell'indirizzo Bluetooth del dispositivo connesso migliora la ricerca del produttore e i dettagli del dispositivo.
+- Le icone ora rappresentano meglio il tipo di dispositivo su cui ascolti, con icone distinte per altoparlanti, cuffie, orologi, sistemi audio per auto e ricevitori audio.
+- Ora è possibile visualizzare il livello della batteria di un maggior numero di dispositivi audio connessi.
+
+### Correzioni
+
+- Corretti diversi bug minori.
 
 <h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Link alla versione 2026.09">2026.09</a></h2>
 

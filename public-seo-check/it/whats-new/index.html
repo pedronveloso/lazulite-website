@@ -85,9 +85,17 @@ Novità di Lazulite
 <meta name="twitter:image:alt" content="Lazulite, analizzatore audio Bluetooth. Segui l&#39;audio dall&#39;app di riproduzione alle cuffie tramite LDAC.">
 
 
-<link href="/sass/main.min.1aab6d919724224baf9e372d24f31d38920d1479399b1cdd57687bec72b79feb.css" rel="stylesheet">
+<script>(()=>{const e=document.documentElement,t=window.matchMedia("(prefers-reduced-motion: reduce)"),n=performance.getEntriesByType("navigation")[0]?.type==="back_forward";if(t.matches||!window.IntersectionObserver||location.hash||window.scrollY>8||n)return;const s=setTimeout(()=>{e.removeAttribute("data-changelog-motion"),delete window.LazuliteChangelog},1500);window.LazuliteChangelog={claim(){const t=e.hasAttribute("data-changelog-motion");return clearTimeout(s),delete window.LazuliteChangelog,t}},e.setAttribute("data-changelog-motion","")})()</script>
+
+
+
+<link href="/sass/main.min.254a524a7ccdd75f6f606b853ae7451520f190cd8cac11e1805c91c15e3c97f2.css" rel="stylesheet">
 <script src="/js/theme.js" defer></script>
 <script src="/js/language-switcher.js" defer></script>
+
+
+
+<script src="/js/changelog-motion.91912d74a9065e07fd420b5597944757b0eb16ecb254eb830d6e3fea53f0a0cb.js" defer></script>
 
 
 
@@ -304,7 +312,25 @@ Novità di Lazulite
     <h1>Novità</h1>
     
     <div>
-        <h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Link alla versione 2026.09">2026.09</a></h2>
+        <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Link alla versione 2026.10">2026.10</a></h2>
+<h3 id="novità">Novità</h3>
+<ul>
+<li>Supporto per tablet! Lazulite ora sfrutta meglio gli schermi più grandi.</li>
+<li>La nuova scheda Stato della riproduzione nella schermata Home mostra i nuovi underrun audio (quando un buffer audio non riceve dati a sufficienza), gli scarti dei buffer audio in uscita e i problemi di connessione audio segnalati da Android e rilevati durante gli aggiornamenti mentre ascolti.</li>
+<li>Ora è disponibile il giapponese 🇯🇵.</li>
+</ul>
+<h3 id="miglioramenti">Miglioramenti</h3>
+<ul>
+<li>La sezione dell&rsquo;offload hardware A2DP ora distingue tra &ldquo;Disponibile&rdquo; e &ldquo;Abilitato&rdquo;. &ldquo;Abilitato&rdquo; appare solo quando l&rsquo;opzione di offload del sistema è attiva, l&rsquo;audio è in riproduzione e il codec attivo è nell&rsquo;elenco dei codec supportati per l&rsquo;offload.</li>
+<li>La risoluzione più affidabile dell&rsquo;indirizzo Bluetooth del dispositivo connesso migliora la ricerca del produttore e i dettagli del dispositivo.</li>
+<li>Le icone ora rappresentano meglio il tipo di dispositivo su cui ascolti, con icone distinte per altoparlanti, cuffie, orologi, sistemi audio per auto e ricevitori audio.</li>
+<li>Ora è possibile visualizzare il livello della batteria di un maggior numero di dispositivi audio connessi.</li>
+</ul>
+<h3 id="correzioni">Correzioni</h3>
+<ul>
+<li>Corretti diversi bug minori.</li>
+</ul>
+<h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Link alla versione 2026.09">2026.09</a></h2>
 <ul>
 <li>Una schermata Home rinnovata rende più chiaro il percorso audio.</li>
 <li>Scopri quale app sta riproducendo audio, con le icone visibili su più dispositivi Android.</li>

@@ -9,6 +9,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 ## Key Commands
 
 ### Build and Deploy
+- `npm ci` - Install the pinned GSAP dependency before the first Hugo build. Hugo bundles `assets/js/home-motion.js` and `assets/js/signal-field.js`; no CDN or separate JavaScript build step is required.
 - `hugo` - Build static site (outputs to `public/`)
 - `hugo server` - Start local dev server (http://localhost:1313)
 - `hugo server -D` - Include draft content in dev server
@@ -19,6 +20,11 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - Run `python3 -m unittest discover -s scripts -p 'test_*.py'` for media-import and metadata checks.
 - `./scripts/seo-snapshot.sh` checks the tracked Hugo output. Use the Hugo version pinned in CI and Netlify.
 - There is no browser test framework; verify desktop/mobile behavior in the local preview.
+
+### GSAP Skills
+- Consult the repository's `.agents/skills/gsap-*/SKILL.md` guidance when implementing or reviewing GSAP animations. Always read [gsap-performance](.agents/skills/gsap-performance/SKILL.md); performance is a priority for all motion work.
+- Read [gsap-core](.agents/skills/gsap-core/SKILL.md), [gsap-timeline](.agents/skills/gsap-timeline/SKILL.md), [gsap-scrolltrigger](.agents/skills/gsap-scrolltrigger/SKILL.md), and the other installed GSAP skills as relevant to the change.
+- Prefer transforms and opacity, batch layout reads and writes, avoid unnecessary per-frame work, and clean up animations according to the lifecycle specified in `PRODUCT.md` and `DESIGN.md`. Preserve the requirement that scrolling does not cancel headphone motion.
 
 ## Architecture
 

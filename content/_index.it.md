@@ -7,11 +7,9 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="accent-text">LAZULITE</span>
-  </h1>
+  {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
+  {{< hero-brand alt="Logo dell'app Lazulite" >}}
 
   <p class="hero-subtitle">
     Le app di streaming promettono audio lossless. Le tue cuffie raccontano un'altra storia.<br>
@@ -30,7 +28,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Perché gli audiofili scelgono <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>Perché</span> <span data-intro-word>gli</span> <span data-intro-word>audiofili</span> <span data-intro-word>scelgono</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     Scopri esattamente cosa fa il tuo equipaggiamento al tuo audio.
   </p>
@@ -50,6 +48,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
       <p class="feature-body">
         Apri i dettagli del percorso audio per confrontare l'uscita dell'app di riproduzione con il formato Bluetooth e vedere dove Android modifica il formato audio.
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -79,12 +78,13 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 </section>
 
 <!-- Smart Suggestions -->
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Suggerimenti intelligenti</h2>
   <p class="section-subtitle">
     Trova suggerimenti in base alla configurazione e collegamenti alle impostazioni di sistema pertinenti.
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="Suggerimento per l'alta risoluzione con accesso alle impostazioni Bluetooth" >}}
     </div>

@@ -84,3 +84,6 @@
 
 [theme_dark]
     other = "深色"
+
+[replay_headphone_animation]
+    other = "重播耳机动画"

@@ -265,3 +265,20 @@ dd {
     margin-bottom: $space-sm;
   }
 }
+
+// ─── Changelog reveal guard ──────────────────────────────────────────────────
+// Set before first paint by changelog-boot.js; changelog-motion.js replaces it
+// with inline GSAP state in the same frame, and a timeout releases it on failure.
+html[data-changelog-motion] .postWrapper {
+  > h1,
+  > div > :is(h2, h3, p),
+  > div li { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-changelog-motion] .postWrapper {
+    > h1,
+    > div > :is(h2, h3, p),
+    > div li { opacity: 1; }
+  }
+}

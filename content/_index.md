@@ -7,11 +7,9 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite App logo" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="accent-text">LAZULITE</span>
-  </h1>
+  {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
+  {{< hero-brand alt="Lazulite App logo" >}}
 
   <p class="hero-subtitle">
     Streaming apps claim lossless. Your headphones say otherwise.<br>
@@ -30,7 +28,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Why Audiophiles Choose <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>Why</span> <span data-intro-word>Audiophiles</span> <span data-intro-word>Choose</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     Know exactly what your gear is doing to your audio.
   </p>
@@ -50,6 +48,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
       <p class="feature-body">
         Open Audio path details to compare playback app output with the Bluetooth format and see where Android changes the audio format.
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -79,12 +78,13 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 </section>
 
 <!-- Smart Suggestions -->
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Smart Suggestions</h2>
   <p class="section-subtitle">
     Find contextual setup tips and shortcuts to relevant system settings.
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="High-resolution setup tip with a shortcut to Bluetooth settings" >}}
     </div>

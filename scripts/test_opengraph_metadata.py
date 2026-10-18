@@ -50,7 +50,7 @@ class OpenGraphMetadataTest(unittest.TestCase):
         partials.mkdir(parents=True)
         shutil.copyfile(SITE_ROOT / "themes/lazulite/layouts/partials/head.html",
                         partials / "head.html")
-        # Only unrelated style/font rendering is stubbed; metadata uses the real partial.
+        # Unrelated style/font rendering and motion bundling are stubbed; metadata uses the real partial.
         (partials / "custom-head.html").write_text("")
         styles = self.site / "assets/sass"
         styles.mkdir(parents=True)
@@ -58,6 +58,9 @@ class OpenGraphMetadataTest(unittest.TestCase):
         core = self.site / "assets/js"
         core.mkdir()
         shutil.copyfile(SITE_ROOT / "themes/lazulite/assets/js/theme-core.js", core / "theme-core.js")
+        shutil.copyfile(SITE_ROOT / "assets/js/home-intro-boot.js", core / "home-intro-boot.js")
+        # GSAP choreography has its own behavior tests; keep these builds dependency-free.
+        (core / "home-motion.js").write_text("window.motionMetadataFixture = true;\n")
         layout = '<html><head>{{ partial "head.html" . }}</head><body></body></html>'
         (self.site / "layouts/index.html").write_text(layout)
         defaults = self.site / "layouts/_default"
@@ -99,6 +102,9 @@ class OpenGraphMetadataTest(unittest.TestCase):
         self.build()
         html = (self.site / "public/index.html").read_text()
         self.assertIn("LazuliteTheme", html)
+        self.assertLess(html.index("LazuliteIntro"), html.index('rel="stylesheet"'))
+        other_page = (self.site / "public/example/index.html").read_text()
+        self.assertNotIn("LazuliteIntro", other_page)
         self.assertLess(html.index("LazuliteTheme"), html.index('rel="stylesheet"'))
         self.assertIn('<script src="/js/theme.js" defer></script>', html)
         self.assertNotIn('<script src="/js/theme.js"></script>', html)

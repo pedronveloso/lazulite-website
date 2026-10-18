@@ -87,11 +87,20 @@
 <meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
 <meta name="twitter:image:alt" content="Lazulite, analizzatore audio Bluetooth. Segui l&#39;audio dall&#39;app di riproduzione alle cuffie tramite LDAC.">
 
+<script>(()=>{const e=document.documentElement,i=window.matchMedia("(prefers-reduced-motion: reduce)"),a=performance.getEntriesByType("navigation")[0]?.type==="back_forward";if(i.matches||!window.IntersectionObserver||location.hash||window.scrollY>8||a)return;const n=["pagehide"],s=()=>n.forEach(e=>window.removeEventListener(e,t,!0)),t=()=>{clearTimeout(o),e.removeAttribute("data-home-intro"),s(),delete window.LazuliteIntro},o=setTimeout(t,1500);window.LazuliteIntro={claim(){const t=e.getAttribute("data-home-intro")==="pending";return clearTimeout(o),s(),delete window.LazuliteIntro,t}},n.forEach(e=>window.addEventListener(e,t,{capture:!0,passive:!0})),e.setAttribute("data-home-intro","pending")})()</script>
 
-<link href="/sass/main.min.1aab6d919724224baf9e372d24f31d38920d1479399b1cdd57687bec72b79feb.css" rel="stylesheet">
+
+
+
+<link href="/sass/main.min.254a524a7ccdd75f6f606b853ae7451520f190cd8cac11e1805c91c15e3c97f2.css" rel="stylesheet">
 <script src="/js/theme.js" defer></script>
 <script src="/js/language-switcher.js" defer></script>
+
 <script src="/js/app-media.js" defer></script>
+
+<script src="/js/home-motion.9a67a4eae08896d8b336307da4aec698e08419b9b2398f708049261f348e370b.js" defer></script>
+
+
 
 
   
@@ -314,10 +323,96 @@
                     <div class="homepage">
 <!-- Hero Section -->
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo" width="270" height="270">
+  <div class="audio-art audio-art--headphone" data-audio-scene="headphone">
+    <svg class="headphone-raster-filters" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <filter id="headphone-ground" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feFlood class="headphone-ground-color"/>
+        <feComposite in2="SourceAlpha" operator="in"/>
+      </filter>
+      <filter id="headphone-ink" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -0.2126 -0.7152 -0.0722 0 1"/>
+        <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-0.08"/></feComponentTransfer>
+        <feComposite in2="SourceAlpha" operator="in" result="strokes"/>
+        <feFlood class="headphone-ink-color"/>
+        <feComposite in2="strokes" operator="in"/>
+      </filter>
+    </defs>
+  </svg><div class="headphone-raster" aria-hidden="true">
+    <div class="headphone-raster__assembled" data-headphone-assembled>
+      <div class="headphone-piece headphone-piece--assembled">
+    <div class="headphone-piece__pose"><picture class="headphone-piece__ground">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture><picture class="headphone-piece__ink">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture></div>
+  </div>
+    </div><div class="headphone-raster__layers" data-headphone-layers>
+      <div class="headphone-piece headphone-piece--housing">
+    <div class="headphone-piece__pose"><picture class="headphone-piece__ground">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture><picture class="headphone-piece__ink">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture></div>
+  </div>
+      <div class="headphone-piece headphone-piece--driver" data-assembly-part data-headphone-part="driver">
+    <div class="headphone-piece__pose"><picture class="headphone-piece__ground">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture><picture class="headphone-piece__ink">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture></div>
+  </div>
+      <div class="headphone-piece headphone-piece--baffle" data-assembly-part data-headphone-part="baffle">
+    <div class="headphone-piece__pose"><picture class="headphone-piece__ground">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture><picture class="headphone-piece__ink">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture></div>
+  </div>
+      <div class="headphone-piece headphone-piece--cushion" data-assembly-part data-headphone-part="cushion">
+    <div class="headphone-piece__pose"><picture class="headphone-piece__ground">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture><picture class="headphone-piece__ink">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture></div>
+  </div>
+    </div></div>
+    <button class="headphone-replay" type="button" data-headphone-replay hidden aria-disabled="true" aria-label="Riproduci di nuovo l’animazione della cuffia"></button>
+  </div>
+  <div class="audio-art audio-art--headphone-right" data-audio-scene="headphone-right" aria-hidden="true">
+    <div class="headphone-raster" aria-hidden="true">
+    <div class="headphone-raster__assembled" data-headphone-assembled>
+      <div class="headphone-piece headphone-piece--assembled">
+    <div class="headphone-piece__pose"><picture class="headphone-piece__ground">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture><picture class="headphone-piece__ink">
+      <source media="(min-width: 1100px)" srcset="/images/audio-art/headphone-circular.f2abeeee6959.webp">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1774" height="887" alt="" draggable="false">
+    </picture></div>
+  </div>
+    </div></div>
+  </div>
+  <div class="hero-logo">
+    <img class="hero-logo__resolved" data-brand-fill src="/images/lazulite-logo-500.png" alt="Logo dell&#39;app Lazulite" width="270" height="270">
+    <svg class="hero-blueprint hero-logo__wire" data-brand-wire viewBox="0 0 270 270" aria-hidden="true" focusable="false"><path data-brand-contour pathLength="1" transform="translate(1 1) scale(2.66)" d="M30 100C13.431 100 0 86.569 0 70V30C0 13.431 13.431 0 30 0h40c16.569 0 30 13.431 30 30v40c0 16.569-13.431 30-30 30z"/>
+      <path data-brand-contour pathLength="1" stroke-width="1.6" transform="translate(51.4 50.6) scale(1.667)" d="M 22.37,97.94 H 60.7 A 11.45,11.45 0 0 0 71.92,86.34 V 75 a 11.38,11.38 0 0 1 -8.61,0 v 6.5 a 0.73,0.73 0 0 1 -0.73,0.73 H 20.48 A 0.73,0.73 0 0 1 19.75,81.5 V 18.6 a 0.73,0.73 0 0 1 0.73,-0.73 h 42.11 a 0.73,0.73 0 0 1 0.73,0.73 v 7.61 a 39.14,39.14 0 0 1 8.61,0 V 13.65 A 11.45,11.45 0 0 0 60.7,2.06 H 22.37 A 11.45,11.45 0 0 0 11.15,13.66 V 86.35 A 11.45,11.45 0 0 0 22.37,97.94 Z M 38.31,87.26 h 6.44 a 2.81,2.81 0 1 1 0,5.62 h -6.44 a 2.81,2.81 0 1 1 0,-5.62 z m 35.2,-31.67 a 11.27,11.27 0 0 0 -11.73,0 3.34,3.34 0 0 1 -4.14,-0.41 L 57.46,55 a 3.39,3.39 0 0 1 0.54,-5.26 18.27,18.27 0 0 1 19.36,0 3.39,3.39 0 0 1 0.49,5.26 l -0.19,0.19 a 3.34,3.34 0 0 1 -4.14,0.4 z M 67.65,33 a 32,32 0 0 1 19.91,6.88 3.46,3.46 0 0 1 0.28,5.12 v 0 a 3.45,3.45 0 0 1 -4.57,0.29 25.43,25.43 0 0 0 -31.22,0 A 3.4640186,3.4640186 0 0 1 47.76,39.85 32,32 0 0 1 67.65,33 Z m 3.06,28.46 a 4.32,4.32 0 1 1 -6.12,0 4.32,4.32 0 0 1 6.12,-0.03 z"/>
+    </svg>
+  </div>
   <h1 class="hero-title">
-    <span class="accent-text">LAZULITE</span>
+    <span class="hero-title__clip"><span class="accent-text hero-wordmark"><span data-brand-fill>LAZULITE</span><span class="hero-blueprint hero-wordmark__wire" data-brand-wire aria-hidden="true">LAZULITE</span></span></span>
   </h1>
+
   <p class="hero-subtitle">
     Le app di streaming promettono audio lossless. Le tue cuffie raccontano un'altra storia.<br>
     Lazulite ti mostra esattamente cosa ti sta arrivando.
@@ -333,7 +428,7 @@
 </section>
 <!-- Main Features Showcase -->
 <section id="features" class="section">
-  <h2 class="section-title">Perché gli audiofili scelgono <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>Perché</span> <span data-intro-word>gli</span> <span data-intro-word>audiofili</span> <span data-intro-word>scelgono</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     Scopri esattamente cosa fa il tuo equipaggiamento al tuo audio.
   </p>
@@ -357,6 +452,9 @@
       <p class="feature-body">
         Apri i dettagli del percorso audio per confrontare l'uscita dell'app di riproduzione con il formato Bluetooth e vedere dove Android modifica il formato audio.
       </p>
+      <div class="analysis-signal" aria-hidden="true">
+        <canvas class="signal-field" width="720" height="240" data-signal-field></canvas>
+      </div>
     </div>
   </div>
 </section>
@@ -389,12 +487,15 @@
   </div>
 </section>
 <!-- Smart Suggestions -->
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Suggerimenti intelligenti</h2>
   <p class="section-subtitle">
     Trova suggerimenti in base alla configurazione e collegamenti alle impostazioni di sistema pertinenti.
   </p>
   <div class="improve-section">
+    <div class="audio-art audio-art--earbud" aria-hidden="true">
+      <span class="audio-art__earbud-image"></span>
+    </div>
     <div class="improve-section__image">
       <picture data-app-picture>
         <source data-theme="light" media="(prefers-color-scheme: light)" srcset="/images/app/it/light/setup-tips.webp?v=50224f8bf9e0cf72" width="840" height="456">

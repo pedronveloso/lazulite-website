@@ -6,11 +6,9 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 <div class="homepage">
 
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="accent-text">LAZULITE</span>
-  </h1>
+  {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
+  {{< hero-brand alt="Lazulite 应用标志" >}}
 
   <p class="hero-subtitle">
     流媒体应用宣称无损。你的耳机却未必如此。<br>
@@ -28,7 +26,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">为什么发烧友选择 <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>为什么</span><span data-intro-word>发烧友</span><span data-intro-word>选择</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     准确了解你的设备究竟对音频做了什么。
   </p>
@@ -48,6 +46,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
       <p class="feature-body">
         打开音频路径详情，对比播放应用输出和蓝牙传输格式，了解 Android 在哪个环节转换了音频格式。
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -75,12 +74,13 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">智能建议</h2>
   <p class="section-subtitle">
     获取适合当前配置的设置建议，并快速打开相关系统设置。
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="高解析度设置建议，附有蓝牙设置快捷入口" >}}
     </div>

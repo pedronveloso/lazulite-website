@@ -1,4 +1,23 @@
 
+<h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Link to version 2026.10">2026.10</a></h2>
+
+### New
+
+- Tablet support! Lazulite now makes better use of larger screens.
+- A dedicated Playback health card on Home shows newly observed audio underruns (when an audio buffer runs short of data), dropped outgoing audio buffers, and audio connection problems reported by Android across refreshes during playback.
+- Japanese is now available 🇯🇵.
+
+### Improved
+
+- The A2DP hardware offload section now distinguishes "Available" from "Enabled". "Enabled" appears only when the platform's offload setting is on, audio is playing, and the active codec is listed as supported for offload.
+- More reliable resolution of the connected device's Bluetooth address improves vendor lookup and device details.
+- Device icons now better reflect what you're listening on, with distinct icons for speakers, headphones, watches, car audio systems, and audio receivers.
+- Battery-level reporting now supports more connected audio devices.
+
+### Fixed
+
+- Several minor bug fixes.
+
 <h2 id="2026-09" class="changelog-version"><a href="#2026-09" aria-label="Link to version 2026.09">2026.09</a></h2>
 
 - A refreshed Home screen makes your audio path easier to follow.

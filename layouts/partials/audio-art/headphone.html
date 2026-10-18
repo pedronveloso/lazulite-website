@@ -1,0 +1,31 @@
+{{- if not .assembled -}}
+{{/* These filters tint raster pixels and their actual alpha silhouettes; no vector artwork. */}}
+<svg class="headphone-raster-filters" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0">
+  <defs>
+    <filter id="headphone-ground" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feFlood class="headphone-ground-color"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+    </filter>
+    <filter id="headphone-ink" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -0.2126 -0.7152 -0.0722 0 1"/>
+      <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-0.08"/></feComponentTransfer>
+      <feComposite in2="SourceAlpha" operator="in" result="strokes"/>
+      <feFlood class="headphone-ink-color"/>
+      <feComposite in2="strokes" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+{{- end -}}
+<div class="headphone-raster" aria-hidden="true">
+  <div class="headphone-raster__assembled" data-headphone-assembled>
+    {{ partial "audio-art/headphone-piece.html" (dict "kind" "assembled") | strings.TrimSpace | safeHTML }}
+  </div>
+  {{- if not .assembled -}}
+  <div class="headphone-raster__layers" data-headphone-layers>
+    {{ partial "audio-art/headphone-piece.html" (dict "kind" "housing") | strings.TrimSpace | safeHTML }}
+    {{ partial "audio-art/headphone-piece.html" (dict "kind" "driver" "animated" true) | strings.TrimSpace | safeHTML }}
+    {{ partial "audio-art/headphone-piece.html" (dict "kind" "baffle" "animated" true) | strings.TrimSpace | safeHTML }}
+    {{ partial "audio-art/headphone-piece.html" (dict "kind" "cushion" "animated" true) | strings.TrimSpace | safeHTML }}
+  </div>
+  {{- end -}}
+</div>

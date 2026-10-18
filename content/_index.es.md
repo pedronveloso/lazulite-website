@@ -6,11 +6,9 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 <div class="homepage">
 
 <section class="hero-section">
-  <img src="/images/lazulite-logo-500.png" alt="Logotipo de la app Lazulite" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="accent-text">LAZULITE</span>
-  </h1>
+  {{< audio-art kind="headphone" >}}
+  {{< audio-art kind="headphone-right" >}}
+  {{< hero-brand alt="Logotipo de la app Lazulite" >}}
 
   <p class="hero-subtitle">
     Las apps de streaming prometen audio sin pérdida. Tus auriculares pueden contar otra historia.<br>
@@ -28,7 +26,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 </section>
 
 <section id="features" class="section">
-  <h2 class="section-title">Por qué los audiófilos eligen <span class="accent-text">Lazulite</span></h2>
+  <h2 class="section-title feature-intro-title"><span data-intro-word>Por</span> <span data-intro-word>qué</span> <span data-intro-word>los</span> <span data-intro-word>audiófilos</span> <span data-intro-word>eligen</span> <span class="accent-text" data-intro-word>Lazulite</span></h2>
   <p class="section-subtitle">
     Descubre exactamente qué hace tu equipo con tu audio.
   </p>
@@ -48,6 +46,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
       <p class="feature-body">
         Abre los detalles de la ruta de audio para comparar la salida de la app de reproducción con el formato Bluetooth y ver dónde Android transforma el audio.
       </p>
+      {{< audio-art kind="wave" >}}
     </div>
   </div>
 </section>
@@ -75,12 +74,13 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Sugerencias inteligentes</h2>
   <p class="section-subtitle">
     Encuentra consejos según tu configuración y accesos a los ajustes del sistema correspondientes.
   </p>
   <div class="improve-section">
+    {{< audio-art kind="earbud" >}}
     <div class="improve-section__image">
       {{< app-media role="setup-tips" alt="Consejo de alta resolución con acceso a los ajustes de Bluetooth" >}}
     </div>

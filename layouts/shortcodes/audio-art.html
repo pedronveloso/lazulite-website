@@ -1,0 +1,18 @@
+{{- $kind := .Get "kind" -}}
+{{- if eq $kind "wave" -}}
+<div class="analysis-signal" aria-hidden="true">
+  <canvas class="signal-field" width="720" height="240" data-signal-field></canvas>
+</div>
+{{- else if eq $kind "earbud" -}}
+<div class="audio-art audio-art--earbud" aria-hidden="true">
+  <span class="audio-art__earbud-image"></span>
+</div>
+{{- else -}}
+{{- $partialKind := cond (eq $kind "headphone-right") "headphone" $kind -}}
+<div class="audio-art audio-art--{{ $kind }}" data-audio-scene="{{ $kind }}"{{ if ne $kind "headphone" }} aria-hidden="true"{{ end }}>
+  {{ partial (printf "audio-art/%s.html" $partialKind) (dict "id" $kind "assembled" (eq $kind "headphone-right")) | strings.TrimSpace | safeHTML }}
+  {{- if eq $kind "headphone" }}
+  <button class="headphone-replay" type="button" data-headphone-replay hidden aria-disabled="true" aria-label="{{ i18n "replay_headphone_animation" }}"></button>
+  {{- end }}
+</div>
+{{- end -}}

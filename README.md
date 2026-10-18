@@ -5,9 +5,13 @@ Website live at: https://lazulite.app
 ## Development
 
 **Prerequisites:** Hugo extended matching `HUGO_VERSION` in `netlify.toml` (currently 0.168.0).
-Use the pinned version when refreshing the tracked SEO snapshot.
+Use the pinned version when refreshing the tracked SEO snapshot. Node.js and npm are also required
+to bundle the self-hosted GSAP animation code.
 
 ```bash
+# Install the pinned animation dependency before building
+npm ci
+
 # Start local dev server with live reload
 hugo server
 
