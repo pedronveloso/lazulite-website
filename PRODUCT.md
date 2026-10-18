@@ -190,7 +190,9 @@ distinguish. Use consistent units and readable measurements. Use color by
 semantic role with text or icons, never as the only explanation of a status.
 Motion should explain an interaction or state change, or express the homepage's
 audio-inspection story through restrained engineering illustrations. The centered
-hero enters in a short, coordinated sequence, followed by a brief pause, a
+hero begins as flat blueprint outlines of the app logo and Sora wordmark, then smoothly
+fills into the existing logo and lapis lettering after the desktop headphones finish
+descending, or earlier on smaller layouts, followed by a brief pause, a
 word-by-word feature heading, another brief pause, and the lower page appearing
 together. Matching assembled raster headphone earcups descend slowly on an
 independent timeline. Their cushions face the centered content, with upright

@@ -39,11 +39,14 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
     addEventListener(name, callback) { replayListeners.set(name, callback); },
   };
   const logo = {}, wordmark = {}, subtitle = {}, buttons = [{}, {}], lower = [{}, {}];
+  const brandFills = [{}, {}], brandWires = [{}, {}], brandContours = [{}, {}];
   const words = Array.from({ length: 4 }, () => ({}));
   const hero = {
     querySelector: selector => ({ '.hero-logo': logo, '.hero-title .accent-text': wordmark,
-      '.hero-subtitle': subtitle })[selector],
-    querySelectorAll: () => buttons,
+      '.hero-subtitle': subtitle, '.hero-wordmark__wire': brandWires[1] })[selector],
+    querySelectorAll: selector => ({ '[data-brand-fill]': brandFills,
+      '[data-brand-wire]': brandWires, '[data-brand-contour]': brandContours,
+      '.cta-buttons .btn': buttons })[selector] || [],
   };
   const set = (targets, vars) => {
     for (const target of Array.isArray(targets) ? targets : [targets]) {
@@ -136,6 +139,7 @@ function setup({ reduced = false, width = 1440, supported = true, hash = '', scr
   if (!bootOnly) start();
   return {
     scenes, canvas, timelines, logo, wordmark, subtitle, buttons, lower, words, attrs, emit, start, replay,
+    brandFills, brandWires, brandContours,
     activateHeadphone() { replayListeners.get('click')?.(); },
     get field() { return field; }, get fieldsCreated() { return fieldsCreated; },
     expireBoot() { timer?.(); },
@@ -162,8 +166,6 @@ test('content reveals the feature heading word by word, pauses, then reveals the
   const step = target => content.steps.find(item => item.target === target);
   const reveal = content.steps.find(item => item.target?.[0] === app.lower[0]);
   const wordSteps = app.words.map(step);
-  assert.equal(step(app.logo).position, 0);
-  assert.equal(step(app.wordmark).position, 0.16);
   assert.equal(step(app.subtitle).position, 0.44);
   const buttonsEnd = Math.max(...app.buttons.map(button => step(button).position + step(button).vars.duration));
   assert.ok(Math.abs(wordSteps[0].position - buttonsEnd - 0.35) < 0.0001);
@@ -276,10 +278,15 @@ test('cushion slows to a gap, pauses, pulls into contact, then holds before the 
   assert.equal(left.layers.autoAlpha, 0);
 });
 
-test('content timing is identical on desktop and mobile', () => {
+test('supporting content timing is identical on desktop and mobile', () => {
   const desktop = setup();
   const mobile = setup({ width: 390 });
-  const schedule = app => app.timelines[0].steps.map(step => ({ position: step.position, duration: step.vars.duration }));
+  const schedule = app => {
+    const targets = [...app.buttons, ...app.words, app.subtitle];
+    return app.timelines[0].steps
+      .filter(step => targets.includes(step.target) || step.target?.[0] === app.lower[0])
+      .map(step => ({ position: step.position, duration: step.vars.duration }));
+  };
   assert.deepEqual(schedule(desktop), schedule(mobile));
   assert.equal(mobile.timelines.length, 1);
   mobile.timelines[0].complete();
@@ -584,4 +591,61 @@ test('the flat waveform evolves through new bounded shapes without resetting bet
   assert.notEqual(app.steps.at(-1).vars.duration, previousRest, 'rests vary between sequences');
   assert.deepEqual(Array.from(app.steps[0].target, bar => bar.height), lastShape,
     'the next sequence starts from the actual current shape');
+});
+
+
+test('blueprint contours finish before the registered logo and live wordmark fill', () => {
+  const app = setup();
+  const content = app.timelines[0];
+  const draw = content.steps.find(step => step.target?.[0] === app.brandContours[0]);
+  const letters = content.steps.find(step => step.target === app.brandWires[1]);
+  const fills = app.brandFills.map(fill => content.steps.find(step => step.target === fill));
+  const fade = content.steps.find(step => step.target?.[0] === app.brandWires[0]);
+  assert.equal(draw.from.strokeDashoffset, 1);
+  assert.equal(draw.vars.strokeDashoffset, 0);
+  assert.ok(draw.position + draw.vars.duration + draw.vars.stagger < fills[0].position);
+  assert.equal(letters.from.clipPath, 'inset(0 100% 0 0)');
+  assert.ok(letters.position + letters.vars.duration < fills[1].position);
+  assert.ok(fills.every(step => step.vars.clipPath === 'inset(0 0% 0 0)'));
+  assert.ok(fade.position > fills[1].position);
+  assert.equal(fade.vars.opacity, 0);
+  assert.ok(Math.abs(fade.position + fade.vars.duration - 4.33) < 0.0001);
+});
+
+test('blueprint overlays and clipped surfaces are cleaned on every content exit', () => {
+  for (const exit of [app => app.timelines[0].complete(), app => app.emit('pointerdown'),
+    app => app.reduce(true), app => app.emit('pagehide'),
+    app => app.emit('pageshow', { persisted: true })]) {
+    const app = setup();
+    exit(app);
+    assert.equal(app.attrs.has('data-home-intro'), false);
+    assert.ok([...app.brandFills, ...app.brandWires, ...app.brandContours].every(target => target.cleaned));
+  }
+  for (const options of [{ reduced: true }, { failedTimeline: true }, { hash: '#features' }]) {
+    const app = setup(options);
+    assert.ok(app.brandFills.every(target => target.cleaned));
+    assert.equal(app.attrs.has('data-home-intro'), false);
+  }
+});
+
+
+test('brand color waits for the headphone descent only where headphones are displayed', () => {
+  for (const width of [390, 1099, 1100, 1440]) {
+    const app = setup({ width });
+    const content = app.timelines[0];
+    const fills = app.brandFills.map(fill => content.steps.find(step => step.target === fill));
+    if (width >= 1100) {
+      const descent = app.timelines[1].steps.find(step => step.target === app.scenes[0]);
+      const landedAt = descent.position + descent.vars.duration;
+      assert.equal(fills[0].position, landedAt);
+      assert.ok(fills.every(fill => fill.position >= landedAt));
+    } else {
+      assert.equal(fills[0].position, 0.72);
+      assert.ok(Math.abs(fills[1].position + fills[1].vars.duration - 1.35) < 0.0001);
+    }
+    const fade = content.steps.find(step => step.target?.[0] === app.brandWires[0]);
+    const fillEnd = Math.max(...fills.map(fill => fill.position + fill.vars.duration));
+    assert.ok(Math.abs(fade.position + fade.vars.duration - fillEnd) < 0.0001,
+      'outlines remain until the surfaces finish revealing');
+  }
 });

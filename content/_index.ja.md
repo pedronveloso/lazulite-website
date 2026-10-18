@@ -8,11 +8,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
   {{< audio-art kind="headphone-right" >}}
-  <img src="/images/lazulite-logo-500.png" alt="Lazuliteのロゴ" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="hero-title__clip"><span class="accent-text">LAZULITE</span></span>
-  </h1>
+  {{< hero-brand alt="Lazuliteのロゴ" >}}
 
   <p class="hero-subtitle">
     いつもの音楽、どう届いている？<br>

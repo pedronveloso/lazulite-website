@@ -20,10 +20,14 @@ import { createSignalField } from './signal-field.js';
   const words = [...document.querySelectorAll('#features [data-intro-word]')];
   const logo = hero?.querySelector('.hero-logo');
   const wordmark = hero?.querySelector('.hero-title .accent-text');
+  const brandFills = [...(hero?.querySelectorAll('[data-brand-fill]') || [])];
+  const brandWires = [...(hero?.querySelectorAll('[data-brand-wire]') || [])];
+  const brandContours = [...(hero?.querySelectorAll('[data-brand-contour]') || [])];
+  const wordmarkWire = hero?.querySelector('.hero-wordmark__wire');
   const subtitle = hero?.querySelector('.hero-subtitle');
   const buttons = [...(hero?.querySelectorAll('.cta-buttons .btn') || [])];
   const contentTargets = [logo, wordmark, subtitle, ...buttons, ...words, ...lower].filter(Boolean);
-  const featureAt = 1.7; // The 1.35s hero entrance, followed by a 350ms breath.
+  const featureAt = 1.7; // Supporting content keeps its original entrance schedule.
   const wordGap = words.length > 1 ? 0.36 / (words.length - 1) : 0;
   const restAt = featureAt + (words.length ? 0.45 + wordGap * (words.length - 1) + 0.25 : 0);
   const headphoneParts = [...(headphone?.querySelectorAll('[data-assembly-part]') || [])];
@@ -33,6 +37,7 @@ import { createSignalField } from './signal-field.js';
   const lastPart = Math.max(0, headphoneParts.length - 1);
   const descentDuration = 2;
   const openAt = featureAt + descentDuration;
+  const brandRevealAt = wide.matches && headphone ? openAt : 0.72;
   const expandedAt = openAt + 1.3 + lastPart * 0.12;
   const collapseAt = expandedAt + 1.4;
   const cushionAt = collapseAt + lastPart * 0.14;
@@ -81,6 +86,9 @@ import { createSignalField } from './signal-field.js';
     unlocked = true;
     intro?.kill();
     root.removeAttribute('data-home-intro');
+    gsap.set([...brandFills, ...brandWires, ...brandContours], {
+      clearProps: 'opacity,visibility,clipPath,strokeDasharray,strokeDashoffset',
+    });
     gsap.set(contentTargets, { clearProps: 'opacity,visibility,transform' });
     inputEvents.forEach(name => window.removeEventListener(name, finishContent, true));
     update();
@@ -187,12 +195,22 @@ import { createSignalField } from './signal-field.js';
     if (claimed && hero && logo && wordmark && subtitle && !reduced.matches && !location.hash) {
       introducing = true;
       intro = gsap.timeline({ paused: true, onComplete: finishContent });
-      intro.fromTo(logo, { scale: 0.94, opacity: 0 }, {
-        scale: 1, opacity: 1, duration: 0.55, ease: 'power3.out',
+      // Hold the blueprint until visible headphones land; smaller layouts fill sooner.
+      // Live Sora text gives the blueprint exactly the resolved wordmark's metrics.
+      gsap.set([logo, wordmark], { opacity: 1 });
+      gsap.set(brandFills, { clipPath: 'inset(0 100% 0 0)' });
+      intro.fromTo(brandContours, { strokeDasharray: 1, strokeDashoffset: 1 }, {
+        strokeDashoffset: 0, duration: 0.6, stagger: 0.08, ease: 'power2.inOut',
       }, 0);
-      intro.fromTo(wordmark, { yPercent: 110, opacity: 1 }, {
-        yPercent: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
-      }, 0.16);
+      if (wordmarkWire) intro.fromTo(wordmarkWire, { clipPath: 'inset(0 100% 0 0)' }, {
+        clipPath: 'inset(0 0% 0 0)', duration: 0.6, ease: 'power2.inOut',
+      }, 0.12);
+      brandFills.forEach((fill, index) => {
+        intro.to(fill, {
+          clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'power2.inOut',
+        }, brandRevealAt + index * 0.08);
+      });
+      intro.to(brandWires, { opacity: 0, duration: 0.25, ease: 'power2.out' }, brandRevealAt + 0.38);
       intro.fromTo(subtitle, { y: 10, opacity: 0 }, {
         y: 0, opacity: 1, duration: 0.6, ease: 'power3.out',
       }, 0.44);

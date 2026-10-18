@@ -18,13 +18,14 @@
   width: 100%;
 
   .hero-logo {
-    max-width: 110px;
-    height: auto;
+    position: relative;
+    width: 110px;
+    max-width: 100%;
     margin: 0 auto $space-lg;
     display: block;
 
     @media (max-width: $breakMedium) {
-      max-width: 80px;
+      width: 80px;
     }
   }
 
@@ -197,4 +198,47 @@ html[data-home-intro] {
     .homepage .audio-art--headphone,
     .homepage .audio-art--headphone-right { opacity: 0.62; }
   }
+}
+
+// Registered blueprint overlays share the resolved assets' layout and theme ink.
+.homepage .hero-logo__resolved {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.homepage .hero-blueprint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: $text-secondary;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.homepage .hero-logo__wire {
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.homepage .hero-wordmark {
+  position: relative;
+
+  > [data-brand-fill] { display: block; }
+}
+
+.homepage .hero-wordmark__wire {
+  color: transparent;
+  -webkit-text-stroke: 1px $text-secondary;
+}
+
+html[data-home-intro] .homepage .hero-blueprint { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-home-intro] .homepage .hero-blueprint { opacity: 0; }
 }

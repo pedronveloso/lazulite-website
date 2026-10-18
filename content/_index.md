@@ -9,11 +9,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
   {{< audio-art kind="headphone-right" >}}
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite App logo" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="hero-title__clip"><span class="accent-text">LAZULITE</span></span>
-  </h1>
+  {{< hero-brand alt="Lazulite App logo" >}}
 
   <p class="hero-subtitle">
     Streaming apps claim lossless. Your headphones say otherwise.<br>

@@ -8,11 +8,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
   {{< audio-art kind="headphone-right" >}}
-  <img src="/images/lazulite-logo-500.png" alt="Lazulite 应用标志" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="hero-title__clip"><span class="accent-text">LAZULITE</span></span>
-  </h1>
+  {{< hero-brand alt="Lazulite 应用标志" >}}
 
   <p class="hero-subtitle">
     流媒体应用宣称无损。你的耳机却未必如此。<br>

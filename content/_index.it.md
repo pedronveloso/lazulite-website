@@ -9,11 +9,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 <section class="hero-section">
   {{< audio-art kind="headphone" >}}
   {{< audio-art kind="headphone-right" >}}
-  <img src="/images/lazulite-logo-500.png" alt="Logo dell'app Lazulite" class="hero-logo" width="270" height="270">
-
-  <h1 class="hero-title">
-    <span class="hero-title__clip"><span class="accent-text">LAZULITE</span></span>
-  </h1>
+  {{< hero-brand alt="Logo dell'app Lazulite" >}}
 
   <p class="hero-subtitle">
     Le app di streaming promettono audio lossless. Le tue cuffie raccontano un'altra storia.<br>
