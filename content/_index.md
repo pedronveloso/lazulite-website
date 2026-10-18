@@ -78,7 +78,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 </section>
 
 <!-- Smart Suggestions -->
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Smart Suggestions</h2>
   <p class="section-subtitle">
     Find contextual setup tips and shortcuts to relevant system settings.

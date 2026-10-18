@@ -78,7 +78,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 </section>
 
 <!-- Smart Suggestions -->
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Suggerimenti intelligenti</h2>
   <p class="section-subtitle">
     Trova suggerimenti in base alla configurazione e collegamenti alle impostazioni di sistema pertinenti.

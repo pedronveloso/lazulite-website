@@ -74,7 +74,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">智能建议</h2>
   <p class="section-subtitle">
     获取适合当前配置的设置建议，并快速打开相关系统设置。

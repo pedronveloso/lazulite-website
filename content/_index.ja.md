@@ -74,7 +74,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">設定を見直すヒント</h2>
   <p class="section-subtitle">
     接続中の機器やコーデックに合わせたヒントと、関連するシステム設定へのショートカットを確認できます。

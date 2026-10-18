@@ -103,6 +103,13 @@
     }
   }
 
+  // Keep mobile suggestion copy and captured cards clear of the tonal panel edges.
+  .suggestions-section {
+    @media (max-width: $breakMedium) {
+      padding-inline: $space-sm;
+    }
+  }
+
   // Full-width block that breaks the two-column rhythm
   .improve-section {
     display: flex;

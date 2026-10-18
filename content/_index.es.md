@@ -74,7 +74,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt suggestions-section">
   <h2 class="section-title">Sugerencias inteligentes</h2>
   <p class="section-subtitle">
     Encuentra consejos según tu configuración y accesos a los ajustes del sistema correspondientes.
