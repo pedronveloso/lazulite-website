@@ -67,6 +67,7 @@ The custom "lazulite" theme (based on "Nightfall"):
   - `index.html` - Homepage layout
   - `_default/single.html` - Single page layout (FAQ, Privacy)
   - `partials/` - Reusable components (header, footer, social, `custom-head.html` for fonts/SEO tags)
+- **Project layouts**: root-level `layouts/` adds site-specific templates and takes precedence over matching theme templates. It includes media partials, shortcodes, the Markdown output layout, and `partials/google-ads.html` for Google Ads measurement. Both analytics integrations use `params.analyticsDomains` from `config.toml`.
 - **Styles**: SCSS in `themes/lazulite/assets/sass/` with component-based organization
   - Design tokens (colors, spacing, radii, breakpoints, fonts) live in `utils/_variables.scss`
   - Shared UI components (buttons, panel, section label, metric row, badges, hero, sections, two-column) are in `components/_modern.scss`

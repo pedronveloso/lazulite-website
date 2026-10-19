@@ -238,6 +238,10 @@ redaction enabled. Google still receives measurement requests; do not describe
 these as no data sharing or apply Umami's EU hosting claim to Google. Keep this
 disclosure aligned across all five privacy-policy translations. Load the Google
 tag only on the production website domains, excluding local and deploy previews.
+Skip Google Ads measurement when the browser signals Global Privacy Control or
+Do Not Track; Umami keeps its existing DNT behavior. Before enabling consent,
+adding a consent banner, or changing cookie behavior, review and update the
+disclosures in all five privacy-policy translations together with this guidance.
 
 ## Website surfaces and maintenance
 

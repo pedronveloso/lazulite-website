@@ -110,17 +110,16 @@ Lazuliteの更新情報
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
 <script src="/js/umami-events.js" defer></script>
-
-
 <script>
   (function () {
-    if (window.location.hostname !== 'lazulite.app' && window.location.hostname !== 'www.lazulite.app') {
+    var domains = ["lazulite.app","www.lazulite.app"];
+    if (domains.indexOf(window.location.hostname) === -1 ||
+        navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') {
       return;
     }
 
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
-
     window.gtag('consent', 'default', {
       ad_storage: 'denied',
       analytics_storage: 'denied',
@@ -137,9 +136,6 @@ Lazuliteの更新情報
     document.head.appendChild(tag);
   }());
 </script>
-
-
-
 
 
 </head>
