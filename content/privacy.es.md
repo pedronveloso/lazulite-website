@@ -3,7 +3,7 @@ title: "Privacidad"
 seoTitle: "Política de privacidad de Lazulite"
 description: "Privacidad en Lazulite: analítica web, diagnósticos de fallos opcionales, consulta de fabricante, cuestionarios, registros y capturas de diagnóstico privadas del dispositivo."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-10-17T00:00:00+02:00
+lastmod: 2026-10-19T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -12,7 +12,9 @@ Gracias por elegir Lazulite. Tu privacidad es importante para nosotros y estamos
 
 ## Analítica del sitio web
 
-Cuando visitas lazulite.app, recopilamos datos analíticos anonimizados sobre las visitas a las páginas y las interacciones con enlaces de descarga, recursos de configuración, respuestas de las preguntas frecuentes y enlaces de contacto. Esta analítica se aplica únicamente al sitio web y es independiente de la telemetría opcional de la aplicación Android. No usamos cookies ni identificamos a los visitantes de forma individual. Los datos analíticos se procesan en servidores de la Unión Europea y se conservan solo durante el tiempo necesario para mejorar el sitio y su contenido de ayuda, y para cumplir con las obligaciones legales aplicables, de conformidad con las leyes de privacidad aplicables.
+Cuando visitas lazulite.app, utilizamos Umami para recopilar datos analíticos anonimizados sobre las visitas a las páginas y las interacciones con enlaces de descarga, recursos de configuración, respuestas de las preguntas frecuentes y enlaces de contacto. Esta analítica se aplica únicamente al sitio web y es independiente de la telemetría opcional de la aplicación Android. Umami no usa cookies ni identifica a los visitantes de forma individual. Los datos analíticos de Umami se procesan en servidores de la Unión Europea y se conservan solo durante el tiempo necesario para mejorar el sitio y su contenido de ayuda, y para cumplir con las obligaciones legales aplicables, de conformidad con las leyes de privacidad aplicables.
+
+También utilizamos la etiqueta de Google Ads para medir el rendimiento de la publicidad mediante el modo de consentimiento de Google. El almacenamiento publicitario y analítico, los datos de usuario para publicidad y la personalización de anuncios permanecen denegados en todas las páginas. La etiqueta no lee ni escribe cookies publicitarias o analíticas, y los identificadores de clics en anuncios se eliminan de las solicitudes de medición. Google sigue recibiendo solicitudes de medición sin cookies que contienen información de la página y del navegador; no usar cookies no significa que no se envíen datos. Google trata esta información conforme a su [Política de privacidad](https://policies.google.com/privacy?hl=es).
 
 ## Diagnósticos de la app Android
 

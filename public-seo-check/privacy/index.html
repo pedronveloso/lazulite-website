@@ -108,6 +108,35 @@ Lazulite Privacy Policy
 <script src="/js/umami-events.js" defer></script>
 
 
+<script>
+  (function () {
+    if (window.location.hostname !== 'lazulite.app' && window.location.hostname !== 'www.lazulite.app') {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-18521711197');
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18521711197';
+    document.head.appendChild(tag);
+  }());
+</script>
+
+
+
+
 
 </head>
 
@@ -310,7 +339,8 @@ Lazulite Privacy Policy
     <div>
         <p>Thank you for choosing Lazulite. Your privacy is important to us, and we are committed to safeguarding your personal data. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to protect your data when you use our Android application available on the Google Play Store.</p>
 <h2 id="website-analytics">Website Analytics:</h2>
-<p>When you visit lazulite.app, we collect anonymized analytics about page visits and interactions with download links, setup resources, FAQ answers, and contact links. This analytics applies only to the website and is separate from the optional telemetry collected by the Android app. We do not use cookies or identify individual visitors. Analytics data is processed on servers in the European Union and retained only for as long as necessary to improve the site and its support content, and to meet applicable legal obligations, in accordance with applicable privacy laws.</p>
+<p>When you visit lazulite.app, we use Umami to collect anonymized analytics about page visits and interactions with download links, setup resources, FAQ answers, and contact links. This analytics applies only to the website and is separate from the optional telemetry collected by the Android app. Umami does not use cookies or identify individual visitors. Umami analytics data is processed on servers in the European Union and retained only for as long as necessary to improve the site and its support content, and to meet applicable legal obligations, in accordance with applicable privacy laws.</p>
+<p>We also use the Google Ads tag to measure advertising performance using Google Consent Mode. Advertising storage, analytics storage, advertising user data, and ad personalization remain denied on every page. The tag does not read or write advertising or analytics cookies, and ad click identifiers are redacted from measurement requests. Google still receives cookieless measurement requests containing page and browser information; cookieless does not mean that no data is sent. Google processes this information under its <a href="https://policies.google.com/privacy">Privacy Policy</a>.</p>
 <h2 id="android-app-diagnostics">Android App Diagnostics:</h2>
 <p>Crash diagnostics are optional and disabled by default. If you choose to enable <strong>Crash diagnostics</strong> during onboarding or in Settings, Lazulite may send crash reports and technical diagnostic logs to Firebase Crashlytics, a Google service. These reports can include technical information about the app, device, operating system, and events leading to a problem. We do not describe them as anonymous because technical information can sometimes be identifying when combined with other information.</p>
 <p>Crashlytics may retain reports locally while diagnostics are disabled. If you later enable Crash diagnostics, locally stored reports may upload to Firebase Crashlytics. Turning the setting off stops Lazulite from sending diagnostic breadcrumbs immediately and disables Crashlytics collection for future app runs; it does not delete reports already held by Firebase.</p>

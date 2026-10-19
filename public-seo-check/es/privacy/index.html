@@ -108,6 +108,35 @@ Política de privacidad de Lazulite
 <script src="/js/umami-events.js" defer></script>
 
 
+<script>
+  (function () {
+    if (window.location.hostname !== 'lazulite.app' && window.location.hostname !== 'www.lazulite.app') {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-18521711197');
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18521711197';
+    document.head.appendChild(tag);
+  }());
+</script>
+
+
+
+
 
 </head>
 
@@ -310,7 +339,8 @@ Política de privacidad de Lazulite
     <div>
         <p>Gracias por elegir Lazulite. Tu privacidad es importante para nosotros y estamos comprometidos con la protección de tus datos personales. Esta Política de privacidad describe qué información recopilamos, cómo la usamos y qué medidas tomamos para proteger tus datos cuando utilizas nuestra aplicación Android disponible en Google Play.</p>
 <h2 id="analítica-del-sitio-web">Analítica del sitio web</h2>
-<p>Cuando visitas lazulite.app, recopilamos datos analíticos anonimizados sobre las visitas a las páginas y las interacciones con enlaces de descarga, recursos de configuración, respuestas de las preguntas frecuentes y enlaces de contacto. Esta analítica se aplica únicamente al sitio web y es independiente de la telemetría opcional de la aplicación Android. No usamos cookies ni identificamos a los visitantes de forma individual. Los datos analíticos se procesan en servidores de la Unión Europea y se conservan solo durante el tiempo necesario para mejorar el sitio y su contenido de ayuda, y para cumplir con las obligaciones legales aplicables, de conformidad con las leyes de privacidad aplicables.</p>
+<p>Cuando visitas lazulite.app, utilizamos Umami para recopilar datos analíticos anonimizados sobre las visitas a las páginas y las interacciones con enlaces de descarga, recursos de configuración, respuestas de las preguntas frecuentes y enlaces de contacto. Esta analítica se aplica únicamente al sitio web y es independiente de la telemetría opcional de la aplicación Android. Umami no usa cookies ni identifica a los visitantes de forma individual. Los datos analíticos de Umami se procesan en servidores de la Unión Europea y se conservan solo durante el tiempo necesario para mejorar el sitio y su contenido de ayuda, y para cumplir con las obligaciones legales aplicables, de conformidad con las leyes de privacidad aplicables.</p>
+<p>También utilizamos la etiqueta de Google Ads para medir el rendimiento de la publicidad mediante el modo de consentimiento de Google. El almacenamiento publicitario y analítico, los datos de usuario para publicidad y la personalización de anuncios permanecen denegados en todas las páginas. La etiqueta no lee ni escribe cookies publicitarias o analíticas, y los identificadores de clics en anuncios se eliminan de las solicitudes de medición. Google sigue recibiendo solicitudes de medición sin cookies que contienen información de la página y del navegador; no usar cookies no significa que no se envíen datos. Google trata esta información conforme a su <a href="https://policies.google.com/privacy?hl=es">Política de privacidad</a>.</p>
 <h2 id="diagnósticos-de-la-app-android">Diagnósticos de la app Android</h2>
 <p>Los diagnósticos de fallos son opcionales y están desactivados de forma predeterminada. Si eliges activar <strong>Diagnósticos de fallos</strong> durante la bienvenida o en Ajustes, Lazulite puede enviar informes de fallos y registros técnicos de diagnóstico a Firebase Crashlytics, un servicio de Google. Estos informes pueden incluir información técnica sobre la app, el dispositivo, el sistema operativo y los eventos previos a un problema. No los describimos como anónimos porque la información técnica puede ser identificable al combinarse con otros datos.</p>
 <p>Crashlytics puede conservar informes localmente mientras los diagnósticos están desactivados. Si más tarde activas Diagnósticos de fallos, los informes almacenados localmente pueden cargarse en Firebase Crashlytics. Desactivar el ajuste detiene inmediatamente los registros de diagnóstico de Lazulite y desactiva la recopilación de Crashlytics para futuras ejecuciones de la app; no elimina los informes que Firebase ya conserve.</p>
