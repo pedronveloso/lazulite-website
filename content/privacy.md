@@ -3,7 +3,7 @@ title: "Privacy"
 seoTitle: "Lazulite Privacy Policy"
 description: "Lazulite privacy policy: website analytics, optional crash diagnostics, vendor lookup, questionnaires, diagnostic logs, and private device captures."
 date: 2026-09-10T00:00:00+02:00
-lastmod: 2026-10-17T00:00:00+02:00
+lastmod: 2026-10-19T00:00:00+02:00
 draft: false
 showMetadata: false
 ---
@@ -12,7 +12,9 @@ Thank you for choosing Lazulite. Your privacy is important to us, and we are com
 
 ## Website Analytics:
 
-When you visit lazulite.app, we collect anonymized analytics about page visits and interactions with download links, setup resources, FAQ answers, and contact links. This analytics applies only to the website and is separate from the optional telemetry collected by the Android app. We do not use cookies or identify individual visitors. Analytics data is processed on servers in the European Union and retained only for as long as necessary to improve the site and its support content, and to meet applicable legal obligations, in accordance with applicable privacy laws.
+When you visit lazulite.app, we use Umami to collect anonymized analytics about page visits and interactions with download links, setup resources, FAQ answers, and contact links. This analytics applies only to the website and is separate from the optional telemetry collected by the Android app. Umami does not use cookies or identify individual visitors. Umami analytics data is processed on servers in the European Union and retained only for as long as necessary to improve the site and its support content, and to meet applicable legal obligations, in accordance with applicable privacy laws.
+
+We also use the Google Ads tag to measure advertising performance using Google Consent Mode. Advertising storage, analytics storage, advertising user data, and ad personalization remain denied on every page. The tag does not read or write advertising or analytics cookies, and ad click identifiers are redacted from measurement requests. Google still receives cookieless measurement requests containing page and browser information; cookieless does not mean that no data is sent. Google processes this information under its [Privacy Policy](https://policies.google.com/privacy).
 
 ## Android App Diagnostics:
 

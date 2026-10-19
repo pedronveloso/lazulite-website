@@ -106,7 +106,32 @@ Lazuliteのプライバシーポリシー
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
 <script src="/js/umami-events.js" defer></script>
+<script>
+  (function () {
+    var domains = ["lazulite.app","www.lazulite.app"];
+    if (domains.indexOf(window.location.hostname) === -1 ||
+        navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') {
+      return;
+    }
 
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-18521711197');
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18521711197';
+    document.head.appendChild(tag);
+  }());
+</script>
 
 
 </head>
@@ -310,7 +335,8 @@ Lazuliteのプライバシーポリシー
     <div>
         <p>Lazuliteをお選びいただきありがとうございます。このポリシーでは、Google Playで配信しているAndroidアプリを使う際に、どのような情報を収集し、何に使い、どのように保護するかを説明します。</p>
 <h2 id="ウェブサイトのアクセス分析">ウェブサイトのアクセス分析</h2>
-<p>lazulite.appでは、ページの閲覧や、ダウンロードリンク、設定の参考資料、FAQの回答、お問い合わせリンクの利用について、匿名化した分析データを収集します。この分析はウェブサイトだけを対象とし、Androidアプリの任意の診断データ収集とは別のものです。Cookieは使わず、訪問者個人の識別も行いません。分析データは欧州連合内のサーバーで処理し、適用されるプライバシー関連法に従って、サイトやサポート内容の改善、法的義務への対応に必要な期間だけ保管します。</p>
+<p>lazulite.appでは、Umamiを使ってページの閲覧や、ダウンロードリンク、設定の参考資料、FAQの回答、お問い合わせリンクの利用について、匿名化した分析データを収集します。この分析はウェブサイトだけを対象とし、Androidアプリの任意の診断データ収集とは別のものです。UmamiはCookieを使わず、訪問者個人の識別も行いません。Umamiの分析データは欧州連合内のサーバーで処理し、適用されるプライバシー関連法に従って、サイトやサポート内容の改善、法的義務への対応に必要な期間だけ保管します。</p>
+<p>広告の効果を測るため、Googleの同意モードを使ってGoogle Adsタグも利用します。広告用ストレージ、分析用ストレージ、広告向けユーザーデータ、広告のパーソナライズは、すべてのページで常に拒否に設定しています。タグは広告用・分析用Cookieの読み書きを行わず、広告クリックの識別子は測定リクエストから削除されます。ただし、ページやブラウザの情報を含むCookieなしの測定リクエストはGoogleに送信されます。Cookieを使わないことは、データを送信しないという意味ではありません。Googleはこの情報を<a href="https://policies.google.com/privacy?hl=ja">プライバシーポリシー</a>に従って処理します。</p>
 <h2 id="androidアプリの診断情報">Androidアプリの診断情報</h2>
 <p>クラッシュ診断は任意で、初期状態ではオフです。初回設定や設定画面で<strong>「クラッシュ診断」</strong>を有効にすると、GoogleのサービスであるFirebase Crashlyticsに、クラッシュレポートと技術的な診断ログを送信する場合があります。レポートには、アプリ、端末、OS、問題が起きるまでの出来事に関する技術情報が含まれることがあります。他の情報と組み合わせることで個人を特定できる場合があるため、これらの情報を匿名とは表現していません。</p>
 <p>診断を無効にしている間も、Crashlyticsがレポートを端末内に保存する場合があります。後からクラッシュ診断を有効にすると、保存済みのレポートがFirebase Crashlyticsに送信されることがあります。設定をオフにすると、Lazuliteからの診断用の操作・動作記録の送信はすぐに止まり、次回以降のアプリ起動ではCrashlyticsによる収集も無効になります。Firebaseがすでに保有しているレポートは削除されません。</p>

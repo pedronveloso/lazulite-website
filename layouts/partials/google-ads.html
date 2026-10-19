@@ -1,0 +1,30 @@
+{{- if hugo.IsProduction -}}
+<script>
+  (function () {
+    var domains = {{ .domains }};
+    if (domains.indexOf(window.location.hostname) === -1 ||
+        navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+
+{{- /* Keep in sync with content/privacy*.md and PRODUCT.md: enabling consent or adding a consent banner requires reviewing these disclosures. */}}
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-18521711197');
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18521711197';
+    document.head.appendChild(tag);
+  }());
+</script>
+{{- end -}}

@@ -106,7 +106,32 @@ Lazulite 隐私政策
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
 <script src="/js/umami-events.js" defer></script>
+<script>
+  (function () {
+    var domains = ["lazulite.app","www.lazulite.app"];
+    if (domains.indexOf(window.location.hostname) === -1 ||
+        navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') {
+      return;
+    }
 
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-18521711197');
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18521711197';
+    document.head.appendChild(tag);
+  }());
+</script>
 
 
 </head>
@@ -310,7 +335,8 @@ Lazulite 隐私政策
     <div>
         <p>感谢你选择 Lazulite。你的隐私对我们很重要，我们致力于保护你的个人数据。本隐私政策说明了当你使用我们在 Google Play 提供的 Android 应用时，我们会收集哪些信息、如何使用这些信息，以及我们会采取哪些措施来保护你的数据。</p>
 <h2 id="网站分析">网站分析</h2>
-<p>当你访问 lazulite.app 时，我们会收集有关页面访问以及用户与下载链接、设置资源、常见问题答案和联系链接互动的匿名分析数据。这些分析仅适用于网站，与 Android 应用的可选遥测数据相互独立。我们不使用 Cookie，也不会识别个人访问者。分析数据在欧盟的服务器上处理，并且仅在改进网站及其帮助内容以及履行适用法律义务所必需的期限内保留，符合适用的隐私法律。</p>
+<p>当你访问 lazulite.app 时，我们会使用 Umami 收集有关页面访问以及用户与下载链接、设置资源、常见问题答案和联系链接互动的匿名分析数据。这些分析仅适用于网站，与 Android 应用的可选遥测数据相互独立。Umami 不使用 Cookie，也不会识别个人访问者。Umami 分析数据在欧盟的服务器上处理，并且仅在改进网站及其帮助内容以及履行适用法律义务所必需的期限内保留，符合适用的隐私法律。</p>
+<p>我们还通过 Google 同意模式使用 Google Ads 标签来衡量广告效果。广告存储、分析存储、广告用户数据和广告个性化在每个页面上均始终设为拒绝。该标签不会读取或写入广告或分析 Cookie，广告点击标识符也会从衡量请求中移除。但 Google 仍会接收包含页面和浏览器信息的无 Cookie 衡量请求；不使用 Cookie 并不意味着不发送数据。Google 会按照其<a href="https://policies.google.com/privacy?hl=zh-CN">隐私权政策</a>处理这些信息。</p>
 <h2 id="android-应用诊断信息">Android 应用诊断信息</h2>
 <p>崩溃诊断信息为可选项，默认关闭。如果你在引导流程或“设置”中选择开启<strong>崩溃诊断信息</strong>，Lazulite 可能会将崩溃报告和技术诊断日志发送给 Firebase Crashlytics（Google 的服务）。这些报告可能包含有关应用、设备、操作系统以及问题发生前事件的技术信息。我们不会将其描述为匿名信息，因为技术信息与其他信息结合后可能具有识别性。</p>
 <p>崩溃诊断信息关闭时，Crashlytics 可能会在本地保留报告。如果你稍后开启崩溃诊断信息，本地存储的报告可能会上传到 Firebase Crashlytics。关闭该设置会立即停止 Lazulite 发送诊断日志，并为后续应用运行关闭 Crashlytics 收集；它不会删除 Firebase 已保存的报告。</p>

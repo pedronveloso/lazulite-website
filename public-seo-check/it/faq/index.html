@@ -123,7 +123,32 @@ FAQ Lazulite: permessi, codec Bluetooth, configurazione e compatibilità
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="cdc673df-1698-42e9-868b-e5513f11fc4b" data-domains="lazulite.app,www.lazulite.app" data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true"></script>
 <script src="/js/umami-events.js" defer></script>
+<script>
+  (function () {
+    var domains = ["lazulite.app","www.lazulite.app"];
+    if (domains.indexOf(window.location.hostname) === -1 ||
+        navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') {
+      return;
+    }
 
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.gtag('set', 'ads_data_redaction', true);
+    window.gtag('js', new Date());
+    window.gtag('config', 'AW-18521711197');
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18521711197';
+    document.head.appendChild(tag);
+  }());
+</script>
 
 
 </head>

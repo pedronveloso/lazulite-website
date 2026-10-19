@@ -10,7 +10,7 @@
 		
 		
 		
-			<lastBuildDate>Sat, 17 Oct 2026 00:00:00 +0200</lastBuildDate>
+			<lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0200</lastBuildDate>
 		
 			<atom:link href="https://lazulite.app/it/index.xml" rel="self" type="application/rss+xml" />
 			<item>
@@ -18,7 +18,7 @@
 				<link>https://lazulite.app/it/privacy/</link>
 				<pubDate>Thu, 10 Sep 2026 00:00:00 +0200</pubDate>
 				<guid>https://lazulite.app/it/privacy/</guid>
-				<description>&lt;p&gt;Grazie per aver scelto Lazulite. La tua privacy è importante per noi e ci impegniamo a proteggere i tuoi dati personali. Questa Informativa sulla privacy descrive i tipi di informazioni che raccogliamo, come le utilizziamo e le misure che adottiamo per proteggere i tuoi dati quando usi la nostra applicazione Android disponibile sul Google Play Store.&lt;/p&gt;&#xA;&lt;h2 id=&#34;analisi-del-sito-web&#34;&gt;Analisi del sito web:&lt;/h2&gt;&#xA;&lt;p&gt;Quando visiti lazulite.app, raccogliamo dati analitici anonimizzati sulle visite alle pagine e sulle interazioni con i link di download, le risorse di configurazione, le risposte alle domande frequenti e i link di contatto. Questa analisi si applica solo al sito web ed è separata dalla telemetria opzionale dell&amp;rsquo;app Android. Non utilizziamo cookie né identifichiamo i singoli visitatori. I dati analitici sono trattati su server nell&amp;rsquo;Unione europea e conservati solo per il tempo necessario a migliorare il sito e i relativi contenuti di assistenza e ad adempiere agli obblighi di legge applicabili, in conformità alle leggi sulla privacy applicabili.&lt;/p&gt;</description>
+				<description>&lt;p&gt;Grazie per aver scelto Lazulite. La tua privacy è importante per noi e ci impegniamo a proteggere i tuoi dati personali. Questa Informativa sulla privacy descrive i tipi di informazioni che raccogliamo, come le utilizziamo e le misure che adottiamo per proteggere i tuoi dati quando usi la nostra applicazione Android disponibile sul Google Play Store.&lt;/p&gt;&#xA;&lt;h2 id=&#34;analisi-del-sito-web&#34;&gt;Analisi del sito web:&lt;/h2&gt;&#xA;&lt;p&gt;Quando visiti lazulite.app, utilizziamo Umami per raccogliere dati analitici anonimizzati sulle visite alle pagine e sulle interazioni con i link di download, le risorse di configurazione, le risposte alle domande frequenti e i link di contatto. Questa analisi si applica solo al sito web ed è separata dalla telemetria opzionale dell&amp;rsquo;app Android. Umami non utilizza cookie né identifica i singoli visitatori. I dati analitici di Umami sono trattati su server nell&amp;rsquo;Unione europea e conservati solo per il tempo necessario a migliorare il sito e i relativi contenuti di assistenza e ad adempiere agli obblighi di legge applicabili, in conformità alle leggi sulla privacy applicabili.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>FAQ</title>
