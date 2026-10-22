@@ -45,7 +45,11 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {{ with $description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ if eq .Kind "404" }}
+<meta name="robots" content="noindex,follow">
+{{ else }}
 <meta name="robots" content="index,follow,max-image-preview:large">
+{{ end }}
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B1017" data-dark="#0B1017" data-light="#F3F6F9" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F3F6F9" media="(prefers-color-scheme: light)">
@@ -55,7 +59,7 @@
 {{ hugo.Generator }}
 
 <!-- Permalink & RSSlink -->
-<link rel="canonical" href="{{ .Permalink }}" >
+{{ if ne .Kind "404" }}<link rel="canonical" href="{{ .Permalink }}" >{{ end }}
 <link rel="alternate" hreflang="{{ $languageCode }}" href="{{ .Permalink }}" >
 {{ range .Translations }}
   {{ if ne .Lang $.Lang }}
@@ -125,6 +129,15 @@
     "image" $socialImageURL
     "inLanguage" $languageCode
   }}
+  {{ with .Site.Params.price }}
+    {{ $appSchema = merge $appSchema (dict "offers" (dict
+      "@type" "Offer"
+      "price" .
+      "priceCurrency" $.Site.Params.priceCurrency
+      "availability" "https://schema.org/InStock"
+      "url" $.Site.Params.playStoreUrl
+    )) }}
+  {{ end }}
   <script type="application/ld+json">{{ $appSchema | jsonify | safeJS }}</script>
   {{ $orgSchema := dict
     "@context" "https://schema.org"

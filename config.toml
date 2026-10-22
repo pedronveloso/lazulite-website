@@ -5,6 +5,9 @@ title = 'Lazulite App'
 theme = "lazulite"
 
 # Allow raw HTML in markdown
+# No taxonomies are in use; skip the empty /tags/ and /categories/ pages
+disableKinds = ["taxonomy", "term"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -35,6 +38,8 @@ url = "mailto:lazuliteapp@gmail.com"
 analyticsDomains = ["lazulite.app", "www.lazulite.app"]
 readingTime = false  # Show reading time on post page
 published = false  # Show published data on post page
+price = "1.99"  # Play Store list price (USD); update when it changes
+priceCurrency = "USD"
 playStoreUrl = "https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"
 socialImage = "/images/opengraph/lazulite.png"
 socialImageWidth = 1200
