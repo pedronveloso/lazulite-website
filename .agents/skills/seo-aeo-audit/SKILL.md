@@ -520,7 +520,7 @@ body {
 
 ## Scripts (optional)
 
-Scripts under `scripts/` for repeatable audits:
+Generic examples of scripts for repeatable audits (not shipped in this repository; create them if needed):
 
 - `scripts/lighthouse.sh`: run Lighthouse CLI against a URL or URL list and store JSON reports.
 - `scripts/pagespeed.sh`: call PageSpeed Insights API with `curl` and capture JSON output.
@@ -748,5 +748,3 @@ Use your preferred AEO monitoring tool to track citation frequency, context, and
 
 - [Google Search Central](https://developers.google.com/search)
 - [Schema.org](https://schema.org/)
-- [Core Web Vitals](../core-web-vitals/SKILL.md)
-- [Web Quality Audit](../web-quality-audit/SKILL.md)
