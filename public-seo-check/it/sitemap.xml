@@ -86,33 +86,6 @@
                 href="https://lazulite.app/ja/faq/"
                 />
   </url><url>
-    <loc>https://lazulite.app/it/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://lazulite.app/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://lazulite.app/es/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://lazulite.app/zh/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-IT"
-                href="https://lazulite.app/it/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://lazulite.app/ja/categories/"
-                />
-  </url><url>
     <loc>https://lazulite.app/it/whats-new/</loc>
     <xhtml:link
                 rel="alternate"
@@ -138,33 +111,6 @@
                 rel="alternate"
                 hreflang="ja-JP"
                 href="https://lazulite.app/ja/whats-new/"
-                />
-  </url><url>
-    <loc>https://lazulite.app/it/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://lazulite.app/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://lazulite.app/es/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://lazulite.app/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-IT"
-                href="https://lazulite.app/it/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://lazulite.app/ja/tags/"
                 />
   </url>
 </urlset>

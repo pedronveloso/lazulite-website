@@ -32,6 +32,56 @@
   to = "/ja/whats-new"
   status = 301
 
+[[redirects]]
+  from = "/tags/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/es/tags/"
+  to = "/es/"
+  status = 301
+
+[[redirects]]
+  from = "/it/tags/"
+  to = "/it/"
+  status = 301
+
+[[redirects]]
+  from = "/zh/tags/"
+  to = "/zh/"
+  status = 301
+
+[[redirects]]
+  from = "/ja/tags/"
+  to = "/ja/"
+  status = 301
+
+[[redirects]]
+  from = "/categories/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/es/categories/"
+  to = "/es/"
+  status = 301
+
+[[redirects]]
+  from = "/it/categories/"
+  to = "/it/"
+  status = 301
+
+[[redirects]]
+  from = "/zh/categories/"
+  to = "/zh/"
+  status = 301
+
+[[redirects]]
+  from = "/ja/categories/"
+  to = "/ja/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -2,7 +2,7 @@
 {{ $description := .Params.description | default .Site.Params.description }}
 {{ $title := .Title | default .Site.Title }}
 {{ $ogType := "article" }}
-{{ if .IsHome }}
+{{ if or .IsHome (eq .Kind "404") }}
   {{ $ogType = "website" }}
 {{ end }}
 {{ if eq .Kind "404" }}
@@ -45,7 +45,11 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {{ with $description }}<meta name="description" content="{{ . }}">{{ end }}
+{{- if eq .Kind "404" }}
+<meta name="robots" content="noindex,follow">
+{{- else }}
 <meta name="robots" content="index,follow,max-image-preview:large">
+{{- end }}
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B1017" data-dark="#0B1017" data-light="#F3F6F9" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F3F6F9" media="(prefers-color-scheme: light)">
@@ -55,6 +59,7 @@
 {{ hugo.Generator }}
 
 <!-- Permalink & RSSlink -->
+{{ if ne .Kind "404" }}
 <link rel="canonical" href="{{ .Permalink }}" >
 <link rel="alternate" hreflang="{{ $languageCode }}" href="{{ .Permalink }}" >
 {{ range .Translations }}
@@ -63,6 +68,7 @@
   {{ end }}
 {{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ $defaultPage.Permalink }}" >
+{{ end }}
 {{- with .OutputFormats.Get "RSS" }}
   <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" >
   <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" >
@@ -125,6 +131,16 @@
     "image" $socialImageURL
     "inLanguage" $languageCode
   }}
+  {{/* Play prices per storefront; publish the USD list price on the English (US) site only */}}
+  {{ with and (eq .Site.Language.Lang "en") .Site.Params.price }}
+    {{ $appSchema = merge $appSchema (dict "offers" (dict
+      "@type" "Offer"
+      "price" .
+      "priceCurrency" $.Site.Params.priceCurrency
+      "availability" "https://schema.org/InStock"
+      "url" $.Site.Params.playStoreUrl
+    )) }}
+  {{ end }}
   <script type="application/ld+json">{{ $appSchema | jsonify | safeJS }}</script>
   {{ $orgSchema := dict
     "@context" "https://schema.org"

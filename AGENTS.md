@@ -23,6 +23,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 
 ### GSAP Skills
 - Consult the repository's `.agents/skills/gsap-*/SKILL.md` guidance when implementing or reviewing GSAP animations. Always read [gsap-performance](.agents/skills/gsap-performance/SKILL.md); performance is a priority for all motion work.
+- For SEO/AEO audits, use [seo-aeo-audit](.agents/skills/seo-aeo-audit/SKILL.md).
 - Read [gsap-core](.agents/skills/gsap-core/SKILL.md), [gsap-timeline](.agents/skills/gsap-timeline/SKILL.md), [gsap-scrolltrigger](.agents/skills/gsap-scrolltrigger/SKILL.md), and the other installed GSAP skills as relevant to the change.
 - Prefer transforms and opacity, batch layout reads and writes, avoid unnecessary per-frame work, and clean up animations according to the lifecycle specified in `PRODUCT.md` and `DESIGN.md`. Preserve the requirement that scrolling does not cancel headphone motion.
 
@@ -31,7 +32,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 ### Site Configuration
 - **Base URL**: https://lazulite.app (production)
 - **Theme**: Custom "lazulite" theme in `themes/lazulite/`
-- **Config**: `config.toml` contains site settings, per-language menus, social links, and SEO params (`playStoreUrl`, `socialImage`, per-language `description`/`homeTitle`)
+- **Config**: `config.toml` contains site settings, per-language menus, social links, and SEO params (`playStoreUrl`, `socialImage`, `price`/`priceCurrency`, per-language `description`/`homeTitle`). `price` is the US Play list price and is emitted in JSON-LD `offers` for `en` only. `disableKinds = ["taxonomy", "term"]` skips the unused `/tags/` and `/categories/` pages (301-redirected in `netlify.toml`); `/posts/` is hidden via a `build` block in `content/posts/_index.md` until the first post ships, so it is intentionally absent from the sitemap. The 404 page is deliberately `noindex,follow` with no canonical or hreflang; do not add them back
 - **Contact**: lazuliteapp@gmail.com (configured in `config.toml`)
 
 ### Internationalization
