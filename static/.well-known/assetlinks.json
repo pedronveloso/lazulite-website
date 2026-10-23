@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pedronveloso.lazulite",
+      "sha256_cert_fingerprints": [
+        "94:44:19:64:9F:D7:88:20:94:73:8E:CD:06:99:D0:D3:38:55:93:9A:86:D0:66:09:91:0A:0E:9F:37:ED:C7:4B"
+      ]
+    }
+  }
+]
