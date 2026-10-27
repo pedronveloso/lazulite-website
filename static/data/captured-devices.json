@@ -13,6 +13,11 @@
       "androidMajor": 17
     },
     {
+      "manufacturer": "HONOR",
+      "model": "DNY-NX9",
+      "androidMajor": 16
+    },
+    {
       "manufacturer": "LENOVO",
       "model": "Lenovo TB128FU",
       "androidMajor": 13
@@ -21,6 +26,11 @@
       "manufacturer": "OnePlus",
       "model": "CPH2747",
       "androidMajor": 16
+    },
+    {
+      "manufacturer": "samsung",
+      "model": "SM-A025U",
+      "androidMajor": 12
     },
     {
       "manufacturer": "samsung",
