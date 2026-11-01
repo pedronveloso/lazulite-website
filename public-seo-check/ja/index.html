@@ -39,7 +39,7 @@
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AndroidのBluetoothオーディオを詳しく確認。Lazuliteで使用中のコーデックやサンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を調べられます。">
+<meta name="description" content="Android向けBluetoothオーディオ確認アプリ。使用中のコーデックやエンコード品質、Androidが報告する音声経路の各段階の形式を確認できます。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B1017" data-dark="#0B1017" data-light="#F3F6F9" media="(prefers-color-scheme: dark)">
@@ -73,7 +73,7 @@
   <link href="https://lazulite.app/ja/index.xml" rel="alternate" type="application/rss+xml" title="Lazulite" >
   <link href="https://lazulite.app/ja/index.xml" rel="feed" type="application/rss+xml" title="Lazulite" ><meta property="og:site_name" content="Lazulite">
 <meta property="og:title" content="AndroidのBluetoothオーディオを詳しく確認 | Lazulite">
-<meta property="og:description" content="AndroidのBluetoothオーディオを詳しく確認。Lazuliteで使用中のコーデックやサンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を調べられます。">
+<meta property="og:description" content="Android向けBluetoothオーディオ確認アプリ。使用中のコーデックやエンコード品質、Androidが報告する音声経路の各段階の形式を確認できます。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lazulite.app/ja/">
 <meta property="og:locale" content="ja_JP">
@@ -85,7 +85,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AndroidのBluetoothオーディオを詳しく確認 | Lazulite">
-<meta name="twitter:description" content="AndroidのBluetoothオーディオを詳しく確認。Lazuliteで使用中のコーデックやサンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を調べられます。">
+<meta name="twitter:description" content="Android向けBluetoothオーディオ確認アプリ。使用中のコーデックやエンコード品質、Androidが報告する音声経路の各段階の形式を確認できます。">
 <meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
 <meta name="twitter:image:alt" content="Bluetoothオーディオ解析アプリLazulite。再生アプリからLDACを経由してヘッドホンに届くまでの音声経路を確認。">
 
@@ -94,7 +94,7 @@
 
 
 
-<link href="/sass/main.min.254a524a7ccdd75f6f606b853ae7451520f190cd8cac11e1805c91c15e3c97f2.css" rel="stylesheet">
+<link href="/sass/main.min.187dff4a4a7034afbef4e07713af89d8b4033ca3a4a3cdc2d94e729ca77b5e11.css" rel="stylesheet">
 <script src="/js/theme.js" defer></script>
 <script src="/js/language-switcher.js" defer></script>
 
@@ -108,7 +108,7 @@
   
   
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"AndroidのBluetoothオーディオを詳しく確認。Lazuliteで使用中のコーデックやサンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を調べられます。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd","inLanguage":"ja-JP","name":"Lazulite","operatingSystem":"Android","url":"https://lazulite.app/ja/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"Android向けBluetoothオーディオ確認アプリ。使用中のコーデックやエンコード品質、Androidが報告する音声経路の各段階の形式を確認できます。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd","inLanguage":"ja-JP","name":"Lazulite","operatingSystem":"Android","url":"https://lazulite.app/ja/"}</script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","logo":"https://lazulite.app/images/lazulite-logo-500.png","name":"Lazulite","sameAs":["https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"],"url":"https://lazulite.app/ja/"}</script>
   
@@ -442,8 +442,8 @@
   </h1>
 
   <p class="hero-subtitle">
-    いつもの音楽、どう届いている？<br>
-    再生アプリからBluetooth機器まで、音声経路を確認できます。
+    Bluetoothコーデックと音声経路を確認。<br>
+    使用中のコーデックやエンコード品質、Androidが報告する音声形式を表示します。
   </p>
   <div class="cta-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite&amp;hl=ja" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
@@ -469,9 +469,9 @@
 
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">使用中のコーデック</h2>
+      <h2 class="section-title section-title--left">使用中のBluetoothコーデックを確認</h2>
       <p class="feature-body">
-        LDAC、aptX HD、AAC、SBCなど、スマートフォンとヘッドホンが接続時に選んだコーデックを表示します。端末や機器が対応するコーデックと、実際に使われているものを比べてみてください。
+        LDAC、aptX HD、AAC、SBCなど、スマートフォンとヘッドホンが接続時に選んだコーデックを表示します。端末や機器が対応するコーデックと、実際に使われているものを比べてみてください。 <a href="/ja/faq/#active_codec">使用中のBluetoothコーデックの確認方法を見る。</a>
       </p>
       <p class="feature-body">
         サンプリング周波数やビット深度、取得できる場合はビットレートやエンコード品質の設定も確認できます。
@@ -546,7 +546,7 @@
   </div>
 </section>
 <section class="section download-section">
-  <h2 class="section-title">いつものオーディオを、もう少し詳しく</h2>
+  <h2 class="section-title">Bluetoothオーディオの仕組みを知る</h2>
   <p class="section-subtitle">
     Google Playで配信中。サブスクリプションはありません。
   </p>

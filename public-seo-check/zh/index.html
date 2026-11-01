@@ -39,7 +39,7 @@
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
+<meta name="description" content="适用于 Android 的蓝牙音频检查工具。查看当前使用的编解码器、编码质量，以及 Android 报告的音频路径中各环节的格式。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B1017" data-dark="#0B1017" data-light="#F3F6F9" media="(prefers-color-scheme: dark)">
@@ -73,7 +73,7 @@
   <link href="https://lazulite.app/zh/index.xml" rel="alternate" type="application/rss+xml" title="Lazulite App" >
   <link href="https://lazulite.app/zh/index.xml" rel="feed" type="application/rss+xml" title="Lazulite App" ><meta property="og:site_name" content="Lazulite App">
 <meta property="og:title" content="Android 蓝牙音频检查工具 | Lazulite App">
-<meta property="og:description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
+<meta property="og:description" content="适用于 Android 的蓝牙音频检查工具。查看当前使用的编解码器、编码质量，以及 Android 报告的音频路径中各环节的格式。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lazulite.app/zh/">
 <meta property="og:locale" content="zh_CN">
@@ -85,7 +85,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Android 蓝牙音频检查工具 | Lazulite App">
-<meta name="twitter:description" content="适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。">
+<meta name="twitter:description" content="适用于 Android 的蓝牙音频检查工具。查看当前使用的编解码器、编码质量，以及 Android 报告的音频路径中各环节的格式。">
 <meta name="twitter:image" content="https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd">
 <meta name="twitter:image:alt" content="Lazulite 蓝牙音频分析工具。追踪音频从播放应用经 LDAC 传输到耳机的路径。">
 
@@ -94,7 +94,7 @@
 
 
 
-<link href="/sass/main.min.254a524a7ccdd75f6f606b853ae7451520f190cd8cac11e1805c91c15e3c97f2.css" rel="stylesheet">
+<link href="/sass/main.min.187dff4a4a7034afbef4e07713af89d8b4033ca3a4a3cdc2d94e729ca77b5e11.css" rel="stylesheet">
 <script src="/js/theme.js" defer></script>
 <script src="/js/language-switcher.js" defer></script>
 
@@ -108,7 +108,7 @@
   
   
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","applicationCategory":"MultimediaApplication","description":"适用于 Android 的蓝牙音频检查工具。查看当前使用的编解码器、编码质量，以及 Android 报告的音频路径中各环节的格式。","downloadUrl":"https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite","image":"https://lazulite.app/images/opengraph/lazulite.png?v=807dd20b7620f2cd","inLanguage":"zh-CN","name":"Lazulite App","operatingSystem":"Android","url":"https://lazulite.app/zh/"}</script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","logo":"https://lazulite.app/images/lazulite-logo-500.png","name":"Lazulite App","sameAs":["https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite"],"url":"https://lazulite.app/zh/"}</script>
   
@@ -442,12 +442,12 @@
   </h1>
 
   <p class="hero-subtitle">
-    流媒体应用宣称无损。你的耳机却未必如此。<br>
-    Lazulite 会把实际传输到耳机的内容直接展示出来。
+    查看蓝牙编解码器和音频路径。<br>
+    了解 Android 报告的当前编解码器、编码质量和音频格式。
   </p>
   <div class="cta-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
-      立即下载
+      在 Google Play 获取
     </a>
     <a href="#features" class="btn btn-secondary">
       查看功能
@@ -469,9 +469,9 @@
 
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">实时音频分析</h2>
+      <h2 class="section-title section-title--left">查看当前使用的蓝牙编解码器</h2>
       <p class="feature-body">
-        查看手机和蓝牙音频设备协商使用的编解码器：LHDC、MIHC、LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。
+        查看手机和蓝牙音频设备协商使用的编解码器：LHDC、MIHC、LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。 <a href="/zh/faq/#active_codec">了解如何查看当前使用的蓝牙编解码器。</a>
       </p>
       <p class="feature-body">
         查看采样率、位深，以及设备提供的比特率或编码质量设置。
@@ -546,7 +546,7 @@
   </div>
 </section>
 <section class="section download-section">
-  <h2 class="section-title">听见真正正在播放的内容</h2>
+  <h2 class="section-title">了解你的蓝牙音频</h2>
   <p class="section-subtitle">
     已上架 Google Play。无订阅，不玩虚的。
   </p>

@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qualità di codifica, uscita dell'app e problemi di riproduzione recenti riportati da Android."
+description = "Inspector audio Bluetooth per Android. Controlla il codec attivo, la qualità di codifica e i formati lungo il percorso audio riportato da Android."
 +++
 
 <div class="homepage">
@@ -12,13 +12,13 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
   {{< hero-brand alt="Logo dell'app Lazulite" >}}
 
   <p class="hero-subtitle">
-    Le app di streaming promettono audio lossless. Le tue cuffie raccontano un'altra storia.<br>
-    Lazulite ti mostra esattamente cosa ti sta arrivando.
+    Controlla il codec Bluetooth e il percorso audio.<br>
+    Consulta il codec attivo, la qualità di codifica e i formati audio riportati da Android.
   </p>
 
   <div class="cta-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
-      Scarica ora
+      Disponibile su Google Play
     </a>
     <a href="#features" class="btn btn-secondary">
       Scopri le funzioni
@@ -38,9 +38,9 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
       {{< app-media role="home" alt="Home di Lazulite con codec aptX Adaptive attivo e percorso audio Bluetooth" >}}
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">Analisi audio in tempo reale</h2>
+      <h2 class="section-title section-title--left">Controlla il codec Bluetooth attivo</h2>
       <p class="feature-body">
-        Controlla il codec scelto dal telefono e dalle cuffie: LDAC, aptX HD, AAC, SBC o un altro formato supportato. Aggiorna per vedere l'ultima configurazione riportata da Android.
+        Controlla il codec scelto dal telefono e dalle cuffie: LDAC, aptX HD, AAC, SBC o un altro formato supportato. Aggiorna per vedere l'ultima configurazione riportata da Android. <a href="/it/faq/#active_codec">Scopri come controllare il codec Bluetooth attivo.</a>
       </p>
       <p class="feature-body">
         Consulta frequenza di campionamento, profondità di bit e, quando disponibili, bitrate e impostazioni della qualità di codifica.
@@ -101,7 +101,7 @@ description = "Inspector audio Bluetooth per Android. Controlla codec attivo, qu
 
 <!-- CTA Section -->
 <section class="section download-section">
-  <h2 class="section-title">Ascolta cosa sta davvero suonando</h2>
+  <h2 class="section-title">Comprendi il tuo audio Bluetooth</h2>
   <p class="section-subtitle">
     Disponibile su Google Play. Nessun abbonamento. Nessuna fregatura.
   </p>

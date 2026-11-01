@@ -29,6 +29,13 @@ Include headphones, earbuds, speakers, car audio systems, and Bluetooth audio
 receivers in compatibility examples. Use "Bluetooth audio device" when speaking
 generally, so visitors do not mistake Lazulite for a headphones-only tool.
 
+Lazulite supports Android phones and tablets, with a layout that adapts to larger
+screens. Without a Bluetooth connection, it can still display the playback app's
+reported audio output while listeners use wired headphones or the device's
+built-in speakers. Available output details depend on Android, the device, and
+the playback app. This does not identify or measure the final wired-device or
+DAC output. Bluetooth codec and transmission details require Bluetooth playback.
+
 ## Product story and claim boundaries
 
 Organize the homepage around what visitors can learn:
@@ -44,8 +51,10 @@ Organize the homepage around what visitors can learn:
 Keep these distinctions in homepage copy, FAQs, captions, metadata, and release
 notes:
 
-- Lazulite inspects Bluetooth audio. Wired-audio inspection, audio playback,
-  equalization, and automatic codec control are outside its functionality.
+- Lazulite inspects Bluetooth audio and available playback-app output without
+  Bluetooth. Detailed wired-output analysis, audio playback, equalization, and
+  automatic codec control are outside its functionality. Do not describe wired
+  headphones as unsupported: they use the same app-output view as built-in speakers.
 - Available details vary by Android version, manufacturer, playback app, codec,
   connected device, and hardware offload. Supported does not mean currently used.
 - App output is not proof of an original recording's fidelity or a streaming
@@ -65,6 +74,59 @@ notes:
 For setup guidance, recommend Shizuku for most users. ADB is an alternative for
 people comfortable with computer-based setup; root access is for already rooted
 phones. Do not suggest that rooting is required. Keep detailed steps in the FAQ.
+
+## Search messaging and discovery
+
+Lead the homepage with "Check your Bluetooth codec and audio path." Follow it
+with "See the active codec, encoding quality, and audio formats reported by
+Android." Translate the meaning naturally in all five languages. Use "Get it on
+Google Play" for the primary English action and natural local equivalents.
+Keep setup instructions in the FAQ; do not add a setup note beside the download
+button.
+
+Help visitors answer practical questions before they know the product name:
+how to check the active codec, whether LDAC is active, how supported codecs differ
+from the active codec, and whether Lazulite can change codecs. Keep these answers
+aligned across languages, link the homepage codec explanation to the active-codec
+answer, and keep FAQ structured data consistent with visible answers.
+
+Web discovery and Google Play discovery serve different search intentions.
+Google Trends describes relative Google search interest, not Play search demand
+or installation intent. Treat keyword priorities as hypotheses until supported
+by channel-specific evidence. Use Search Console for web queries, existing
+website download-intent events for outbound interest, and Play Console for
+available store search terms and acquisition conversion. A download click is not
+an installation. Keep dated research and measurement procedures in
+[the discovery research note](docs/research/2026-10-30-search-discovery.md), rather
+than copying changing scores into this reference.
+
+Retain "Bluetooth audio inspector" as the descriptor. Use familiar codec names
+in examples without promising codec control or support beyond the connected
+hardware. Keep LDAC prominent in Japanese examples and the existing LHDC/MIHC
+emphasis in Simplified Chinese. Adapt wording to local usage; low-volume Trends
+results alone do not justify changing spelling or removing a codec example.
+
+## FAQ organization and readability
+
+Keep the FAQ's section navigation and question order aligned across all five
+languages. Group questions into Permissions & Setup, Checking Your Codec,
+Devices & Codec Support, Audio Path & Device Details, Privacy & Data, and
+Usage & Behavior. Keep `#codecs` for Checking Your Codec, `#compatibility` for
+Devices & Codec Support, and `#audio-path` for Audio Path & Device Details.
+Preserve established question anchors and analytics identifiers when regrouping.
+
+Use semantic `<strong>` emphasis for short key concepts, contrasting terms,
+important actions, and qualifications. In the supported-versus-active answer,
+give each definition its own paragraph with its term bolded, followed by the
+selection qualification in a third paragraph. Adapt emphasis naturally to each
+language; avoid bolding whole paragraphs or every codec in a list. Use short
+paragraphs and lists for separate ideas or steps, preserving commands and claims.
+Reuse the existing text styling and expandable disclosures.
+
+FAQ structured-data answers remain plain text and match their visible answers,
+including paragraph and list boundaries. Keep the existing schema question
+subset in reading order and update its text when changing the corresponding
+visible content.
 
 ## Voice and terminology
 
@@ -155,7 +217,7 @@ version and manufacturer; include recognizable alternatives when necessary.
 ## Simplified Chinese codec emphasis
 
 The Simplified Chinese homepage intentionally leads the codec examples in its
-"实时音频分析" feature paragraph with **LHDC and MIHC**, ahead of LDAC, aptX HD,
+"查看当前使用的蓝牙编解码器" feature paragraph with **LHDC and MIHC**, ahead of LDAC, aptX HD,
 AAC, and SBC.
 
 LHDC and MIHC are particularly relevant to the Chinese audience and more common

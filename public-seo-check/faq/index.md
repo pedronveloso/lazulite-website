@@ -1,7 +1,9 @@
 
 <nav class="faq-nav" aria-label="FAQ sections">
   <a href="#permissions">Permissions & Setup</a>
-  <a href="#codecs">Codecs & Compatibility</a>
+  <a href="#codecs">Checking Your Codec</a>
+  <a href="#compatibility">Devices & Codec Support</a>
+  <a href="#audio-path">Audio Path & Device Details</a>
   <a href="#privacy">Privacy & Data</a>
   <a href="#usage">Usage & Behavior</a>
 </nav>
@@ -50,17 +52,60 @@
 
 ---
 
-<h2 id="codecs">Codecs & Compatibility</h2>
+<h2 id="codecs">Checking Your Codec</h2>
+
+<details id="active_codec" data-umami-faq="active_codec">
+<summary>How do I check which Bluetooth codec Android is using?</summary>
+<div class="faq-body">
+<p>Connect a Bluetooth audio device to your Android phone, <strong>play audio</strong>, and <strong>refresh Lazulite</strong>. Read the codec shown for the <strong>active connection</strong>.</p>
+<p>The supported-codec lists describe what your phone and receiving device can support; they do not show which codec is currently in use.</p>
+</div>
+</details>
+
+<details id="ldac_active" data-umami-faq="ldac_active">
+<summary>How can I tell whether LDAC is active?</summary>
+<div class="faq-body">
+<p>Look for <strong>LDAC as the active codec</strong> in Lazulite after starting playback and refreshing. LDAC appearing in a supported-codec list does not mean it is active.</p>
+<p><strong>When Android provides the information</strong>, Lazulite also shows the bitrate or encoding quality setting. Available details vary by device.</p>
+</div>
+</details>
+
+<details id="supported_vs_active" data-umami-faq="supported_vs_active">
+<summary>What's the difference between supported codecs and the active codec?</summary>
+<div class="faq-body">
+<p><strong>Supported codecs</strong> describe the capabilities reported separately by your phone and receiving device.</p>
+<p><strong>The active codec</strong> is the one they negotiated for the current Bluetooth connection.</p>
+<p>A codec can appear in a supported list without being selected for playback.</p>
+</div>
+</details>
+
+<details id="codec_control" data-umami-faq="codec_control">
+<summary>Can Lazulite change my Bluetooth codec?</summary>
+<div class="faq-body">
+<p>Lazulite <strong>inspects your Bluetooth connection</strong> and provides shortcuts to relevant system settings.</p>
+<p>It <strong>does not automatically select codecs</strong> or enable codecs your phone or receiving device does not support. Any available codec changes are made through your system settings.</p>
+</div>
+</details>
+
+<h2 id="compatibility">Devices & Codec Support</h2>
+
+<details id="tablet_support" data-umami-faq="tablet_support">
+<summary>Does Lazulite support Android tablets?</summary>
+<div class="faq-body">
+<p>Yes. Lazulite supports <strong>Android tablets</strong> as well as phones, with a layout that adapts to larger screens.</p>
+<p>You can inspect the <strong>playback app's reported output</strong> when listening through the tablet's speakers or wired headphones. Connecting a Bluetooth audio device adds codec and transmission details. Available information depends on the tablet, Android version, and playback app.</p>
+</div>
+</details>
 
 <details data-umami-faq="codec_support">
 <summary>Which Bluetooth codecs does Lazulite support?</summary>
 <div class="faq-body">
-<p>Lazulite can detect and display all Bluetooth audio codecs your device supports:</p>
+<p>Lazulite can detect and display all <strong>Bluetooth audio codecs</strong> your device supports:</p>
 <ul>
 <li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus</li>
 <li>LHDC (see <a href="#lhdc-versions">supported LHDC versions</a> below)</li>
 <li>AAC, SBC</li>
-<li>SSC, SSC UHQ (Samsung devices only)</li>
+<li>SSC, SSC UHQ (<strong>Samsung devices only</strong>)</li>
 </ul>
 <p>If your phone and Bluetooth audio device support it and agree to use it, Lazulite will show it.</p>
 </div>
@@ -69,45 +114,49 @@
 <details id="lhdc-versions" data-umami-faq="lhdc_versions">
 <summary>Which LHDC versions does Lazulite support?</summary>
 <div class="faq-body">
-<p>Lazulite has been tested with LHDC V2, V3, and V5. In theory, it should support all current and future LHDC versions.</p>
+<p>Lazulite has been <strong>tested with LHDC V2, V3, and V5</strong>. <strong>In theory</strong>, it should support all current and future LHDC versions.</p>
 </div>
 </details>
 
 <details data-umami-faq="bluetooth_audio_devices">
 <summary>Does Lazulite work only with Bluetooth headphones?</summary>
 <div class="faq-body">
-<p>No. Lazulite works with Bluetooth audio devices, including headphones, earbuds, speakers, car audio systems, and Bluetooth audio receivers. Connect the device to your Android phone and play audio to inspect its Bluetooth codec and reported audio path. Available details depend on the phone and connected device.</p>
+<p>No. Lazulite works with <strong>Bluetooth audio devices</strong>, including headphones, earbuds, speakers, car audio systems, and Bluetooth audio receivers.</p>
+<p>Without a Bluetooth connection, it can still show the <strong>playback app's reported output</strong> while you use wired headphones or your phone or tablet's built-in speakers. Connect a Bluetooth audio device to also inspect its codec and transmission details. Available information depends on your Android device, playback app, and connected audio device.</p>
 </div>
 </details>
 
 <details data-umami-faq="wired_headphones">
 <summary>Can I use Lazulite with wired headphones?</summary>
 <div class="faq-body">
-<p>Wired audio inspection is not supported. Lazulite shows the codec selected by your phone and Bluetooth audio device, along with the audio path reported by Android.</p>
-<p>Wired connections bypass Bluetooth, so there is no Bluetooth codec data for Lazulite to inspect.</p>
+<p>Yes. Lazulite works with <strong>wired headphones</strong>, even without a Bluetooth connection. It shows the <strong>playback app's reported audio output</strong>, just as it does when playing through your phone or tablet's built-in speakers.</p>
+<p>Play audio and refresh to see available details such as sample rate and bit depth. These describe the app's output, not a measurement of the wired headphones or DAC. Bluetooth codec and transmission details only apply to Bluetooth playback.</p>
 </div>
 </details>
+
+<h2 id="audio-path">Audio Path & Device Details</h2>
 
 <details data-umami-faq="codec_expectations">
 <summary>Why do streaming apps sometimes show different codecs than expected?</summary>
 <div class="faq-body">
-<p>Many streaming apps claim "lossless" or "hi-fi" quality, but your device or headphones may force re-encoding to a lower-quality codec before audio ever reaches your ears.</p>
-<p>Lazulite shows the <strong>actual codec used for Bluetooth transmission</strong>, not what the streaming app reports. If you are paying for hi-res audio but seeing AAC 256kbps in Lazulite, you now know what is actually happening.</p>
+<p><strong>Hi-Fi</strong> is a broad label, not a precise audio format. Depending on the service, it can cover anything from below-CD-quality streams to studio-resolution audio.</p>
+<p>In Audio path details, Lazulite shows the <strong>app's reported output</strong>, including sample rate and bit depth when available, so you can see the format leaving the app.</p>
+<p>For Bluetooth playback, Android re-encodes that output using the <strong>Bluetooth codec</strong> negotiated by your phone and audio device. These reported formats do not verify the original recording's fidelity or measure perceived sound quality.</p>
 </div>
 </details>
 
 <details data-umami-faq="hardware_offload">
 <summary>What is A2DP hardware offload, and does Lazulite show it?</summary>
 <div class="faq-body">
-<p>Some Android devices can move Bluetooth audio encoding off the main processor and onto dedicated audio or Bluetooth hardware. That can reduce CPU work and power use during playback.</p>
-<p>Lazulite detects when A2DP hardware offload is active and lists which codecs your device's hardware supports for it. A codec showing up in that list doesn't mean it's being offloaded right now: that depends on the codec in use, the connected device, your system settings, and how the manufacturer implemented it.</p>
+<p>Some Android devices can move Bluetooth audio encoding off the main processor and onto <strong>dedicated audio or Bluetooth hardware</strong>. That can reduce CPU work and power use during playback.</p>
+<p>Lazulite detects when A2DP hardware offload is active and lists which codecs your device's hardware supports for it. A codec showing up in that list <strong>doesn't mean it's being offloaded right now</strong>: that depends on the codec in use, the connected device, your system settings, and how the manufacturer implemented it.</p>
 </div>
 </details>
 
 <details data-umami-faq="vendor_lookup">
 <summary>What does Lazulite's Bluetooth manufacturer lookup identify?</summary>
 <div class="faq-body">
-<p>With "Look up destination vendor" enabled in Settings, Lazulite uses the connected Bluetooth audio device's MAC address prefix to look up the associated manufacturer, when available. This may identify the Bluetooth chipset manufacturer rather than the brand of your headphones, speaker, or other audio device. A result is not always available, for example when the address is randomized or the lookup has no matching record.</p>
+<p>With "Look up destination vendor" enabled in Settings, Lazulite uses the connected Bluetooth audio device's <strong>MAC address prefix</strong> to look up the associated manufacturer, when available. This may identify the <strong>Bluetooth chipset manufacturer</strong> rather than the brand of your headphones, speaker, or other audio device. A result is not always available, for example when the address is randomized or the lookup has no matching record.</p>
 <p>This is on by default when no preference has been saved; existing choices are preserved. You can turn it off in Settings. When enabled, Lazulite sends only the first three pairs of the destination MAC address to MACLookup to identify the vendor. No other part of the address is ever sent.</p>
 </div>
 </details>
@@ -134,7 +183,7 @@
 <summary>Will Lazulite drain my battery?</summary>
 <div class="faq-body">
 <p><strong>TL;DR:</strong> Nope, negligible impact.</p>
-<p>Lazulite only reads existing system logs that your device generates anyway. It doesn't create additional processes or run in the background when you're not using it.</p>
+<p>Lazulite only reads <strong>existing system logs</strong> that your device generates anyway. It doesn't create additional processes or run in the background when you're not using it.</p>
 <p><strong>Note:</strong> Lazulite monitors your phone's logs, not your Bluetooth headphones. Your earbuds' battery is unaffected.</p>
 </div>
 </details>

@@ -90,7 +90,7 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 
 
 
-<link href="/sass/main.min.254a524a7ccdd75f6f606b853ae7451520f190cd8cac11e1805c91c15e3c97f2.css" rel="stylesheet">
+<link href="/sass/main.min.187dff4a4a7034afbef4e07713af89d8b4033ca3a4a3cdc2d94e729ca77b5e11.css" rel="stylesheet">
 <script src="/js/theme.js" defer></script>
 <script src="/js/language-switcher.js" defer></script>
 
@@ -112,8 +112,18 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
   
     
   
+    
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite lee los registros de audio del sistema Android para mostrar información sobre códecs Bluetooth y la ruta de audio. Android restringe el acceso a estos registros, por lo que el permiso debe concederse con ADB, Shizuku o acceso root."},"name":"¿Por qué Lazulite necesita permisos especiales?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite puede detectar los códecs Bluetooth que tu dispositivo admite y negocia, incluidos LDAC, aptX, aptX HD, aptX Adaptive, LC3, MIHC, Opus, variantes de LHDC, AAC, SBC y los códecs Samsung SSC cuando están disponibles."},"name":"¿Qué códecs Bluetooth admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite se ha probado con LHDC V2, V3 y V5. En teoría, debería admitir todas las versiones actuales y futuras de LHDC."},"name":"¿Qué versiones de LHDC admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No. Lazulite funciona con dispositivos de audio Bluetooth, incluidos auriculares de diadema e intraaurales, altavoces, sistemas de audio del coche y receptores de audio Bluetooth. Conecta el dispositivo a tu teléfono Android y reproduce audio para consultar su códec Bluetooth y la ruta de audio indicada por Android. Los detalles disponibles dependen del teléfono y del dispositivo conectado."},"name":"¿Lazulite solo funciona con auriculares Bluetooth?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No se admite la inspección de audio por cable. Lazulite inspecciona los códecs y la ruta de audio indicada por Android para las conexiones Bluetooth. El audio por cable no usa Bluetooth, así que no hay datos de códec Bluetooth que inspeccionar."},"name":"¿Puedo usar Lazulite con auriculares con cable?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"El impacto en batería es mínimo. Lazulite lee registros del sistema que ya existen y no crea procesamiento Bluetooth adicional cuando no estás usando la app."},"name":"¿Lazulite consume mucha batería?"}]}</script>
+    
+  
+    
+  
+    
+  
+    
+  
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite necesita permiso para leer los registros de audio de tu sistema Android y así mostrar información sobre códecs Bluetooth y la ruta de audio. Android restringe el acceso a estos registros por motivos de privacidad y seguridad, así que tendrás que conceder permiso usando uno de estos tres métodos: Opción 1: Shizuku (recomendado para la mayoría) Ideal para: la mayoría de usuarios, especialmente quienes prefieren configurar Lazulite directamente desde el teléfono Shizuku permite que Lazulite acceda a la información del sistema que necesita sin root. En Android 11 y versiones posteriores, puedes iniciar Shizuku mediante la depuración inalámbrica, sin conectar el teléfono a un ordenador. Después de reiniciar el dispositivo, tendrás que volver a iniciar Shizuku antes de abrir Lazulite. ▶ Guía en video: cómo habilitar Shizuku Opción 2: ADB (para usuarios familiarizados con ADB) Ideal para: usuarios que ya saben utilizar ADB desde un ordenador Instala Android SDK Platform-Tools, activa la depuración USB, conecta y autoriza el teléfono y, después, ejecuta: adb shell pm grant com.pedronveloso.lazulite android.permission.DUMP Opción 3: Acceso root Ideal para: usuarios avanzados con dispositivos rooteados Si tu dispositivo está rooteado, Lazulite puede solicitar automáticamente los permisos necesarios. Es la opción más cómoda, pero solo si ya te sientes cómodo haciendo root en dispositivos Android."},"name":"¿Por qué Lazulite necesita permisos especiales?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Conecta un dispositivo de audio Bluetooth a tu móvil Android, reproduce audio y actualiza Lazulite. Consulta el códec que aparece para la conexión activa. Las listas de códecs compatibles describen lo que admiten el móvil y el dispositivo receptor, no el códec que se está usando."},"name":"¿Cómo compruebo qué códec Bluetooth está usando Android?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Busca LDAC como códec activo en Lazulite después de iniciar la reproducción y actualizar. Que LDAC aparezca en una lista de códecs compatibles no significa que esté activo. Cuando Android facilita la información, Lazulite también muestra la tasa de bits o el ajuste de calidad de codificación. Los detalles disponibles varían según el dispositivo."},"name":"¿Cómo sé si LDAC está activo?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Los códecs compatibles describen las capacidades que indican por separado tu móvil y el dispositivo receptor. El códec activo es el que ambos han acordado usar en la conexión Bluetooth actual. Un códec puede aparecer en una lista de compatibilidad sin estar seleccionado para la reproducción."},"name":"¿Qué diferencia hay entre los códecs compatibles y el códec activo?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite inspecciona la conexión Bluetooth y ofrece accesos a los ajustes del sistema correspondientes. No selecciona códecs automáticamente ni habilita códecs que tu móvil o dispositivo receptor no admitan. Los cambios de códec disponibles se realizan en los ajustes del sistema."},"name":"¿Puede Lazulite cambiar mi códec Bluetooth?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Sí. Lazulite es compatible con tabletas Android, además de móviles, y su diseño se adapta a pantallas más grandes. Puedes consultar la salida que indica la app de reproducción al escuchar por los altavoces de la tableta o con auriculares con cable. Al conectar un dispositivo de audio Bluetooth, también se muestran detalles del códec y la transmisión. La información disponible depende de la tableta, la versión de Android y la app de reproducción."},"name":"¿Lazulite es compatible con tabletas Android?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite puede detectar y mostrar todos los códecs de audio Bluetooth compatibles con tu dispositivo: LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus LHDC (consulta las versiones de LHDC compatibles más abajo) AAC, SBC SSC, SSC UHQ (solo en dispositivos Samsung) Si tu teléfono y tu dispositivo de audio Bluetooth lo admiten y ambos acuerdan usarlo, Lazulite lo mostrará."},"name":"¿Qué códecs Bluetooth admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Lazulite se ha probado con LHDC V2, V3 y V5. En teoría, debería admitir todas las versiones actuales y futuras de LHDC."},"name":"¿Qué versiones de LHDC admite Lazulite?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No. Lazulite funciona con dispositivos de audio Bluetooth, incluidos auriculares de diadema e intraaurales, altavoces, sistemas de audio del coche y receptores de audio Bluetooth. Sin una conexión Bluetooth, también puede mostrar la salida que indica la app de reproducción mientras usas auriculares con cable o los altavoces integrados del móvil o la tableta. Conecta un dispositivo de audio Bluetooth para consultar también su códec y los detalles de transmisión. La información disponible depende del dispositivo Android, la app de reproducción y el dispositivo de audio conectado."},"name":"¿Lazulite solo funciona con auriculares Bluetooth?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Sí. Lazulite funciona con auriculares con cable, incluso sin una conexión Bluetooth. Muestra la salida de audio que indica la app de reproducción, igual que al escuchar por los altavoces integrados del móvil o la tableta. Reproduce audio y actualiza para consultar los datos disponibles, como la frecuencia de muestreo y la profundidad de bits. Describen la salida de la app, no una medición de los auriculares con cable o del DAC. Los detalles del códec y la transmisión Bluetooth solo se aplican a la reproducción por Bluetooth."},"name":"¿Puedo usar Lazulite con auriculares con cable?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Resumen: no, el impacto es insignificante. Lazulite solo lee registros del sistema que tu dispositivo ya genera de todos modos. No crea procesos adicionales ni se ejecuta en segundo plano cuando no lo estás usando. Nota: Lazulite monitoriza los registros del teléfono, no los de tus auriculares Bluetooth. La batería de tus audífonos no se ve afectada."},"name":"¿Lazulite agota la batería?"}]}</script>
 
 
 <link rel="preload" href="/fonts/Sora/Sora-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -354,7 +364,9 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
     <div>
         <nav class="faq-nav" aria-label="Secciones de preguntas frecuentes">
   <a href="#permissions">Permisos y configuración</a>
-  <a href="#codecs">Códecs y compatibilidad</a>
+  <a href="#codecs">Comprueba tu códec</a>
+  <a href="#compatibility">Dispositivos y códecs compatibles</a>
+  <a href="#audio-path">Ruta de audio y detalles del dispositivo</a>
   <a href="#privacy">Privacidad y datos</a>
   <a href="#usage">Uso y comportamiento</a>
 </nav>
@@ -394,16 +406,53 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 </div>
 </details>
 <hr>
-<h2 id="codecs">Códecs y compatibilidad</h2>
+<h2 id="codecs">Comprueba tu códec</h2>
+<details id="active_codec" data-umami-faq="active_codec">
+<summary>¿Cómo compruebo qué códec Bluetooth está usando Android?</summary>
+<div class="faq-body">
+<p>Conecta un dispositivo de audio Bluetooth a tu móvil Android, <strong>reproduce audio</strong> y <strong>actualiza Lazulite</strong>. Consulta el códec que aparece para la <strong>conexión activa</strong>.</p>
+<p>Las listas de códecs compatibles describen lo que admiten el móvil y el dispositivo receptor, no el códec que se está usando.</p>
+</div>
+</details>
+<details id="ldac_active" data-umami-faq="ldac_active">
+<summary>¿Cómo sé si LDAC está activo?</summary>
+<div class="faq-body">
+<p>Busca <strong>LDAC como códec activo</strong> en Lazulite después de iniciar la reproducción y actualizar. Que LDAC aparezca en una lista de códecs compatibles no significa que esté activo.</p>
+<p><strong>Cuando Android facilita la información</strong>, Lazulite también muestra la tasa de bits o el ajuste de calidad de codificación. Los detalles disponibles varían según el dispositivo.</p>
+</div>
+</details>
+<details id="supported_vs_active" data-umami-faq="supported_vs_active">
+<summary>¿Qué diferencia hay entre los códecs compatibles y el códec activo?</summary>
+<div class="faq-body">
+<p><strong>Los códecs compatibles</strong> describen las capacidades que indican por separado tu móvil y el dispositivo receptor.</p>
+<p><strong>El códec activo</strong> es el que ambos han acordado usar en la conexión Bluetooth actual.</p>
+<p>Un códec puede aparecer en una lista de compatibilidad sin estar seleccionado para la reproducción.</p>
+</div>
+</details>
+<details id="codec_control" data-umami-faq="codec_control">
+<summary>¿Puede Lazulite cambiar mi códec Bluetooth?</summary>
+<div class="faq-body">
+<p>Lazulite <strong>inspecciona la conexión Bluetooth</strong> y ofrece accesos a los ajustes del sistema correspondientes.</p>
+<p><strong>No selecciona códecs automáticamente</strong> ni habilita códecs que tu móvil o dispositivo receptor no admitan. Los cambios de códec disponibles se realizan en los ajustes del sistema.</p>
+</div>
+</details>
+<h2 id="compatibility">Dispositivos y códecs compatibles</h2>
+<details id="tablet_support" data-umami-faq="tablet_support">
+<summary>¿Lazulite es compatible con tabletas Android?</summary>
+<div class="faq-body">
+<p>Sí. Lazulite es compatible con <strong>tabletas Android</strong>, además de móviles, y su diseño se adapta a pantallas más grandes.</p>
+<p>Puedes consultar la <strong>salida que indica la app de reproducción</strong> al escuchar por los altavoces de la tableta o con auriculares con cable. Al conectar un dispositivo de audio Bluetooth, también se muestran detalles del códec y la transmisión. La información disponible depende de la tableta, la versión de Android y la app de reproducción.</p>
+</div>
+</details>
 <details data-umami-faq="codec_support">
 <summary>¿Qué códecs Bluetooth admite Lazulite?</summary>
 <div class="faq-body">
-<p>Lazulite puede detectar y mostrar todos los códecs de audio Bluetooth compatibles con tu dispositivo:</p>
+<p>Lazulite puede detectar y mostrar todos los <strong>códecs de audio Bluetooth</strong> compatibles con tu dispositivo:</p>
 <ul>
 <li>LDAC, aptX, aptX HD, aptX Adaptive, aptX TWS, LC3, MIHC, Opus</li>
 <li>LHDC (consulta las <a href="#lhdc-versions">versiones de LHDC compatibles</a> más abajo)</li>
 <li>AAC, SBC</li>
-<li>SSC, SSC UHQ (solo en dispositivos Samsung)</li>
+<li>SSC, SSC UHQ (<strong>solo en dispositivos Samsung</strong>)</li>
 </ul>
 <p>Si tu teléfono y tu dispositivo de audio Bluetooth lo admiten y ambos acuerdan usarlo, Lazulite lo mostrará.</p>
 </div>
@@ -411,40 +460,43 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 <details id="lhdc-versions" data-umami-faq="lhdc_versions">
 <summary>¿Qué versiones de LHDC admite Lazulite?</summary>
 <div class="faq-body">
-<p>Lazulite se ha probado con LHDC V2, V3 y V5. En teoría, debería admitir todas las versiones actuales y futuras de LHDC.</p>
+<p>Lazulite se ha <strong>probado con LHDC V2, V3 y V5</strong>. <strong>En teoría</strong>, debería admitir todas las versiones actuales y futuras de LHDC.</p>
 </div>
 </details>
 <details data-umami-faq="bluetooth_audio_devices">
 <summary>¿Lazulite solo funciona con auriculares Bluetooth?</summary>
 <div class="faq-body">
-<p>No. Lazulite funciona con dispositivos de audio Bluetooth, incluidos auriculares de diadema e intraaurales, altavoces, sistemas de audio del coche y receptores de audio Bluetooth. Conecta el dispositivo a tu teléfono Android y reproduce audio para consultar su códec Bluetooth y la ruta de audio indicada por Android. Los detalles disponibles dependen del teléfono y del dispositivo conectado.</p>
+<p>No. Lazulite funciona con <strong>dispositivos de audio Bluetooth</strong>, incluidos auriculares de diadema e intraaurales, altavoces, sistemas de audio del coche y receptores de audio Bluetooth.</p>
+<p>Sin una conexión Bluetooth, también puede mostrar la <strong>salida que indica la app de reproducción</strong> mientras usas auriculares con cable o los altavoces integrados del móvil o la tableta. Conecta un dispositivo de audio Bluetooth para consultar también su códec y los detalles de transmisión. La información disponible depende del dispositivo Android, la app de reproducción y el dispositivo de audio conectado.</p>
 </div>
 </details>
 <details data-umami-faq="wired_headphones">
 <summary>¿Puedo usar Lazulite con auriculares con cable?</summary>
 <div class="faq-body">
-<p>No se admite la inspección de audio por cable. Lazulite muestra el códec seleccionado por tu teléfono y tu dispositivo de audio Bluetooth, junto con la ruta de audio indicada por Android.</p>
-<p>Las conexiones por cable no usan Bluetooth, así que no hay datos de códec Bluetooth que Lazulite pueda inspeccionar.</p>
+<p>Sí. Lazulite funciona con <strong>auriculares con cable</strong>, incluso sin una conexión Bluetooth. Muestra la <strong>salida de audio que indica la app de reproducción</strong>, igual que al escuchar por los altavoces integrados del móvil o la tableta.</p>
+<p>Reproduce audio y actualiza para consultar los datos disponibles, como la frecuencia de muestreo y la profundidad de bits. Describen la salida de la app, no una medición de los auriculares con cable o del DAC. Los detalles del códec y la transmisión Bluetooth solo se aplican a la reproducción por Bluetooth.</p>
 </div>
 </details>
+<h2 id="audio-path">Ruta de audio y detalles del dispositivo</h2>
 <details data-umami-faq="codec_expectations">
 <summary>¿Por qué las apps de streaming a veces muestran códecs distintos de lo esperado?</summary>
 <div class="faq-body">
-<p>Muchas apps de streaming prometen calidad "lossless" o "hi-fi", pero tu dispositivo o tus auriculares pueden forzar una recodificación a un códec de menor calidad antes de que el audio llegue a tus oídos.</p>
-<p>Lazulite muestra el <strong>códec real usado para la transmisión Bluetooth</strong>, no lo que informa la app de streaming. Si pagas por audio hi-res pero Lazulite muestra AAC a 256 kbps, ahora sabes qué está pasando en realidad.</p>
+<p><strong>Hi-Fi</strong> es una etiqueta amplia, no un formato de audio concreto. Según el servicio, puede abarcar desde audio de calidad inferior a la de un CD hasta formatos con resolución de estudio.</p>
+<p>En los detalles de la ruta de audio, Lazulite muestra la <strong>salida que indica la app</strong>, incluida la frecuencia de muestreo y la profundidad de bits cuando están disponibles. Así puedes ver qué formato sale de la app.</p>
+<p>Al reproducir por Bluetooth, Android vuelve a codificar esa salida con el <strong>códec Bluetooth</strong> acordado entre tu móvil y el dispositivo de audio. Estos formatos indicados no verifican la fidelidad de la grabación original ni miden la calidad de sonido percibida.</p>
 </div>
 </details>
 <details data-umami-faq="hardware_offload">
 <summary>¿Qué es la descarga de hardware A2DP, y la muestra Lazulite?</summary>
 <div class="faq-body">
-<p>Algunos dispositivos Android pueden trasladar la codificación de audio Bluetooth del procesador principal a hardware de audio o Bluetooth dedicado. Esto puede reducir el trabajo de la CPU y el consumo durante la reproducción.</p>
-<p>Lazulite detecta cuándo la descarga de hardware A2DP está activa y muestra qué códecs admite el hardware de tu dispositivo para ella. Que un códec aparezca en esa lista no significa que se esté usando en tu conexión actual: eso depende del códec en uso, el dispositivo conectado, los ajustes del sistema y cómo lo implementó el fabricante.</p>
+<p>Algunos dispositivos Android pueden trasladar la codificación de audio Bluetooth del procesador principal a <strong>hardware de audio o Bluetooth dedicado</strong>. Esto puede reducir el trabajo de la CPU y el consumo durante la reproducción.</p>
+<p>Lazulite detecta cuándo la descarga de hardware A2DP está activa y muestra qué códecs admite el hardware de tu dispositivo para ella. Que un códec aparezca en esa lista <strong>no significa que se esté usando en tu conexión actual</strong>: eso depende del códec en uso, el dispositivo conectado, los ajustes del sistema y cómo lo implementó el fabricante.</p>
 </div>
 </details>
 <details data-umami-faq="vendor_lookup">
 <summary>¿Qué identifica la búsqueda del fabricante Bluetooth de Lazulite?</summary>
 <div class="faq-body">
-<p>Con "Buscar proveedor del destino" activado en Ajustes, Lazulite usa el prefijo de la dirección MAC del dispositivo de audio Bluetooth conectado para buscar el fabricante asociado, cuando está disponible. El resultado puede identificar al fabricante del chipset Bluetooth en lugar de la marca de tus auriculares, altavoz u otro dispositivo de audio. No siempre hay un resultado disponible, por ejemplo, si la dirección es aleatoria o la búsqueda no encuentra un registro coincidente.</p>
+<p>Con "Buscar proveedor del destino" activado en Ajustes, Lazulite usa el <strong>prefijo de la dirección MAC</strong> del dispositivo de audio Bluetooth conectado para buscar el fabricante asociado, cuando está disponible. El resultado puede identificar al <strong>fabricante del chipset Bluetooth</strong> en lugar de la marca de tus auriculares, altavoz u otro dispositivo de audio. No siempre hay un resultado disponible, por ejemplo, si la dirección es aleatoria o la búsqueda no encuentra un registro coincidente.</p>
 <p>Esta opción está activada de forma predeterminada si no hay una preferencia guardada; se respetan las elecciones existentes. Puedes desactivarla en Ajustes. Cuando está activada, Lazulite envía solo los tres primeros pares de la dirección MAC de destino a MACLookup para identificar el proveedor. No se envía ninguna otra parte de la dirección.</p>
 </div>
 </details>
@@ -465,7 +517,7 @@ FAQ de Lazulite: permisos, códecs Bluetooth, configuración y compatibilidad
 <summary>¿Lazulite agota la batería?</summary>
 <div class="faq-body">
 <p><strong>Resumen:</strong> no, el impacto es insignificante.</p>
-<p>Lazulite solo lee registros del sistema que tu dispositivo ya genera de todos modos. No crea procesos adicionales ni se ejecuta en segundo plano cuando no lo estás usando.</p>
+<p>Lazulite solo lee <strong>registros del sistema</strong> que tu dispositivo ya genera de todos modos. No crea procesos adicionales ni se ejecuta en segundo plano cuando no lo estás usando.</p>
 <p><strong>Nota:</strong> Lazulite monitoriza los registros del teléfono, no los de tus auriculares Bluetooth. La batería de tus audífonos no se ve afectada.</p>
 </div>
 </details>
