@@ -192,5 +192,5 @@
 
 ## Further Questions?
 
-Still stuck or have questions not covered here? [Drop us an email](mailto:lazuliteapp@gmail.com) and we'll help you out.
+Still stuck or have questions not covered here? [Drop us an email](mailto:lazulite@pnvdigital.com) and we'll help you out.
 

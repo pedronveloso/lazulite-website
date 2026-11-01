@@ -33,7 +33,7 @@ Static website for the Lazulite Android App, built with Hugo and deployed on Net
 - **Base URL**: https://lazulite.app (production)
 - **Theme**: Custom "lazulite" theme in `themes/lazulite/`
 - **Config**: `config.toml` contains site settings, per-language menus, social links, and SEO params (`playStoreUrl`, `socialImage`, `price`/`priceCurrency`, per-language `description`/`homeTitle`). `price` is the US Play list price and is emitted in JSON-LD `offers` for `en` only. `disableKinds = ["taxonomy", "term"]` skips the unused `/tags/` and `/categories/` pages (301-redirected in `netlify.toml`); `/posts/` is hidden via a `build` block in `content/posts/_index.md` until the first post ships, so it is intentionally absent from the sitemap. The 404 page is deliberately `noindex,follow` with no canonical or hreflang; do not add them back
-- **Contact**: lazuliteapp@gmail.com (configured in `config.toml`)
+- **Contact**: lazulite@pnvdigital.com (configured in `config.toml`)
 
 ### Internationalization
 The site is multilingual. Languages are defined under `[languages.*]` in `config.toml`:

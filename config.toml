@@ -31,7 +31,7 @@ disableKinds = ["taxonomy", "term"]
 [[params.social]]
 key = 0
 name = "email"
-url = "mailto:lazuliteapp@gmail.com"
+url = "mailto:lazulite@pnvdigital.com"
 #icon = "fa-solid fa-envelope"
 
 [params]

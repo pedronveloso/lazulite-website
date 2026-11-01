@@ -224,4 +224,4 @@ faqSchema:
 
 ## Altre domande?
 
-Sei ancora bloccato o hai domande non trattate qui? [Scrivici una email](mailto:lazuliteapp@gmail.com) e ti aiuteremo.
+Sei ancora bloccato o hai domande non trattate qui? [Scrivici una email](mailto:lazulite@pnvdigital.com) e ti aiuteremo.

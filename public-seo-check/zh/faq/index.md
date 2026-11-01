@@ -192,5 +192,5 @@
 
 ## 还有其他问题？
 
-如果你仍然卡住，或者有这里没有覆盖的问题，可以[给我们发邮件](mailto:lazuliteapp@gmail.com)，我们会帮你处理。
+如果你仍然卡住，或者有这里没有覆盖的问题，可以[给我们发邮件](mailto:lazulite@pnvdigital.com)，我们会帮你处理。
 

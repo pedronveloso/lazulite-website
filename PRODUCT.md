@@ -310,7 +310,7 @@ disclosures in all five privacy-policy translations together with this guidance.
 The homepage introduces the product and provides a download entry point. The FAQ
 covers setup, permissions, compatibility, and usage. What's New records
 user-facing releases; the privacy page explains data handling. Use
-lazuliteapp@gmail.com as the public support address.
+lazulite@pnvdigital.com as the public support address.
 
 Keep changing prices, ratings, and download counts on their authoritative
 surfaces rather than duplicating them in this reference.

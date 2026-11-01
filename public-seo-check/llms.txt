@@ -21,6 +21,6 @@ Links:
 - FAQ: https://lazulite.app/faq/
 - Privacy policy: https://lazulite.app/privacy/
 - Captured-device catalog (manufacturer, model, and Android major version only): https://lazulite.app/data/captured-devices.json
-- Contact: lazuliteapp@gmail.com
+- Contact: lazulite@pnvdigital.com
 
 Also available in Spanish (https://lazulite.app/es/), Simplified Chinese (https://lazulite.app/zh/), Italian (https://lazulite.app/it/), and Japanese (https://lazulite.app/ja/).

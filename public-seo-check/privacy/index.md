@@ -45,7 +45,7 @@ We implement a variety of security measures to maintain the safety of the data w
 
 ## Your Choice and Contact:
 
-Crash diagnostics are optional. You can enable or withdraw them at any time in Lazulite under **Settings → Crash diagnostics**. Questionnaire participation is optional too, and you can skip it at any time. For privacy questions or requests, contact us at [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
+Crash diagnostics are optional. You can enable or withdraw them at any time in Lazulite under **Settings → Crash diagnostics**. Questionnaire participation is optional too, and you can skip it at any time. For privacy questions or requests, contact us at [lazulite@pnvdigital.com](mailto:lazulite@pnvdigital.com).
 
 ## Changes to This Privacy Policy:
 

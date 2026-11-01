@@ -45,7 +45,7 @@ Aplicamos diversas medidas de seguridad para mantener protegidos los datos que r
 
 ## Tu elección y contacto
 
-Los diagnósticos de fallos son opcionales. Puedes activarlos o retirarlos en cualquier momento en **Ajustes → Diagnósticos de fallos**. Participar en los cuestionarios también es opcional y puedes omitirlos cuando quieras. Para preguntas o solicitudes de privacidad, contáctanos en [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
+Los diagnósticos de fallos son opcionales. Puedes activarlos o retirarlos en cualquier momento en **Ajustes → Diagnósticos de fallos**. Participar en los cuestionarios también es opcional y puedes omitirlos cuando quieras. Para preguntas o solicitudes de privacidad, contáctanos en [lazulite@pnvdigital.com](mailto:lazulite@pnvdigital.com).
 
 ## Cambios en esta política de privacidad
 

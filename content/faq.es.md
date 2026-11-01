@@ -224,4 +224,4 @@ faqSchema:
 
 ## ¿Más preguntas?
 
-Si sigues atascado o tienes dudas que no están aquí, [escríbenos por correo](mailto:lazuliteapp@gmail.com) y te ayudaremos.
+Si sigues atascado o tienes dudas que no están aquí, [escríbenos por correo](mailto:lazulite@pnvdigital.com) y te ayudaremos.

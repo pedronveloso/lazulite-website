@@ -225,4 +225,4 @@ faqSchema:
 
 ## ほかに気になることはありますか？
 
-ここで解決しない場合や、ほかの質問がある場合は、[メールでお問い合わせください](mailto:lazuliteapp@gmail.com)。
+ここで解決しない場合や、ほかの質問がある場合は、[メールでお問い合わせください](mailto:lazulite@pnvdigital.com)。

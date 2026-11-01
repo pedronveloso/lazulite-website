@@ -45,7 +45,7 @@ Lazuliteは、お使いの機種とAndroidバージョンの診断データが�
 
 ## 設定の変更とお問い合わせ
 
-クラッシュ診断は任意です。Lazuliteの<strong>「設定 → クラッシュ診断」</strong>から、いつでも有効・無効を切り替えられます。アンケートも任意で、いつでもスキップできます。プライバシーについての質問やご依頼は、[lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com)までお知らせください。
+クラッシュ診断は任意です。Lazuliteの<strong>「設定 → クラッシュ診断」</strong>から、いつでも有効・無効を切り替えられます。アンケートも任意で、いつでもスキップできます。プライバシーについての質問やご依頼は、[lazulite@pnvdigital.com](mailto:lazulite@pnvdigital.com)までお知らせください。
 
 ## このポリシーの変更
 
