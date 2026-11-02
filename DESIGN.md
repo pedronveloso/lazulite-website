@@ -385,6 +385,12 @@ Screenshots, semantic cards, video, and posters are real AASG captures for each 
 - **Don't** hard-code component colors, add inline styles in content, or use color-named classes.
 - **Don't** infer light-theme button text, focus, hover, or media colors from a dark-theme coincidence.
 
+### FAQ anchor navigation
+
+FAQ section headings and disclosures with an anchor reserve 64px of scroll
+margin above the target, keeping linked sections and questions visible below the
+56px sticky header. Their layout and native expansion behavior remain unchanged.
+
 ### What's New Reveal
 
 The What's New page (front matter `motion: changelog`) loads a separate fingerprinted GSAP bundle, `changelog-motion.js`, and a tiny pre-paint `changelog-boot.js`. The page title, release headings, section labels, paragraphs, and list items each rise 12px while fading in over 600ms with `power3.out`. `ScrollTrigger.batch` reveals items as they pass 92% of the viewport height, once, with items that enter together (collected over 100ms) sharing one document-order stagger of 60ms each, capped at 600ms in total; it never scrubs, pins, or reverses. Only transform and opacity animate, and GSAP clears its inline styles when each item finishes. Reduced motion, direct anchors, restored scroll positions, back/forward restoration, and missing IntersectionObserver leave the page static. A failed or late bundle releases the pre-paint guard after 1.5 seconds. Without JavaScript the page is fully visible.

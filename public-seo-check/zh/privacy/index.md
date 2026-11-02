@@ -45,7 +45,7 @@ Lazulite 偶尔可能会向你展示关于你的音频设置和听音体验的�
 
 ## 你的选择和联系方式
 
-崩溃诊断信息为可选项。你可以随时在 Lazulite 的**设置 → 崩溃诊断信息**中开启或撤回该选择。问卷参与同样为可选项，你可以随时跳过。如有隐私问题或请求，请通过 [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com) 联系我们。
+崩溃诊断信息为可选项。你可以随时在 Lazulite 的**设置 → 崩溃诊断信息**中开启或撤回该选择。问卷参与同样为可选项，你可以随时跳过。如有隐私问题或请求，请通过 [lazulite@pnvdigital.com](mailto:lazulite@pnvdigital.com) 联系我们。
 
 ## 本隐私政策的变更
 

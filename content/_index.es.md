@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "Inspector de audio Bluetooth para Android. Consulta el códec activo, la calidad de codificación, la salida de la app y problemas de reproducción recientes indicados por Android."
+description = "Inspector de audio Bluetooth para Android. Comprueba el códec activo, la calidad de codificación y los formatos de la ruta de audio indicada por Android."
 +++
 
 <div class="homepage">
@@ -11,13 +11,13 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
   {{< hero-brand alt="Logotipo de la app Lazulite" >}}
 
   <p class="hero-subtitle">
-    Las apps de streaming prometen audio sin pérdida. Tus auriculares pueden contar otra historia.<br>
-    Lazulite te muestra exactamente qué te está llegando.
+    Comprueba tu códec Bluetooth y la ruta de audio.<br>
+    Consulta el códec activo, la calidad de codificación y los formatos de audio que indica Android.
   </p>
 
   <div class="cta-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
-      Descargar ahora
+      Consíguela en Google Play
     </a>
     <a href="#features" class="btn btn-secondary">
       Ver funciones
@@ -36,9 +36,9 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
       {{< app-media role="home" alt="Inicio de Lazulite con el códec aptX Adaptive activo y la ruta de audio Bluetooth" >}}
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">Análisis de audio en tiempo real</h2>
+      <h2 class="section-title section-title--left">Comprueba el códec Bluetooth activo</h2>
       <p class="feature-body">
-        Comprueba el códec que han seleccionado tu móvil y tus auriculares: LDAC, aptX HD, AAC, SBC u otro formato compatible. Actualiza para ver la última configuración indicada por Android.
+        Comprueba el códec que han seleccionado tu móvil y tus auriculares: LDAC, aptX HD, AAC, SBC u otro formato compatible. Actualiza para ver la última configuración indicada por Android. <a href="/es/faq/#active_codec">Aprende a comprobar el códec Bluetooth activo.</a>
       </p>
       <p class="feature-body">
         Consulta la frecuencia de muestreo, la profundidad de bits y, cuando estén disponibles, la tasa de bits o los ajustes de calidad de codificación.
@@ -95,7 +95,7 @@ description = "Inspector de audio Bluetooth para Android. Consulta el códec act
 </section>
 
 <section class="section download-section">
-  <h2 class="section-title">Escucha lo que realmente se está reproduciendo</h2>
+  <h2 class="section-title">Comprende tu audio Bluetooth</h2>
   <p class="section-subtitle">
     Disponible en Google Play. Sin suscripciones. Sin rodeos.
   </p>

@@ -32,7 +32,7 @@
       { resource: "shizuku_video" }
     );
     trackLinkClicks(
-      'a[href="mailto:lazuliteapp@gmail.com"]',
+      'a[href="mailto:lazulite@pnvdigital.com"]',
       "contact_intent",
       { source: "faq" }
     );

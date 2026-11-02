@@ -34,6 +34,11 @@
     },
     {
       "manufacturer": "samsung",
+      "model": "SM-A165F",
+      "androidMajor": 14
+    },
+    {
+      "manufacturer": "samsung",
       "model": "SM-A256E",
       "androidMajor": 16
     },
@@ -56,6 +61,11 @@
       "manufacturer": "Xiaomi",
       "model": "25113PN0EG",
       "androidMajor": 16
+    },
+    {
+      "manufacturer": "Xiaomi",
+      "model": "Redmi Note 9 Pro Max",
+      "androidMajor": 12
     }
   ]
 }

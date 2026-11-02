@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "AndroidのBluetoothオーディオを詳しく確認。Lazuliteで使用中のコーデックやサンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を調べられます。"
+description = "Android向けBluetoothオーディオ確認アプリ。使用中のコーデックやエンコード品質、Androidが報告する音声経路の各段階の形式を確認できます。"
 +++
 
 <div class="homepage">
@@ -11,8 +11,8 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
   {{< hero-brand alt="Lazuliteのロゴ" >}}
 
   <p class="hero-subtitle">
-    いつもの音楽、どう届いている？<br>
-    再生アプリからBluetooth機器まで、音声経路を確認できます。
+    Bluetoothコーデックと音声経路を確認。<br>
+    使用中のコーデックやエンコード品質、Androidが報告する音声形式を表示します。
   </p>
 
   <div class="cta-buttons">
@@ -36,9 +36,9 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
       {{< app-media role="home" alt="使用中のaptX AdaptiveコーデックとBluetooth音声経路を表示したLazuliteのホーム画面" >}}
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">使用中のコーデック</h2>
+      <h2 class="section-title section-title--left">使用中のBluetoothコーデックを確認</h2>
       <p class="feature-body">
-        LDAC、aptX HD、AAC、SBCなど、スマートフォンとヘッドホンが接続時に選んだコーデックを表示します。端末や機器が対応するコーデックと、実際に使われているものを比べてみてください。
+        LDAC、aptX HD、AAC、SBCなど、スマートフォンとヘッドホンが接続時に選んだコーデックを表示します。端末や機器が対応するコーデックと、実際に使われているものを比べてみてください。 <a href="/ja/faq/#active_codec">使用中のBluetoothコーデックの確認方法を見る。</a>
       </p>
       <p class="feature-body">
         サンプリング周波数やビット深度、取得できる場合はビットレートやエンコード品質の設定も確認できます。
@@ -95,7 +95,7 @@ description = "AndroidのBluetoothオーディオを詳しく確認。Lazulite�
 </section>
 
 <section class="section download-section">
-  <h2 class="section-title">いつものオーディオを、もう少し詳しく</h2>
+  <h2 class="section-title">Bluetoothオーディオの仕組みを知る</h2>
   <p class="section-subtitle">
     Google Playで配信中。サブスクリプションはありません。
   </p>

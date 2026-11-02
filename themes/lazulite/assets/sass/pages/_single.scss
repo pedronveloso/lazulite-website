@@ -190,6 +190,12 @@ dd {
 
 // ─── FAQ collapsible items ───────────────────────────────────────────────────
 .postWrapper {
+  // Keep linked sections and questions below the 56px sticky header.
+  h2[id],
+  details[id] {
+    scroll-margin-top: $space-3xl;
+  }
+
   details {
     background: $surface;
     border: 1px solid $hairline;

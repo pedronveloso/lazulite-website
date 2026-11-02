@@ -38,6 +38,9 @@ jobs:
       - name: Check tracked SEO snapshot
         run: ./scripts/seo-snapshot.sh
 
+      - name: Check discovery FAQ consistency
+        run: python3 -m unittest discover -s scripts -p 'test_faq_discovery.py'
+
       - name: Build site
         run: hugo --minify
 

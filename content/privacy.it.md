@@ -54,7 +54,7 @@ Adottiamo diverse misure di sicurezza per garantire la protezione dei dati che r
 
 ## La tua scelta e contatti:
 
-La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla in qualsiasi momento in **Impostazioni → Diagnostica degli arresti anomali**. Anche la partecipazione ai questionari è facoltativa e puoi saltarli in qualsiasi momento. Per domande o richieste relative alla privacy, contattaci all'indirizzo [lazuliteapp@gmail.com](mailto:lazuliteapp@gmail.com).
+La diagnostica degli arresti anomali è facoltativa. Puoi attivarla o revocarla in qualsiasi momento in **Impostazioni → Diagnostica degli arresti anomali**. Anche la partecipazione ai questionari è facoltativa e puoi saltarli in qualsiasi momento. Per domande o richieste relative alla privacy, contattaci all'indirizzo [lazulite@pnvdigital.com](mailto:lazulite@pnvdigital.com).
 
 ## Modifiche a questa Informativa sulla privacy:
 

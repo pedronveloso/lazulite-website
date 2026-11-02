@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "适用于 Android 的蓝牙音频检查工具。查看当前编解码器、编码质量、播放应用输出，以及 Android 近期报告的播放问题。"
+description = "适用于 Android 的蓝牙音频检查工具。查看当前使用的编解码器、编码质量，以及 Android 报告的音频路径中各环节的格式。"
 +++
 
 <div class="homepage">
@@ -11,13 +11,13 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
   {{< hero-brand alt="Lazulite 应用标志" >}}
 
   <p class="hero-subtitle">
-    流媒体应用宣称无损。你的耳机却未必如此。<br>
-    Lazulite 会把实际传输到耳机的内容直接展示出来。
+    查看蓝牙编解码器和音频路径。<br>
+    了解 Android 报告的当前编解码器、编码质量和音频格式。
   </p>
 
   <div class="cta-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
-      立即下载
+      在 Google Play 获取
     </a>
     <a href="#features" class="btn btn-secondary">
       查看功能
@@ -36,9 +36,9 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
       {{< app-media role="home" alt="Lazulite 主页，显示当前 aptX Adaptive 编解码器和蓝牙音频路径" >}}
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">实时音频分析</h2>
+      <h2 class="section-title section-title--left">查看当前使用的蓝牙编解码器</h2>
       <p class="feature-body">
-        查看手机和蓝牙音频设备协商使用的编解码器：LHDC、MIHC、LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。
+        查看手机和蓝牙音频设备协商使用的编解码器：LHDC、MIHC、LDAC、aptX HD、AAC、SBC 或其他支持的格式。刷新即可查看最新报告的配置。 <a href="/zh/faq/#active_codec">了解如何查看当前使用的蓝牙编解码器。</a>
       </p>
       <p class="feature-body">
         查看采样率、位深，以及设备提供的比特率或编码质量设置。
@@ -95,7 +95,7 @@ description = "适用于 Android 的蓝牙音频检查工具。查看当前编�
 </section>
 
 <section class="section download-section">
-  <h2 class="section-title">听见真正正在播放的内容</h2>
+  <h2 class="section-title">了解你的蓝牙音频</h2>
   <p class="section-subtitle">
     已上架 Google Play。无订阅，不玩虚的。
   </p>

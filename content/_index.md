@@ -1,6 +1,6 @@
 +++
 author = "Pedro Veloso"
-description = "Bluetooth audio inspector for Android. Check the active codec, encoding quality, playback app output, and recent Android-reported playback issues."
+description = "Bluetooth audio inspector for Android. Check your active codec, encoding quality, and audio formats along the reported audio path."
 +++
 
 <div class="homepage">
@@ -12,13 +12,13 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
   {{< hero-brand alt="Lazulite App logo" >}}
 
   <p class="hero-subtitle">
-    Streaming apps claim lossless. Your headphones say otherwise.<br>
-    Lazulite shows exactly what's being delivered.
+    Check your Bluetooth codec and audio path.<br>
+    See the active codec, encoding quality, and audio formats reported by Android.
   </p>
 
   <div class="cta-buttons">
     <a href="https://play.google.com/store/apps/details?id=com.pedronveloso.lazulite" class="btn btn-primary" data-umami-event="download_intent" data-umami-event-placement="hero">
-      Download Now
+      Get it on Google Play
     </a>
     <a href="#features" class="btn btn-secondary">
       See Features
@@ -38,9 +38,9 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
       {{< app-media role="home" alt="Lazulite Home showing the active aptX Adaptive codec and Bluetooth audio path" >}}
     </div>
     <div class="column">
-      <h2 class="section-title section-title--left">Real-Time Audio Analysis</h2>
+      <h2 class="section-title section-title--left">Check Your Active Bluetooth Codec</h2>
       <p class="feature-body">
-        Check the codec your phone and headphones selected: LDAC, aptX HD, AAC, SBC, or another supported format. Refresh to see the latest reported configuration.
+        Check the codec your phone and headphones selected: LDAC, aptX HD, AAC, SBC, or another supported format. Refresh to see the latest reported configuration. <a href="/faq/#active_codec">Learn how to check your active Bluetooth codec.</a>
       </p>
       <p class="feature-body">
         See the sample rate, bit depth, and available bitrate or encoding quality information for the active connection.
@@ -101,7 +101,7 @@ description = "Bluetooth audio inspector for Android. Check the active codec, en
 
 <!-- CTA Section -->
 <section class="section download-section">
-  <h2 class="section-title">Hear What's Actually Playing</h2>
+  <h2 class="section-title">Understand Your Bluetooth Audio</h2>
   <p class="section-subtitle">
     Available on Google Play. No subscriptions. No BS.
   </p>

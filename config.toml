@@ -31,7 +31,7 @@ disableKinds = ["taxonomy", "term"]
 [[params.social]]
 key = 0
 name = "email"
-url = "mailto:lazuliteapp@gmail.com"
+url = "mailto:lazulite@pnvdigital.com"
 #icon = "fa-solid fa-envelope"
 
 [params]
@@ -53,7 +53,7 @@ socialImageHeight = 630
     title = 'Lazulite App'
     [languages.en.params]
       footerHtml = 'Lazulite App for Android'
-      description = "Real-time Bluetooth audio codec inspection for Android. Monitor LDAC, aptX HD, AAC, SBC and more — see exactly what your wireless audio is doing."
+      description = "Bluetooth audio inspector for Android. Check your active codec, encoding quality, and audio formats along the reported audio path."
       homeTitle = "Bluetooth Audio Inspector for Android | Lazulite App"
     [[languages.en.menu.header]]
       name = "Privacy Policy"
@@ -75,7 +75,7 @@ socialImageHeight = 630
     title = 'Lazulite App'
     [languages.es.params]
       footerHtml = 'Lazulite App para Android'
-      description = "Inspección en tiempo real de códecs de audio Bluetooth para Android. Supervisa LDAC, aptX HD, AAC, SBC y más para ver exactamente qué está haciendo tu audio inalámbrico."
+      description = "Inspector de audio Bluetooth para Android. Comprueba el códec activo, la calidad de codificación y los formatos de la ruta de audio indicada por Android."
       homeTitle = "Inspector de audio Bluetooth para Android | Lazulite App"
     [[languages.es.menu.header]]
       name = "Privacidad"
@@ -97,7 +97,7 @@ socialImageHeight = 630
     title = 'Lazulite App'
     [languages.zh.params]
       footerHtml = '适用于 Android 的 Lazulite'
-      description = "面向 Android 的实时蓝牙音频编解码器检测。监控 LDAC、aptX HD、AAC、SBC 等格式，准确查看无线音频的实际传输情况。"
+      description = "适用于 Android 的蓝牙音频检查工具。查看当前使用的编解码器、编码质量，以及 Android 报告的音频路径中各环节的格式。"
       homeTitle = "Android 蓝牙音频检查工具 | Lazulite App"
     [[languages.zh.menu.header]]
       name = "隐私政策"
@@ -119,7 +119,7 @@ socialImageHeight = 630
     title = 'Lazulite App'
     [languages.it.params]
       footerHtml = 'Lazulite App per Android'
-      description = "Ispezione in tempo reale dei codec audio Bluetooth per Android. Monitora LDAC, aptX HD, AAC, SBC e altri codec per vedere esattamente cosa sta facendo il tuo audio wireless."
+      description = "Inspector audio Bluetooth per Android. Controlla il codec attivo, la qualità di codifica e i formati lungo il percorso audio riportato da Android."
       homeTitle = "Strumento di ispezione audio Bluetooth per Android | Lazulite App"
     [[languages.it.menu.header]]
       name = "Privacy"
@@ -142,7 +142,7 @@ socialImageHeight = 630
     title = 'Lazulite'
     [languages.ja.params]
       footerHtml = 'Android向けアプリ Lazulite'
-      description = "AndroidのBluetoothオーディオを詳しく確認。使用中のコーデック、サンプリング周波数、ビット深度、再生アプリから出力先までの音声経路を表示します。"
+      description = "Android向けBluetoothオーディオ確認アプリ。使用中のコーデックやエンコード品質、Androidが報告する音声経路の各段階の形式を確認できます。"
       homeTitle = "AndroidのBluetoothオーディオを詳しく確認 | Lazulite"
     [[languages.ja.menu.header]]
       name = "プライバシーポリシー"

@@ -10,4 +10,4 @@ published = false  # Show published data on post page
 [[params.social]]
 key = 0
 name = "email"
-url = "mailto:lazuliteapp@gmail.com"
+url = "mailto:lazulite@pnvdigital.com"
