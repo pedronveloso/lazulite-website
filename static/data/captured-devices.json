@@ -23,6 +23,16 @@
       "androidMajor": 13
     },
     {
+      "manufacturer": "Nothing",
+      "model": "A024",
+      "androidMajor": 16
+    },
+    {
+      "manufacturer": "Nothing",
+      "model": "A024",
+      "androidMajor": 17
+    },
+    {
       "manufacturer": "OnePlus",
       "model": "CPH2747",
       "androidMajor": 16
@@ -51,6 +61,11 @@
       "manufacturer": "samsung",
       "model": "SM-S921U1",
       "androidMajor": 16
+    },
+    {
+      "manufacturer": "samsung",
+      "model": "SM-S928B",
+      "androidMajor": 17
     },
     {
       "manufacturer": "samsung",
