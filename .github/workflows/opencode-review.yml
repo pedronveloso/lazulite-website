@@ -25,7 +25,7 @@ jobs:
           persist-credentials: true
 
       - name: Run OpenCode review
-        uses: anomalyco/opencode/github@18ef3cc7c5a25b82114c953a80ccc09f4988f74e # v1.18.32
+        uses: anomalyco/opencode/github@97178e54b8c0940719a64f1a8595c794cbf1e50b # v1.18.32
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
