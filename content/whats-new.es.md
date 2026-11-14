@@ -7,6 +7,28 @@ showMetadata: false
 motion: changelog
 ---
 
+<h2 id="2026-11" class="changelog-version"><a href="#2026-11" aria-label="Enlace a la versión 2026.11">2026.11</a></h2>
+
+### Novedades
+
+- Añadimos compatibilidad con la reproducción de audio a través de Android Auto.
+- Ahora también puedes consultar los detalles de reproducción al escuchar por los altavoces del dispositivo, sin Bluetooth.
+- Añadimos información experimental sobre audio espacial y seguimiento de la cabeza para dispositivos Bluetooth compatibles. Puedes activarla en Ajustes.
+
+### Mejoras
+
+- Simplificamos los Ajustes para que sea más fácil encontrar las opciones de reproducción, los controles de privacidad y la ayuda.
+- Los formatos de audio ahora se muestran con nombres conocidos, como AAC y FLAC.
+- Las secciones desplegables tienen animaciones más fluidas y son más fáciles de pulsar.
+- Explicaciones más claras sobre cómo afecta la aceleración por hardware de Bluetooth al consumo de batería y a la calidad del sonido.
+
+### Correcciones
+
+- Las actualizaciones automáticas de reproducción ahora funcionan con más apps de música y contenido multimedia.
+- Detección más precisa del dispositivo Bluetooth en uso y del formato del audio que se está reproduciendo.
+- Al actualizar, las tarjetas ya no se mueven innecesariamente ni se altera la vista de los detalles desplegados.
+- Las listas de códecs compatibles ya no muestran entradas desconocidas que puedan resultar confusas.
+
 <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Enlace a la versión 2026.10">2026.10</a></h2>
 
 ### Novedades

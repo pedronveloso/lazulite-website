@@ -7,6 +7,28 @@ showMetadata: false
 motion: changelog
 ---
 
+<h2 id="2026-11" class="changelog-version"><a href="#2026-11" aria-label="Link to version 2026.11">2026.11</a></h2>
+
+### New
+
+- Added support for audio playback via Android Auto.
+- Playback details are now available when listening through your device speakers, without Bluetooth.
+- Added experimental spatial audio and head tracking information for supported Bluetooth devices. Enable it in Settings.
+
+### Improved
+
+- Simplified Settings so playback options, privacy controls, and support are easier to find.
+- Audio formats now use familiar names like AAC and FLAC.
+- Expandable sections are smoother and easier to tap.
+- Clearer explanations of how Bluetooth hardware acceleration affects battery use and sound quality.
+
+### Fixed
+
+- Automatic playback updates now work with more music and media apps.
+- More accurate detection of your active Bluetooth device and the audio format being played.
+- Refreshing no longer causes unnecessary card movement or disrupts expanded details.
+- Supported codec lists no longer show confusing unknown entries.
+
 <h2 id="2026-10" class="changelog-version"><a href="#2026-10" aria-label="Link to version 2026.10">2026.10</a></h2>
 
 ### New
